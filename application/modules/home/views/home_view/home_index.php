@@ -274,7 +274,15 @@
                         <h2><a href="/thue-van-phong-c9/cho-thue-nguyen-can-toa-nha-521-523-dien-bien-phu-qbinh-thanh-ngay-cau-van-thanh-i282448"><?php echo $list_prj['title']?></a></h2>
                         <span class="location"><a class="link-ext" href="/thue-van-phong-c9/tphcm-t3/quan-binh-thanh-q140">Quận Bình Thạnh</a>, 
                                                 <a class="link-ext" href="/thue-van-phong-c9/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">84 triệu/th&#225;ng</span>
+                        <span class="price">
+                        
+                        <?php 
+                        if(is_numeric($list_prj['price']))
+                        {
+                        echo bd_nice_number($list_prj['price'])?>/th&#225;ng 
+                        <?php } else { echo $list_prj['price'];}?>
+                        
+                        </span>
                     </div>
                 </div>
             </li>
@@ -293,78 +301,45 @@
             </ul>
         </div>
         <ul class="listing_1">
-            <li >
+            <?php 
+            $i=1;
+            foreach($list_pro_new as $pro_new)
+            {
+                if($i%2==0)
+                {
+                    ?> 
+                     <li  class=margin_left >
+                    <?php } else {?> 
+                     <li >
+                    <?php
+                }
+            ?>
+            
                 <div class="posted_block ">
                     <div class="img"><a href="/ban-dat-o-dat-tho-cu-c11/can-ban-gap-lo-i17-my-phuoc-3-huong-bac-duong-16m-ngay-khu-cho-dan-cu-dong-duc-i751676">
                                 <img src="http://image.diaoconline.vn/sieu-thi/2014/01/09/thumb-198-C8ACE7.jpg" width="120" height="120" alt="Cần b&#225;n gấp l&#244; I17 Mỹ Phước 3, hướng Bắc đường 16m ngay khu chợ, d&#226;n cư đ&#244;ng đ&#250;c"/></a></div>
                     <div class="posted_info">
-                        <h2><a href="/ban-dat-o-dat-tho-cu-c11/can-ban-gap-lo-i17-my-phuoc-3-huong-bac-duong-16m-ngay-khu-cho-dan-cu-dong-duc-i751676">Cần bán gấp lô I17 Mỹ Phước 3, hướng Bắc đường 16m ngay khu chợ, dân cư đông đúc</a></h2>
+                        <h2><a href="/ban-dat-o-dat-tho-cu-c11/can-ban-gap-lo-i17-my-phuoc-3-huong-bac-duong-16m-ngay-khu-cho-dan-cu-dong-duc-i751676"><?php echo $pro_new['title']?></a></h2>
                         <span class="location"><a class="link-ext" href="/ban-dat-o-dat-tho-cu-c11/binh-duong-t61/ben-cat-q473">Bến Cát</a>, 
                                                 <a class="link-ext" href="/ban-dat-o-dat-tho-cu-c11/binh-duong-t61">Bình Dương</a></span><br />
-                        <span class="price">200 triệu</span>
+                        <span class="price">
+                        <?php 
+                        if(is_numeric($pro_new['price']))
+                        {
+                            echo bd_nice_number($pro_new['price']);
+                        }
+                        else
+                        {
+                            echo $pro_new['price'];
+                        }
+                        ?>
+                        </span>
                     </div>
                 </div>
             </li>
-            <li  class=margin_left >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-cao-cap-c10/can-ho-thuy-tien-resort-mat-tien-bien-vung-tau-gia-chi-810-trieu-i673713">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/09/22/thumb-7BB-F5A797.jpg" width="120" height="120" alt="Căn hộ Thủy Ti&#234;n resort - mặt tiền biển Vũng T&#224;u, gi&#225; chỉ 810 triệu"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-cao-cap-c10/can-ho-thuy-tien-resort-mat-tien-bien-vung-tau-gia-chi-810-trieu-i673713">Căn hộ Thủy Tiên resort - mặt tiền biển Vũng Tàu, giá chỉ 810 triệu</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-cao-cap-c10/ba-ria-vung-tau-t68/tpvung-tau-q156">TP.Vũng Tàu</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-cao-cap-c10/ba-ria-vung-tau-t68">Bà Rịa - Vũng Tàu</a></span><br />
-                        <span class="price">13 triệu 800 ng&#224;n/m2</span>
-                    </div>
-                </div>
-            </li>
-            <li >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-nha-pho-c20/ban-gap-nha-pho-mat-tien-duong-noi-bo-d2-noi-dai-f25-quan-binh-thanh-i722846">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/11/22/thumb-9BA-277F34.jpg" width="120" height="120" alt="B&#225;n gấp nh&#224; phố mặt tiền đường nội bộ D2 nối d&#224;i, F.25, quận B&#236;nh Thạnh"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-nha-pho-c20/ban-gap-nha-pho-mat-tien-duong-noi-bo-d2-noi-dai-f25-quan-binh-thanh-i722846">Bán gấp nhà phố mặt tiền đường nội bộ D2 nối dài, F.25, quận Bình Thạnh</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-nha-pho-c20/tphcm-t3/quan-binh-thanh-q140">Quận Bình Thạnh</a>, 
-                                                <a class="link-ext" href="/ban-nha-pho-c20/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">Thương lượng</span>
-                    </div>
-                </div>
-            </li>
-            <li  class=margin_left >
-                <div class="posted_block ">
-                    <div class="img"><a href="/thue-nha-kho-xuong-c19/cho-thue-nha-xuong-tai-cum-cong-nghiep-dona-que-bang-dien-tich-2500m2-i737346">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/16/thumb-6A9-FF1BA6.jpg" width="120" height="120" alt="Cho thu&#234; nh&#224; xưởng tại cụm c&#244;ng nghiệp Dona Quế Bằng, diện t&#237;ch: 2500m2"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/thue-nha-kho-xuong-c19/cho-thue-nha-xuong-tai-cum-cong-nghiep-dona-que-bang-dien-tich-2500m2-i737346">Cho thuê nhà xưởng tại cụm công nghiệp Dona Quế Bằng, diện tích: 2500m2</a></h2>
-                        <span class="location"><a class="link-ext" href="/thue-nha-kho-xuong-c19/dong-nai-t53/vinh-cuu-q641">Vĩnh Cửu</a>, 
-                                                <a class="link-ext" href="/thue-nha-kho-xuong-c19/dong-nai-t53">Đồng Nai</a></span><br />
-                        <span class="price">Thương lượng</span>
-                    </div>
-                </div>
-            </li>
-            <li  class=last >
-                <div class="posted_block ">
-                    <div class="img"><a href="/thue-can-ho-chung-cu-c8/cho-thue-hoac-ban-can-ho-lan-huong-mhbr-gia-6-trieuthang-ho-van-tu-ptruong-tho-qthu-duc-i727563">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/11/29/thumb-74C-014EA3.jpg" width="120" height="120" alt="Cho thu&#234; hoặc b&#225;n căn hộ Lan Hương MHBR, g&#237;a: 6 triệu/th&#225;ng, Hồ Văn Tư, P.Trường Thọ, Q.Thủ Đức"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/thue-can-ho-chung-cu-c8/cho-thue-hoac-ban-can-ho-lan-huong-mhbr-gia-6-trieuthang-ho-van-tu-ptruong-tho-qthu-duc-i727563">Cho thuê hoặc bán căn hộ Lan Hương MHBR, gía: 6 triệu/tháng, Hồ Văn Tư, P.Trường Thọ, Q.Thủ Đức</a></h2>
-                        <span class="location"><a class="link-ext" href="/thue-can-ho-chung-cu-c8/tphcm-t3/quan-thu-duc-q144">Quận Thủ Đức</a>, 
-                                                <a class="link-ext" href="/thue-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">6 triệu/th&#225;ng</span>
-                    </div>
-                </div>
-            </li>
-            <li  class="margin_left last" >
-                <div class="posted_block ">
-                    <div class="img"><a href="/thue-can-ho-chung-cu-c8/cho-thue-can-ho-besco-an-suong-chung-cu-an-suong-gia-45-trieuthang-dt-67m2-i736554">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/12/thumb-D12-EF2724.jpg" width="120" height="120" alt="Cho thu&#234; căn hộ Besco An Sương - chung cư An Sương, gi&#225;: 4,5 triệu/th&#225;ng, DT: 67m2"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/thue-can-ho-chung-cu-c8/cho-thue-can-ho-besco-an-suong-chung-cu-an-suong-gia-45-trieuthang-dt-67m2-i736554">Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2</a></h2>
-                        <span class="location"><a class="link-ext" href="/thue-can-ho-chung-cu-c8/tphcm-t3/quan-12-q138">Quận 12</a>, 
-                                                <a class="link-ext" href="/thue-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">4 triệu 500 ng&#224;n/th&#225;ng</span>
-                    </div>
-                </div>
-            </li>
+            <?php $i++;} ?>
+           
+            
         </ul>
         <a class="view_all" href="/sieu-thi">Xem tất cả</a>
     </div>
@@ -375,78 +350,43 @@
             </ul>
         </div>
         <ul class="listing_1">
-            <li >
+        <?php 
+        $i = 1;
+        foreach($property_low_price as $low_rice)
+        {
+            if($i%2==0)
+            {
+                ?> 
+                 <li  class=margin_left >
+                <?php }else { ?> 
+                <li>
+                <?php } 
+            
+        ?>
+           
                 <div class="posted_block ">
                     <div class="img"><a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
                                 <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-BA3-BC9149.jpg" width="120" height="120" alt="Qu&#253; kh&#225;ch h&#227;y sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 th&#225;ng kh&#244;ng l&#227;i suất"/></a></div>
                     <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất</a></h2>
+                        <h2><a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778"><?php echo $low_rice['title']?></a></h2>
                         <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
                                                 <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
+                        <span class="price"><?php 
+                        if(is_numeric($low_rice['price']))
+                        {
+                            echo bd_nice_number($low_rice['price']);
+                        }
+                        else
+                        {
+                            echo $low_rice['price'];
+                        }
+                        ?></span>
                     </div>
                 </div>
             </li>
-            <li  class=margin_left >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-394-D6A67A.jpg" width="120" height="120" alt="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Qu&#253; kh&#225;ch được trả chậm 24 th&#225;ng kh&#244;ng l&#227;i suất"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
-                    </div>
-                </div>
-            </li>
-            <li >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-B4C-E3B619.jpg" width="120" height="120" alt="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, qu&#253; kh&#225;ch h&#227;y sở hữu tổ ấm của ri&#234;ng m&#236;nh"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
-                    </div>
-                </div>
-            </li>
-            <li  class=margin_left >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-to-am-cua-rieng-minh-ngay-canh-kdl-dam-sen-i746344">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/28/thumb-6C5-49871E.jpg" width="120" height="120" alt="Chỉ 600 triệu/căn - Qu&#253; kh&#225;ch sẽ sở hữu tổ ấm của ri&#234;ng m&#236;nh ngay cạnh KDL Đầm Sen"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-to-am-cua-rieng-minh-ngay-canh-kdl-dam-sen-i746344">Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
-                    </div>
-                </div>
-            </li>
-            <li  class=last >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-dam-sen-chi-600-trieucan-tra-cham-khong-lai-suat-i746125">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/27/thumb-AD0-247C6B.jpg" width="120" height="120" alt="Căn hộ ngay cạnh Đầm Sen - chỉ 600 triệu/căn -Trả chậm kh&#244;ng l&#227;i suất"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-dam-sen-chi-600-trieucan-tra-cham-khong-lai-suat-i746125">Căn hộ ngay cạnh Đầm Sen - chỉ 600 triệu/căn -Trả chậm không lãi suất</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
-                    </div>
-                </div>
-            </li>
-            <li  class="margin_left last" >
-                <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-cao-cap-c10/nhieu-nguoi-van-chua-tin-lai-co-can-ho-hoan-hao-nhu-the-gia-re-tra-gop-dai-han-dien-tich-nho-i734999">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-228-06FE55.jpg" width="120" height="120" alt="Nhiều người vẫn chưa tin lại c&#243; căn hộ ho&#224;n hảo như thế: gi&#225; rẻ + trả g&#243;p d&#224;i hạn + diện t&#237;ch nhỏ"/></a></div>
-                    <div class="posted_info">
-                        <h2><a href="/ban-can-ho-cao-cap-c10/nhieu-nguoi-van-chua-tin-lai-co-can-ho-hoan-hao-nhu-the-gia-re-tra-gop-dai-han-dien-tich-nho-i734999">Nhiều người vẫn chưa tin lại có căn hộ hoàn hảo như thế: giá rẻ + trả góp dài hạn + diện tích nhỏ</a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-cao-cap-c10/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-cao-cap-c10/tphcm-t3">TP.HCM</a></span><br />
-                        <span class="price">600 triệu</span>
-                    </div>
-                </div>
-            </li>
+            
+                
+            <?php $i++;} ?>
         </ul>
         <a class="view_all" href="/sieu-thi/loc?gianho=300000000&amp;gialon=1000000000">Xem tất cả</a>
     </div>
