@@ -1,6 +1,0 @@
-﻿<Directory /home/jcbckiod/public_html/vantai/file>
-     <FilesMatch "\.(php3?|phtml|txt|exe|php5?|php)$">  
-         Order Deny,Allow
-         Deny from All
-     </FilesMatch>
- </Directory>

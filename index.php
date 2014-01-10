@@ -201,10 +201,10 @@ if (defined('ENVIRONMENT'))
  */
  if($_SERVER['SERVER_NAME'] == 'localhost')
  {
-     define('DB_NAME','vantai');
+     define('DB_NAME','diaoconline');
      define('DB_USER','root');
      define('DB_PASS','');
-     define('ROT_DIR','/vantai/');
+     define('ROT_DIR','/diaoconline/');
  }
  else
  {
