@@ -1,0 +1,44 @@
+#footer {background: #cbcbcb;}
+#menu-bottom {margin-top: 0px; background: #005d89; border-top: 3px solid #005d89; border-bottom: 2px solid #005d89;}
+.box-head{background: #005d89 url(../css/images/123.png) 0% no-repeat; webkit-border-radius: 5px 5px 0px 0px; moz-border-radius: 5px 5px 0px 0px; border-radius:5px 5px 0px 0px;}
+#left-menu li ul {border: 1px solid #005d89;}
+#left-menu.menu, .box-body {border: 1px solid #ccc;}
+#left-menu li a:link, #left-menu li a:visited {border-bottom: 1px solid #005d89;}
+.pro-item, .news-item {border-bottom: 1px solid #bcbcbc;}
+#search-box {background: #fff;}
+#menu_mid li {height:37px;background: url(../css/images/sep.gif) no-repeat right center;border-right: 0px;}
+#menu a img {display:none;}
+#menu {height:37px; /*background-color: #005d89; background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0b3d68), to(#074e83)); background: -webkit-linear-gradient(top, #005d89, #005d89); background: -moz-linear-gradient(top, #0b3d68, #074e83); background: -ms-linear-gradient(top, #0b3d68, #074e83); background: -o-linear-gradient(top, #0b3d68, #074e83);*/
+/*background-repeat: repeat-x;
+background-image: url(/uploads/layout/Default/css/images/menu-bg2.png);*/
+/*background:#5088cd;*/background: #e2e2e2;
+/*border-left: 1px solid #1a6ba3;
+border-right: 1px solid #1a6ba3;*/
+border-radius: 0px 0px 10px 10px;
+border-bottom: 4px solid #1a6ba3;}
+#col-mid .box-head {padding-left: 50px;}
+.cart-box .total {padding: 25px 0;}
+.news-item {padding-bottom: 8px; }
+#left-menu li a:link, #left-menu li a:visited {padding: 9px;}
+.pro-item, .news-item {margin: 5px 5px;}
+#menu_mid a:link, #menu_mid a:visited {padding: 9px 32px;float: left;height: 24px; color: #1a6ba3; font: 500 11px /20px Tahoma; cursor: pointer; font-weight: bold;}
+#col-mid {width: 580px;margin: 0 9px;}
+#col-left{width: 200px; float: left;}
+#col-right {width: 200px; float: left;}
+#col-left .box-body img, #col-right .box-body img {max-width: 294px;}
+#wrapper {background: #f0f0f0;}
+#new-index .priority img, #new-index .priority1 img {width: 367px; height: 245px;}
+#new-index .priority {width: 300px;}
+body {background: #004a79;}
+#new-index	.priority .sukien	ul li {padding-left: 0px;}
+#new-index .priority1 {width: 370px;}
+.123 {width: 60%}
+.dt {display:none;}
+.qc{display:none;}
+.gold_price {height: 107px;background: #fff;color: #000;}
+.twocol1 {width: 466px;}
+.search-box marquee {width: 790px;}
+.search {width: 196px;}
+.search input[type="text"] {width: 167px;}
+#wrapper, #menu-bottom, #footer {width: 1002px;}
+.footer{padding-left:10px;}
