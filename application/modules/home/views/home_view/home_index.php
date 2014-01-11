@@ -1,3 +1,4 @@
+
 <div class="col_650  margin_bottom">
                 <div class="col_650 margin_bottom">
     <script type="text/javascript">
@@ -12,70 +13,43 @@
                 pagination: true,
                 paginationClass: 'paging_1',
                 currentClass: 'actived',
-                preloadImage: 'Content/loading.gif'
+                preloadImage: '<?php echo base_url();?>template/home_ezwebvietnam/Content/images/loading.gif'
             });
         });
     </script>
 <div id="hot_latest_news">
     <div class="slides_container">
+        <?php 
+        foreach($list_new_slide as $new_slide)
+        {
+        ?>
         <div class="slide_content">
         
             <a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143">
-                <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/large-227-mat-bang-ban-le-hao-nhoang-da-dung-hut-khach.jpg" width="310" height="200" alt="Mặt bằng bán lẻ hào nhoáng, đa dụng hút khách" style="float:left"/></a>
+            <?php 
+            if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_slide['img']))
+            {
+            ?>
+                <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_slide['img']?>" width="310" height="200" alt="<?php echo $new_slide['title']?>" style="float:left"/></a>
+            <?php } ?>
                 <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143">Mặt bằng bán lẻ hào nhoáng, đa dụng hút khách</a></h2>
-                <span class="updated_date">Cập nhật: 24 ph&#250;t trước</span><br />
-                <p>Chủ đầu tư các dự án mặt bằng bán lẻ đang đau đầu với sự chuyển dịch của khách hàng khi liên tiếp có các trung tâm thương mại hào nhoáng, đa dụng hơn chào thị trường.</p>
+                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143"><?php echo $new_slide['title']?></a></h2>
+                <span class="updated_date">Cập nhật:<?php echo date('d/m/Y',$new_slide['create_date'])?></span><br />
+                <p><?php echo sub_string(loaibohtmltrongvanban($new_slide['content']),222);?></p>
             </div>
             </div>
-        <div class="slide_content">
+        <?php }?>
         
-            <a href="/tin-tuc/thi-truong-dia-oc-c18/nha-o-xa-hoi-khong-phai-cay-dua-than-i45141">
-                <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/large-FD9-nha-o-xa-hoi-khong-phai-cay-dua-than.jpg" width="310" height="200" alt="Nhà ở xã hội không phải “cây đũa thần”" style="float:left"/></a>
-                <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/nha-o-xa-hoi-khong-phai-cay-dua-than-i45141">Nhà ở xã hội không phải “cây đũa thần”</a></h2>
-                <span class="updated_date">Cập nhật: 36 ph&#250;t trước</span><br />
-                <p>Thị trường bất động sản trầm lắng, các dự án thương mại kém thanh khoản, nhiều DN chuyển sang xây nhà ở xã hội hoặc chuyển đổi dự án thương mại sang phân khúc này với hy vọng giá cả phải chăng sẽ thu  ...</p>
-            </div>
-            </div>
-        <div class="slide_content">
-        
-            <a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-can-ho-nong-phan-khuc-binh-dan-i45140">
-                <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/large-ED5-thi-truong-can-ho-nong-phan-khuc-binh-dan.jpg" width="310" height="200" alt="Thị trường căn hộ: “Nóng” phân khúc bình dân" style="float:left"/></a>
-                <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-can-ho-nong-phan-khuc-binh-dan-i45140">Thị trường căn hộ: “Nóng” phân khúc bình dân</a></h2>
-                <span class="updated_date">Cập nhật: 38 ph&#250;t trước</span><br />
-                <p>Chỉ trong quý IV/2013 có 2.702 căn hộ được chào bán, trong đó hơn phân nửa thuộc phân khúc bình dân.</p>
-            </div>
-            </div>
-        <div class="slide_content">
-        
-            <a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-bat-dong-san-nam-2014-lay-lai-niem-tin-i45139">
-                <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/large-241-thi-truong-bat-dong-san-nam-2014-lay-lai-niem-tin.jpg" width="310" height="200" alt="Thị trường bất động sản năm 2014: Lấy lại niềm tin" style="float:left"/></a>
-                <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-bat-dong-san-nam-2014-lay-lai-niem-tin-i45139">Thị trường bất động sản năm 2014: Lấy lại niềm tin</a></h2>
-                <span class="updated_date">Cập nhật: 47 ph&#250;t trước</span><br />
-                <p>Trái với dự đoán chạm "đáy" và hồi phục, thị trường bất động sản (BĐS) năm 2013 vẫn tiếp tục đà giảm giá ở tất cả các phân khúc.</p>
-            </div>
-            </div>
-        <div class="slide_content">
-        
-            <a href="/tin-tuc/thi-truong-dia-oc-c18/ong-nguyen-van-duc-bo-xay-dung-lai-lac-quan-ve-bds-i45138">
-                <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/large-470-ong-nguyen-van-duc-bo-xay-dung-lai-lac-quan-ve-bds.jpg" width="310" height="200" alt="Ông Nguyễn Văn Đực: Bộ Xây dựng lại lạc quan về BĐS?" style="float:left"/></a>
-                <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/ong-nguyen-van-duc-bo-xay-dung-lai-lac-quan-ve-bds-i45138">Ông Nguyễn Văn Đực: Bộ Xây dựng lại lạc quan về BĐS?</a></h2>
-                <span class="updated_date">Cập nhật: 56 ph&#250;t trước</span><br />
-                <p>Ông Nguyễn Văn Đực, Phó Chủ tịch Hiệp hội Bất động sản TP.HCM, Phó Giám đốc Công ty địa ốc Đất Lành cho biết, không có cơ sở khẳng định thị trường bất động sản đã ấm lên, chỉ có những dự án được mua  ...</p>
-            </div>
-            </div>
         </div>
         <div class="paging_1">
         <ul>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
+        <?php 
+        $count = count($list_new_slide);
+        for($i = 1;$i<=$count;$i++)
+        {
+        ?>
+            <li><a href="#"><?php echo $i;?></a></li>
+        <?php } ?>
         </ul>
         </div>
     
@@ -83,36 +57,16 @@
 <div id="updated_news_list">
 	<h3 class="headline_title"><span>THÔNG TIN MỚI CẬP NHẬT</span></h3>
     <ul class="listing_1">
+    <?php 
+    foreach($list_new_slide_ as $news_slide_)
+    {
+    ?>
         <li class="updated_news_section">
             <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ</a></h2>
+            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146"><?php echo $news_slide_['title']?></a></h2>
             </div>
         </li>
-        <li class="updated_news_section">
-            <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/khoi-dong-sieu-du-an-duong-sat-do-thi-60000-ty-dong-i45145">Khởi động siêu dự án đường sắt đô thị 60.000 tỷ đồng</a></h2>
-            </div>
-        </li>
-        <li class="updated_news_section">
-            <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/dia-oc-hung-kieu-hoi-cuoi-nam-i45144">Địa ốc hứng kiều hối cuối năm</a></h2>
-            </div>
-        </li>
-        <li class="updated_news_section">
-            <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143">Mặt bằng bán lẻ hào nhoáng, đa dụng hút khách</a></h2>
-            </div>
-        </li>
-        <li class="updated_news_section">
-            <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-ha-noi-vao-mua-i45142">Bất động sản Hà Nội vào mùa</a></h2>
-            </div>
-        </li>
-        <li class="updated_news_section">
-            <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/nha-o-xa-hoi-khong-phai-cay-dua-than-i45141">Nhà ở xã hội không phải “cây đũa thần”</a></h2>
-            </div>
-        </li>
+     <?php } ?>   
     </ul>
 </div>
                 </div>
@@ -412,39 +366,41 @@
 <div class="rounded_style_2 rounded_box">
     <div class="content">
         <div class="latest_news">
-            <div class="img"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147"><img src="http://image.diaoconline.vn/kham-pha/2014/01/09/large-E3B-nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan.jpg" width="400" height="250" alt="“Nấc thang thi&#234;n đường” c&#225;ch địa ngục chỉ một bước ch&#226;n"/></a></div>
+        <?php 
+        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$list_new_slide_d[0]['img']))
+        {
+        ?>
+            <div class="img"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147"><img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $list_new_slide_d[0]['img']?>" width="400" height="250" alt="<?php echo $list_new_slide_d[0]['title']?>"/></a></div>
+        <?php } ?>
                 <div class="news_info">
                     <div class="category"><a href="/kham-pha/khong-gian-song-c7">»Không gian sống</a></div>
-                    <h2 class="larger_title"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147">“Nấc thang thiên đường” cách địa ngục chỉ một bước chân</a></h2>
+                    <h2 class="larger_title"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147"><?php echo $list_new_slide_d[0]['title']?></a></h2>
                     <div class="updated_date"><span>Cập nhật 15 ph&#250;t trước</span></div>
                     <br />
-                    <p>Ngay cả những người thích phiêu lưu mạo hiểm khi đối diện với con đường được làm bằng ván gỗ men theo sườn ngọn núi Hua Shan ở thành phố Tây An, Trung Quốc cũng phải rùng mình vì sợ.</p>
+                    <p><?php echo sub_string(loaibohtmltrongvanban($list_new_slide_d[0]['content']),239);?></p>
                 </div>
         </div>
         <div class="other_news">
             <h3 class="headline_title"><span>CÁC TIN KHÁC</span></h3>
             <ul>
+            <?php 
+            foreach($list_new_slide_d_ as $news_d)
+            {
+            ?>
                 <li >
                     <div class="news_block">
                     <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">
-                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/08/thumb-059-thong-dong-cuoi-ngua-ngam-bien-o-nam-phi.jpg" width="200" height="125" alt="Thong dong cưỡi ngựa ngắm biển ở Nam Phi" title="Thong dong cưỡi ngựa ngắm biển ở Nam Phi" alt="Thong dong cưỡi ngựa ngắm biển ở Nam Phi"/></a><br />
-                    <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">Thong dong cưỡi ngựa ngắm biển ở Nam Phi</a>
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$news_d['img']))
+                    {
+                    ?>
+                    <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $news_d['img']?>" width="200" height="125" alt="<?php echo $news_d['title']?>" title="<?php echo $news_d['title']?>" alt="<?php echo $news_d['title']?>"/>
+                    <?php } ?>
+                    </a><br />
+                    <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131"><?php echo $news_d['title']?></a>
                     </div>
                 </li>
-                <li >
-                    <div class="news_block">
-                    <a href="/kham-pha/thuong-hieu-c11/google-facebook-bi-de-bep-o-viet-nam-i45128">
-                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/08/thumb-73F-google-facebook-bi-de-bep-o-viet-nam.jpg" width="200" height="125" alt="Google, Facebook bị 'đè bẹp' ở Việt Nam?" title="Google, Facebook bị 'đè bẹp' ở Việt Nam?" alt="Google, Facebook bị 'đè bẹp' ở Việt Nam?"/></a><br />
-                    <a href="/kham-pha/thuong-hieu-c11/google-facebook-bi-de-bep-o-viet-nam-i45128">Google, Facebook bị 'đè bẹp' ở Việt Nam?</a>
-                    </div>
-                </li>
-                <li  class=last >
-                    <div class="news_block">
-                    <a href="/kham-pha/the-gioi-kien-truc-c4/nhung-nha-nguyen-bang-xuong-rung-ron-tren-the-gioi-i45119">
-                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/08/thumb-334-nhung-nha-nguyen-bang-xuong-rung-ron-tren-the-gioi.jpg" width="200" height="125" alt="Những Nhà Nguyện bằng xương rùng rợn trên thế giới" title="Những Nhà Nguyện bằng xương rùng rợn trên thế giới" alt="Những Nhà Nguyện bằng xương rùng rợn trên thế giới"/></a><br />
-                    <a href="/kham-pha/the-gioi-kien-truc-c4/nhung-nha-nguyen-bang-xuong-rung-ron-tren-the-gioi-i45119">Những Nhà Nguyện bằng xương rùng rợn trên thế giới</a>
-                    </div>
-                </li>
+             <?php } ?>   
             </ul>
         </div>
     </div>

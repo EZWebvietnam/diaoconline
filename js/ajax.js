@@ -137,7 +137,7 @@ function viewLoadStatus(tagHTML){
 	if(tagHTML!=null){
 		var targelem = document.getElementById(tagHTML);
 		if((targelem.tagName.toUpperCase()!='INPUT')&&(targelem.tagName.toUpperCase()!='TEXTAREA')){
-			targelem.innerHTML = '<div align="center"><img src="../images/loading.gif" border=0><br>Loading...</div>';
+			targelem.innerHTML = '<div align="center"><img src="../../Content/images/loading.gif" border=0><br>Loading...</div>';
 		}
 	}
 }

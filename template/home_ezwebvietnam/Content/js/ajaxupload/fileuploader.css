@@ -88,7 +88,7 @@ position:absolute;
 }
 .qq-upload-spinner {
     display: inline-block;
-    background: url("loading.gif");
+    background: url("../../Content/images/loading.gif");
     width: 15px;
     height: 15px;
     vertical-align: text-bottom;
