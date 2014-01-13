@@ -690,9 +690,9 @@ foreach($left_menu as $left_mn)
                 <div class="news_form margin_bottom">
                     <div class="headline_title_1 rounded_style_5 rounded_box">
                         <h2 class="headline">
-                            <a href="/tin-tuc/thi-truong-dia-oc-c18">
+                            <a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($new_main)))?>-c<?php echo $k?>">
                                 <span><?php echo $new_main; ?></span></a></h2>
-                        <a href="/tin-tuc/thi-truong-dia-oc-c18" class="grey_link">
+                        <a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($new_main)))?>-c<?php echo $k?>" class="grey_link">
                             Xem thêm</a>
                     </div>
                     <div class="rounded_style_2 rounded_box">

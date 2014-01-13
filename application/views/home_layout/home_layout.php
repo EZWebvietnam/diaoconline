@@ -78,10 +78,10 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="<?php echo base_url();?>" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <div id="head_nav">
                 <ul>
-                    <li id="news_item" ><a href="/tin-tuc">
+                    <li id="news_item" ><a href="<?php echo base_url();?>tin-tuc">
                         THÔNG TIN ĐỊA ỐC</a>
                         <div class="sub_menu">
                             <div class="wrap">
