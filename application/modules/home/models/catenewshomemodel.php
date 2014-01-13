@@ -21,5 +21,14 @@ class Catenewshomemodel extends CI_Model
         $query_cate = $this->db->get('cate_new');
         return $query_cate->result_array();
     }
+    public function get_cate_detail($id)
+    {
+        $id = intval($id);
+        $this->db->select();
+        $this->db->where('id',$id);
+        $query_cate = $this->db->get('cate_new');
+        return $query_cate->result_array();
+    }
+    
 }
 ?>

@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="content_inner rounded_style_7 rounded_box">
-                                                <div class="content">
+                                                 <div class="content">
                                                     <div class="img">
                                                         <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
                                                         <?php

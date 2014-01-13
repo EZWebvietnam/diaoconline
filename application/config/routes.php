@@ -39,7 +39,7 @@
 */
 
 $route['default_controller'] = "home/index";
-$route['tin-tuc-c/(:any)-i(:any)'] = "home/news/news_detail/$3";
+$route['tin-tuc-c/(:any)-c(:any)'] = "home/news/list_new/$2";
 $route['tin-tuc/(:any)/(:any)-i(:any)'] = "home/news/news_detail/$3";
 $route['404_override'] = '';
 $route['admin'] = "admin/index/login";

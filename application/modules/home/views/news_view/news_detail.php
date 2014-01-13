@@ -110,7 +110,7 @@
                         ?>
                                 <li>
                                     <h2>
-                                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($list_new_cate['name'])));?>-c<?php echo $list_new_cate['id_cate'] ?>/<?php echo mb_strtolower(url_title(removesign($list_new_cate['title'])));?>-i<?php echo $list_new_cate['id'] ?>">
+                                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($list_new_cate['name'])));?>-c<?php echo $list_new_cate['id_cate'] ?>/<?php echo mb_strtolower(url_title(removesign($list_new_cate['title'])));?>-i<?php echo $list_new_cate['id_new'] ?>">
                                             » <?php echo $list_new_cate['title']?></a></h2>
                                     <span class="updated_date" style="padding-top: 3px; padding-left: 2px;">(<?php echo date('d/m/Y',$list_new_cate['create_date'])?>)</span></li>
                         <?php } ?>

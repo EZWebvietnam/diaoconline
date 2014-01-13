@@ -4,6 +4,9 @@ class Home extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        parent::get_menu_new_nav();
+        parent::load_last_new();
+        parent::load_list_last_new($this->data['new_on_nav'][0]['id_new']);
     }
     public function index()
     {

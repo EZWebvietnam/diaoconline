@@ -88,22 +88,14 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/tin-tuc/thi-truong-dia-oc-c18">Thị trường địa ốc</a>
+                                                <?php 
+                                                foreach($new_nav as $menu_new)
+                                                {
+                                                ?>
+                                                <li><a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($menu_new['name'])))?>-c<?php echo $menu_new['id']?>"><?php echo $menu_new['name']?></a>
                                                 </li>
-                                                <li><a href="/tin-tuc/hoat-dong-doanh-nghiep-c23">Hoạt động Doanh nghiệp</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/chinh-sach-quy-hoach-c16">Chính sách - Quy hoạch</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/tai-chinh-chung-khoan-c57">Tài chính - Chứng khoán</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/xay-dung-c25">Xây dựng</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/bat-dong-san-the-gioi-c24">Bất động sản thế giới</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/ngoai-kieu-viet-kieu-c17">Ngoại kiều - Việt kiều</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/cong-nghe-c75">Công nghệ</a>
-                                                </li>
+                                                <?php } ?>
+                                                
                                         </ul>
                                     </div>
                                 </div>
@@ -119,15 +111,23 @@
                                                 <div class="content">
                                                     <div class="img">
                                                         <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
-                                                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/09/thumb-7FD-ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty.jpg" width="200" height="154" alt="Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ" title="Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ"/>
+                                                        <?php
+                                                        
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_on_nav[0]['img'])){
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php }
+                                                        else { ?>
+                                                        <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php } ?>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ</a></h2>
-                                                        <span class="updated_date">13 ph&#250;t trước</span>
+                                                            <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['name'])))?>-c<?php echo $new_on_nav[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['title'])))?>-i<?php echo $new_on_nav[0]['id_new']?>"><?php echo $new_on_nav[0]['title']?></a></h2>
+                                                        <span class="updated_date"><?php echo date('d/m/Y',$new_on_nav[0]['create_date'])?></span>
                                                         <br />
-                                                        <p>Chiều 8/1, ông Nguyễn Thịnh Thành, Chánh Văn phòng, kiêm người phát ngôn Ủy ban Nhân dân thành phố Hà Nội cho biết thành phố vừa chỉ đạo Giám đốc Sở Xây dựng; Chủ tịch các quận Ba Đình, Hoàn Kiếm, Đống Đa và Hai Bà Trưng liên quan đến việc đầu tư xây dựng 14 nhà vệ sinh công cộng.</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($new_on_nav[0]['content']),367);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -143,33 +143,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/khoi-dong-sieu-du-an-duong-sat-do-thi-60000-ty-dong-i45145" title="Khởi động siêu dự án đường sắt đô thị 60.000 tỷ đồng">
-                                                        Khởi động siêu dự án đường sắt đô thị  ...
+                                            <?php 
+                                            foreach($list_last_new as $l_l_new)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($l_l_new['name'])))?>-c<?php echo $l_l_new['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_l_new['title'])))?>-i<?php echo $l_l_new['id_new']?>" title="<?php echo $l_l_new['title']?>">
+                                                       <?php echo sub_string($l_l_new['title'],50);?> ...
                                                     </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/dia-oc-hung-kieu-hoi-cuoi-nam-i45144" title="Địa ốc hứng kiều hối cuối năm">
-                                                        Địa ốc hứng kiều hối cuối năm
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143" title="Mặt bằng bán lẻ hào nhoáng, đa dụng hút khách">
-                                                        Mặt bằng bán lẻ hào nhoáng, đa dụng hút  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-ha-noi-vao-mua-i45142" title="Bất động sản Hà Nội vào mùa">
-                                                        Bất động sản Hà Nội vào mùa
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/nha-o-xa-hoi-khong-phai-cay-dua-than-i45141" title="Nhà ở xã hội không phải “cây đũa thần”">
-                                                        Nhà ở xã hội không phải “cây đũa thần”
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-can-ho-nong-phan-khuc-binh-dan-i45140" title="Thị trường căn hộ: “Nóng” phân khúc bình dân">
-                                                        Thị trường căn hộ: “Nóng” phân khúc  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/thi-truong-bat-dong-san-nam-2014-lay-lai-niem-tin-i45139" title="Thị trường bất động sản năm 2014: Lấy lại niềm tin">
-                                                        Thị trường bất động sản năm 2014: Lấy  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/ong-nguyen-van-duc-bo-xay-dung-lai-lac-quan-ve-bds-i45138" title="Ông Nguyễn Văn Đực: Bộ Xây dựng lại lạc quan về BĐS?">
-                                                        Ông Nguyễn Văn Đực: Bộ Xây dựng lại lạc  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/dieu-kien-mua-nha-o-xa-hoi-cua-nguoi-co-thu-nhap-thap-i45137" title="Điều kiện mua nhà ở xã hội của người có thu nhập thấp">
-                                                        Điều kiện mua nhà ở xã hội của người có  ...
-                                                    </a></li> 
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>
