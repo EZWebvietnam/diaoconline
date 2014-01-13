@@ -39,11 +39,8 @@
 */
 
 $route['default_controller'] = "home/index";
-$route['dich-vu/(:any)/(:any)']="home/services/index/$1";
-$route['bai-viet/(:any)/(:any)']="home/home/new_detail/$1";
-$route['lien-he']="home/lienhe/index";
-$route['gioi-thieu']="home/home/view_about";
-$route['dich-vu']="home/services/dich_vu";
+$route['tin-tuc-c/(:any)-i(:any)'] = "home/news/news_detail/$3";
+$route['tin-tuc/(:any)/(:any)-i(:any)'] = "home/news/news_detail/$3";
 $route['404_override'] = '';
 $route['admin'] = "admin/index/login";
 $route['admin/login.xxx'] = "admin/index/login";

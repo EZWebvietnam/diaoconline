@@ -25,7 +25,7 @@
         ?>
         <div class="slide_content">
         
-            <a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143">
+            <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_slide['name'])));?>-c<?php echo $new_slide['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_slide['title'])));?>-i<?php echo $new_slide['id']?>">
             <?php 
             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_slide['img']))
             {
@@ -33,7 +33,7 @@
                 <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_slide['img']?>" width="310" height="200" alt="<?php echo $new_slide['title']?>" style="float:left"/></a>
             <?php } ?>
                 <div class="body">
-                <h2 class="larger_title"><a href="/tin-tuc/thi-truong-dia-oc-c18/mat-bang-ban-le-hao-nhoang-da-dung-hut-khach-i45143"><?php echo $new_slide['title']?></a></h2>
+                <h2 class="larger_title"><a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_slide['name'])));?>-c<?php echo $new_slide['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_slide['title'])));?>-i<?php echo $new_slide['id']?>"><?php echo $new_slide['title']?></a></h2>
                 <span class="updated_date">Cập nhật:<?php echo date('d/m/Y',$new_slide['create_date'])?></span><br />
                 <p><?php echo sub_string(loaibohtmltrongvanban($new_slide['content']),222);?></p>
             </div>
@@ -63,7 +63,7 @@
     ?>
         <li class="updated_news_section">
             <div class="updated_news_descript">                                
-            <h2><a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146"><?php echo $news_slide_['title']?></a></h2>
+            <h2><a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($news_slide_['name'])));?>-c<?php echo $news_slide_['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($news_slide_['title'])));?>-i<?php echo $news_slide_['id']?>"><?php echo $news_slide_['title']?></a></h2>
             </div>
         </li>
      <?php } ?>   

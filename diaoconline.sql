@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 4.0.8
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 11, 2014 at 06:23 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Jan 13, 2014 at 06:55 PM
+-- Server version: 5.5.34-cll
+-- PHP Version: 5.3.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,9 +17,50 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `diaoconline`
+-- Database: `jcbckiod_9fay`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cate_new`
+--
+
+CREATE TABLE IF NOT EXISTS `cate_new` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `parent` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+
+--
+-- Dumping data for table `cate_new`
+--
+
+INSERT INTO `cate_new` (`id`, `name`, `parent`) VALUES
+(1, 'Thông tin', 0),
+(2, 'Thị trường địa ốc', 1),
+(3, 'Hoạt động doanh nghiệp', 1),
+(4, 'Chính sách - Quy hoạch', 1),
+(5, 'Tài chính - Chứng khoán', 1),
+(6, 'Xây dựng', 1),
+(7, 'Bất động sản thế giới', 1),
+(8, 'Ngoại kiều - Việt kiều', 1),
+(9, 'Công nghệ', 1),
+(10, 'Thư viện địa ốc', 0),
+(11, 'Bản đồ QH sử dụng đất', 10),
+(12, 'Bản đồ thành phố', 10),
+(13, 'Các biểu mẫu nhà đất', 10),
+(14, 'Các loại văn bản', 10),
+(15, 'Cafe luật', 0),
+(16, 'Hợp thức hóa', 15),
+(17, 'Xây dựng hoàn công', 15),
+(18, 'Chuyển quyền sở hữu', 15),
+(19, 'Thừa kế', 15),
+(20, 'Nghĩa vụ tài chính', 15),
+(21, 'Tranh chấp', 15),
+(22, 'Tái định cư', 15),
+(23, 'Yếu tố nước ngoài', 15);
 
 -- --------------------------------------------------------
 
