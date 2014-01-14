@@ -399,7 +399,7 @@
                     </li>
                     <li ><a href="/doanh-nghiep">
                         DOANH NGHIỆP</a></li>
-                    <li  class=actived ><a href="/kham-pha" >
+                    <li  class=actived ><a href="<?php echo base_url();?>kham-pha" >
                         KHÁM PHÁ</a>
                         <div class="sub_menu">
                             <div class="wrap">
