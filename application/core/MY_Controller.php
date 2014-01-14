@@ -83,5 +83,24 @@ class MY_Controller extends CI_Controller
         $this->load->model('newshomemodel');
         $this->data['list_cafe_law']=$this->newshomemodel->get_list_cafe_law();
     }
+    public function get_cate_dis_parent()
+    {
+        $this->load->model('catediscoveryhomemodel');
+        $list_parent = $this->catediscoveryhomemodel->get_cate_parent();
+        $list_cate = array();
+        $cate_p = array();
+        $cate_s = array();
+        foreach($list_parent as $l_p)
+        {
+            $cate_sub = $this->catediscoveryhomemodel->get_cate_from_parent($l_p['id']);
+            $cate_p = array('id'=>$l_p['id'],'name'=>$l_p['name']);
+            foreach($cate_sub as $c_s)
+            {
+                $cate_s[$c_s['id']]=$c_s['name'];
+            }
+            $list_cate[]=array('cate_parent'=>$cate_p,'cate_sub'=>$cate_s);
+        }
+        $this->data['list_cate_left']=$list_cate;
+    }
 }
 ?>
