@@ -50,7 +50,7 @@ class Newshomemodel extends CI_Model
         $id_cate = intval($id_cate);
         $offset = intval($offset);
         $number = intval($number);
-        $sql = "SELECT news.id as id_new,news.img,news.title,news.content,news.create_date,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = $id_cate ORDER BY news.id DESC LIMIT $offset,$number";
+        $sql = "SELECT news.id as id_new,news.img,news.title,news.content,news.create_date,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = $id_cate OR cate_new.parent = $id_cate ORDER BY news.id DESC LIMIT $offset,$number";
         
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -59,8 +59,8 @@ class Newshomemodel extends CI_Model
     {
         $id_cate = intval($id_cate);
         
-        $sql = 'SELECT * FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = ? ORDER BY news.id DESC';
-        $query = $this->db->query($sql, array($id_cate));
+        $sql = 'SELECT * FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = ? OR cate_new.parent = ? ORDER BY news.id DESC';
+        $query = $this->db->query($sql, array($id_cate,$id_cate));
         $total = count($query->result_array());
         return $total;
     }
@@ -73,6 +73,20 @@ class Newshomemodel extends CI_Model
     public function get_new_list_($id)
     {
         $sql = "SELECT news.id as id_new,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate IN($id) ORDER BY news.id DESC LIMIT 3";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function get_most_view()
+    {
+        $sql = "SELECT news.id as id_new,news.view,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.view > 100 ORDER BY news.id DESC LIMIT 6";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+   
+    public function get_list_cafe_law()
+    {
+       
+        $sql = "SELECT news.id as id_new,news.view,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE cate_new.parent=15  ORDER BY news.id DESC LIMIT 5";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

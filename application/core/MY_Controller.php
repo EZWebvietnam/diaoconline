@@ -76,5 +76,12 @@ class MY_Controller extends CI_Controller
        
         $this->data['main']=$array;
     }
+   
+    public function get_list_cafe_law()
+    {
+     
+        $this->load->model('newshomemodel');
+        $this->data['list_cafe_law']=$this->newshomemodel->get_list_cafe_law();
+    }
 }
 ?>

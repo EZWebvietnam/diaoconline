@@ -99,22 +99,14 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/tin-tuc/thi-truong-dia-oc-c18">Thị trường địa ốc</a>
+                                                <?php 
+                                                foreach($new_nav as $menu_new)
+                                                {
+                                                ?>
+                                                <li><a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($menu_new['name'])))?>-c<?php echo $menu_new['id']?>"><?php echo $menu_new['name']?></a>
                                                 </li>
-                                                <li><a href="/tin-tuc/hoat-dong-doanh-nghiep-c23">Hoạt động Doanh nghiệp</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/chinh-sach-quy-hoach-c16">Chính sách - Quy hoạch</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/tai-chinh-chung-khoan-c57">Tài chính - Chứng khoán</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/xay-dung-c25">Xây dựng</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/bat-dong-san-the-gioi-c24">Bất động sản thế giới</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/ngoai-kieu-viet-kieu-c17">Ngoại kiều - Việt kiều</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/cong-nghe-c75">Công nghệ</a>
-                                                </li>
+                                                <?php } ?>
+                                                
                                         </ul>
                                     </div>
                                 </div>
@@ -129,16 +121,24 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/tin-tuc/cau-chuyen-doanh-nhan-c81/truyen-ba-am-thuc-viet-tai-xu-suong-mu-i45221">
-                                                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/13/thumb-DFD-truyen-ba-am-thuc-viet-tai-xu-suong-mu.jpg" width="200" height="154" alt="“Truyền bá” ẩm thực Việt tại xứ Sương mù" title="“Truyền bá” ẩm thực Việt tại xứ Sương mù"/>
+                                                        <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
+                                                        <?php
+                                                        
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_on_nav[0]['img'])){
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php }
+                                                        else { ?>
+                                                        <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php } ?>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/tin-tuc/cau-chuyen-doanh-nhan-c81/truyen-ba-am-thuc-viet-tai-xu-suong-mu-i45221">“Truyền bá” ẩm thực Việt tại xứ Sương mù</a></h2>
-                                                        <span class="updated_date">6 giờ 38 ph&#250;t trước</span>
+                                                            <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['name'])))?>-c<?php echo $new_on_nav[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['title'])))?>-i<?php echo $new_on_nav[0]['id_new']?>"><?php echo $new_on_nav[0]['title']?></a></h2>
+                                                        <span class="updated_date"><?php echo date('d/m/Y',$new_on_nav[0]['create_date'])?></span>
                                                         <br />
-                                                        <p>Hầu hết doanh nhân Việt Nam khi khởi nghiệp ở xứ người đều phải vượt qua vô vàn khó khăn như vốn, địa điểm kinh doanh, khác biệt về ngôn ngữ, hành lang pháp lý...</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($new_on_nav[0]['content']),367);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -154,33 +154,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/dia-oc-tphcm-can-ho-van-phong-tro-lai-duong-dua-i45218" title="Địa ốc TP.HCM: Căn hộ, văn phòng trở lại đường đua">
-                                                        Địa ốc TP.HCM: Căn hộ, văn phòng trở  ...
+                                            <?php 
+                                            foreach($list_last_new as $l_l_new)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($l_l_new['name'])))?>-c<?php echo $l_l_new['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_l_new['title'])))?>-i<?php echo $l_l_new['id_new']?>" title="<?php echo $l_l_new['title']?>">
+                                                       <?php echo sub_string($l_l_new['title'],50);?> ...
                                                     </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/bat-cap-tien-su-dung-dat-i45215" title="Bất cập tiền sử dụng đất">
-                                                        Bất cập tiền sử dụng đất
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/cap-nhat-phan-khuc-dang-hot-tren-thi-truong-i45216" title="Cập nhật phân khúc đang “hot” trên thị trường">
-                                                        Cập nhật phân khúc đang “hot” trên thị  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/giai-cuu-thi-truong-dat-nen-i45214" title="Giải cứu thị trường đất nền">
-                                                        Giải cứu thị trường đất nền
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/cac-loai-van-ban-c22/thong-tu-lien-tich-so-202013ttlt-bxd-bnv-ngay-21112013-cua-bo-xay-dung-bo-noi-vu-i45212" title="Thông tư liên tịch số 20/2013/TTLT-BXD-BNV ngày 21/11/2013 của Bộ Xây dựng - Bộ Nội vụ">
-                                                        Thông tư liên tịch số  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/chinh-sach-quy-hoach-c16/tp-hcm-nha-dat-mua-giay-viet-tay-duoc-nop-phat-de-lam-so-do-i45211" title="TP HCM: Nhà đất mua giấy viết tay được nộp phạt để làm "sổ đỏ"">
-                                                        TP HCM: Nhà đất mua giấy viết tay được  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/chinh-sach-quy-hoach-c16/binh-duong-se-rong-tay-cho-tin-dung-bat-dong-san-i45210" title="Bình Dương sẽ "rộng tay" cho tín dụng bất động sản">
-                                                        Bình Dương sẽ "rộng tay" cho tín dụng  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/chinh-sach-quy-hoach-c16/su-dung-dat-khong-dung-muc-dich-phat-1-ty-dong-i45207" title="Sử dụng đất không đúng mục đích phạt 1 tỷ đồng">
-                                                        Sử dụng đất không đúng mục đích phạt 1  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/chinh-sach-quy-hoach-c16/duyet-quy-hoach-phan-khu-do-thi-hon-1000ha-tai-dong-anh-gia-lam-i45206" title="Duyệt quy hoạch phân khu đô thị hơn 1.000ha tại Đông Anh, Gia Lâm">
-                                                        Duyệt quy hoạch phân khu đô thị hơn  ...
-                                                    </a></li> 
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>
@@ -517,66 +498,27 @@
     </div>
     <div class="rounded_style_7 rounded_box">
         <ul class="listing_5">
+        <?php 
+        foreach($list_most_view as $most_view)
+        {
+        ?>
                 <li >
                     <div class="img">
                         <a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-2014-se-nho-toi-ts-alan-phan-i45001">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/02/thumb-42C-bat-dong-san-2014-se-nho-toi-ts-alan-phan.jpg" width="90" height="70" alt="Bất động sản 2014 sẽ nhớ tới TS. Alan Phan?"/></a></div>
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$most_view['img']))
+                        {
+                        ?>
+                            <img src="<?php echo base_url();?>file/uploads/news/<?php echo $most_view['img']?>" width="90" height="70" alt="<?php echo $most_view['title']?>"/>
+                            <?php } ?>
+                            </a></div>
                     <div class="right">
                         <h2>
-                            <a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-2014-se-nho-toi-ts-alan-phan-i45001">Bất động sản 2014 sẽ nhớ tới TS. Alan Phan?</a></h2>
-                        <span class="updated_date">02/01/2014 14:20</span>
+                            <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($most_view['name'])));?>-c<?php echo $most_view['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($most_view['title'])));?>-i<?php echo $most_view['id_new']?>"><?php echo $most_view['title']?></a></h2>
+                        <span class="updated_date"><?php echo date('d/m/Y h:i:s',$most_view['create_date'])?></span>
                     </div>
                 </li>
-                <li >
-                    <div class="img">
-                        <a href="/tin-tuc/hoat-dong-doanh-nghiep-c23/the-sun-city-ba-to-mo-ban-chinh-thuc-giai-doan-i-i45014">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/03/thumb-601-the-sun-city-ba-to-mo-ban-chinh-thuc-giai-doan-i.jpg" width="90" height="70" alt="“The Sun City Ba Tơ” mở bán chính thức giai đoạn I"/></a></div>
-                    <div class="right">
-                        <h2>
-                            <a href="/tin-tuc/hoat-dong-doanh-nghiep-c23/the-sun-city-ba-to-mo-ban-chinh-thuc-giai-doan-i-i45014">“The Sun City Ba Tơ” mở bán chính thức giai đoạn I</a></h2>
-                        <span class="updated_date">03/01/2014 09:21</span>
-                    </div>
-                </li>
-                <li >
-                    <div class="img">
-                        <a href="/tin-tuc/chinh-sach-quy-hoach-c16/de-xuat-6-nhom-doi-tuong-phai-nop-tien-su-dung-dat-i45024">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/03/thumb-D0F-de-xuat-6-nhom-doi-tuong-phai-nop-tien-su-dung-dat.jpg" width="90" height="70" alt="Đề xuất 6 nhóm đối tượng phải nộp tiền sử dụng đất"/></a></div>
-                    <div class="right">
-                        <h2>
-                            <a href="/tin-tuc/chinh-sach-quy-hoach-c16/de-xuat-6-nhom-doi-tuong-phai-nop-tien-su-dung-dat-i45024">Đề xuất 6 nhóm đối tượng phải nộp tiền sử dụng đất</a></h2>
-                        <span class="updated_date">03/01/2014 13:27</span>
-                    </div>
-                </li>
-                <li >
-                    <div class="img">
-                        <a href="/tin-tuc/chinh-sach-quy-hoach-c16/giam-lai-suat-cho-vay-goi-ho-tro-30000-ty-i45033">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/03/thumb-018-giam-lai-suat-cho-vay-goi-ho-tro-30000-ty.jpg" width="90" height="70" alt="Giảm lãi suất cho vay gói hỗ trợ 30.000 tỷ"/></a></div>
-                    <div class="right">
-                        <h2>
-                            <a href="/tin-tuc/chinh-sach-quy-hoach-c16/giam-lai-suat-cho-vay-goi-ho-tro-30000-ty-i45033">Giảm lãi suất cho vay gói hỗ trợ 30.000 tỷ</a></h2>
-                        <span class="updated_date">03/01/2014 15:11</span>
-                    </div>
-                </li>
-                <li >
-                    <div class="img">
-                        <a href="/tin-tuc/bat-dong-san-the-gioi-c24/10-thi-truong-bat-dong-san-nong-nhat-nam-2013-i44989">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/02/thumb-BF3-10-thi-truong-bat-dong-san-nong-nhat-nam-2013.jpg" width="90" height="70" alt="10 thị trường bất động sản nóng nhất năm 2013"/></a></div>
-                    <div class="right">
-                        <h2>
-                            <a href="/tin-tuc/bat-dong-san-the-gioi-c24/10-thi-truong-bat-dong-san-nong-nhat-nam-2013-i44989">10 thị trường bất động sản nóng nhất năm 2013</a></h2>
-                        <span class="updated_date">02/01/2014 10:29</span>
-                    </div>
-                </li>
-                <li  class=last >
-                    <div class="img">
-                        <a href="/tin-tuc/xay-dung-c25/nganh-thep-du-bao-tang-truong-10-i44977">
-                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/02/thumb-47E-nganh-thep-du-bao-tang-truong-10.jpg" width="90" height="70" alt="Ngành thép: Dự báo tăng trưởng 10%"/></a></div>
-                    <div class="right">
-                        <h2>
-                            <a href="/tin-tuc/xay-dung-c25/nganh-thep-du-bao-tang-truong-10-i44977">Ngành thép: Dự báo tăng trưởng 10%</a></h2>
-                        <span class="updated_date">02/01/2014 08:30</span>
-                    </div>
-                </li>
+          <?php } ?>      
         </ul>
     </div>
 </div>            <div id="left_search" class="rounded_style_1 rounded_box margin_bottom">
@@ -761,36 +703,34 @@ foreach($left_menu as $left_mn)
     </div>
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
-        <h2 class="headline"><a href="/tin-tuc/cafe-luat-c26"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
-        <a href="/tin-tuc/cafe-luat-c26" class="grey_link">Xem thêm</a>
+        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
+        <a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15" class="grey_link">Xem thêm</a>
     </div>
     <div class="rounded_style_2 rounded_box">
         <div class="body">
 			<ul class="listing_1">
+            <?php 
+            $i = 1;
+            foreach($list_cafe_law as $cafe_law)
+            {
+                if($i == 1)
+                {
+            ?>
                     <li >
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/mua-dat-lan-chiem-dat-cong-co-the-lam-so-do-duoc-khong-i45134">
-                        <img src="http://image.diaoconline.vn/tin-tuc/2014/01/08/thumb-FB1-mua-dat-lan-chiem-dat-cong-co-the-lam-so-do-duoc-khong.jpg" alt="Mua đất lấn chiếm đất công có thể làm sổ đỏ được không?" width="80" height="61" class="img-left"/>
-                         Mua đất lấn chiếm đất công có thể làm sổ đỏ được không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/dat-co-dien-tich-41m2-o-di-an-co-duoc-cap-so-do-khong-i45130">
-                         Đất có diện tích 41m2 ở Dĩ An có được cấp sổ đỏ không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/nghia-vu-tai-chinh-c64/co-phai-dong-tien-su-dung-dat-doi-voi-dat-co-quan-cap-hay-khong-i45129">
-                         Có phải đóng tiền sử dụng đất đối với đất cơ quan cấp hay không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/nghia-vu-tai-chinh-c64/ban-can-nha-duy-nhat-can-phai-nop-nhung-thue-gi-i45017">
-                         Bán căn nhà duy nhất cần phải nộp những thuế gì?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/thu-tuc-chuyen-dat-trong-cay-hang-nam-sang-dat-tho-cu-i45016">
-                         Thủ tục chuyển đất trồng cây hàng năm sang đất thổ cư?</a></li>
-                    <li  class=last >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/thua-ke-c65/me-nuoi-toi-muon-chia-tai-san-cho-toi-khong-co-di-chuc-co-duoc-khong-i44970">
-                         Mẹ nuôi tôi muốn chia tài sản cho tôi không có di chúc có được không?</a></li>
+                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($cafe_law['name'])))?>-c<?php echo $cafe_law['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($cafe_law['title'])));?>-i<?php echo $cafe_law['id_new']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$cafe_law['img']))
+                        {
+                        ?>
+                        <img src="<?php echo base_url();?>file/uploads/news/<?php echo $cafe_law['img']?>" alt="<?php echo $cafe_law['title']?>" width="80" height="61" class="img-left"/>
+                        <?php } ?>
+                         <?php echo $cafe_law['title']?></a></li>
+            <?php } else { ?> 
+             <li >
+                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($cafe_law['name'])))?>-c<?php echo $cafe_law['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($cafe_law['title'])));?>-i<?php echo $cafe_law['id_new']?>">
+                         <?php echo $cafe_law['title']?></a></li>
+            <?php }$i++;} ?>
+                    
             </ul>
         </div>
     </div>

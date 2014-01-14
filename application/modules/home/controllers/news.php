@@ -8,12 +8,15 @@ class News extends MY_Controller
         parent::get_menu_new_nav();
         parent::load_last_new();
         parent::load_list_last_new($this->data['new_on_nav'][0]['id_cate']);
+        
+        parent::get_list_cafe_law();
         $this->load->model('newshomemodel');
     }
     public function index()
     {
         parent::get_new_index();
         $this->data['news_slide']=$this->newshomemodel->load_news_slide_();
+        $this->data['list_most_view']=$this->newshomemodel->get_most_view();
         $this->load->view('home_layout/news_layout', $this->data);
     }
     public function list_new($id)
