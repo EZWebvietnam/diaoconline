@@ -40,6 +40,7 @@
 
 $route['default_controller'] = "home/index";
 $route['tin-tuc'] = "home/news/index";
+$route['kham-pha'] = "home/discovery/index";
 $route['kham-pha/(:any)/(:any)-i(:any)'] = "home/discovery/discovery_detail/$3";
 $route['tin-tuc-c/(:any)-c(:any)'] = "home/news/list_new/$2";
 $route['tin-tuc/(:any)/(:any)-i(:any)'] = "home/news/news_detail/$3";

@@ -7,6 +7,12 @@ class Discovery extends MY_Controller
         $this->load->model('discoveryhomemodel');
         parent::get_cate_dis_parent();
     }
+    public function index()
+    {
+        parent::get_kham_pha_index();
+        
+        $this->load->view('home_layout/kham_pha_layout',$this->data);
+    }
     public function discovery_detail($id)
     {
         $this->data['main_content']='discovery_view/discovery_detail';

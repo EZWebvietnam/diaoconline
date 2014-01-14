@@ -102,5 +102,23 @@ class MY_Controller extends CI_Controller
         }
         $this->data['list_cate_left']=$list_cate;
     }
+    public function get_kham_pha_index()
+    {
+        $this->load->model('catediscoveryhomemodel');
+        $cate_sub = $this->catediscoveryhomemodel->get_cate_from_parent(1);
+        $list_new = array();
+        $list_new_ = array();
+        foreach($cate_sub as $c_s)
+        {
+           $cate_s[$c_s['id']]=$c_s['name'];
+           $list_new = $this->discoveryhomemodel->load_discovery_cate($c_s['id']);
+           $list_new_[$c_s['id']] = $list_new;
+           
+        }
+        $list_cate=array('cate_sub'=>$cate_s,'list_new'=>$list_new_);
+        $list_new_ = array();
+        $list_new = array();
+        $this->data['main']=$list_cate;
+    }
 }
 ?>
