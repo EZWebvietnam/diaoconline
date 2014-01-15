@@ -15,6 +15,7 @@ class Discovery extends MY_Controller
     }
     public function index()
     {
+         parent::project_noi_bat();
         parent::get_kham_pha_index();
         $this->data['list_thuong_hieu']=$this->discoveryhomemodel->load_discovery_cate_limt_10(6);
         $this->data['slide_discovery']=$this->discoveryhomemodel->load_discovery_cate_limt_2();
@@ -23,6 +24,16 @@ class Discovery extends MY_Controller
     }
     public function discovery_detail($id)
     {
+         parent::project_noi_bat();
+        if(empty($id))
+        {
+            show_404();
+            exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();exit;
+        }
         $this->data['main_content']='discovery_view/discovery_detail';
         $this->data['detail_dis'] = $this->discoveryhomemodel->load_detail($id);
         $this->data['title']=$this->data['detail_dis'][0]['title'];
@@ -31,6 +42,7 @@ class Discovery extends MY_Controller
     }
     public function list_disc($id)
     {
+        parent::project_noi_bat();
          $this->load->model('catediscoveryhomemodel');
          
         if (!is_numeric($id)) {

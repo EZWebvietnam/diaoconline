@@ -282,7 +282,7 @@
                             </div>
                         </div>
                     </li>
-                    <li id="project_item" ><a href="/du-an">
+                    <li id="project_item" ><a href="<?php echo base_url();?>du-an">
                         DỰ ÁN</a>
                         <div class="sub_menu">
                             <div class="wrap">
@@ -578,36 +578,22 @@
 	</div>
     <div class="properties_block">
         <ul>
+        <?php 
+        foreach($prj_noi_bat as $project_nb)
+        {
+        ?>
             <li >
-            <a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412">
-            <img src="http://image.diaoconline.vn/du-an/2013/10/21/thumb-DF0-lexington-an-phu.jpg" width="180" height="118" alt="Lexington An Phú"/></a>
-            <h2><a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412">Lexington An Phú</a></h2>
+            <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($project_nb['name'])))?>-c<?php echo $project_nb['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($project_nb['title'])))?>-i<?php echo $project_nb['id_pro']?>">
+            <?php 
+            if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$project_nb['img']))
+            {
+            ?>
+            <img src="<?php echo base_url();?>file/uploads/project/<?php echo $project_nb['img']?>" width="180" height="118" alt="<?php echo $project_nb['title']?>"/>
+            <?php } ?>
+            </a>
+            <h2><a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($project_nb['name'])))?>-c<?php echo $project_nb['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($project_nb['title'])))?>-i<?php echo $project_nb['id_pro']?>"><?php echo $project_nb['title']?></a></h2>
         </li>
-            <li >
-            <a href="/du-an/khu-dan-cu-do-thi-moi-c24/green-life-city-i1375">
-            <img src="http://image1.diaoconline.vn/du-an/2012/11/30/thumb-917-ngoc-bich-residence.jpg" width="180" height="118" alt="Green Life City"/></a>
-            <h2><a href="/du-an/khu-dan-cu-do-thi-moi-c24/green-life-city-i1375">Green Life City</a></h2>
-        </li>
-            <li >
-            <a href="/du-an/khu-can-ho-c27/dragon-hill-residence-and-suites-i1086">
-            <img src="http://image.diaoconline.vn/du-an/2013/07/31/thumb-E23-dragon-hill.jpg" width="180" height="118" alt="Dragon Hill Residence and Suites"/></a>
-            <h2><a href="/du-an/khu-can-ho-c27/dragon-hill-residence-and-suites-i1086">Dragon Hill Residence and Suites</a></h2>
-        </li>
-            <li >
-            <a href="/du-an/khu-can-ho-c27/the-eastern-i1070">
-            <img src="http://image1.diaoconline.vn/du-an/2011/01/25/thumb-713-the-eastern.jpg" width="180" height="118" alt="The Eastern"/></a>
-            <h2><a href="/du-an/khu-can-ho-c27/the-eastern-i1070">The Eastern</a></h2>
-        </li>
-            <li >
-            <a href="/du-an/khu-can-ho-c27/le-thanh-twin-towers-i219">
-            <img src="http://image1.diaoconline.vn/du-an/2012/10/24/thumb-D60-le-thanh-twin-towers.jpg" width="180" height="118" alt="Lê Thành Twin Towers"/></a>
-            <h2><a href="/du-an/khu-can-ho-c27/le-thanh-twin-towers-i219">Lê Thành Twin Towers</a></h2>
-        </li>
-            <li  class=last >
-            <a href="/du-an/khu-can-ho-c27/tdh-truong-tho-i208">
-            <img src="http://image1.diaoconline.vn/du-an/2012/11/29/thumb-095-tdh-truong-tho.jpg" width="180" height="118" alt="TDH - Trường Thọ"/></a>
-            <h2><a href="/du-an/khu-can-ho-c27/tdh-truong-tho-i208">TDH - Trường Thọ</a></h2>
-        </li>
+        <?php } ?>   
         </ul>
     </div>    
 </div>

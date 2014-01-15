@@ -271,7 +271,7 @@
                             </div>
                         </div>
                     </li>
-                    <li id="project_item" ><a href="/du-an">
+                    <li id="project_item" ><a href="<?php echo base_url();?>du-an">
                         DỰ ÁN</a>
                         <div class="sub_menu">
                             <div class="wrap">

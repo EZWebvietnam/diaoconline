@@ -40,6 +40,13 @@
 
 $route['default_controller'] = "home/index";
 $route['tin-tuc'] = "home/news/index";
+$route['du-an'] = "home/project/index";
+$route['du-an/page/(:any)'] = "home/project/index";
+$route['du-an/tu-khoa-(:any)'] = "home/project/key/$1";
+$route['du-an-c/(:any)-c(:any)'] = "home/project/list_project/$2";
+$route['du-an-c/(:any)-c(:any)/page/(:any)'] = "home/project/list_project/$2";
+$route['du-an/(:any)-c(:any)/(:any)-i(:any)'] = "home/project/detail/$4";
+$route['du-an/tu-khoa-(:any)/page/(:any)'] = "home/project/key/$1";
 $route['kham-pha'] = "home/discovery/index";
 $route['kham-pha/(:any)/(:any)-i(:any)'] = "home/discovery/discovery_detail/$3";
 $route['kham-pha-c/(:any)-c(:any)'] = "home/discovery/list_disc/$2";

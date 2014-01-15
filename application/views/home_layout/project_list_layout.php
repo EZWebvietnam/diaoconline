@@ -4,16 +4,16 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title><?php echo $title;?></title>
-    <meta name="description" content="Một nhà nguyện nhỏ nằm trong khung cảnh miền núi xa xôi, là một nơi cuộc sống trở nên đơn giản, ít vội vã và mang nhiều ý nghĩa." />
-    <meta name="keywords" content="Nhà nguyện trong mây, Costa Rica, thị trấn đào vàng Barkerville, tỉnh British Columbia, học viện Victory Horse Sense Victory" />
+    <title><?php if(isset($list[0])) { echo $list[0]['name'];} else { echo 'Dự án';}?></title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?0052" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?2054" rel="stylesheet" type="text/css" />
     <!--[if IE 7]>
     <link href="css/ie7.css" rel="stylesheet" type="text/css" />
     <![endif]-->
-    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/Discovery.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/Project.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slides/slides.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/tooltip/tools.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/uniform.default.css" rel="stylesheet" type="text/css" />
@@ -55,7 +55,7 @@
     </div>
     <div id="b_right" style="right:90px">
 
-<div id="position_66" class =''><div><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/66"/></div><div><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/66"/></div></div><script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
+<div id="position_66" class =''><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
 
 <div id="position_67" class =''><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div></div><script type='text/javascript'>var Banner67=1;function Random_Banner67(){    var _Arr=document.getElementById("position_67").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner67 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner67 - 1]).html(); $(_Arr[Banner67 - 1]).html(''); $(_Arr[Banner67 - 1]).html(tempBanner);    window.setTimeout("Random_Banner67()" ,25000);    Banner67 = Banner67 + 1;    if(Banner67 > _Arr.length)        Banner67 = 1;}Random_Banner67();</script>
     </div>
@@ -89,7 +89,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="<?php echo base_url();?>" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <div id="head_nav">
                 <ul>
                     <li id="news_item" ><a href="<?php echo base_url();?>tin-tuc">
@@ -468,107 +468,189 @@
                     </div>
             </div>
             <div class="post_propertise">
-                <a href="/thanh-vien/tai-san-dang-moi/45176">ĐĂNG TÀI SẢN CỦA BẠN</a>
+                <a href="/thanh-vien/tai-san-dang-moi/24">ĐĂNG TÀI SẢN CỦA BẠN</a>
             </div>
         </div>
     </div>
     <div id="content_container">
         
-    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/normalize.css" rel="stylesheet" type="text/css" />
     <div class="wrap">
 
-<div id="position_43" class ='banner_960x75 margin_bottom'><div><a href="http://www.diaoconline.vn/quangcao/362/43" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/11/92E-smilecard_960x90.gif" width="960px" height="90px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/362/43" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/11/92E-smilecard_960x90.gif" width="960px" height="90px"/></a></div></div><script type='text/javascript'>var Banner43=1;function Random_Banner43(){    var _Arr=document.getElementById("position_43").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner43 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner43 - 1]).html(); $(_Arr[Banner43 - 1]).html(''); $(_Arr[Banner43 - 1]).html(tempBanner);    window.setTimeout("Random_Banner43()" ,25000);    Banner43 = Banner43 + 1;    if(Banner43 > _Arr.length)        Banner43 = 1;}Random_Banner43();</script>
+
         <div class="col_180">
-        <?php 
-        foreach($list_cate_left as $cate)
-        {
-        ?>
-            <div class="menu_col_left margin_bottom">
-<div style="clear:both;display:table;">
+            
+<script type="text/javascript">
+    $(function () {
+        $("#CityList,#DistrictList,#ProjectTypeList").uniform({
+            selectAutoWidth: true
+        });
+    });
+</script>
+<?php 
+foreach($list_cate_project_left as $cate_pro)
+{
+?>
+<div class="menu_col_left margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <div class="TL"></div>
         <div class="TR"></div>
         <div class="BL"></div>
         <div class="BR"></div>
-        <h2 class="headline"><a id="c_<?php echo $cate['cate_parent']['id']?>" href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate['cate_parent']['name'])))?>-c<?php echo $cate['cate_parent']['id']?>"><span><?php echo $cate['cate_parent']['name']?></span></a></h2>
+        <h2 class="headline"><a href="<?php echo base_url();?>du-an"><span><?php echo $cate_pro['cate_parent']['name']?></span></a></h2>
     </div>
     <div class="headline_title_2 rounded_box">
-    <ul>
-            <?php
-            foreach($cate['cate_sub'] as $k=>$cate_v)
-            {
-             ?>
-            <li id="c_<?php echo $k?>"><a  href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate_v)))?>-c<?php echo $k?>"><?php echo $cate_v;?></a></li>
-            <?php } ?>
-    </ul>
+        <ul>
+                <?php 
+                foreach($cate_pro['cate_sub'] as $k=>$cate_sub)
+                {
+                ?>
+                <li id="c_<?php echo $k?>"><a href="<?php echo base_url();?>du-an-c/<?php echo mb_strtolower(url_title(removesign($cate_sub)))?>-c<?php echo $k?>"><?php echo $cate_sub?></a></li>
+                <?php } ?>
+               
+        </ul>
     </div>
 </div>
-            </div>
-            <?php } ?>
-            <div id="left_search" class="rounded_style_1 rounded_box margin_bottom">
-                    <script type="text/javascript">
-        $(function () {
-            $("#FormSearch").submit(function () {
-                if ($('#KeySearch').val().trim().length <= 2) {
-                    $('#KeySearch').focus();
-                    return false;
-                } else {
-                    return true;
-                }
-            });
-        });
-    </script>
-    <div class="body">
-        <form action="/Discovery/Search" id="FormSearch" method="post" class="form_style_1">
-        <fieldset>
-            <div class="business_search_type margin_bottom_form">
-                <input type="text" class="input_text" value="" id="KeySearch" name="KeySearch" placeholder="Nhập từ khóa cần tìm"/>
-                <button type="submit" name="Submit" id="Submit" class="btn_2">
-                    <span>TÌM KIẾM</span></button>
-            </div>
-        </fieldset>
-        </form>
-    </div>
+<?php } ?>
+<div id="left_search" class="rounded_style_1 rounded_box margin_bottom">
+    <div class="content">
+        <div class="body">
+            <form action="/du-an/tim-kiem" id="frmSearch" method="post" class="form_style_1">
+            <fieldset>
+                <div class="business_search_type margin_bottom_form">
+                    <input class="input_text" id="td" name="td" param="td" placeholder="Nhập từ khóa cần tìm" title="Nhập từ khóa cần tìm" type="text" value="" />
 
-            </div>
-            <div id="latest_news" class="margin_bottom">
+                    <div class="city wid-btm">
+                        <div class="divUni-2">
+                            <div class="wid-left"></div>
+	                        <div class="wid">
+                        <select id="CityList" name="CityList" param="tp"><option value="">Tỉnh/Th&#224;nh phố</option>
+<option value="2">H&#224; Nội</option>
+<option value="3">TP.HCM</option>
+<option value="71">Đ&#224; Nẵng</option>
+<option value="53">Đồng Nai</option>
+<option value="61">B&#236;nh Dương</option>
+<option value="35">Long An</option>
+<option value="69">An Giang</option>
+<option value="68">B&#224; Rịa - Vũng T&#224;u</option>
+<option value="67">Bắc Giang</option>
+<option value="66">Bắc Kạn</option>
+<option value="65">Bạc Li&#234;u</option>
+<option value="64">Bắc Ninh</option>
+<option value="63">Bến Tre</option>
+<option value="62">B&#236;nh Định</option>
+<option value="60">B&#236;nh Phước</option>
+<option value="59">B&#236;nh Thuận</option>
+<option value="58">C&#224; Mau</option>
+<option value="72">Cần Thơ</option>
+<option value="57">Cao Bằng</option>
+<option value="56">Đắk Lắk</option>
+<option value="55">Đắk N&#244;ng</option>
+<option value="54">Điện Bi&#234;n</option>
+<option value="52">Đồng Th&#225;p</option>
+<option value="51">Gia Lai</option>
+<option value="50">H&#224; Giang</option>
+<option value="49">H&#224; Nam </option>
+<option value="47">H&#224; Tĩnh</option>
+<option value="46">Hải Dương</option>
+<option value="70">Hải Ph&#242;ng</option>
+<option value="45">Hậu Giang</option>
+<option value="44">H&#242;a B&#236;nh</option>
+<option value="43">Hưng Y&#234;n</option>
+<option value="42">Kh&#225;nh H&#242;a</option>
+<option value="41">Ki&#234;n Giang</option>
+<option value="40">Kon Tum</option>
+<option value="39">Lai Ch&#226;u</option>
+<option value="38">L&#226;m Đồng</option>
+<option value="37">Lạng Sơn</option>
+<option value="36">L&#224;o Cai</option>
+<option value="34">Nam Định</option>
+<option value="33">Nghệ An</option>
+<option value="32">Ninh B&#236;nh</option>
+<option value="31">Ninh Thuận</option>
+<option value="30">Ph&#250; Thọ</option>
+<option value="29">Ph&#250; Y&#234;n</option>
+<option value="28">Quảng B&#236;nh</option>
+<option value="27">Quảng Nam</option>
+<option value="26">Quảng Ng&#227;i</option>
+<option value="25">Quảng Ninh</option>
+<option value="24">Quảng Trị</option>
+<option value="23">S&#243;c Trăng</option>
+<option value="22">Sơn La</option>
+<option value="21">T&#226;y Ninh</option>
+<option value="19">Th&#225;i B&#236;nh</option>
+<option value="18">Th&#225;i Nguy&#234;n</option>
+<option value="17">Thanh H&#243;a</option>
+<option value="16">Thừa Thi&#234;n Huế</option>
+<option value="15">Tiền Giang</option>
+<option value="14">Tr&#224; Vinh</option>
+<option value="13">Tuy&#234;n Quang</option>
+<option value="12">Vĩnh Long</option>
+<option value="11">Vĩnh Ph&#250;c</option>
+<option value="10">Y&#234;n B&#225;i</option>
+</select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="district wid-btm" id="district">
+                        <div class="divUni-2">
+                            <div class="wid-left"></div>
+	                        <div class="wid">
+                        <select id="DistrictList" name="DistrictList" param="qh"><option value="">Quận/Huyện</option>
+</select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bussiness_type wid-btm">
+                        <div class="divUni-2 wid-btm">
+                            <div class="wid-left"></div>
+	                        <div class="wid">
+                        <select id="ProjectTypeList" name="ProjectTypeList" param="loai"><option value="">Loại dự &#225;n</option>
+<option value="11">Khu c&#244;ng nghiệp</option>
+<option selected="selected" value="24">Khu d&#226;n cư – Đ&#244; thị mới </option>
+<option value="25">Khu phức hợp - Thương mại</option>
+<option value="26">Cao ốc văn ph&#242;ng</option>
+<option value="27">Khu căn hộ</option>
+<option value="28">Khu du lịch - Nghỉ dưỡng</option>
+<option value="29">C&#244;ng tr&#236;nh c&#244;ng cộng</option>
+</select>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn_2" id="SearchSubmit"><span>TÌM KIẾM</span></button>
+                </div>
+            </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
     <div class="asset-spec-left margin_bottom">
         <div class="headline_title_1 rounded_style_5 rounded_box">
-            <h2 class="headline">
-                <span>TÀI SẢN MỚI NHẤT</span></h2>
+            <div class="TL"></div>
+            <div class="TR"></div>
+            <div class="BL"></div>
+            <div class="BR"></div>
+            <h2 class="headline"><a href="/sieu-thi/loc/?duan=24"><span>TÀI SẢN ĐANG GIAO DỊCH</span></a></h2>
         </div>
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/ban-nha-pho-c20/can-tien-ban-lo-1-can-nha-pho-duong-12m-gom-1-tret-2-lau-san-thuong-tai-tp-binh-duong-i191488" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương" title="Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương" />
-                                   Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương</h2></a>
+                        <li><a href="/thue-can-ho-chung-cu-c8/cho-thue-can-ho-besco-an-suong-chung-cu-an-suong-gia-45-trieuthang-dt-67m2-i736554" >
+                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/12/thumb-D12-EF2724.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2" title="Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2" />
+                                   Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2</h2></a>
                         </li>
-                        <li><a href="/ban-nha-pho-c20/can-tien-ban-lo-1-can-nha-duong-36m-gom-1-tret-2-lau-san-thuong-tai-tp-binh-duong-i201075" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương" title="Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương" />
-                                   Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương</h2></a>
+                        <li><a href="/ban-dat-du-an-quy-hoach-c12/ban-dat-nen-du-an-khu-dan-cu-an-suong-66-ha-i460107" >
+                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/11/27/thumb-63A-5005B0.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán đất nền dự án khu dân cư An Sương 66 ha" title="Bán đất nền dự án khu dân cư An Sương 66 ha" />
+                                   Bán đất nền dự án khu dân cư An Sương 66 ha</h2></a>
                         </li>
-                        <li><a href="/ban-can-ho-chung-cu-c8/ket-tien-ban-gap-can-ho-hoang-anh-can-tho-gia-chi-8-trieum2-i517967" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/can-ho-chung-cu.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2" title="Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2" />
-                                   Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/can-ban-nha-pho-du-an-hud-canh-sunflower-city-nhan-ngay-so-do-i188057" >
-                             <h2><img src="http://image.diaoconline.vn/UserUpload/2012/06/24/41460_051327_nho_trach_sun_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ" title="Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ" />
-                                   Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ</h2></a>
-                        </li>
-                        <li><a href="/ban-dat-du-an-quy-hoach-c12/can-tien-ban-gap-dat-gan-san-bay-quoc-te-long-thanh-voi-gia-chi-105-trieunen-i492883" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/dat-du-an-quy-hoach.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền" title="Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền" />
-                                   Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền</h2></a>
-                        </li>
-                        <li><a href="/ban-dat-du-an-quy-hoach-c12/dat-nen-sai-gon-khu-do-thi-trung-tam-an-lac-lien-ke-quan-trung-tam-chi-75-trieum2-i492884" >
-                             <h2><img src="http://image.diaoconline.vn/UserUpload/2012/08/30/41460_112951_kdc_an_lac_residence_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2" title="Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2" />
-                                   Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2</h2></a>
+                        <li><a href="/ban-can-ho-chung-cu-c8/ban-can-ho-an-suong-lau-6-mat-tien-quoc-lo-1a-ptrung-my-tay-q12-i286003" >
+                             <h2><img src="http://image.diaoconline.vn/UserUpload/2010/12/11/31398_Hinh_can_ho_An_Suong_1_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12" title="Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12" />
+                                   Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12</h2></a>
                         </li>
                 </ul>
             </div>
         </div>
     </div>
-            </div>
+    
     <div id="hot_prj">
     <div class="headline_title_1 rounded_style_5 rounded_box">
 		<h2 class="headline"><span>DỰ ÁN NỔI BẬT</span></h2>
@@ -594,15 +676,104 @@
         </ul>
     </div>    
 </div>
-            <div class="banner_180">
-                <h2>
-                    Quảng cáo</h2>
 
+        </div>
+        <div class="col_770 margin_left">
+            <div id="cate_listing" class="margin_bottom">
+                <div class="headline_title_1 rounded_style_5 rounded_box">
+                    <ul class="headline_tab">
+                        <li class="actived"><span class="L"></span><a href="javascript:void(0)">DANH SÁCH DỰ
+                            ÁN</a><span class="R"></span></li>
+                        
+                    </ul>
+                    <div class="paging_2">
+                        <ul class="pager">
+</ul>
+<?php 
+if(isset($list[0]))
+{
+?>
+<script type="text/javascript">
+    $(function () {
+        $('.pager').html(LoadPagging(<?php echo $page?>, <?php echo $total?>, '<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($list[0]['name'])))?>-c<?php echo  $list[0]['id_cate']?>',<?php echo $total_page?>));
+    });
+</script>
+<?php } ?>
+                    </div>
+                </div>
+    <div class="breadcrumb">
+            <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="<?php echo base_url();?>du-an" itemprop="url" title=""><span itemprop="title">Dự án</span></a>
+&raquo;            </div>
+<?php 
+if(isset($list[0]))
+{
+?>
+            <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($list[0]['name'])))?>-c<?php echo $list[0]['id_cate']?>" itemprop="url" title="<?php echo $list[0]['name']?> "><span itemprop="title"><?php echo $list[0]['name']?> </span></a>
+            </div>
+            <?php } ?>
+    </div>
+                <div class="rounded_style_2 rounded_box margin_bottom">
+                    <div class="content">
+                        <div class="content_inner">
+                        <?php 
+                        $i = 1;
+                        foreach($list as $l_pro)
+                        {
+                            if($i%3==0)
+                            {
+                        ?>
+                                <div class="invest_block last">
+                                <?php } else { ?>
+                                <div class="invest_block">
+                                <?php } ?>
+                                    <div class="img">
+                                        <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($l_pro['name'])))?>-c<?php echo $l_pro['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_pro['title'])))?>-i<?php echo $l_pro['id_pro']?>">
+                                        <?php 
+                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$l_pro['img']))
+                                        {
+                                        ?>
+                                            <img src="<?php echo base_url();?>file/uploads/project/<?php echo $l_pro['img']?>" width="230" height="130" alt="<?php echo $l_pro['title']?>"/>
+                                            <?php } ?>
+                                            </a></div>
+                                    <div class="invest_content">
+                                        <h2>
+                                            <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($l_pro['name'])))?>-c<?php echo $l_pro['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_pro['title'])))?>-i<?php echo $l_pro['id_pro']?>"><?php echo $l_pro['title']?></a></h2>
+                                        <span class="location">Vị trí:                                                                             <?php echo $list_district[$l_pro['id_district']]?>
+                                                                        - <?php echo $list_city[$l_pro['id_city']]?></span><br />
+                                    </div>
+                                    <div class="active_tool_1">
+                                        <ul>
+                                            
+                                            <li class="last"><span class="ico_16 ico_trade_16"></span><a href="<?php echo base_url()?>sieu-thi/loc/?duan=<?php echo $l_pro['id_pro']?>">Tài sản đang giao dịch</a></li>
+                                        </ul>
+                                    </div>
+                                </div> 
+                           <?php $i++;} ?>     
+                                 
+                        </div>
+                    </div>
+                </div>
+                <div class="paging_2 margin_bottom">
+                    <ul class="pager">
+</ul>
+<?php 
+if(isset($list[0]))
+{
+?>
+<script type="text/javascript">
+    $(function () {
+        $('.pager').html(LoadPagging(<?php echo $page?>, <?php echo $total?>, '<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($list[0]['name'])))?>-c<?php echo  $list[0]['id_cate']?>',<?php echo $total_page?>));
+    });
+</script>
+<?php } ?>
 
+                </div>
             </div>
         </div>
-        <?php echo $this->load->view($main_content);?>
     </div>
+
 	</div>
     <!--FOOTER-->
 <div id="footer">
@@ -783,7 +954,7 @@ $(function() {
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/script.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/tooltip/tooltipsy.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slides/slides.min.jquery.js" type="text/javascript"></script>
-    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/doolv3.js?0052" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/doolv3.js?2054" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 </div>
 </body>

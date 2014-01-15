@@ -142,5 +142,50 @@ class MY_Controller extends CI_Controller
         $this->load->model('discoveryhomemodel');
         $this->data['last_dis_nb']=$this->discoveryhomemodel->load_other_last_dis($id);
     }
+    public function list_city()
+    {
+        $this->load->model('cityhomemodel');
+        $list_city = $this->cityhomemodel->get_list_city();
+        foreach($list_city as $city)
+        {
+            $data[$city['provinceid']]=$city['name'];
+        }
+        $this->data['list_city']=$data;
+    }
+    public function list_district()
+    {
+        $this->load->model('cityhomemodel');
+        $list_city = $this->cityhomemodel->get_list_district();
+        foreach($list_city as $city)
+        {
+            $data[$city['districtid']]=$city['name'];
+        }
+        
+        $this->data['list_district']=$data;
+    }
+     public function get_cate_pro_parent()
+    {
+        $this->load->model('cateprojecthomemodel');
+        $list_parent = $this->cateprojecthomemodel->get_cate_parent();
+        $list_cate = array();
+        $cate_p = array();
+        $cate_s = array();
+        foreach($list_parent as $l_p)
+        {
+            $cate_sub = $this->cateprojecthomemodel->get_cate_from_parent($l_p['id']);
+            $cate_p = array('id'=>$l_p['id'],'name'=>$l_p['name']);
+            foreach($cate_sub as $c_s)
+            {
+                $cate_s[$c_s['id']]=$c_s['name'];
+            }
+            $list_cate[]=array('cate_parent'=>$cate_p,'cate_sub'=>$cate_s);
+        }
+        $this->data['list_cate_project_left']=$list_cate;
+    }
+    public function project_noi_bat()
+    {
+        $this->load->model('projecthomemodel');
+        $this->data['prj_noi_bat']=$this->projecthomemodel->project_noi_bat();
+    }
 }
 ?>

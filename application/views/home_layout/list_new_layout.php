@@ -82,7 +82,7 @@
             <span id="logo"><a href="<?php echo base_url();?>" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <div id="head_nav">
                 <ul>
-                    <li id="news_item"  class=actived ><a href="<?php echo base_url();?>tin-tuc">
+                    <li id="news_item" ><a href="<?php echo base_url();?>tin-tuc">
                         THÔNG TIN ĐỊA ỐC</a>
                         <div class="sub_menu">
                             <div class="wrap">
@@ -109,7 +109,7 @@
                                             </div>
                                         </div>
                                         <div class="content_inner rounded_style_7 rounded_box">
-                                                 <div class="content">
+                                                <div class="content">
                                                     <div class="img">
                                                         <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
                                                         <?php
@@ -198,29 +198,29 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                             <div class="content">
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-the-manor-dt-124m2-3-phong-ngu-noi-that-dep-view-thoang-mat-i741605">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/20/thumb-274-FB85B9.jpg" width="140" height="140"  alt="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát" title="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-BA3-BC9149.jpg" width="140" height="140"  alt="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất" title="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-the-manor-dt-124m2-3-phong-ngu-noi-that-dep-view-thoang-mat-i741605">
-                                                                Bán gấp trong ngày căn hộ The Manor,  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                                Quý khách hãy sở hữu căn hộ 8X Đầm Sen  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-CF7-EBE8CB.jpg" width="140" height="140"  alt="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" title="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-394-D6A67A.jpg" width="140" height="140"  alt="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất" title="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021">
-                                                                Bán gấp căn hộ The Manor, DT: 157m2, 3  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                                Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block last">
-                                                        <a href="/ban-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-ii-qbt-dt-95m2-2-phong-ngu-lau-cao-tien-nghi-cao-cap-i735038">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-795-7B6FD7.jpg" width="140" height="140"  alt="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp" title="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-B4C-E3B619.jpg" width="140" height="140"  alt="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình" title="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-ii-qbt-dt-95m2-2-phong-ngu-lau-cao-tien-nghi-cao-cap-i735038">
-                                                                Cho thuê căn hộ The Manor II, Q.BT. DT:  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                                Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn,  ...
                                                             </a>
                                                         </h3>
                                                     </div>
@@ -238,33 +238,33 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-officetel-dt-38m2-1-phong-ngu-dang-studio-du-tien-nghi-i712623" title="Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi">
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-to-am-cua-rieng-minh-ngay-canh-kdl-dam-sen-i746344" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Cho thuê căn hộ The Manor  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-dt-98m2-2-phong-ngu-du-tien-nghi-cao-view-dep-i743801" title="Bán gấp căn hộ The Manor, DT: 98m2, 2 phòng ngủ, đủ tiện nghi, cao, view đẹp">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-dam-sen-chi-600-trieucan-tra-cham-khong-lai-suat-i746125" title="Căn hộ ngay cạnh Đầm Sen - chỉ 600 triệu/căn -Trả chậm không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Bán gấp căn hộ The Manor, DT:  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-saigon-pearl-ruby-1-dt-136m2-3-phong-ngu-lau-cao-view-quan-1-i735033" title="Bán gấp trong ngày căn hộ Saigon Pearl - Ruby 1, DT: 136m2, 3 phòng ngủ, lầu cao, view quận 1">
+                                                        Căn hộ ngay cạnh Đầm Sen -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/nhieu-nguoi-van-chua-tin-lai-co-can-ho-hoan-hao-nhu-the-gia-re-tra-gop-dai-han-dien-tich-nho-i734999" title="Nhiều người vẫn chưa tin lại có căn hộ hoàn hảo như thế: giá rẻ + trả góp dài hạn + diện tích nhỏ">
                                                         <span>TP.HCM: </span>
-                                                        Bán gấp trong ngày căn hộ  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-officetel-dt-68m2-1-phong-ngu-1wc-can-goc-view-thoang-mat-i737074" title="Bán gấp căn hộ The Manor Officetel, DT: 68m2, 1 phòng ngủ, 1WC, căn góc, view thoáng mát">
+                                                        Nhiều người vẫn chưa tin lại  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-gia-re-cho-gioi-tre-can-ho-8x-dam-sen-600-trieu-tra-gop-20-nam-i735429" title="Căn hộ giá rẻ cho giới trẻ - căn hộ 8X Đầm Sen, 600 triệu trả góp 20 năm">
                                                         <span>TP.HCM: </span>
-                                                        Bán gấp căn hộ The Manor  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-can-ho-saigon-pearl-q-bt-dt-140m2-3-pn-lau-cao-view-trung-tam-quan-1-i730404" title="Bán căn hộ Saigon Pearl, Q. BT, DT: 140m2, 3 PN, lầu cao, view trung tâm Quận 1">
+                                                        Căn hộ giá rẻ cho giới trẻ -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/tan-huong-tower-quan-tan-phu-gia-goc-chu-dau-tu-i702755" title="Tân Hương Tower quận Tân Phú giá gốc chủ đầu tư">
                                                         <span>TP.HCM: </span>
-                                                        Bán căn hộ Saigon Pearl, Q.  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-saigon-pearl-ruby-dt-135m2-3-phong-ngu-view-cau-saigon-i736287" title="Bán gấp trong ngày căn hộ Saigon Pearl - Ruby, DT: 135m2, 3 phòng ngủ, view cầu Saigon">
+                                                        Tân Hương Tower quận Tân Phú  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-690-trieucan-da-vat-so-luong-co-han-li-xi-10-trieu-cho-khach-hang-dang-ky-voi-chung-toi-i696245" title="Căn hộ 690 triệu/căn đã VAT - số lượng có hạn - lì xì 10 triệu cho khách hàng đăng ký với chúng tôi">
                                                         <span>TP.HCM: </span>
-                                                        Bán gấp trong ngày căn hộ  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/cho-thue-can-ho-saigon-pearl-dt-90m2-2-phong-ngu-2wc-noi-that-cao-cap-view-dep-i724863" title="Cho thuê căn hộ Saigon Pearl, DT: 90m2, 2 phòng ngủ, 2WC, nội thất cao cấp, view đẹp">
+                                                        Căn hộ 690 triệu/căn đã VAT -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-so-huu-ngay-can-ho-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i746122" title="Chỉ 600 triệu/căn - Quý khách sở hữu ngay căn hộ cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Cho thuê căn hộ Saigon Pearl,  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/ban-can-ho-saigon-pearl-block-ruby-dt-84m2-2-phong-ngu-du-noi-that-lau-30-view-dep-i727981" title="Bán căn hộ Saigon Pearl - Block Ruby, DT: 84m2, 2 phòng ngủ, đủ nội thất, lầu 30, view đẹp">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-can-ho-ngay-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i745256" title="Chỉ 600 triệu/căn - Căn hộ ngay cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Bán căn hộ Saigon Pearl -  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-nha-pho-c20/nha-cho-thue-tran-binh-trong-q5-dtsd-2000-m2-tret-6-lau-st-i710541" title="Nhà cho thuê Trần Bình Trọng, Q.5. (DTSD: 2000 m2, trệt, 6 lầu, ST)">
+                                                        Chỉ 600 triệu/căn - Căn hộ  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-can-ho-ngay-canh-kdl-dam-sen-i744238" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu căn hộ ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Nhà cho thuê Trần Bình Trọng,  ...</a> </li>
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -272,7 +272,7 @@
                             </div>
                         </div>
                     </li>
-                    <li id="project_item" ><a href="/du-an">
+                    <li id="project_item" ><a href="<?php echo base_url();?>du-an">
                         DỰ ÁN</a>
                         <div class="sub_menu">
                             <div class="wrap">

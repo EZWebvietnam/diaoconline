@@ -92,7 +92,7 @@
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <div id="head_nav">
                 <ul>
-                    <li id="news_item"  class=actived ><a href="/tin-tuc">
+                    <li id="news_item" ><a href="<?php echo base_url();?>tin-tuc">
                         THÔNG TIN ĐỊA ỐC</a>
                         <div class="sub_menu">
                             <div class="wrap">
@@ -208,29 +208,29 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                             <div class="content">
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-trung-tam-quan-tan-phu-gia-khong-dau-so-sanh-duoc-i752078">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/09/thumb-FC8-7DD4BE.jpg" width="140" height="140"  alt="Căn hộ trung tâm quận Tân Phú, giá không đâu so sánh được" title="Căn hộ trung tâm quận Tân Phú, giá không đâu so sánh được"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-BA3-BC9149.jpg" width="140" height="140"  alt="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất" title="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-trung-tam-quan-tan-phu-gia-khong-dau-so-sanh-duoc-i752078">
-                                                                Căn hộ trung tâm quận Tân Phú, giá  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                                Quý khách hãy sở hữu căn hộ 8X Đầm Sen  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-cao-cap-co-ho-boi-phong-gym-da-hoat-dong-khuon-vien-cuc-rong-i696827">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/10/23/thumb-B71-695934.jpg" width="140" height="140"  alt="Căn hộ cao cấp có hồ bơi phòng gym đã hoạt động - khuôn viên cực rộng" title="Căn hộ cao cấp có hồ bơi phòng gym đã hoạt động - khuôn viên cực rộng"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-394-D6A67A.jpg" width="140" height="140"  alt="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất" title="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-cao-cap-co-ho-boi-phong-gym-da-hoat-dong-khuon-vien-cuc-rong-i696827">
-                                                                Căn hộ cao cấp có hồ bơi phòng gym đã  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                                Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block last">
-                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-trung-tam-quan-tan-phu-gia-re-tien-ich-tot-can-ho-dep-i752074">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/09/thumb-B84-56E944.jpg" width="140" height="140"  alt="Căn hộ trung tâm quận Tân Phú, giá rẻ, tiện ích tốt, căn hộ đẹp" title="Căn hộ trung tâm quận Tân Phú, giá rẻ, tiện ích tốt, căn hộ đẹp"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-B4C-E3B619.jpg" width="140" height="140"  alt="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình" title="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-trung-tam-quan-tan-phu-gia-re-tien-ich-tot-can-ho-dep-i752074">
-                                                                Căn hộ trung tâm quận Tân Phú, giá rẻ,  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                                Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn,  ...
                                                             </a>
                                                         </h3>
                                                     </div>
@@ -248,33 +248,33 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-la-du-an-dinh-dam-nhat-hien-nay-i752071" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, là dự án đình đám nhất hiện nay">
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-to-am-cua-rieng-minh-ngay-canh-kdl-dam-sen-i746344" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-uu-dai-bat-ngo-tu-hung-thinh-cho-cac-ban-tre-i752067" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, ưu đãi bất ngờ từ Hưng Thịnh cho các bạn trẻ">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-dam-sen-chi-600-trieucan-tra-cham-khong-lai-suat-i746125" title="Căn hộ ngay cạnh Đầm Sen - chỉ 600 triệu/căn -Trả chậm không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-uu-dai-bat-ngo-tu-hung-thinh-i749409" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn ưu đãi bất ngờ từ Hưng Thịnh">
+                                                        Căn hộ ngay cạnh Đầm Sen -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/nhieu-nguoi-van-chua-tin-lai-co-can-ho-hoan-hao-nhu-the-gia-re-tra-gop-dai-han-dien-tich-nho-i734999" title="Nhiều người vẫn chưa tin lại có căn hộ hoàn hảo như thế: giá rẻ + trả góp dài hạn + diện tích nhỏ">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-thanh-toan-2-nam-khong-lai-suat-i749408" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn thanh toán 2 năm không lãi suất">
+                                                        Nhiều người vẫn chưa tin lại  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-gia-re-cho-gioi-tre-can-ho-8x-dam-sen-600-trieu-tra-gop-20-nam-i735429" title="Căn hộ giá rẻ cho giới trẻ - căn hộ 8X Đầm Sen, 600 triệu trả góp 20 năm">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-ho-tro-goi-30000-ty-i749406" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn hỗ trợ gói 30.000 tỷ">
+                                                        Căn hộ giá rẻ cho giới trẻ -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/tan-huong-tower-quan-tan-phu-gia-goc-chu-dau-tu-i702755" title="Tân Hương Tower quận Tân Phú giá gốc chủ đầu tư">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-co-hoi-so-huu-can-ho-cua-cac-ban-tre-i744763" title="Căn hộ 8x Đầm Sen cơ hội sở hữu căn hộ của các bạn trẻ">
+                                                        Tân Hương Tower quận Tân Phú  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-690-trieucan-da-vat-so-luong-co-han-li-xi-10-trieu-cho-khach-hang-dang-ky-voi-chung-toi-i696245" title="Căn hộ 690 triệu/căn đã VAT - số lượng có hạn - lì xì 10 triệu cho khách hàng đăng ký với chúng tôi">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen cơ hội sở  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-thanh-toan-chi-5-trieuthang-i744762" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, thanh toán chỉ 5 triệu/tháng">
+                                                        Căn hộ 690 triệu/căn đã VAT -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-so-huu-ngay-can-ho-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i746122" title="Chỉ 600 triệu/căn - Quý khách sở hữu ngay căn hộ cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/so-huu-can-ho-ngay-canh-dam-sen-bang-chinh-luong-thu-nhap-cua-ban-i740950" title="Sở hữu căn hộ ngay cạnh Đầm Sen bằng chính lương thu nhập của bạn">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-can-ho-ngay-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i745256" title="Chỉ 600 triệu/căn - Căn hộ ngay cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Sở hữu căn hộ ngay cạnh Đầm  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-dam-sen-chi-600-trieucan-vat-chi-5-i740946" title="Căn hộ ngay Đầm Sen chỉ 600 triệu/căn, VAT chỉ 5%">
+                                                        Chỉ 600 triệu/căn - Căn hộ  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-can-ho-ngay-canh-kdl-dam-sen-i744238" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu căn hộ ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ ngay Đầm Sen chỉ 600  ...</a> </li>
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -282,7 +282,7 @@
                             </div>
                         </div>
                     </li>
-                    <li id="project_item" ><a href="/du-an">
+                    <li id="project_item" ><a href="<?php echo base_url();?>du-an">
                         DỰ ÁN</a>
                         <div class="sub_menu">
                             <div class="wrap">
@@ -310,16 +310,16 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/du-an/thiet-ke-c40/thiet-ke-quan-cafe-dep-i1426">
-                                                            <img src="http://image.diaoconline.vn/du-an/2014/01/10/thumb-89C-thiet-ke-quan-cafe-dep.jpg" width="200" height="154" alt="Thiết kế quán cafe đẹp" title="Thiết kế quán cafe đẹp"/>
+                                                        <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">
+                                                            <img src="http://image.diaoconline.vn/du-an/2014/01/08/thumb-809-can-ho-van-gia-phuc.jpg" width="200" height="154" alt="Căn hộ Vạn Gia Phúc" title="Căn hộ Vạn Gia Phúc"/>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/du-an/thiet-ke-c40/thiet-ke-quan-cafe-dep-i1426">Thiết kế quán cafe đẹp</a></h2>
-                                                        <span class="updated_date">10/01/2014 08:37</span>
+                                                            <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">Căn hộ Vạn Gia Phúc</a></h2>
+                                                        <span class="updated_date">08/01/2014 15:41</span>
                                                         <br />
-                                                        <p>Ngày nay với nền kinh tế phát triển vượt bậc, xã hội ngày càng văn minh và hiện đại, vì thế mà một trong những nghành kinh doanh phát triển nhất đó là dịch vụ phục vụ cho con người về vui chơi giải trí.</p>
+                                                        <p>Căn hộ Vạn Gia Phúc được quy hoạch 92 nền đất nhà phố, 312 căn hộ chung cư, gồm đầy đủ nhiều tiện ích như: công viên, trung tâm thương mại… gần chợ, bệnh viện, trường học, giao thông cực kỳ thuận lợi.</p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -335,14 +335,6 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/du-an/thiet-ke-c40/thiet-ke-truong-mam-non-i1425" title="Thiết kế trường Mầm Non">
-                                                        <span>TP.HCM: </span>
-                                                        Thiết kế trường Mầm Non
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424" title="Căn hộ Vạn Gia Phúc">
-                                                        <span>TP.HCM: </span>
-                                                        Căn hộ Vạn Gia Phúc
-                                                    </a></li>
                                                     <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/the-sun-city-ba-to-quan-8-i1423" title="The Sun City Ba Tơ quận 8">
                                                         <span>TP.HCM: </span>
                                                         The Sun City Ba Tơ quận 8
@@ -370,6 +362,14 @@
                                                     <li><span class="bullet"></span><a href="/du-an/khu-phuc-hop-thuong-mai-c25/nha-pho-thuong-mai-phu-xuan-i1414" title="Nhà phố thương mại Phú Xuân">
                                                         <span>TP.HCM: </span>
                                                         Nhà phố thương mại Phú Xuân
+                                                    </a></li>
+                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/nguyenbinh-house-i1415" title="NguyenBinh House">
+                                                        <span>TP.HCM: </span>
+                                                        NguyenBinh House
+                                                    </a></li>
+                                                    <li><span class="bullet"></span><a href="/du-an/khu-phuc-hop-thuong-mai-c25/pho-cang-sai-gon-moi-i1416" title="Phố Cảng Sài Gòn mới">
+                                                        <span>TP.HCM: </span>
+                                                        Phố Cảng Sài Gòn mới
                                                     </a></li>
                                             </ul>
                                         </div>

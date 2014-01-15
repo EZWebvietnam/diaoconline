@@ -183,7 +183,7 @@
                     <?php }?>
                     <div class="txt">
                         <h1><a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412" class="link-white"><?php echo $l_pro['title']?></a></h1>
-						<p>Vị trí: Quận 2, TP.HCM</p>
+						<p>Vị trí: <?php echo $list_district[$l_pro['id_district']]?>, <?php echo $list_city[$l_pro['id_city']]?></p>
                     </div>
                 </div>
                 <div class="prj_info prj_1">
