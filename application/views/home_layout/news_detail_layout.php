@@ -377,13 +377,12 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/kham-pha/the-gioi-kien-truc-c4">Thế giới kiến trúc</a></li>
-                                                <li><a href="/kham-pha/mach-ban-c6">Mách bạn</a></li>
-                                                <li><a href="/kham-pha/phong-thuy-c9">Phong thủy</a></li>
-                                                <li><a href="/kham-pha/khong-gian-song-c7">Không gian sống</a></li>
-                                                <li><a href="/kham-pha/shopping-cung-dool-c10">Shopping cùng DOOL</a></li>
-                                                <li><a href="/kham-pha/thuong-hieu-c11">Thương hiệu</a></li>
-                                                <li><a href="/kham-pha/nha-cua-sao-c76">Nhà của sao</a></li>
+                                        <?php 
+                                        foreach($nav_cate_dis as $cate_nav)
+                                        {
+                                        ?>
+                                                <li><a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate_nav['name'])))?>-c<?php echo $cate_nav['id']?>"><?php echo $cate_nav['name']?></a></li>
+                                        <?php } ?>        
                                         </ul>
                                     </div>
                                 </div>
@@ -398,15 +397,21 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/kham-pha/mach-ban-c6/nhung-y-tuong-doc-dao-de-trang-tri-dau-giuong-i45149">
-                                                            <img src="http://image.diaoconline.vn/kham-pha/2014/01/09/thumb-91F-nhung-y-tuong-doc-dao-de-trang-tri-dau-giuong.jpg" width="200" height="125" alt="Những ý tưởng độc đáo để trang trí đầu giường" title="Những ý tưởng độc đáo để trang trí đầu giường"/></a>
+                                                        <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">
+                                                        <?php 
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$last_dis[0]['img']))
+                                                        {
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $last_dis[0]['img']?>" width="200" height="125" alt="<?php echo $last_dis[0]['title']?>" title="<?php echo $last_dis[0]['title']?>"/>
+                                                        <?php } ?>
+                                                            </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/kham-pha/mach-ban-c6/nhung-y-tuong-doc-dao-de-trang-tri-dau-giuong-i45149">Những ý tưởng độc đáo để trang trí đầu giường</a></h2>
-                                                        <span class="updated_date">1 giờ 18 ph&#250;t trước</span>
+                                                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['name'])))?>-c<?php echo $last_dis[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['title'])))?>-i<?php echo $last_dis[0]['id_disco']?>"><?php echo $last_dis[0]['title']?></a></h2>
+                                                        <span class="updated_date">08/01/2014 16:50</span>
                                                         <br />
-                                                        <p>Giường ngủ là nơi bạn tiếp xúc khá nhiều trong ngày. Vậy nên, đừng phung phí sức sáng tạo của mình khi bỏ qua nơi này để trổ tài.</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($last_dis[0]['content']),200);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -422,33 +427,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147" title="“Nấc thang thiên đường” cách địa ngục chỉ một bước chân" >
-                                                        “Nấc thang thiên đường” cách địa ngục  ...
+                                            <?php 
+                                            foreach($last_dis_nb as $last_dis)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis['name'])))?>-c<?php echo $last_dis['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis['title'])))?>-i<?php echo $last_dis['id_disco']?>" title="<?php echo $last_dis['title']?>" >
+                                                        <?php echo $last_dis['title']?>
                                                     </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131" title="Thong dong cưỡi ngựa ngắm biển ở Nam Phi" >
-                                                        Thong dong cưỡi ngựa ngắm biển ở Nam Phi
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/thuong-hieu-c11/google-facebook-bi-de-bep-o-viet-nam-i45128" title="Google, Facebook bị 'đè bẹp' ở Việt Nam?" >
-                                                        Google, Facebook bị 'đè bẹp' ở Việt Nam?
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/the-gioi-kien-truc-c4/nhung-nha-nguyen-bang-xuong-rung-ron-tren-the-gioi-i45119" title="Những Nhà Nguyện bằng xương rùng rợn trên thế giới" >
-                                                        Những Nhà Nguyện bằng xương rùng rợn  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/doc-la-canh-dong-bu-nhin-o-phan-lan-i45117" title="Độc lạ cánh đồng bù nhìn ở Phần Lan" >
-                                                        Độc lạ cánh đồng bù nhìn ở Phần Lan
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/nha-cua-sao-c76/co-ngoi-hoanh-trang-cua-ngoc-trinh-i45124" title="Cơ ngơi hoành tráng của Ngọc Trinh" >
-                                                        Cơ ngơi hoành tráng của Ngọc Trinh
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/mach-ban-c6/10-luu-y-khi-don-nha-de-loai-bo-cac-tac-nhan-gay-di-ung-i45122" title="10 lưu ý khi dọn nhà để loại bỏ các tác nhân gây dị ứng" >
-                                                        10 lưu ý khi dọn nhà để loại bỏ các tác  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/10-noi-yen-nghi-sang-trong-va-dat-gia-nhat-the-gioi-i45114" title="10 "nơi yên nghỉ" sang trọng và đắt giá nhất thế giới" >
-                                                        10 "nơi yên nghỉ" sang trọng và đắt giá  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/the-gioi-kien-truc-c4/10-cong-trinh-lam-thay-doi-bo-mat-dat-nuoc-anh-i45111" title="10 công trình làm thay đổi bộ mặt đất nước Anh" >
-                                                        10 công trình làm thay đổi bộ mặt đất  ...
-                                                    </a></li>
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>

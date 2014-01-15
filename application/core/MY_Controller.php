@@ -120,5 +120,27 @@ class MY_Controller extends CI_Controller
         $list_new = array();
         $this->data['main']=$list_cate;
     }
+    public function get_cate_dis_nav()
+    {
+        $this->load->model('catediscoveryhomemodel');
+        $cate_sub = $this->catediscoveryhomemodel->get_cate_from_parent(1);
+        $this->data['nav_cate_dis'] = $cate_sub;
+    }
+    public function get_cate_dis_nav_()
+    {
+        $this->load->model('catediscoveryhomemodel');
+        $cate_sub = $this->catediscoveryhomemodel->get_cate_from_parent_(1);
+        $this->data['nav_cate_dis_'] = $cate_sub;
+    }
+    public function dis_noi_bat()
+    {
+        $this->load->model('discoveryhomemodel');
+        $this->data['last_dis']=$this->discoveryhomemodel->load_last_dis();
+    }
+    public function dis_noi_bat_other($id)
+    {
+        $this->load->model('discoveryhomemodel');
+        $this->data['last_dis_nb']=$this->discoveryhomemodel->load_other_last_dis($id);
+    }
 }
 ?>

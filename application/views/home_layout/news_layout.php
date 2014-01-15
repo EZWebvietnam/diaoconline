@@ -387,13 +387,12 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/kham-pha/the-gioi-kien-truc-c4">Thế giới kiến trúc</a></li>
-                                                <li><a href="/kham-pha/mach-ban-c6">Mách bạn</a></li>
-                                                <li><a href="/kham-pha/phong-thuy-c9">Phong thủy</a></li>
-                                                <li><a href="/kham-pha/khong-gian-song-c7">Không gian sống</a></li>
-                                                <li><a href="/kham-pha/shopping-cung-dool-c10">Shopping cùng DOOL</a></li>
-                                                <li><a href="/kham-pha/thuong-hieu-c11">Thương hiệu</a></li>
-                                                <li><a href="/kham-pha/nha-cua-sao-c76">Nhà của sao</a></li>
+                                        <?php 
+                                        foreach($nav_cate_dis as $cate_nav)
+                                        {
+                                        ?>
+                                                <li><a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate_nav['name'])))?>-c<?php echo $cate_nav['id']?>"><?php echo $cate_nav['name']?></a></li>
+                                        <?php } ?>        
                                         </ul>
                                     </div>
                                 </div>
@@ -408,15 +407,21 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/kham-pha/the-gioi-kien-truc-c4/ngoi-nha-chong-ca-sieu-bao-song-than-i45217">
-                                                            <img src="http://image.diaoconline.vn/kham-pha/2014/01/13/thumb-5BB-ngoi-nha-chong-ca-sieu-bao-song-than.jpg" width="200" height="125" alt="Ngôi nhà chống cả siêu bão, sóng thần" title="Ngôi nhà chống cả siêu bão, sóng thần"/></a>
+                                                        <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">
+                                                        <?php 
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$last_dis[0]['img']))
+                                                        {
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $last_dis[0]['img']?>" width="200" height="125" alt="<?php echo $last_dis[0]['title']?>" title="<?php echo $last_dis[0]['title']?>"/>
+                                                        <?php } ?>
+                                                            </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/kham-pha/the-gioi-kien-truc-c4/ngoi-nha-chong-ca-sieu-bao-song-than-i45217">Ngôi nhà chống cả siêu bão, sóng thần</a></h2>
-                                                        <span class="updated_date">7 giờ 8 ph&#250;t trước</span>
+                                                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['name'])))?>-c<?php echo $last_dis[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['title'])))?>-i<?php echo $last_dis[0]['id_disco']?>"><?php echo $last_dis[0]['title']?></a></h2>
+                                                        <span class="updated_date">08/01/2014 16:50</span>
                                                         <br />
-                                                        <p>Từ bão Katrina đến lốc xoáy nam cực, có thể thấy rõ những thảm hoạ thiên nhiên này gây thiệt hại vô cùng to lớn cho con người và nhà cửa. Nhưng mới đây công ty Designs Northwest Architects đã thiết kế và xây dựng một ngôi nhà đặc biệt có tên gọi Tsunami House (Nhà Sóng thần), có khả năng chịu đựng  ...</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($last_dis[0]['content']),200);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -432,33 +437,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/thuong-hieu-c11/khoi-nghiep-kho-tin-cua-10-thuong-hieu-noi-tieng-i45219" title="Khởi nghiệp khó tin của 10 thương hiệu nổi tiếng" >
-                                                        Khởi nghiệp khó tin của 10 thương hiệu  ...
+                                            <?php 
+                                            foreach($last_dis_nb as $last_dis)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis['name'])))?>-c<?php echo $last_dis['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis['title'])))?>-i<?php echo $last_dis['id_disco']?>" title="<?php echo $last_dis['title']?>" >
+                                                        <?php echo $last_dis['title']?>
                                                     </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/hanh-trinh-toi-bath-xu-so-thanh-binh-va-quyen-ru-i45213" title="Hành trình tới Bath, xứ sở thanh bình và quyến rũ" >
-                                                        Hành trình tới Bath, xứ sở thanh bình  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/nha-cua-sao-c76/biet-thu-dep-nhu-mo-cua-mc-dong-tinh-ellen-degeneres-i45205" title="Biệt thự đẹp như mơ của MC đồng tính Ellen DeGeneres" >
-                                                        Biệt thự đẹp như mơ của MC đồng tính  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/the-gioi-kien-truc-c4/ngo-ngang-cung-dien-long-lay-phan-chieu-anh-cau-vong-i45209" title="Ngỡ ngàng cung điện lộng lẫy phản chiếu ánh cầu vồng" >
-                                                        Ngỡ ngàng cung điện lộng lẫy phản  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/mach-ban-c6/6-cach-tao-goc-lam-viec-tai-gia-i45208" title="6 cách tạo góc làm việc tại gia" >
-                                                        6 cách tạo góc làm việc tại gia
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/nha-cua-sao-c76/tham-can-nha-khong-hao-nhoang-cua-quang-le-o-my-i45200" title="Thăm căn nhà không hào nhoáng của Quang Lê ở Mỹ" >
-                                                        Thăm căn nhà không hào nhoáng của Quang  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/phong-thuy-c9/cam-hoa-theo-phong-thuy-trong-ngay-tet-i45163" title="Cắm hoa theo phong thủy trong ngày Tết" >
-                                                        Cắm hoa theo phong thủy trong ngày Tết
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/hon-dao-duoc-lam-tu-nhung-vo-so-doc-dao-i45179" title="Hòn đảo được làm từ những vỏ sò độc đáo" >
-                                                        Hòn đảo được làm từ những vỏ sò độc đáo
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/mach-ban-c6/10-nguyen-tac-bai-tri-noi-that-hoan-hao-i45184" title="10 nguyên tắc bài trí nội thất hoàn hảo" >
-                                                        10 nguyên tắc bài trí nội thất hoàn hảo
-                                                    </a></li>
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>

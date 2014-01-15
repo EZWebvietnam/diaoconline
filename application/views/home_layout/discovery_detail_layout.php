@@ -99,22 +99,14 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/tin-tuc/thi-truong-dia-oc-c18">Thị trường địa ốc</a>
+                                                <?php 
+                                                foreach($new_nav as $menu_new)
+                                                {
+                                                ?>
+                                                <li><a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($menu_new['name'])))?>-c<?php echo $menu_new['id']?>"><?php echo $menu_new['name']?></a>
                                                 </li>
-                                                <li><a href="/tin-tuc/hoat-dong-doanh-nghiep-c23">Hoạt động Doanh nghiệp</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/chinh-sach-quy-hoach-c16">Chính sách - Quy hoạch</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/tai-chinh-chung-khoan-c57">Tài chính - Chứng khoán</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/xay-dung-c25">Xây dựng</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/bat-dong-san-the-gioi-c24">Bất động sản thế giới</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/ngoai-kieu-viet-kieu-c17">Ngoại kiều - Việt kiều</a>
-                                                </li>
-                                                <li><a href="/tin-tuc/cong-nghe-c75">Công nghệ</a>
-                                                </li>
+                                                <?php } ?>
+                                                
                                         </ul>
                                     </div>
                                 </div>
@@ -129,16 +121,24 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/tin-tuc/cau-chuyen-doanh-nhan-c81/bi-quyet-nghin-ti-cua-do-ha-nam-i45182">
-                                                            <img src="http://image.diaoconline.vn/tin-tuc/2014/01/10/thumb-773-bi-quyet-nghin-ti-cua-do-ha-nam.jpg" width="200" height="154" alt="Bí quyết nghìn tỉ của Đỗ Hà Nam" title="Bí quyết nghìn tỉ của Đỗ Hà Nam"/>
+                                                        <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
+                                                        <?php
+                                                        
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_on_nav[0]['img'])){
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php }
+                                                        else { ?>
+                                                        <img src="<?php echo base_url();?>file/uploads/news/<?php echo $new_on_nav[0]['img']?>" width="200" height="154" alt="<?php echo $new_on_nav[0]['title']?>" title="<?php echo $new_on_nav[0]['title']?>"/>
+                                                        <?php } ?>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/tin-tuc/cau-chuyen-doanh-nhan-c81/bi-quyet-nghin-ti-cua-do-ha-nam-i45182">Bí quyết nghìn tỉ của Đỗ Hà Nam</a></h2>
-                                                        <span class="updated_date">10/01/2014 16:04</span>
+                                                            <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['name'])))?>-c<?php echo $new_on_nav[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['title'])))?>-i<?php echo $new_on_nav[0]['id_new']?>"><?php echo $new_on_nav[0]['title']?></a></h2>
+                                                        <span class="updated_date"><?php echo date('d/m/Y',$new_on_nav[0]['create_date'])?></span>
                                                         <br />
-                                                        <p>Mức tăng trưởng đều đặn hơn 10%/năm trong suốt giai đoạn khủng hoảng của Intimex khiến nhiều người tò mò, nhất là khi các doanh nghiệp cùng ngành lần lượt ngã ngựa. Thế nhưng, bí quyết của ông chủ Đỗ Hà Nam lại đơn giản đến mức khó tin.</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($new_on_nav[0]['content']),367);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -154,33 +154,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/62-du-an-xin-chia-nho-can-ho-i45180" title="62 dự án xin “chia nhỏ” căn hộ">
-                                                        62 dự án xin “chia nhỏ” căn hộ
+                                            <?php 
+                                            foreach($list_last_new as $l_l_new)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($l_l_new['name'])))?>-c<?php echo $l_l_new['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_l_new['title'])))?>-i<?php echo $l_l_new['id_new']?>" title="<?php echo $l_l_new['title']?>">
+                                                       <?php echo sub_string($l_l_new['title'],50);?> ...
                                                     </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-tu-cuu-minh-i45178" title="Bất động sản tự cứu mình">
-                                                        Bất động sản tự cứu mình
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/ngoai-kieu-viet-kieu-c17/go-kho-cho-bat-dong-san-i45177" title="Gỡ khó cho bất động sản">
-                                                        Gỡ khó cho bất động sản
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/du-bao-tao-bao-ve-thi-truong-bds-nam-2014-i45174" title="Dự báo táo bạo về thị trường BĐS năm 2014">
-                                                        Dự báo táo bạo về thị trường BĐS năm  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/goi-tin-dung-30000-ty-dong-cung-thieu-kem-hap-dan-can-tien-do-giai-ngan-i45172" title="Gói tín dụng 30.000 tỷ đồng: Cung thiếu, kém hấp dẫn cản tiến độ giải ngân">
-                                                        Gói tín dụng 30.000 tỷ đồng: Cung  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/can-ho-vua-tui-tien-hut-khach-i45171" title="Căn hộ vừa túi tiền hút khách">
-                                                        Căn hộ vừa túi tiền hút khách
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/bat-dong-san-the-gioi-c24/nha-moi-ban-ra-tai-australia-cao-nhat-25-nam-i45170" title="Nhà mới bán ra tại Australia cao nhất 2,5 năm">
-                                                        Nhà mới bán ra tại Australia cao nhất  ...
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/bat-dong-san-khoi-sac-nho-kieu-hoi-i45169" title="Bất động sản khởi sắc nhờ kiều hối?">
-                                                        Bất động sản khởi sắc nhờ kiều hối?
-                                                    </a></li> 
-                                                    <li><span class="bullet"></span><a href="/tin-tuc/thi-truong-dia-oc-c18/giai-cuu-bds-bang-chinh-sach-i45168" title="Giải cứu BĐS bằng chính sách">
-                                                        Giải cứu BĐS bằng chính sách
-                                                    </a></li> 
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>
@@ -227,29 +208,29 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                             <div class="content">
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-co-hoi-so-huu-can-ho-cua-cac-ban-tre-i744763">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/25/thumb-A61-86CEEB.jpg" width="140" height="140"  alt="Căn hộ 8x Đầm Sen cơ hội sở hữu căn hộ của các bạn trẻ" title="Căn hộ 8x Đầm Sen cơ hội sở hữu căn hộ của các bạn trẻ"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-BA3-BC9149.jpg" width="140" height="140"  alt="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất" title="Quý khách hãy sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-co-hoi-so-huu-can-ho-cua-cac-ban-tre-i744763">
-                                                                Căn hộ 8x Đầm Sen cơ hội sở hữu căn hộ  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
+                                                                Quý khách hãy sở hữu căn hộ 8X Đầm Sen  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block">
-                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-thanh-toan-chi-5-trieuthang-i744762">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/25/thumb-DDB-35492D.jpg" width="140" height="140"  alt="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, thanh toán chỉ 5 triệu/tháng" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, thanh toán chỉ 5 triệu/tháng"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-394-D6A67A.jpg" width="140" height="140"  alt="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất" title="Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với 600 triệu/căn - Quý khách được trả chậm 24 tháng không lãi suất"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-thanh-toan-chi-5-trieuthang-i744762">
-                                                                Căn hộ 8x Đầm Sen chỉ 600 triệu/căn,  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-kdl-dam-sen-chi-voi-600-trieucan-quy-khach-duoc-tra-cham-24-thang-khong-lai-suat-i748777">
+                                                                Căn hộ ngay cạnh KDL Đầm Sen - Chỉ với  ...
                                                             </a>
                                                         </h3>
                                                     </div>
                                                     <div class="real_block last">
-                                                        <a href="/ban-can-ho-chung-cu-c8/so-huu-can-ho-ngay-canh-dam-sen-bang-chinh-luong-thu-nhap-cua-ban-i740950">
-                                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/19/thumb-B90-A00B21.jpg" width="140" height="140"  alt="Sở hữu căn hộ ngay cạnh Đầm Sen bằng chính lương thu nhập của bạn" title="Sở hữu căn hộ ngay cạnh Đầm Sen bằng chính lương thu nhập của bạn"/></a>
+                                                        <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-B4C-E3B619.jpg" width="140" height="140"  alt="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình" title="Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn, quý khách hãy sở hữu tổ ấm của riêng mình"/></a>
                                                         <h3>
-                                                            <a href="/ban-can-ho-chung-cu-c8/so-huu-can-ho-ngay-canh-dam-sen-bang-chinh-luong-thu-nhap-cua-ban-i740950">
-                                                                Sở hữu căn hộ ngay cạnh Đầm Sen bằng  ...
+                                                            <a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-quy-khach-hay-so-huu-to-am-cua-rieng-minh-i748780">
+                                                                Căn hộ 8X Đầm Sen - Chỉ 600 triệu/căn,  ...
                                                             </a>
                                                         </h3>
                                                     </div>
@@ -267,33 +248,33 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-dam-sen-chi-600-trieucan-vat-chi-5-i740946" title="Căn hộ ngay Đầm Sen chỉ 600 triệu/căn, VAT chỉ 5%">
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-to-am-cua-rieng-minh-ngay-canh-kdl-dam-sen-i746344" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ ngay Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-ho-tro-goi-30000-ty-i749406" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn hỗ trợ gói 30.000 tỷ">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-ngay-canh-dam-sen-chi-600-trieucan-tra-cham-khong-lai-suat-i746125" title="Căn hộ ngay cạnh Đầm Sen - chỉ 600 triệu/căn -Trả chậm không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-thanh-toan-2-nam-khong-lai-suat-i749408" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn thanh toán 2 năm không lãi suất">
+                                                        Căn hộ ngay cạnh Đầm Sen -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/nhieu-nguoi-van-chua-tin-lai-co-can-ho-hoan-hao-nhu-the-gia-re-tra-gop-dai-han-dien-tich-nho-i734999" title="Nhiều người vẫn chưa tin lại có căn hộ hoàn hảo như thế: giá rẻ + trả góp dài hạn + diện tích nhỏ">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieu-can-uu-dai-bat-ngo-tu-hung-thinh-i749409" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/ căn ưu đãi bất ngờ từ Hưng Thịnh">
+                                                        Nhiều người vẫn chưa tin lại  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-gia-re-cho-gioi-tre-can-ho-8x-dam-sen-600-trieu-tra-gop-20-nam-i735429" title="Căn hộ giá rẻ cho giới trẻ - căn hộ 8X Đầm Sen, 600 triệu trả góp 20 năm">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-uu-dai-bat-ngo-tu-hung-thinh-cho-cac-ban-tre-i752067" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, ưu đãi bất ngờ từ Hưng Thịnh cho các bạn trẻ">
+                                                        Căn hộ giá rẻ cho giới trẻ -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/tan-huong-tower-quan-tan-phu-gia-goc-chu-dau-tu-i702755" title="Tân Hương Tower quận Tân Phú giá gốc chủ đầu tư">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-trung-tam-quan-tan-phu-gia-re-tien-ich-tot-can-ho-dep-i752074" title="Căn hộ trung tâm quận Tân Phú, giá rẻ, tiện ích tốt, căn hộ đẹp">
+                                                        Tân Hương Tower quận Tân Phú  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-cao-cap-c10/can-ho-690-trieucan-da-vat-so-luong-co-han-li-xi-10-trieu-cho-khach-hang-dang-ky-voi-chung-toi-i696245" title="Căn hộ 690 triệu/căn đã VAT - số lượng có hạn - lì xì 10 triệu cho khách hàng đăng ký với chúng tôi">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ trung tâm quận Tân  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-8x-dam-sen-chi-600-trieucan-la-du-an-dinh-dam-nhat-hien-nay-i752071" title="Căn hộ 8x Đầm Sen chỉ 600 triệu/căn, là dự án đình đám nhất hiện nay">
+                                                        Căn hộ 690 triệu/căn đã VAT -  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-so-huu-ngay-can-ho-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i746122" title="Chỉ 600 triệu/căn - Quý khách sở hữu ngay căn hộ cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ 8x Đầm Sen chỉ 600  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-cao-cap-co-ho-boi-phong-gym-da-hoat-dong-khuon-vien-cuc-rong-i696827" title="Căn hộ cao cấp có hồ bơi phòng gym đã hoạt động - khuôn viên cực rộng">
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-can-ho-ngay-canh-kdl-dam-sen-tra-cham-24-thang-khong-lai-suat-i745256" title="Chỉ 600 triệu/căn - Căn hộ ngay cạnh KDL Đầm Sen - Trả chậm 24 tháng không lãi suất">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ cao cấp có hồ bơi  ...</a> </li>
-                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/can-ho-duong-truong-chinh-chuan-bi-giao-nha-i696803" title="Căn hộ đường Trường Chinh, chuẩn bị giao nhà">
+                                                        Chỉ 600 triệu/căn - Căn hộ  ...</a> </li>
+                                                    <li><span class="bullet"></span><a href="/ban-can-ho-chung-cu-c8/chi-600-trieucan-quy-khach-se-so-huu-can-ho-ngay-canh-kdl-dam-sen-i744238" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu căn hộ ngay cạnh KDL Đầm Sen">
                                                         <span>TP.HCM: </span>
-                                                        Căn hộ đường Trường Chinh,  ...</a> </li>
+                                                        Chỉ 600 triệu/căn - Quý khách  ...</a> </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -329,16 +310,16 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/du-an/thiet-ke-c40/thiet-ke-quan-cafe-dep-i1426">
-                                                            <img src="http://image.diaoconline.vn/du-an/2014/01/10/thumb-89C-thiet-ke-quan-cafe-dep.jpg" width="200" height="154" alt="Thiết kế quán cafe đẹp" title="Thiết kế quán cafe đẹp"/>
+                                                        <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">
+                                                            <img src="http://image.diaoconline.vn/du-an/2014/01/08/thumb-809-can-ho-van-gia-phuc.jpg" width="200" height="154" alt="Căn hộ Vạn Gia Phúc" title="Căn hộ Vạn Gia Phúc"/>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/du-an/thiet-ke-c40/thiet-ke-quan-cafe-dep-i1426">Thiết kế quán cafe đẹp</a></h2>
-                                                        <span class="updated_date">10/01/2014 08:37</span>
+                                                            <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">Căn hộ Vạn Gia Phúc</a></h2>
+                                                        <span class="updated_date">08/01/2014 15:41</span>
                                                         <br />
-                                                        <p>Ngày nay với nền kinh tế phát triển vượt bậc, xã hội ngày càng văn minh và hiện đại, vì thế mà một trong những nghành kinh doanh phát triển nhất đó là dịch vụ phục vụ cho con người về vui chơi giải trí.</p>
+                                                        <p>Căn hộ Vạn Gia Phúc được quy hoạch 92 nền đất nhà phố, 312 căn hộ chung cư, gồm đầy đủ nhiều tiện ích như: công viên, trung tâm thương mại… gần chợ, bệnh viện, trường học, giao thông cực kỳ thuận lợi.</p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -354,14 +335,6 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/du-an/thiet-ke-c40/thiet-ke-truong-mam-non-i1425" title="Thiết kế trường Mầm Non">
-                                                        <span>TP.HCM: </span>
-                                                        Thiết kế trường Mầm Non
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424" title="Căn hộ Vạn Gia Phúc">
-                                                        <span>TP.HCM: </span>
-                                                        Căn hộ Vạn Gia Phúc
-                                                    </a></li>
                                                     <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/the-sun-city-ba-to-quan-8-i1423" title="The Sun City Ba Tơ quận 8">
                                                         <span>TP.HCM: </span>
                                                         The Sun City Ba Tơ quận 8
@@ -390,6 +363,14 @@
                                                         <span>TP.HCM: </span>
                                                         Nhà phố thương mại Phú Xuân
                                                     </a></li>
+                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/nguyenbinh-house-i1415" title="NguyenBinh House">
+                                                        <span>TP.HCM: </span>
+                                                        NguyenBinh House
+                                                    </a></li>
+                                                    <li><span class="bullet"></span><a href="/du-an/khu-phuc-hop-thuong-mai-c25/pho-cang-sai-gon-moi-i1416" title="Phố Cảng Sài Gòn mới">
+                                                        <span>TP.HCM: </span>
+                                                        Phố Cảng Sài Gòn mới
+                                                    </a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -399,20 +380,19 @@
                     </li>
                     <li ><a href="/doanh-nghiep">
                         DOANH NGHIỆP</a></li>
-                    <li  class=actived ><a href="<?php echo base_url();?>kham-pha" >
+                    <li ><a href="<?php echo base_url();?>kham-pha" >
                         KHÁM PHÁ</a>
                         <div class="sub_menu">
                             <div class="wrap">
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/kham-pha/the-gioi-kien-truc-c4">Thế giới kiến trúc</a></li>
-                                                <li><a href="/kham-pha/mach-ban-c6">Mách bạn</a></li>
-                                                <li><a href="/kham-pha/phong-thuy-c9">Phong thủy</a></li>
-                                                <li><a href="/kham-pha/khong-gian-song-c7">Không gian sống</a></li>
-                                                <li><a href="/kham-pha/shopping-cung-dool-c10">Shopping cùng DOOL</a></li>
-                                                <li><a href="/kham-pha/thuong-hieu-c11">Thương hiệu</a></li>
-                                                <li><a href="/kham-pha/nha-cua-sao-c76">Nhà của sao</a></li>
+                                        <?php 
+                                        foreach($nav_cate_dis as $cate_nav)
+                                        {
+                                        ?>
+                                                <li><a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate_nav['name'])))?>-c<?php echo $cate_nav['id']?>"><?php echo $cate_nav['name']?></a></li>
+                                        <?php } ?>        
                                         </ul>
                                     </div>
                                 </div>
@@ -427,15 +407,21 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/kham-pha/thuong-hieu-c11/20-thuong-hieu-noi-tieng-nhat-the-gioi-bi-nhai-boi-china-i45183">
-                                                            <img src="http://image.diaoconline.vn/kham-pha/2014/01/10/thumb-588-20-thuong-hieu-noi-tieng-nhat-the-gioi-bi-nhai-boi-china.jpg" width="200" height="125" alt="20 thương hiệu nổi tiếng nhất thế giới bị nhái bởi “China”" title="20 thương hiệu nổi tiếng nhất thế giới bị nhái bởi “China”"/></a>
+                                                        <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">
+                                                        <?php 
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$last_dis[0]['img']))
+                                                        {
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $last_dis[0]['img']?>" width="200" height="125" alt="<?php echo $last_dis[0]['title']?>" title="<?php echo $last_dis[0]['title']?>"/>
+                                                        <?php } ?>
+                                                            </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/kham-pha/thuong-hieu-c11/20-thuong-hieu-noi-tieng-nhat-the-gioi-bi-nhai-boi-china-i45183">20 thương hiệu nổi tiếng nhất thế giới bị nhái bởi “China”</a></h2>
-                                                        <span class="updated_date">10/01/2014 16:05</span>
+                                                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['name'])))?>-c<?php echo $last_dis[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis[0]['title'])))?>-i<?php echo $last_dis[0]['id_disco']?>"><?php echo $last_dis[0]['title']?></a></h2>
+                                                        <span class="updated_date">08/01/2014 16:50</span>
                                                         <br />
-                                                        <p>20 thương hiệu lớn, nổi tiếng nhất thế giới đều bị các công ty Trung Quốc bắt chước thương hiệu tạo nên sự nhầm lẫn đối với người dùng.</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($last_dis[0]['content']),200);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -451,33 +437,14 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176" title="Nhà nguyện trong mây - Nơi thời gian ngưng đọng" >
-                                                        Nhà nguyện trong mây - Nơi thời gian  ...
+                                            <?php 
+                                            foreach($last_dis_nb as $last_dis)
+                                            {
+                                            ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($last_dis['name'])))?>-c<?php echo $last_dis['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($last_dis['title'])))?>-i<?php echo $last_dis['id_disco']?>" title="<?php echo $last_dis['title']?>" >
+                                                        <?php echo $last_dis['title']?>
                                                     </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/hang-dia-nguc-voi-nhung-bo-xuong-phat-sang-i45175" title="Hang địa ngục với những bộ xương phát sáng" >
-                                                        Hang địa ngục với những bộ xương phát  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/mach-ban-c6/bi-kip-chon-noi-that-cho-phong-khach-chat-hep-i45173" title="Bí kíp chọn nội thất cho phòng khách chật hẹp" >
-                                                        Bí kíp chọn nội thất cho phòng khách  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/nha-cua-sao-c76/chi-tiet-doc-trong-biet-thu-cua-bill-gates-i45166" title="Chi tiết độc trong biệt thự của Bill Gates" >
-                                                        Chi tiết độc trong biệt thự của Bill  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/thac-niagara-dong-bang-trong-dot-lanh-ky-luc-i45165" title="Thác Niagara đóng băng trong đợt lạnh kỷ lục" >
-                                                        Thác Niagara đóng băng trong đợt lạnh  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/phong-thuy-c9/chon-hoa-tet-mang-lai-may-man-i45126" title="Chọn hoa Tết mang lại may mắn" >
-                                                        Chọn hoa Tết mang lại may mắn
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/thuong-hieu-c11/thi-truong-mi-goi-bai-hoc-tu-mi-tien-vua-i45157" title="Thị trường mì gói: Bài học từ mì Tiến Vua" >
-                                                        Thị trường mì gói: Bài học từ mì Tiến  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/khong-gian-song-c7/top-10-diem-du-lich-hoang-da-nhat-hanh-tinh-i45155" title="Top 10 điểm du lịch hoang dã nhất hành tinh" >
-                                                        Top 10 điểm du lịch hoang dã nhất hành  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/kham-pha/the-gioi-kien-truc-c4/dinh-thu-chameleon-villa-2400-m2-voi-san-do-truc-thang-i45151" title="Dinh thự Chameleon Villa 2.400 m2 với sân đỗ trực thăng" >
-                                                        Dinh thự Chameleon Villa 2.400 m2 với  ...
-                                                    </a></li>
+                                             <?php } ?>       
                                             </ul>
                                         </div>
                                     </div>

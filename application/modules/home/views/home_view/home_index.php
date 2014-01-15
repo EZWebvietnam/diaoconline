@@ -353,12 +353,15 @@
 <div class="headline_title_1 rounded_style_5 rounded_box">
     <div class="content">
         <ul class="headline_tab">
-            <li class="actived"><span class="L"></span><a href="/kham-pha/kham-pha-trai-nghiem-c3">Kh&#225;m Ph&#225;</a><span class="R"></span></li>
-            <li><a href="/kham-pha/khong-gian-song-c7"><span>Kh&#244;ng Gian Sống</span></a></li>
-            <li><a href="/kham-pha/the-gioi-kien-truc-c4"><span>Thế Giới Kiến Tr&#250;c</span></a></li>
-            <li><a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></li>
-            <li><a href="/kham-pha/mach-ban-c6"><span>M&#225;ch Bạn</span></a></li>
-            <li><a href="/kham-pha/thuong-hieu-c11"><span>Thương Hiệu</span></a></li>
+            <?php
+            $i = 1; 
+            foreach($nav_cate_dis as $nav)
+            {
+                if($i<=5)
+                {
+            ?>
+            <li><a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($nav['name'])))?>-c<?php echo $nav['id']?>"><span><?php echo $nav['name']?></span></a></li>
+            <?php } $i++;} ?>
         </ul>
         
     </div>
@@ -370,11 +373,11 @@
         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$list_new_slide_d[0]['img']))
         {
         ?>
-            <div class="img"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147"><img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $list_new_slide_d[0]['img']?>" width="400" height="250" alt="<?php echo $list_new_slide_d[0]['title']?>"/></a></div>
+            <div class="img"><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_new_slide_d[0]['name'])))?>-c<?php echo $list_new_slide_d[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_new_slide_d[0]['title'])))?>-i<?php echo $list_new_slide_d[0]['id_disco']?>"><img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $list_new_slide_d[0]['img']?>" width="400" height="250" alt="<?php echo $list_new_slide_d[0]['title']?>"/></a></div>
         <?php } ?>
                 <div class="news_info">
-                    <div class="category"><a href="/kham-pha/khong-gian-song-c7">»Không gian sống</a></div>
-                    <h2 class="larger_title"><a href="/kham-pha/khong-gian-song-c7/nac-thang-thien-duong-cach-dia-nguc-chi-mot-buoc-chan-i45147"><?php echo $list_new_slide_d[0]['title']?></a></h2>
+                    <div class="category"><a href="<?php echo base_url()?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($list_new_slide_d[0]['name'])))?>-c<?php echo $list_new_slide_d[0]['id_cate']?>">»<?php echo $list_new_slide_d[0]['name']?></a></div>
+                    <h2 class="larger_title"><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_new_slide_d[0]['name'])))?>-c<?php echo $list_new_slide_d[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_new_slide_d[0]['title'])))?>-i<?php echo $list_new_slide_d[0]['id_disco']?>"><?php echo $list_new_slide_d[0]['title']?></a></h2>
                     <div class="updated_date"><span>Cập nhật 15 ph&#250;t trước</span></div>
                     <br />
                     <p><?php echo sub_string(loaibohtmltrongvanban($list_new_slide_d[0]['content']),239);?></p>
@@ -389,7 +392,7 @@
             ?>
                 <li >
                     <div class="news_block">
-                    <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131">
+                    <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($news_d['name'])))?>-c<?php echo $news_d['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($news_d['title'])))?>-i<?php echo $news_d['id_disco']?>">
                     <?php 
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$news_d['img']))
                     {
@@ -397,7 +400,7 @@
                     <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $news_d['img']?>" width="200" height="125" alt="<?php echo $news_d['title']?>" title="<?php echo $news_d['title']?>" alt="<?php echo $news_d['title']?>"/>
                     <?php } ?>
                     </a><br />
-                    <a href="/kham-pha/khong-gian-song-c7/thong-dong-cuoi-ngua-ngam-bien-o-nam-phi-i45131"><?php echo $news_d['title']?></a>
+                    <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($news_d['name'])))?>-c<?php echo $news_d['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($news_d['title'])))?>-i<?php echo $news_d['id_disco']?>"><?php echo $news_d['title']?></a>
                     </div>
                 </li>
              <?php } ?>   

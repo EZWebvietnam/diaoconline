@@ -10,6 +10,9 @@ class News extends MY_Controller
         parent::load_list_last_new($this->data['new_on_nav'][0]['id_cate']);
         
         parent::get_list_cafe_law();
+        parent::get_cate_dis_nav();
+        parent::dis_noi_bat();
+        parent::dis_noi_bat_other($this->data['last_dis'][0]['id_disco']);
         $this->load->model('newshomemodel');
     }
     public function index()
