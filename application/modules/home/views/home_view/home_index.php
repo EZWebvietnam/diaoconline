@@ -223,9 +223,17 @@
             <?php } ?>
                 <div class="posted_block hightlight_type_3 ">
                     <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_prj['loai_dia_oc'])))?>-c<?php echo $list_prj['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_prj['title'])))?>-h<?php echo $list_prj['id']?>">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2013/12/26/thumb-B71-95BDA2.jpg" width="120" height="120" alt="Cho thu&#234; nguy&#234;n căn t&#242;a nh&#224; 521-523 Điện Bi&#234;n Phủ, Q.B&#236;nh Thạnh, ngay cầu Văn Th&#225;nh"/></a></div>
+                                <?php 
+                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$list_prj['code'].'/'.$list_prj['img']))
+                                {
+                                ?>
+                                <img src="<?php echo base_url();?>file/uploads/property/<?php echo $list_prj['code']?>/<?php echo $list_prj['img']?>" width="120" height="120" alt="<?php echo $list_prj['title']?>"/>
+                                <?php } else {?> 
+                                <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="120" height="120" alt="<?php echo $list_prj['title']?>"/>
+                                <?php }?>
+                                </a></div>
                     <div class="posted_info">
-                        <h2><a href="/thue-van-phong-c9/cho-thue-nguyen-can-toa-nha-521-523-dien-bien-phu-qbinh-thanh-ngay-cau-van-thanh-i282448"><?php echo $list_prj['title']?></a></h2>
+                        <h2><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_prj['loai_dia_oc'])))?>-c<?php echo $list_prj['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_prj['title'])))?>-h<?php echo $list_prj['id']?>"><?php echo $list_prj['title']?></a></h2>
                         <span class="location"><a class="link-ext" href="/thue-van-phong-c9/tphcm-t3/quan-binh-thanh-q140">Quận Bình Thạnh</a>, 
                                                 <a class="link-ext" href="/thue-van-phong-c9/tphcm-t3">TP.HCM</a></span><br />
                         <span class="price">
