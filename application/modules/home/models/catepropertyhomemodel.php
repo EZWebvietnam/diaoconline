@@ -18,5 +18,11 @@ class Catepropertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function cate_list_()
+    {
+        $sql="SELECT * FROM loai_dia_oc WHERE parent <> 0";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

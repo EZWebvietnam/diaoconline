@@ -126,9 +126,8 @@
                                 <li class="actived" id="tabtimkiemts"><span class="L"></span><a href="javascript:void(0)">
                                     Tìm kiếm tài sản</a> <span class="R"></span></li>
                                 <li id="tabtimnhanhts"><a href="javascript:void(0)"><span>Xem nhanh theo loại tài sản</span></a></li>
-                                <li><a href="/sieu-thi/loc?thechap=1"><span>Xem
-                                    tài sản đấu giá</span></a></li>
-                                <li><a href="/sieu-thi/loc?nhasv=1"><span>Nhà trọ sinh viên</span></a></li>
+                                
+                                <li><a href="<?php echo base_url();?>sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
                             </ul>
                             
                         </div>
@@ -273,27 +272,14 @@
                     </div>
                     <div id="timnhanhts" class="infiniteCarousel select_search_item" style="display: none">
                         <div class="wrapper">
-                            <ul>
-                                    <li><a href="/sieu-thi/nha-pho-c20">
-                                        <span class="ico_30 ico_home_1_30"></span><strong>NH&#192; PHỐ</strong></a></li>
-                                    <li><a href="/sieu-thi/van-phong-c9">
-                                        <span class="ico_30 ico_home_2_30"></span><strong>VĂN PH&#210;NG CHO THU&#202;</strong></a></li>
-                                    <li><a href="/sieu-thi/can-ho-cao-cap-c10">
-                                        <span class="ico_30 ico_home_3_30"></span><strong>CĂN HỘ CAO CẤP</strong></a></li>
-                                    <li><a href="/sieu-thi/villa-biet-thu-c1">
-                                        <span class="ico_30 ico_home_4_30"></span><strong>VILLA BIỆT THỰ</strong></a></li>
-                                    <li><a href="/sieu-thi/dat-lam-nghiep-c23">
-                                        <span class="ico_30 ico_home_5_30"></span><strong>ĐẤT L&#194;M NGHIỆP</strong></a></li>
-                                    <li><a href="/sieu-thi/dat-nong-nghiep-c13">
-                                        <span class="ico_30 ico_home_6_30"></span><strong>ĐẤT N&#212;NG NGHIỆP</strong></a></li>
-                                    <li><a href="/sieu-thi/dat-o-dat-tho-cu-c11">
-                                        <span class="ico_30 ico_home_7_30"></span><strong>ĐẤT Ở ĐẤT THỔ CƯ</strong></a></li>
-                                    <li><a href="/sieu-thi/dat-du-an-quy-hoach-c12">
-                                        <span class="ico_30 ico_home_8_30"></span><strong>ĐẤT QUY HOẠCH</strong></a></li>
-                                    <li><a href="/sieu-thi/dat-cho-san-xuat-c14">
-                                        <span class="ico_30 ico_home_9_30"></span><strong>ĐẤT SẢN XUẤT</strong></a></li>
-                                    <li><a href="/sieu-thi/nha-hang-khach-san-c17">
-                                        <span class="ico_30 ico_home_10_30"></span><strong>NH&#192; H&#192;NG KH&#193;CH SẠN</strong></a></li>
+                            <ul>    <?php 
+                            $i = 1;
+                                        foreach($cate_proper_list as $cate_l)
+                                        {
+                                    ?>
+                                    <li><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($cate_l['name'])))?>-c<?php echo $cate_l['id']?>">
+                                        <span class="ico_30 ico_home_<?php echo $i?>_30"></span><strong><?php echo $cate_l['name']?></strong></a></li>
+                                    <?php $i++;} ?>
                             </ul>
                         </div>
                     </div>

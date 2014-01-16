@@ -278,7 +278,7 @@
                                 <tr class="bg_grey">
                                     <td>
                                         Loại địa ốc: <strong>
-                                                <a href="/sieu-thi/phong-tro-c16" class="link-ext"><?php echo $detail[0]['loai_dia_oc']?></a>
+                                                <a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>" class="link-ext"><?php echo $detail[0]['loai_dia_oc']?></a>
 </strong>
                                     </td>
                                 </tr>
@@ -303,7 +303,7 @@
                                 <tr class="bg_grey">
                                     <td>
                                         Vị trí địa ốc: <strong>
-                                                <a href="/sieu-thi/duong-truoc-nha-khong-cap-nhat-d4" class="link-ext"><?php echo $detail[0]['vi_tri_dia_oc']?></a>
+                                                <?php echo $detail[0]['vi_tri_dia_oc']?>
 </strong>
                                     </td>
                                 </tr>

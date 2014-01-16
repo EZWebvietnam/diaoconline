@@ -29,6 +29,7 @@ class Home extends MY_Controller
         $this->load->model('propertyhomemodel');
          $this->load->model('newshomemodel');
          $this->load->model('discoveryhomemodel');
+         $this->load->model('catepropertyhomemodel');
         $list_project = $this->projecthomemodel->get_list_project();
         $list_pro = $this->propertyhomemodel->get_list_property_cc();
         $list_pro_new = $this->propertyhomemodel->get_list_property_new();
@@ -37,6 +38,7 @@ class Home extends MY_Controller
         $list_new_slide_ = $this->newshomemodel->load_news_slide_();
         $list_new_slide_d = $this->discoveryhomemodel->load_news_slide();
         $list_new_slide_d_ = $this->discoveryhomemodel->load_news_slide_($list_new_slide_d[0]['id_disco']);
+        $this->data['cate_proper_list']=$this->catepropertyhomemodel->cate_list_();
         $this->data['list_project']=$list_project;
         $this->data['list_new_slide']=$list_new_slide;
          $this->data['list_new_slide_']=$list_new_slide_;
