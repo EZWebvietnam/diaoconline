@@ -269,18 +269,23 @@ foreach($list_cate_project_left as $cate_pro)
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/thue-can-ho-chung-cu-c8/cho-thue-can-ho-besco-an-suong-chung-cu-an-suong-gia-45-trieuthang-dt-67m2-i736554" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/12/thumb-D12-EF2724.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2" title="Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2" />
-                                   Cho thuê căn hộ Besco An Sương - chung cư An Sương, giá: 4,5 triệu/tháng, DT: 67m2</h2></a>
+                <?php 
+                if(isset($property_of_cate))
+                {
+                    foreach($property_of_cate as $pr)
+                    {
+                ?>
+                        <li><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($pr['loai_dia_oc'])))?>-c<?php echo $pr['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($pr['title'])))?>-h<?php echo $pr['id']?>" >
+                             <h2>
+                             <?php 
+                             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$pr['code'].'/'.$pr['img']))
+                             {
+                             ?>
+                             <img src="<?php echo base_url();?>file/uploads/property/<?php echo $pr['code']?>/<?php echo $pr['img']?>" style="float:left; margin-right:5px;" width="45" height="45" alt="<?php echo $pr['title']?>" title="<?php echo $pr['title']?>" />
+                             <?php }?>
+                                  <?php echo $pr['title']?></h2></a>
                         </li>
-                        <li><a href="/ban-dat-du-an-quy-hoach-c12/ban-dat-nen-du-an-khu-dan-cu-an-suong-66-ha-i460107" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/11/27/thumb-63A-5005B0.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán đất nền dự án khu dân cư An Sương 66 ha" title="Bán đất nền dự án khu dân cư An Sương 66 ha" />
-                                   Bán đất nền dự án khu dân cư An Sương 66 ha</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-chung-cu-c8/ban-can-ho-an-suong-lau-6-mat-tien-quoc-lo-1a-ptrung-my-tay-q12-i286003" >
-                             <h2><img src="http://image.diaoconline.vn/UserUpload/2010/12/11/31398_Hinh_can_ho_An_Suong_1_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12" title="Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12" />
-                                   Bán căn hộ An Sương, lầu 6, mặt tiền Quốc lộ 1A, P.Trung Mỹ Tây, Q.12</h2></a>
-                        </li>
+                <?php } } ?>        
                 </ul>
             </div>
         </div>
@@ -381,7 +386,7 @@ if(isset($list[0]))
                                     <div class="active_tool_1">
                                         <ul>
                                             
-                                            <li class="last"><span class="ico_16 ico_trade_16"></span><a href="<?php echo base_url()?>sieu-thi/loc/?duan=<?php echo $l_pro['id_pro']?>">Tài sản đang giao dịch</a></li>
+                                            <li class="last"><span class="ico_16 ico_trade_16"></span><a href="<?php echo base_url()?>sieu-thi/du-an.<?php echo $l_pro['id_pro']?>.duan">Tài sản đang giao dịch</a></li>
                                         </ul>
                                     </div>
                                 </div> 

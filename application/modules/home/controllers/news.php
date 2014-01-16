@@ -22,6 +22,8 @@ class News extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
+        parent::get_ts_menu();
+        parent::load_phong_thuy();
         $this->load->model('newshomemodel');
     }
     public function index()
@@ -87,10 +89,11 @@ class News extends MY_Controller
             exit;
         }
         $this->data['list_new'] = $this->newshomemodel->get_news_with_cate($news_detail[0]['id_cate'],
-            $news_detail[0]['id']);
+            $news_detail[0]['id_new']);
 
         $this->data['main_content'] = 'news_view/news_detail';
         $this->data['detail'] = $news_detail;
+        $this->data['title'] = $news_detail[0]['title'];
         $this->load->view('home_layout/news_detail_layout', $this->data);
     }
 }

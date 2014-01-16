@@ -99,7 +99,16 @@
                                                         <span class="property_code">Mã số tài sản: <strong><?php echo $list_property['code']?></strong></span><br>
                                                         <span class="post_type">Cập nhật: <?php echo date('d/m/Y h:i',$list_property['create_date'])?></span><br>
                                                         <div class="price">
-                                                            <p>Giá cho thuê:<br><strong><?php echo bd_nice_number($list_property['price'])?></strong></p>
+                                                            <p>Giá cho thuê:<br><strong><?php
+                                                            if(is_numeric($list_property['price']))
+                                                            { 
+                                                            echo bd_nice_number($list_property['price']);
+                                                            }
+                                                            else
+                                                            {
+                                                                echo $list_property['price'];
+                                                            }
+                                                            ?></strong></p>
                                                         </div>
                                                         <div class="contact_info">
                                                                 <p>Liên hệ:<br>

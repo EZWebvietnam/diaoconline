@@ -11,10 +11,8 @@
                       <div class="rounded_style_2 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                         <div class="content">
                             <p>
-                            </p><h1 class="title"><?php 
-                        
-                            echo $detail_cate[0]['name']?></h1>
-                                    <label class="title"> có <?php echo $total;?> tài sản 
+                            </p><h1 class="title">Theo quận vừa tìm có:</h1>
+                                    <label class="title"> có <?php echo $total;?> tài sản cùng loại địa ốc bạn của tài sản bạn vừa xem
                                     </label><p></p>
                                 
                         </div>

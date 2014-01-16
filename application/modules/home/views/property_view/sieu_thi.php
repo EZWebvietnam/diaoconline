@@ -4,7 +4,7 @@
                         <ul class="headline_tab">
                                     <li id="all"><a href="<?php echo base_url();?>sieu-thi"><span>TÀI SẢN ĐANG GIAO DỊCH</span></a></li>
                                     <li id="chinhchu"><a href="<?php echo base_url();?>sieu-thi/chinh-chu"><span>TÀI SẢN CHÍNH CHỦ</span></a></li>
-                                    <li id="nhasv"><a href="/sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
+                                    <li id="nhasv"><a href="<?php echo base_url();?>sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
                             
                         </ul>
                     </div>
@@ -99,7 +99,7 @@
                                                         <span class="property_code">Mã số tài sản: <strong><?php echo $list_property['code']?></strong></span><br>
                                                         <span class="post_type">Cập nhật: <?php echo date('d/m/Y h:i',$list_property['create_date'])?></span><br>
                                                         <div class="price">
-                                                            <p>Giá cho thuê:<br><strong><?php echo bd_nice_number($list_property['price'])?></strong></p>
+                                                            <p>Giá cho thuê:<br><strong><?php if(is_numeric($list_property['price'])) {echo bd_nice_number($list_property['price']);} else {echo $list_property['price'];} ?></strong></p>
                                                         </div>
                                                         <div class="contact_info">
                                                                 <p>Liên hệ:<br>

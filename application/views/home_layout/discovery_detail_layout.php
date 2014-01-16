@@ -175,30 +175,21 @@
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/ban-nha-pho-c20/can-tien-ban-lo-1-can-nha-pho-duong-12m-gom-1-tret-2-lau-san-thuong-tai-tp-binh-duong-i191488" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương" title="Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương" />
-                                   Cần tiền bán lỗ 1 căn nhà phố đường 12m gồm 1 trệt 2 lầu sân thượng tại Tp. Bình Dương</h2></a>
+                <?php 
+                foreach($tai_san_noi_bat_khac as $ts_nb)
+                {
+                ?>
+                        <li><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_nb['loai_dia_oc'])))?>-c<?php echo $ts_nb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_nb['title'])))?>-h<?php echo $ts_nb['id']?>" >
+                             <h2>
+                             <?php 
+                             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$ts_nb['code'].'/'.$ts_nb['img']))
+                             {
+                             ?>
+                             <img src="<?php echo base_url();?>file/uploads/property/<?php echo $ts_nb['code']?>/<?php echo $ts_nb['img']?>" style="float:left; margin-right:5px;" width="45" height="45" alt="<?php echo $ts_nb['title']?>" title="<?php echo $ts_nb['title']?>" />
+                             <?php } ?>
+                                   <?php echo $ts_nb['title']?></h2></a>
                         </li>
-                        <li><a href="/ban-nha-pho-c20/can-tien-ban-lo-1-can-nha-duong-36m-gom-1-tret-2-lau-san-thuong-tai-tp-binh-duong-i201075" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương" title="Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương" />
-                                   Cần tiền bán lỗ 1 căn nhà đường 36m gồm 1 trệt 2 lầu, sân thượng tại TP Bình Dương</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-chung-cu-c8/ket-tien-ban-gap-can-ho-hoang-anh-can-tho-gia-chi-8-trieum2-i517967" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/can-ho-chung-cu.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2" title="Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2" />
-                                   Kẹt tiền bán gấp căn hộ Hoàng Anh Cần thơ giá chỉ 8 triệu/m2</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/can-ban-nha-pho-du-an-hud-canh-sunflower-city-nhan-ngay-so-do-i188057" >
-                             <h2><img src="http://image.diaoconline.vn/UserUpload/2012/06/24/41460_051327_nho_trach_sun_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ" title="Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ" />
-                                   Cần bán nhà phố dự án HUD cạnh Sunflower City, nhận ngay sổ đỏ</h2></a>
-                        </li>
-                        <li><a href="/ban-dat-du-an-quy-hoach-c12/can-tien-ban-gap-dat-gan-san-bay-quoc-te-long-thanh-voi-gia-chi-105-trieunen-i492883" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/dat-du-an-quy-hoach.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền" title="Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền" />
-                                   Cần tiền bán gấp đất gần sân bay quốc tế Long Thành với giá chỉ 105 triệu/nền</h2></a>
-                        </li>
-                        <li><a href="/ban-dat-du-an-quy-hoach-c12/dat-nen-sai-gon-khu-do-thi-trung-tam-an-lac-lien-ke-quan-trung-tam-chi-75-trieum2-i492884" >
-                             <h2><img src="http://image.diaoconline.vn/UserUpload/2012/08/30/41460_112951_kdc_an_lac_residence_360.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2" title="Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2" />
-                                   Đất nền Sài Gòn khu đô thị trung tâm An Lạc, liền kề Quận trung tâm chỉ 7,5 triệu/m2</h2></a>
-                        </li>
+                 <?php } ?>       
                 </ul>
             </div>
         </div>

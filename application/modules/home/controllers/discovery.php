@@ -45,6 +45,11 @@ class Discovery extends MY_Controller
         }
         $this->data['main_content']='discovery_view/discovery_detail';
         $this->data['detail_dis'] = $this->discoveryhomemodel->load_detail($id);
+        if(empty($this->data['detail_dis']))
+        {
+            show_404();
+            exit;
+        }
         $this->data['title']=$this->data['detail_dis'][0]['title'];
         $this->data['list_other']=$this->discoveryhomemodel->load_detail_other($this->data['detail_dis'][0]['id_disco'],$this->data['detail_dis'][0]['id_cate']);
         $this->load->view('home_layout/discovery_detail_layout',$this->data);
@@ -53,7 +58,11 @@ class Discovery extends MY_Controller
     {
         parent::project_noi_bat();
          $this->load->model('catediscoveryhomemodel');
-         
+         if(empty($id))
+         {
+            show_404();
+            exit;
+         }
         if (!is_numeric($id)) {
             show_404();
             exit;
@@ -63,7 +72,7 @@ class Discovery extends MY_Controller
         $this->data['title']=$detail_cate[0]['name'];
         if (empty($detail_cate)) {
             show_404();
-            exit;
+            exit;  
         }
         
         $this->load->helper('url');
@@ -80,9 +89,7 @@ class Discovery extends MY_Controller
             show_404();
             exit;
         }
-        if (empty($id)) {
-            redirect('trang-chu', 'refresh');
-        }
+        
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->discoveryhomemodel->get_list_cate($id,$config['per_page'], $page1);
        $this->data['cate_parent'] = $this->catediscoveryhomemodel->get_cate_detail($detail_cate[0]['parent']);

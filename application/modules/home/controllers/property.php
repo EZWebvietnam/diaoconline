@@ -26,11 +26,27 @@ class Property extends MY_Controller
     }
     public function detail($id)
     {
+        if(empty($id))
+        {
+            show_404();
+            exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();
+            exit;
+        }
         $this->load->model('cityhomemodel');
         $this->data['detail']=$this->propertyhomemodel->property_detail($id);
+        if(empty($this->data['detail']))
+        {
+            show_404();
+            exit;
+        }        
         $this->data['list_district_']=$this->cityhomemodel->get_list_district_city($this->data['detail'][0]['id_city']);
         $this->data['list_loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc();
         $this->data['list_city_']=$this->cityhomemodel->get_list_city_();
+        $this->data['list_cung_nguoi_dang'] = $this->propertyhomemodel->list_cung_nguoi_dang($this->data['detail'][0]['id_user']);
         $this->data['title']=$this->data['detail'][0]['title'];
         $this->data['main_content']='property_view/detail';
         $this->load->view('home_layout/detail_nha',$this->data);
@@ -50,7 +66,11 @@ class Property extends MY_Controller
         }
         $this->load->helper('url');
         $detail_cate = $this->catepropertyhomemodel->cate_detail($id);
-       
+        if(empty($detail_cate))
+        {
+            show_404();
+            exit;
+        }
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(3);
         $config['per_page'] = 12;
@@ -184,7 +204,7 @@ class Property extends MY_Controller
        
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_duan($id,$config['per_page'], $page1);
-        $this->data['id']=$id;
+       $this->data['id']=$id;
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -222,6 +242,87 @@ class Property extends MY_Controller
        $this->data['total']=$config['total_rows'];
        $this->data['list']=$array_sv;
        $this->data['main_content']='property_view/gia';
+       $this->load->view('home_layout/list_tai_san',$this->data);
+    }
+    public function get_theo_quan($id,$id_district)
+    {
+        $id = intval($id);
+        if(empty($id) || empty($id_district))
+        {
+            show_404();exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();
+            exit;
+        }
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(6);
+        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_quan($id,$id_district);
+        
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_quan($id,$id_district,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='property_view/list_quan';
+       $this->load->view('home_layout/list_tai_san',$this->data);
+    }
+     public function get_theo_thanh_pho($id,$id_city)
+    {
+        $id = intval($id);
+        $id = intval($id);
+        if(empty($id) || empty($id_city))
+        {
+            show_404();exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();
+            exit;
+        }
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(6);
+        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_city($id,$id_city);
+        
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_city($id,$id_city,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='property_view/list_city';
        $this->load->view('home_layout/list_tai_san',$this->data);
     }
 }

@@ -364,30 +364,20 @@ foreach($left_menu as $left_mn)
     <div class="rounded_style_2 rounded_box">
         <div class="body">
 			<ul class="listing_1">
+                    <?php 
+                    foreach($list_phong_thuy as $phong_thuy)
+                    {
+                    ?>
                     <li >
-                        <a href="/kham-pha/phong-thuy-c9/cam-hoa-theo-phong-thuy-trong-ngay-tet-i45163">
-                        <img src="http://image.diaoconline.vn/kham-pha/2014/01/10/thumb-FD6-cam-hoa-theo-phong-thuy-trong-ngay-tet.jpg" alt="Cắm hoa theo phong thủy trong ngày Tết" width="80" height="61" class="img-left"/>
-                         Cắm hoa theo phong thủy trong ngày Tết</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/chon-hoa-tet-mang-lai-may-man-i45126">
-                         Chọn hoa Tết mang lại may mắn</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-va-nhung-dai-ky-cua-nam-moi-i45095">
-                         Phong thủy và những đại kỵ của năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/cay-canh-mang-may-man-trong-nam-moi-i45037">
-                         Cây cảnh mang may mắn trong năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-nha-o-hut-tai-loc-trong-nam-moi-i44986">
-                         Phong thủy nhà ở hút tài lộc trong năm mới</a></li>
-                    <li  class=last >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/nam-2014-tuoi-xong-dat-va-gio-dep-xuat-hanh-i44961">
-                         Năm 2014: Tuổi xông đất và giờ đẹp xuất hành?</a></li>
+                        <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($phong_thuy['name'])))?>-c<?php echo $phong_thuy['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($phong_thuy['title'])))?>-i<?php echo $phong_thuy['id_disco']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$phong_thuy['img']))
+                        {
+                        ?>
+                        <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $phong_thuy['img']?>" alt=<?php echo $phong_thuy['title']?>" width="80" height="61" class="img-left"/>
+                        <?php } ?>
+                         <?php echo $phong_thuy['title']?></a></li>
+                    <?php } ?>
             </ul>
         </div>
     </div>
@@ -398,46 +388,35 @@ foreach($left_menu as $left_mn)
     </div>
     <div class="content">
         <ul class="listing_4 asset-spec-box">
-                <li><a href="/ban-dat-o-dat-tho-cu-c11/can-nhuong-gap-dat-tho-cu-binh-duong-gia-re-330-trieu300m2-dan-cu-dong-ke-cho-truong-i467642" >
-                    <img src="http://image.diaoconline.vn/sieu-thi/2013/03/16/thumb-AD6-F8E08F.jpg" width="75" height="75" alt="Cần nhượng gấp đất thổ cư Bình Dương giá rẻ 330 triệu/300m2, dân cư đông, kề chợ, trường" title="Cần nhượng gấp đất thổ cư Bình Dương giá rẻ 330 triệu/300m2, dân cư đông, kề chợ, trường" /></a>
+        <?php 
+        foreach($tai_san_noi_bat_khac as $tai_san)
+        {
+        ?>
+                <li><a href="<?php echo base_url();?>nha/<?php echo  mb_strtolower(url_title(removesign($tai_san['loai_dia_oc'])))?>-c<?php echo $tai_san['id_ldo']?>/<?php echo  mb_strtolower(url_title(removesign($tai_san['title'])))?>-h<?php echo $tai_san['id']?>" >
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$tai_san['code'].'/'.$tai_san['img']))
+                    {
+                    ?>
+                    <img src="<?php echo base_url();?>file/uploads/property/<?php echo $tai_san['code']?>/<?php echo $tai_san['img']?>" width="75" height="75" alt="<?php echo $tai_san['title']?>" title="<?php echo $tai_san['title']?>" />
+                    <?php } ?></a>
                     <div class="right">
                         <h2>
-                            <a href="/ban-dat-o-dat-tho-cu-c11/can-nhuong-gap-dat-tho-cu-binh-duong-gia-re-330-trieu300m2-dan-cu-dong-ke-cho-truong-i467642" title="Cần nhượng gấp đất thổ cư Bình Dương giá rẻ 330 triệu/300m2, dân cư đông, kề chợ, trường">Cần nhượng gấp đất thổ cư Bình Dương giá rẻ 330 triệu/300m2, dân cư đông, kề chợ, trường</a></h2>
-                        <span class="price">330 triệu</span>
+                            <a href="<?php echo base_url();?>nha/<?php echo  mb_strtolower(url_title(removesign($tai_san['loai_dia_oc'])))?>-c<?php echo $tai_san['id_ldo']?>/<?php echo  mb_strtolower(url_title(removesign($tai_san['title'])))?>-h<?php echo $tai_san['id']?>" title="<?php echo $tai_san['title']?>"><?php echo $tai_san['title']?></a></h2>
+                        <span class="price">
+                        <?php 
+                        if(is_numeric($tai_san['price']))
+                        {
+                            echo bd_nice_number($tai_san['price']);
+                        }
+                        else
+                        {
+                            echo $tai_san['price'];
+                        }
+                        ?>
+                        </span>
                     </div>
                 </li>
-                <li><a href="/ban-nha-pho-c20/ban-nha-duong-dinh-tien-hoang-phuong-3-quan-binh-thanh-i752613" >
-                    <img src="http://image.diaoconline.vn/sieu-thi/2014/01/10/thumb-12E-4B1330.jpg" width="75" height="75" alt="Bán nhà đường Đinh Tiên Hoàng, phường 3, quận Bình Thạnh" title="Bán nhà đường Đinh Tiên Hoàng, phường 3, quận Bình Thạnh" /></a>
-                    <div class="right">
-                        <h2>
-                            <a href="/ban-nha-pho-c20/ban-nha-duong-dinh-tien-hoang-phuong-3-quan-binh-thanh-i752613" title="Bán nhà đường Đinh Tiên Hoàng, phường 3, quận Bình Thạnh">Bán nhà đường Đinh Tiên Hoàng, phường 3, quận Bình Thạnh</a></h2>
-                        <span class="price">3 tỷ 500 triệu</span>
-                    </div>
-                </li>
-                <li><a href="/ban-dat-o-dat-tho-cu-c11/dat-nen-tho-cu-100-so-hong-rieng-gia-tu-120-trieunen-tra-gop-2-nam-0-xay-dung-tu-do-i689810" >
-                    <img src="http://image.diaoconline.vn/sieu-thi/2013/10/15/thumb-63E-1C17AF.jpg" width="75" height="75" alt="Đất nền thổ cư 100% sổ hồng riêng, giá từ 120 triệu/nền, trả góp 2 năm 0%, xây dựng tự do" title="Đất nền thổ cư 100% sổ hồng riêng, giá từ 120 triệu/nền, trả góp 2 năm 0%, xây dựng tự do" /></a>
-                    <div class="right">
-                        <h2>
-                            <a href="/ban-dat-o-dat-tho-cu-c11/dat-nen-tho-cu-100-so-hong-rieng-gia-tu-120-trieunen-tra-gop-2-nam-0-xay-dung-tu-do-i689810" title="Đất nền thổ cư 100% sổ hồng riêng, giá từ 120 triệu/nền, trả góp 2 năm 0%, xây dựng tự do">Đất nền thổ cư 100% sổ hồng riêng, giá từ 120 triệu/nền, trả góp 2 năm 0%, xây dựng tự do</a></h2>
-                        <span class="price">120 triệu</span>
-                    </div>
-                </li>
-                <li><a href="/thue-nha-pho-c20/cho-thue-nha-nguyen-can-339-dien-bien-phu-q3-i728985" >
-                    <img src="http://image.diaoconline.vn/sieu-thi/2013/12/02/thumb-BFA-F7177B.jpg" width="75" height="75" alt="Cho thuê nhà nguyên căn 339 Điện Biên Phủ, Q3" title="Cho thuê nhà nguyên căn 339 Điện Biên Phủ, Q3" /></a>
-                    <div class="right">
-                        <h2>
-                            <a href="/thue-nha-pho-c20/cho-thue-nha-nguyen-can-339-dien-bien-phu-q3-i728985" title="Cho thuê nhà nguyên căn 339 Điện Biên Phủ, Q3">Cho thuê nhà nguyên căn 339 Điện Biên Phủ, Q3</a></h2>
-                        <span class="price">100 triệu</span>
-                    </div>
-                </li>
-                <li><a href="/thue-van-phong-c9/ban-hoac-cho-thue-toa-nha-tai-thanh-pho-bien-hoa-i749152" >
-                    <img src="http://image.diaoconline.vn/sieu-thi/2014/01/03/thumb-530-0A963F.jpg" width="75" height="75" alt="Bán hoặc cho thuê toà nhà tại thành phố Biên Hoà" title="Bán hoặc cho thuê toà nhà tại thành phố Biên Hoà" /></a>
-                    <div class="right">
-                        <h2>
-                            <a href="/thue-van-phong-c9/ban-hoac-cho-thue-toa-nha-tai-thanh-pho-bien-hoa-i749152" title="Bán hoặc cho thuê toà nhà tại thành phố Biên Hoà">Bán hoặc cho thuê toà nhà tại thành phố Biên Hoà</a></h2>
-                        <span class="price">Thương lượng</span>
-                    </div>
-                </li>
+         <?php } ?>       
         </ul>
     </div>
             </div>

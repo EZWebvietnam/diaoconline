@@ -486,5 +486,181 @@ class Propertyhomemodel extends CI_Model
         return count($query->result_array());
         
     }
+    //---List quan
+     public function list_property_quan($id,$id_district,$number,$offset)
+    {
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address,project.title as name_project
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE  property.id_district = '$id_district' AND property.loai_dia_oc=$id
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_quan($id,$id_district)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE property.id_district = '$id_district' AND property.loai_dia_oc=$id
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    //----List city
+     public function list_property_city($id,$id_city,$number,$offset)
+    {
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address,project.title as name_project
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE  property.id_city = '$id_city' AND property.loai_dia_oc=$id
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_city($id,$id_city)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE property.id_city = '$id_city' AND property.loai_dia_oc=$id
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    // List project
+    public function list_property_project($id)
+    {
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address,project.title as name_project
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE property.id_duan IN ($id)
+        ORDER BY property.id DESC
+         LIMIT 3
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    //
+    public function list_cung_nguoi_dang($id)
+    {
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo, tinh_trang_phap_ly.name as tinh_trang_phap_ly,tinh_trang_phap_ly.id as id_ttpl,
+        huong.name as huong,huong.id as id_huong,vi_tri_dia_oc.name as vi_tri_dia_oc,vi_tri_dia_oc.id as id_vtdo,phong_ngu.name as phong_ngu
+        ,users.full_name,users.phone,users.address,project.title as name_project
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        LEFT JOIN tinh_trang_phap_ly
+        ON property.tinh_trang_phap_ly = tinh_trang_phap_ly.id
+        LEFT JOIN huong
+        ON property.huong = huong.id
+        LEFT JOIN vi_tri_dia_oc
+        ON property.vi_tri_dia_oc = vi_tri_dia_oc.id
+        LEFT JOIN phong_ngu
+        ON property.so_phong_ngu = phong_ngu.id
+        LEFT JOIN users
+        ON users.id = property.id_user
+        LEFT JOIN project
+        ON project.id = property.id_duan
+        WHERE property.id_user = $id
+        ORDER BY property.id DESC
+         LIMIT 3
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

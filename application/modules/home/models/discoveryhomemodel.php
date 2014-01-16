@@ -96,6 +96,13 @@ class Discoveryhomemodel extends CI_Model
         $query = $this->db->query($sql_get_discovery);
         return $query->result_array();
     }
-    
+    public function load_phong_thuy()
+    {
+      
+        $sql_get_discovery = "SELECT discovery.title,discovery.img,discovery.content,discovery.create_date,discovery.id as id_disco, cate_discovery.id as id_cate,cate_discovery.name
+        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE discovery.id_cate = 4 LIMIT 6";
+        $query = $this->db->query($sql_get_discovery);
+        return $query->result_array();
+    }
 }
 ?>

@@ -135,7 +135,16 @@
                 <div class="features margin_bottom">
                     <div class="currency_convertor">
                         <div class="money">
-                            Giá: <?php echo bd_nice_number($detail[0]['price'])?></div>
+                            Giá: <?php 
+                            if(is_numeric($detail[0]['price']))
+                            {
+                                echo bd_nice_number($detail[0]['price']);
+                            }
+                            else
+                            {
+                                echo $detail[0]['price'];
+                            }
+                            ?></div>
                     </div>
                     <div class="feat_item">
                         <dl>
@@ -463,7 +472,7 @@
                         {
                             $count = $this->propertyhomemodel->count_dia_oc_district($district['districtid'])
                     ?>
-                    <li><span class="bullet">+</span><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>/quan/<?php echo mb_strtolower(url_title(removesign($district['name'])))?>-q<?php echo $district['districtid']?>"><?php echo $district['type'].' '.$district['name']?></a> <span>(<?php echo $count[0]['total']?>)</span></li>
+                    <li><span class="bullet">+</span><a href="<?php echo base_url();?>q-sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>/quan/<?php echo mb_strtolower(url_title(removesign($district['name'])))?>-q<?php echo $district['districtid']?>"><?php echo $district['type'].' '.$district['name']?></a> <span>(<?php echo $count[0]['total']?>)</span></li>
                     <?php } ?>
                     
             </ul>
@@ -491,7 +500,7 @@
                     {
                         $count = $this->propertyhomemodel->count_dia_oc_tinh_thanh($city['provinceid']);
                     ?>
-                    <li><span class="bullet">+</span><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>/city/<?php echo mb_strtolower(url_title(removesign($city['name'])))?>-ct<?php echo $city['provinceid'] ?>"><?php echo $city['name']?></a> <span>(<?php echo $count[0]['total']?>)</span></li>
+                    <li><span class="bullet">+</span><a href="<?php echo base_url();?>tp-sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>/city/<?php echo mb_strtolower(url_title(removesign($city['name'])))?>-ct<?php echo $city['provinceid'] ?>"><?php echo $city['name']?></a> <span>(<?php echo $count[0]['total']?>)</span></li>
                     <?php } ?>
                     
             </ul>
@@ -508,30 +517,41 @@
                         <div class="content">
                             <div class="content_inner">
                                 <ul class="listing_4">
-                                        <li><a href="/ban-phong-tro-c16/phong-tro-cho-thue-quan-thu-duc-1-trieu-500-ngan-thang-i540497">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/phong-tro.jpg" width="75" height="75" alt="Phòng trọ cho thuê quận Thủ Đức - 1 triệu 500 ngàn/ tháng" title="Phòng trọ cho thuê quận Thủ Đức - 1 triệu 500 ngàn/ tháng"></a>
+                                        <?php $i = 1;
+                                            foreach($list_cung_nguoi_dang as $nd)
+                                            {
+                                                if($i==3)
+                                                {
+                                        ?>
+                                        <li class="last">
+                                        <?php } else {?> 
+                                        <li>
+                                        <?php } ?>
+                                        <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($nd['loai_dia_oc'])))?>-c<?php echo $nd['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($nd['title'])))?>-h<?php echo $nd['id']?>">
+                                            <?php 
+                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$nd['code'].'/'.$nd['img']))
+                                            {
+                                            ?>
+                                            <img src="<?php echo base_url();?>file/uploads/property/<?php echo $nd['code']?>/<?php echo $nd['img']?>" width="75" height="75" alt="<?php echo $nd['title']?>" title="<?php echo $nd['title']?>"></a>
+                                            <?php } ?>
                                             <div class="right">
                                                 <h2>
-                                                    <a href="/thue-phong-tro-c16/phong-tro-cho-thue-quan-thu-duc-1-trieu-500-ngan-thang-i540497">Phòng trọ cho thuê quận Thủ Đức - 1 triệu 500 ngàn/ tháng</a></h2>
-                                                <span class="price">1 triệu 500 ngàn/tháng</span>
+                                                    <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($nd['loai_dia_oc'])))?>-c<?php echo $nd['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($nd['title'])))?>-h<?php echo $nd['id']?>"><?php echo sub_string(loaibohtmltrongvanban($nd['title']),30);?></a></h2>
+                                                <span class="price">
+                                                <?php 
+                                                if(is_numeric($nd['price']))
+                                                {
+                                                    echo bd_nice_number($nd['price']);
+                                                }
+                                                else
+                                                {
+                                                    echo $nd['price'];
+                                                }
+                                                ?>
+                                                </span>
                                             </div>
                                         </li>
-                                        <li><a href="/ban-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieu-300-ngan-thang-i540498">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/phong-tro.jpg" width="75" height="75" alt="Phòng trọ cho thuê quận Bình Tân - 1 triệu 300 ngàn/ tháng" title="Phòng trọ cho thuê quận Bình Tân - 1 triệu 300 ngàn/ tháng"></a>
-                                            <div class="right">
-                                                <h2>
-                                                    <a href="/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieu-300-ngan-thang-i540498">Phòng trọ cho thuê quận Bình Tân - 1 triệu 300 ngàn/ tháng</a></h2>
-                                                <span class="price">1 triệu 300 ngàn/tháng</span>
-                                            </div>
-                                        </li>
-                                        <li class="last"><a href="/ban-phong-tro-c16/phong-tro-cho-thue-nu-duong-au-co-i533081">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/phong-tro.jpg" width="75" height="75" alt="Phòng trọ cho thuê nữ đường Âu Cơ" title="Phòng trọ cho thuê nữ đường Âu Cơ"></a>
-                                            <div class="right">
-                                                <h2>
-                                                    <a href="/thue-phong-tro-c16/phong-tro-cho-thue-nu-duong-au-co-i533081">Phòng trọ cho thuê nữ đường Âu Cơ</a></h2>
-                                                <span class="price">1 triệu 200 ngàn/tháng</span>
-                                            </div>
-                                        </li>
+                                        <?php  $i++;} ?>
                                 </ul>
                             </div>
                         </div>
@@ -544,30 +564,38 @@
                         <div class="content">
                             <div class="content_inner">
                                 <ul class="listing_4">
-                                        <li><a href="/ban-phong-tro-c16/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-CF7-EBE8CB.jpg" width="75" height="75" alt="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" title="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt"></a>
+                                        <?php 
+                                        $i = 1;
+                                        foreach($tai_san_noi_bat_khac as $nb_k)
+                                        {
+                                            if($i<=3)
+                                            {
+                                                if($i == 3)
+                                                {
+                                        ?>
+                                        <li><?php } else {?><li class="last">  <?php } ?><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($nb_k['loai_dia_oc'])))?>-c<?php echo $nb_k['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($nb_k['title'])))?>-h<?php echo $nd['id']?>">
+                                            <?php 
+                                            if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$nb_k['code'].'/'.$nb_k['img']))
+                                            {
+                                            ?>
+                                            <img src="<?php echo base_url();?>file/uploads/property/<?php echo $nb_k['code']?>/<?php echo $nb_k['img']?>" width="75" height="75" alt="<?php echo $nb_k['title']?>" title="<?php echo $nb_k['title']?>"></a>
+                                            <?php } ?></a>
                                             <div class="right">
                                                 <h2>
-                                                    <a href="/ban-phong-tro-c16/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021">Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao,  ...</a></h2>
-                                                <span class="price">5 tỷ 300 triệu</span>
+                                                    <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($nb_k['loai_dia_oc'])))?>-c<?php echo $nb_k['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($nb_k['title'])))?>-h<?php echo $nd['id']?>">Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao,  ...</a></h2>
+                                                <span class="price"><?php 
+                                                if(is_numeric($nb_k['price']))
+                                                {
+                                                    echo bd_nice_number($nb_k['price']);
+                                                }
+                                                else
+                                                {
+                                                    echo $nb_k['price'];
+                                                }
+                                                ?></span>
                                             </div>
                                         </li>
-                                        <li><a href="/ban-phong-tro-c16/cho-thue-can-ho-the-manor-officetel-dt-140m2-3-phong-ngu-2wc-noi-that-cao-cap-gia-re-i751458">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/08/thumb-CCD-3D017C.jpg" width="75" height="75" alt="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ" title="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ"></a>
-                                            <div class="right">
-                                                <h2>
-                                                    <a href="/ban-phong-tro-c16/cho-thue-can-ho-the-manor-officetel-dt-140m2-3-phong-ngu-2wc-noi-that-cao-cap-gia-re-i751458">Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng  ...</a></h2>
-                                                <span class="price">21 triệu 500 ngàn/tháng</span>
-                                            </div>
-                                        </li>
-                                        <li class="last"><a href="/ban-phong-tro-c16/chinh-chu-cho-thue-can-ho-saigon-pearl-topaz-2-dt-135m2-3-phong-ngu-lau-29-view-dep-i751100">
-                                            <img src="http://image.diaoconline.vn/sieu-thi/2014/01/07/thumb-2BA-276BDD.jpg" width="75" height="75" alt="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp" title="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp"></a>
-                                            <div class="right">
-                                                <h2>
-                                                    <a href="/ban-phong-tro-c16/chinh-chu-cho-thue-can-ho-saigon-pearl-topaz-2-dt-135m2-3-phong-ngu-lau-29-view-dep-i751100">Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT:  ...</a></h2>
-                                                <span class="price">30 triệu/tháng</span>
-                                            </div>
-                                        </li>
+                                        <?php }  $i++;} ?>
                                 </ul>
                             </div>
                         </div>

@@ -52,6 +52,11 @@ class Project extends MY_Controller
     }
     public function key($key)
     {
+        if(empty($key))
+        {
+            show_404();
+            exit;
+        }
         $lower_key = strtolower($key);
         $this->load->helper('url');
         $config['uri_segment'] = 5;
@@ -135,6 +140,17 @@ class Project extends MY_Controller
        
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->projecthomemodel->get_list_project_cate($id,$config['per_page'], $page1);
+       foreach($array_sv as $k)
+       {
+            $imp[]=$k['id_pro'];
+       }
+       if(!empty($array_sv))
+       {
+            $imp_s = implode(',',$imp);
+            $this->load->model('propertyhomemodel');
+            $this->data['property_of_cate']=$this->propertyhomemodel->list_property_project($imp_s);
+            
+       }
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;

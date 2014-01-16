@@ -4,9 +4,9 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ - DiaOcOnline</title>
-    <meta name="description" content="Chiều 8/1, ông Nguyễn Thịnh Thành, Chánh Văn phòng, kiêm người phát ngôn Ủy ban Nhân dân thành phố Hà Nội cho biết thành phố vừa chỉ đạo Giám đốc Sở Xây dựng; Chủ tịch các quận Ba Đình, Hoàn Kiếm, Đống Đa và Hai Bà Trưng liên quan đến việc đầu tư xây dựng" />
-    <meta name="keywords" content="14 nhà vệ sinh công cộng, hà nội, nhà vệ sinh công cộng bằng thép, nhà vệ sinh tiền tỷ" />
+    <title><?php echo $title?></title>
+    <meta name="description" content="<?php echo $title;?>" />
+    <meta name="keywords" content="<?php echo $title;?>" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?1037" rel="stylesheet" type="text/css" />

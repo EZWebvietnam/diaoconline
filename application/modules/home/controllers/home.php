@@ -14,7 +14,7 @@ class Home extends MY_Controller
         parent::list_district();
          parent::cate_project_sub();
         parent::project_noi_bat_lm1();
-        
+        parent::get_list_cafe_law();
         parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
         
         // Tai san

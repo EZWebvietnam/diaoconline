@@ -5,11 +5,11 @@
                         <div class="left">
                             <div class="email_print">
                                 <ul>
-                                    <li><a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146/ban-in" target="_blank">
+                                    <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                     <li><a href="javascript:void(0)" onclick="GetDataSaved('J0X9Nwixfg0=','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
-                                    <li><a href="http://www.diaoconline.vn/du-an/khu-can-ho-c27/lexington-an-phu-i1412"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
+                                    <li><a href="javascript:history.go(-1);"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -18,7 +18,7 @@
         <span class="tl">Chia sẻ</span>
         <ul>
         <li><a href="http://www.facebook.com/share.php?u=http://www.diaoconline.vn/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=H%c3%a0+N%e1%bb%99i+d%e1%bb%abng+%c4%91%e1%ba%a7u+t%c6%b0+x%c3%a2y+d%e1%bb%b1ng+14+nh%c3%a0+v%e1%bb%87+sinh+ti%e1%bb%81n+t%e1%bb%b7&url=http://www.diaoconline.vn/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146&via=DiaOcOnlinevn" target="_blank"><span class="ico_16 ico_twitter_16">twitter</span></a></li>
+        
         
         </ul>
     </div>
@@ -27,13 +27,13 @@
                     </div>
     <div class="breadcrumb">
             <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/tin-tuc" itemprop="url" title="Thông tin Địa ốc"><span itemprop="title">Thông tin Địa ốc</span></a>
+                <a href="<?php echo base_url();?>tin-tuc" itemprop="url" title="Thông tin Địa ốc"><span itemprop="title">Thông tin Địa ốc</span></a>
 &raquo;            </div>
             <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/tin-tuc/thong-tin-c1" itemprop="url" title="Thông tin Địa ốc Thông tin"><span itemprop="title">Thông tin</span></a>
+                <a href="<?php echo base_url();?>tin-tuc" itemprop="url" title="Thông tin Địa ốc Thông tin"><span itemprop="title">Thông tin</span></a>
 &raquo;            </div>
             <div itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/tin-tuc/thi-truong-dia-oc-c18" itemprop="url" title="Thông tin Địa ốc Thị trường địa ốc"><span itemprop="title">Thị trường địa ốc</span></a>
+                <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($detail[0]['name'])))?>-c<?php echo $detail[0]['id_cate']?>" itemprop="url" title="<?php echo $detail[0]['name']?>"><span itemprop="title"><?php echo $detail[0]['name']?></span></a>
             </div>
     </div>
                     <div class="body">
@@ -45,7 +45,9 @@
 </p>
     <div class="tag_relation">
         <b>Từ khóa:</b>
-        <?php 
+        
+        <?php
+       
         if($detail[0]['tag_key']!='')
         {
             $key_tag = explode(',',$detail[0]['tag_key']);
@@ -75,11 +77,11 @@
                         <div class="left">
                             <div class="email_print">
                                 <ul>
-                                    <li><a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146/ban-in">
+                                    <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                     <li><a href="javascript:void(0)" onclick="GetDataSaved('J0X9Nwixfg0=','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
-                                    <li><a href="http://www.diaoconline.vn/du-an/khu-can-ho-c27/lexington-an-phu-i1412"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
+                                    <li><a href="javascript:history.go(-1);"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -88,7 +90,7 @@
         <span class="tl">Chia sẻ</span>
         <ul>
         <li><a href="http://www.facebook.com/share.php?u=http://www.diaoconline.vn/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=H%c3%a0+N%e1%bb%99i+d%e1%bb%abng+%c4%91%e1%ba%a7u+t%c6%b0+x%c3%a2y+d%e1%bb%b1ng+14+nh%c3%a0+v%e1%bb%87+sinh+ti%e1%bb%81n+t%e1%bb%b7&url=http://www.diaoconline.vn/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146&via=DiaOcOnlinevn" target="_blank"><span class="ico_16 ico_twitter_16">twitter</span></a></li>
+        
         
         </ul>
     </div>

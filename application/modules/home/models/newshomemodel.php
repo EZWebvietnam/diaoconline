@@ -21,15 +21,14 @@ class Newshomemodel extends CI_Model
     public function new_detail($id = null)
     {
         $id = intval($id);
-        $this->db->select();
-        $this->db->where('id',$id);
-        $query_new = $this->db->get('news');
+        $sql = "SELECT news.id as id_new,news.create_date,news.tag_key,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id = $id;";
+        $query_new = $this->db->query($sql);
         return $query_new->result_array();
     }
     public function get_news_with_cate($id,$id_c)
     {
         $id = intval($id);
-        $sql ="SELECT news.id as id_new,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = $id AND news.id NOT IN($id_c) ORDER BY rand() LIMIT 10";
+        $sql ="SELECT news.id as id_new,news.tag_key,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE news.id_cate = $id AND news.id NOT IN($id_c) ORDER BY rand() LIMIT 10";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -86,7 +85,7 @@ class Newshomemodel extends CI_Model
     public function get_list_cafe_law()
     {
        
-        $sql = "SELECT news.id as id_new,news.view,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE cate_new.parent=15  ORDER BY news.id DESC LIMIT 5";
+        $sql = "SELECT news.id as id_new,news.view,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate WHERE cate_new.parent=15 OR cate_new.id = 15  ORDER BY news.id DESC LIMIT 5";
         $query = $this->db->query($sql);
         return $query->result_array();
     }

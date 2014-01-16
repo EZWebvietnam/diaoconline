@@ -224,5 +224,11 @@ class MY_Controller extends CI_Controller
         $list = $this->catepropertyhomemodel->cate_list();
         $this->data['cate_sieu_thi_list']=$list;
     }
+    public function load_phong_thuy()
+    {
+        $this->load->model('discoveryhomemodel');
+        $phong_thuy = $this->discoveryhomemodel->load_phong_thuy();
+        $this->data['list_phong_thuy']=$phong_thuy;
+    }
 }
 ?>

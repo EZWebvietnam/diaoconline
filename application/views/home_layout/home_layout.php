@@ -444,51 +444,42 @@
 		</div>
 	</div>
 </div>
-
-                
-<div id="faq_list" class="margin_bottom">
+<div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
-        <div class="content">
-            <ul class="headline_tab">
-                <li class="actived"><span class="L"></span><a href="/tin-tuc/cafe-luat-c26">Cafe Luật</a><span class="R"></span></li>
-                <li><a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></li>
+        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
+        <a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15" class="grey_link">Xem thêm</a>
+    </div>
+    <div class="rounded_style_2 rounded_box">
+        <div class="body">
+			<ul class="listing_1">
+            <?php 
+            $i = 1;
+            foreach($list_cafe_law as $cafe_law)
+            {
+                if($i == 1)
+                {
+            ?>
+                    <li >
+                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($cafe_law['name'])))?>-c<?php echo $cafe_law['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($cafe_law['title'])));?>-i<?php echo $cafe_law['id_new']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$cafe_law['img']))
+                        {
+                        ?>
+                        <img src="<?php echo base_url();?>file/uploads/news/<?php echo $cafe_law['img']?>" alt="<?php echo $cafe_law['title']?>" width="80" height="61" class="img-left"/>
+                        <?php } ?>
+                         <?php echo $cafe_law['title']?></a></li>
+            <?php } else { ?> 
+             <li >
+                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($cafe_law['name'])))?>-c<?php echo $cafe_law['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($cafe_law['title'])));?>-i<?php echo $cafe_law['id_new']?>">
+                         <?php echo $cafe_law['title']?></a></li>
+            <?php }$i++;} ?>
+                    
             </ul>
         </div>
     </div>
-    <div class="rounded_style_2 rounded_box">
-        <div class="content">
-            <ul class="listing_1">
-                    <li >
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/mua-dat-lan-chiem-dat-cong-co-the-lam-so-do-duoc-khong-i45134">
-                        <img src="http://image.diaoconline.vn/tin-tuc/2014/01/08/thumb-FB1-mua-dat-lan-chiem-dat-cong-co-the-lam-so-do-duoc-khong.jpg" alt="Mua đất lấn chiếm đất công có thể làm sổ đỏ được không?" width="80" height="61" class="img-left"/>
-                         Mua đất lấn chiếm đất công có thể làm sổ đỏ được không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/dat-co-dien-tich-41m2-o-di-an-co-duoc-cap-so-do-khong-i45130">
-                         Đất có diện tích 41m2 ở Dĩ An có được cấp sổ đỏ không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/nghia-vu-tai-chinh-c64/co-phai-dong-tien-su-dung-dat-doi-voi-dat-co-quan-cap-hay-khong-i45129">
-                         Có phải đóng tiền sử dụng đất đối với đất cơ quan cấp hay không?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/nghia-vu-tai-chinh-c64/ban-can-nha-duy-nhat-can-phai-nop-nhung-thue-gi-i45017">
-                         Bán căn nhà duy nhất cần phải nộp những thuế gì?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/hop-thuc-hoa-c61/thu-tuc-chuyen-dat-trong-cay-hang-nam-sang-dat-tho-cu-i45016">
-                         Thủ tục chuyển đất trồng cây hàng năm sang đất thổ cư?</a></li>
-                    <li  class=last >
-                        <span class="arrow"></span> 
-                        <a href="/tin-tuc/thua-ke-c65/me-nuoi-toi-muon-chia-tai-san-cho-toi-khong-co-di-chuc-co-duoc-khong-i44970">
-                         Mẹ nuôi tôi muốn chia tài sản cho tôi không có di chúc có được không?</a></li>
-            </ul>
-            <a href="/tin-tuc/cafe-luat-c26" class="more">Xem thêm »</a>
-            
-            <p>&nbsp;</p>
-        </div>
-    </div>    
 </div>
+                
+
 <div id="agency_intro" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
             <h2 class="headline"><span>GIỚI THIỆU DOANH NGHIỆP</span></h2>
