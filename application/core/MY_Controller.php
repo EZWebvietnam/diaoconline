@@ -187,5 +187,24 @@ class MY_Controller extends CI_Controller
         $this->load->model('projecthomemodel');
         $this->data['prj_noi_bat']=$this->projecthomemodel->project_noi_bat();
     }
+    public function cate_project_sub()
+    {
+        $this->load->model('cateprojecthomemodel');
+        $cate_sub = $this->cateprojecthomemodel->get_cate_from_parent(1);
+        $this->data['cate_pro_nav']=$cate_sub;
+    }
+    public function project_noi_bat_lm1()
+    {
+         $this->load->model('projecthomemodel');
+        $cate_sub = $this->projecthomemodel->project_noi_bat_lm1();
+        $this->data['noi_bat_menu_1']=$cate_sub;
+    }
+    public function project_noi_menu($id)
+    {
+        $this->load->model('projecthomemodel');
+        $prj = $this->projecthomemodel->project_noi_menu($id);
+        $this->data['noi_bat_menu']=$prj;
+        
+    }
 }
 ?>

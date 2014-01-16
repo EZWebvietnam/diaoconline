@@ -289,13 +289,12 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <li><a href="/du-an/khu-cong-nghiep-c11">Khu công nghiệp</a></li>
-                                                <li><a href="/du-an/khu-dan-cu-do-thi-moi-c24">Khu dân cư – Đô thị mới </a></li>
-                                                <li><a href="/du-an/khu-phuc-hop-thuong-mai-c25">Khu phức hợp - Thương mại</a></li>
-                                                <li><a href="/du-an/cao-oc-van-phong-c26">Cao ốc văn phòng</a></li>
-                                                <li><a href="/du-an/khu-can-ho-c27">Khu căn hộ</a></li>
-                                                <li><a href="/du-an/khu-du-lich-nghi-duong-c28">Khu du lịch - Nghỉ dưỡng</a></li>
-                                                <li><a href="/du-an/cong-trinh-cong-cong-c29">Công trình công cộng</a></li>
+                                                <?php 
+                                                foreach($cate_pro_nav as $cate_pro)
+                                                {
+                                            ?>
+                                            <li><a href="<?php echo base_url();?>du-an-c/<?php echo  mb_strtolower(url_title(removesign($cate_pro['name'])))?>-c<?php echo $cate_pro['id']?>"><?php echo $cate_pro['name']?></a></li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -310,16 +309,21 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">
-                                                            <img src="http://image.diaoconline.vn/du-an/2014/01/08/thumb-809-can-ho-van-gia-phuc.jpg" width="200" height="154" alt="Căn hộ Vạn Gia Phúc" title="Căn hộ Vạn Gia Phúc"/>
+                                                        <a href="<?php echo base_url();?>du-an/<?php echo  mb_strtolower(url_title(removesign($noi_bat_menu_1[0]['name'])))?>-c<?php echo $noi_bat_menu_1[0]['id_cate']?>/<?php echo  mb_strtolower(url_title(removesign($noi_bat_menu_1[0]['title'])))?>-i<?php echo $noi_bat_menu_1[0]['id_pro']?>">
+                                                        <?php 
+                                                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$noi_bat_menu_1[0]['img']))
+                                                        {
+                                                        ?>
+                                                            <img src="<?php echo base_url();?>file/uploads/project/<?php echo $noi_bat_menu_1[0]['img']?>" width="200" height="154" alt="<?php echo $noi_bat_menu_1[0]['title']?>" title="<?php echo $noi_bat_menu_1[0]['title']?>"/>
+                                                            <?php } ?>
                                                         </a>
                                                     </div>
                                                     <div class="right">
                                                         <h2>
-                                                            <a href="/du-an/khu-can-ho-c27/can-ho-van-gia-phuc-i1424">Căn hộ Vạn Gia Phúc</a></h2>
-                                                        <span class="updated_date">08/01/2014 15:41</span>
+                                                            <a href="<?php echo base_url();?>du-an/<?php echo  mb_strtolower(url_title(removesign($noi_bat_menu_1[0]['name'])))?>-c<?php echo $noi_bat_menu_1[0]['id_cate']?>/<?php echo  mb_strtolower(url_title(removesign($noi_bat_menu_1[0]['title'])))?>-i<?php echo $noi_bat_menu_1[0]['id_pro']?>"><?php echo $noi_bat_menu_1[0]['title']?></a></h2>
+                                                        <span class="updated_date"><?php echo date('d/m/Y h:i',$noi_bat_menu_1[0]['create_date'])?></span>
                                                         <br />
-                                                        <p>Căn hộ Vạn Gia Phúc được quy hoạch 92 nền đất nhà phố, 312 căn hộ chung cư, gồm đầy đủ nhiều tiện ích như: công viên, trung tâm thương mại… gần chợ, bệnh viện, trường học, giao thông cực kỳ thuận lợi.</p>
+                                                        <p><?php echo sub_string(loaibohtmltrongvanban($noi_bat_menu_1[0]['content']),200);?></p>
                                                     </div>
                                                 </div>
                                         </div>
@@ -335,42 +339,15 @@
                                         </div>
                                         <div class="content_inner">
                                             <ul>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/the-sun-city-ba-to-quan-8-i1423" title="The Sun City Ba Tơ quận 8">
-                                                        <span>TP.HCM: </span>
-                                                        The Sun City Ba Tơ quận 8
+                                                <?php 
+                                                foreach($noi_bat_menu as $noi_menu)
+                                                {
+                                                ?>
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($noi_menu['name'])))?>-c<?php echo $noi_menu['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($noi_menu['title'])))?>-i<?php echo $noi_menu['id_pro']?>" title="<?php echo $noi_menu['title']?>">
+                                                        <span><?php echo $list_city[$noi_menu['id_city']]?>: </span>
+                                                       <?php echo sub_string(loaibohtmltrongvanban($noi_menu['content']),45);?>
                                                     </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/kdc-sai-gon-moi-i1422" title="KDC Sài Gòn Mới">
-                                                        <span>TP.HCM: </span>
-                                                        KDC Sài Gòn Mới
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/thi-cong-c41/cai-tao-sua-chua-nha-i1421" title="Cải tạo sửa chữa nhà">
-                                                        <span>TP.HCM: </span>
-                                                        Cải tạo sửa chữa nhà
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-can-ho-c27/can-ho-8x-dam-sen-i1420" title="Căn hộ 8X Đầm Sen">
-                                                        <span>TP.HCM: </span>
-                                                        Căn hộ 8X Đầm Sen
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/thi-cong-c41/cai-tao-sua-chua-nang-cap-khach-san-i1419" title="Cải tạo, sửa chữa nâng cấp khách sạn">
-                                                        <span>TP.HCM: </span>
-                                                        Cải tạo, sửa chữa nâng cấp khách sạn
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/xay-dung-nha-pho-dep-tai-thanh-pho-moi-binh-duong-i1418" title="Xây dựng nhà phố đẹp tại thành phố mới Bình Dương">
-                                                        <span>Bình Dương: </span>
-                                                        Xây dựng nhà phố đẹp tại thành phố mới  ...
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-phuc-hop-thuong-mai-c25/nha-pho-thuong-mai-phu-xuan-i1414" title="Nhà phố thương mại Phú Xuân">
-                                                        <span>TP.HCM: </span>
-                                                        Nhà phố thương mại Phú Xuân
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-dan-cu-do-thi-moi-c24/nguyenbinh-house-i1415" title="NguyenBinh House">
-                                                        <span>TP.HCM: </span>
-                                                        NguyenBinh House
-                                                    </a></li>
-                                                    <li><span class="bullet"></span><a href="/du-an/khu-phuc-hop-thuong-mai-c25/pho-cang-sai-gon-moi-i1416" title="Phố Cảng Sài Gòn mới">
-                                                        <span>TP.HCM: </span>
-                                                        Phố Cảng Sài Gòn mới
-                                                    </a></li>
+                                                 <?php }?>   
                                             </ul>
                                         </div>
                                     </div>
@@ -471,36 +448,24 @@
 
         <div id="project_slider" class="wrap margin_bottom">
 <ul class="slide_horizone">
-    <li><a href="/du-an/khu-can-ho-c27/the-eastern-i1070"><img src="http://image1.diaoconline.vn/du-an/2012/12/03/large-209-the-eastern.jpg" width="630" height="300" alt="The Eastern"/></a>
+<?php 
+foreach($slide as $pr_sl)
+{
+?>
+    <li><a href="<?php echo base_url();?>du-an/<?php echo  mb_strtolower(url_title(removesign($pr_sl['name'])))?>-c<?php echo $pr_sl['id_cate']?>/<?php echo  mb_strtolower(url_title(removesign($pr_sl['title'])))?>-i<?php echo $pr_sl['id_pro']?>">
+    <?php 
+    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$pr_sl['img']))
+    {
+    ?>
+    <img src="<?php echo base_url(); ?>file/uploads/project/<?php echo $pr_sl['img']?>" width="630" height="300" alt="<?php echo $pr_sl['title']?>"/>
+    <?php } ?>
+    </a>
         <div class="description">
-            <h2><a href="/du-an/khu-can-ho-c27/the-eastern-i1070">The Eastern</a></h2>
-            <span>Vị trí: Quận 9, TP.HCM</span>
+            <h2><a href="<?php echo base_url();?>du-an/<?php echo  mb_strtolower(url_title(removesign($pr_sl['name'])))?>-c<?php echo $pr_sl['id_cate']?>/<?php echo  mb_strtolower(url_title(removesign($pr_sl['title'])))?>-i<?php echo $pr_sl['id_pro']?>"><?php echo $pr_sl['title']?></a></h2>
+            <span>Vị trí: <?php echo $list_district[$pr_sl['id_district']]?>, <?php echo $list_city[$pr_sl['id_city']]?></span>
         </div>
     </li>
-    <li><a href="/du-an/khu-can-ho-c27/dragon-hill-residence-and-suites-i1086"><img src="http://image.diaoconline.vn/du-an/2013/07/31/large-2EA-dragon-hill.jpg" width="630" height="300" alt="Dragon Hill Residence and Suites"/></a>
-        <div class="description">
-            <h2><a href="/du-an/khu-can-ho-c27/dragon-hill-residence-and-suites-i1086">Dragon Hill Residence and Suites</a></h2>
-            <span>Vị trí: Huyện Nhà Bè, TP.HCM</span>
-        </div>
-    </li>
-    <li><a href="/du-an/khu-dan-cu-do-thi-moi-c24/green-life-city-i1375"><img src="http://image.diaoconline.vn/du-an/2013/07/16/large-BCB-green-life-city.jpg" width="630" height="300" alt="Green Life City"/></a>
-        <div class="description">
-            <h2><a href="/du-an/khu-dan-cu-do-thi-moi-c24/green-life-city-i1375">Green Life City</a></h2>
-            <span>Vị trí: Trảng Bom, Đồng Nai</span>
-        </div>
-    </li>
-    <li><a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412"><img src="http://image.diaoconline.vn/du-an/2013/12/19/large-14B-lexington-an-phu.jpg" width="630" height="300" alt="Lexington An Phú"/></a>
-        <div class="description">
-            <h2><a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412">Lexington An Phú</a></h2>
-            <span>Vị trí: Quận 2, TP.HCM</span>
-        </div>
-    </li>
-    <li><a href="/du-an/khu-can-ho-c27/le-thanh-twin-towers-i219"><img src="http://image1.diaoconline.vn/du-an/2012/12/06/large-189-le-thanh-twin-towers.jpg" width="630" height="300" alt="Lê Thành Twin Towers"/></a>
-        <div class="description">
-            <h2><a href="/du-an/khu-can-ho-c27/le-thanh-twin-towers-i219">Lê Thành Twin Towers</a></h2>
-            <span>Vị trí: Quận Bình Tân, TP.HCM</span>
-        </div>
-    </li>
+ <?php } ?>   
 </ul>
 <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/jquery.kwicks.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -698,14 +663,13 @@
                     <li><a href="javascript:void(0)"><span>DANH SÁCH DỰ ÁN</span></a>
                             <div class="dropdown_list">
                                 <div class="wrap">
-                                    <ul>
-                                            <li><a href="/du-an/khu-cong-nghiep-c11">Khu công nghiệp</a></li>
-                                            <li><a href="/du-an/khu-dan-cu-do-thi-moi-c24">Khu dân cư – Đô thị mới </a></li>
-                                            <li><a href="/du-an/khu-phuc-hop-thuong-mai-c25">Khu phức hợp - Thương mại</a></li>
-                                            <li><a href="/du-an/cao-oc-van-phong-c26">Cao ốc văn phòng</a></li>
-                                            <li><a href="/du-an/khu-can-ho-c27">Khu căn hộ</a></li>
-                                            <li><a href="/du-an/khu-du-lich-nghi-duong-c28">Khu du lịch - Nghỉ dưỡng</a></li>
-                                            <li><a href="/du-an/cong-trinh-cong-cong-c29">Công trình công cộng</a></li>
+                                    <ul>    <?php 
+                                                foreach($cate_pro_nav as $cate_pro)
+                                                {
+                                            ?>
+                                            <li><a href="<?php echo base_url();?>du-an-c/<?php echo  mb_strtolower(url_title(removesign($cate_pro['name'])))?>-c<?php echo $cate_pro['id']?>"><?php echo $cate_pro['name']?></a></li>
+                                            <?php } ?>
+                                            
                                     </ul>
                                 </div>
                             </div>

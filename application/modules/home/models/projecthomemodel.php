@@ -74,5 +74,25 @@ class Projecthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function project_noi_bat_slide()
+    {
+        $sql="SELECT project.id as id_pro,project.content,project.id_district,project.id_city,project.title,project.id_district,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate LIMIT 5";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function project_noi_bat_lm1()
+    {
+        $sql="SELECT project.id as id_pro,project.content, project.title,project.id_district,project.create_date,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate LIMIT 1";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function project_noi_menu($id)
+    {
+        $id = intval($id);
+        $sql="SELECT project.id as id_pro,project.content, project.title,project.id_district,project.create_date,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate WHERE project.id NOT IN($id) LIMIT 9";
+        //echo $sql;exit;
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

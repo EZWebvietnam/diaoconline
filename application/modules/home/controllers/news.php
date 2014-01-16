@@ -13,6 +13,11 @@ class News extends MY_Controller
         parent::get_cate_dis_nav();
         parent::dis_noi_bat();
         parent::dis_noi_bat_other($this->data['last_dis'][0]['id_disco']);
+         parent::cate_project_sub();
+        parent::project_noi_bat_lm1();
+        parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
+        parent::list_city();
+        parent::list_district();
         $this->load->model('newshomemodel');
     }
     public function index()

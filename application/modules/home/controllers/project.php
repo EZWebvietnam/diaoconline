@@ -14,6 +14,9 @@ class Project extends MY_Controller
         parent::list_city();
         parent::list_district();
         parent::get_cate_pro_parent();
+        parent::cate_project_sub();
+        parent::project_noi_bat_lm1();
+        parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
     }
     public function index()
     {
@@ -35,6 +38,7 @@ class Project extends MY_Controller
        
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->projecthomemodel->get_list_project_index($config['per_page'], $page1);
+       $this->data['slide']=$this->projecthomemodel->project_noi_bat_slide();
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -63,6 +67,7 @@ class Project extends MY_Controller
        
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->projecthomemodel->get_list_project_index_key($key,$lower_key,$config['per_page'], $page1);
+        $this->data['slide']=$this->projecthomemodel->project_noi_bat_slide();
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;

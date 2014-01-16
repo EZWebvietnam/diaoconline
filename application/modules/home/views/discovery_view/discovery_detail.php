@@ -5,11 +5,11 @@
                         <div class="left">
                             <div class="email_print">
                                 <ul>
-                                    <li><a href="/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176/ban-in" target="_blank">
+                                    <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                     <li><a href="javascript:void(0)" onclick="GetDataSaved('hyWDobl1I+I=','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
-                                    <li><a href="http://www.diaoconline.vn/kham-pha"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
+                                    <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -17,8 +17,8 @@
                                 <div class="social_network">
         <span class="tl">Chia sẻ</span>
         <ul>
-        <li><a href="http://www.facebook.com/share.php?u=http://www.diaoconline.vn/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=Nh%c3%a0+nguy%e1%bb%87n+trong+m%c3%a2y+-+N%c6%a1i+th%e1%bb%9di+gian+ng%c6%b0ng+%c4%91%e1%bb%8dng&amp;url=http://www.diaoconline.vn/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176&amp;via=DiaOcOnlinevn" target="_blank"><span class="ico_16 ico_twitter_16">twitter</span></a></li>
+        <li><a href="http://www.facebook.com/share.php?u=<?php echo str_replace('//','/',base_url().$_SERVER['REQUEST_URI'])?>" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
+
         
         </ul>
     </div>
@@ -48,11 +48,11 @@
                         <div class="left">
                             <div class="email_print">
                                 <ul>
-                                    <li><a href="/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176/ban-in">
+                                    <li><a href="javascript:window.print()">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                     <li><a href="javascript:void(0)" onclick="GetDataSaved('hyWDobl1I+I=','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
-                                    <li><a href="http://www.diaoconline.vn/kham-pha"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
+                                    <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -60,8 +60,7 @@
                                 <div class="social_network">
         <span class="tl">Chia sẻ</span>
         <ul>
-        <li><a href="http://www.facebook.com/share.php?u=http://www.diaoconline.vn/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=Nh%c3%a0+nguy%e1%bb%87n+trong+m%c3%a2y+-+N%c6%a1i+th%e1%bb%9di+gian+ng%c6%b0ng+%c4%91%e1%bb%8dng&amp;url=http://www.diaoconline.vn/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176&amp;via=DiaOcOnlinevn" target="_blank"><span class="ico_16 ico_twitter_16">twitter</span></a></li>
+        <li><a href="http://www.facebook.com/share.php?u=<?php echo str_replace('//','/',base_url().$_SERVER['REQUEST_URI'])?>" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
         
         </ul>
     </div>

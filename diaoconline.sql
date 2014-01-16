@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2014 at 03:43 PM
+-- Generation Time: Jan 16, 2014 at 02:51 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -963,6 +963,7 @@ CREATE TABLE IF NOT EXISTS `project` (
   `id_district` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `id_city` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=16 ;
 
@@ -970,22 +971,22 @@ CREATE TABLE IF NOT EXISTS `project` (
 -- Dumping data for table `project`
 --
 
-INSERT INTO `project` (`id`, `title`, `content`, `id_cate`, `id_district`, `id_city`, `img`) VALUES
-(1, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(2, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(3, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(4, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(5, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(6, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(7, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(8, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(9, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(10, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(11, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(12, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(13, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(14, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg'),
-(15, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg');
+INSERT INTO `project` (`id`, `title`, `content`, `id_cate`, `id_district`, `id_city`, `img`, `create_date`) VALUES
+(1, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(2, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(3, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(4, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(5, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(6, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(7, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(8, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(9, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(10, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(11, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(12, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(13, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(14, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0),
+(15, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 2, '001', '01', 'thumb-DF0-lexington-an-phu.jpg', 0);
 
 -- --------------------------------------------------------
 

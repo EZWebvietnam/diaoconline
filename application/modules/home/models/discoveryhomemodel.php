@@ -81,7 +81,7 @@ class Discoveryhomemodel extends CI_Model
     {
         $id = intval($id);
         $sql_get_discovery = "SELECT discovery.title,discovery.img,discovery.content,discovery.create_date,discovery.id as id_disco, cate_discovery.id as id_cate,cate_discovery.name
-        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE discovery.id_cate = $id ORDER BY discovery.id";
+        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE discovery.id_cate = $id OR cate_discovery.parent = $id ORDER BY discovery.id";
         $query = $this->db->query($sql_get_discovery);
         return count($query->result_array());
     }
@@ -91,7 +91,7 @@ class Discoveryhomemodel extends CI_Model
         $offset = intval($offset);
         $number = intval($number);
         $sql_get_discovery = "SELECT discovery.title,discovery.img,discovery.content,discovery.create_date,discovery.id as id_disco, cate_discovery.id as id_cate,cate_discovery.name
-        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE discovery.id_cate = $id_cate ORDER BY discovery.id LIMIT $offset,$number";
+        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE discovery.id_cate = $id_cate OR cate_discovery.parent = $id_cate ORDER BY discovery.id LIMIT $offset,$number";
         
         $query = $this->db->query($sql_get_discovery);
         return $query->result_array();
