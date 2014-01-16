@@ -14,7 +14,10 @@ class Home extends MY_Controller
         parent::list_district();
          parent::cate_project_sub();
         parent::project_noi_bat_lm1();
+        if(isset($this->data['noi_bat_menu_1'][0]))
+        {
         parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
+        }
     }
     public function index()
     {

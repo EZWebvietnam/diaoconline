@@ -39,6 +39,7 @@
 */
 
 $route['default_controller'] = "home/index";
+$route['nha/(:any)-c(:any)/(:any)-h(:any)'] = "home/property/detail/$4";
 $route['tin-tuc'] = "home/news/index";
 $route['du-an'] = "home/project/index";
 $route['du-an/page/(:any)'] = "home/project/index";

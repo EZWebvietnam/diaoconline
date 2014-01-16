@@ -222,7 +222,7 @@
             <li >
             <?php } ?>
                 <div class="posted_block hightlight_type_3 ">
-                    <div class="img"><a href="/thue-van-phong-c9/cho-thue-nguyen-can-toa-nha-521-523-dien-bien-phu-qbinh-thanh-ngay-cau-van-thanh-i282448">
+                    <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_prj['loai_dia_oc'])))?>-c<?php echo $list_prj['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_prj['title'])))?>-h<?php echo $list_prj['id']?>">
                                 <img src="http://image.diaoconline.vn/sieu-thi/2013/12/26/thumb-B71-95BDA2.jpg" width="120" height="120" alt="Cho thu&#234; nguy&#234;n căn t&#242;a nh&#224; 521-523 Điện Bi&#234;n Phủ, Q.B&#236;nh Thạnh, ngay cầu Văn Th&#225;nh"/></a></div>
                     <div class="posted_info">
                         <h2><a href="/thue-van-phong-c9/cho-thue-nguyen-can-toa-nha-521-523-dien-bien-phu-qbinh-thanh-ngay-cau-van-thanh-i282448"><?php echo $list_prj['title']?></a></h2>
@@ -257,6 +257,7 @@
         <ul class="listing_1">
             <?php 
             $i=1;
+            
             foreach($list_pro_new as $pro_new)
             {
                 if($i%2==0)
@@ -270,12 +271,20 @@
             ?>
             
                 <div class="posted_block ">
-                    <div class="img"><a href="/ban-dat-o-dat-tho-cu-c11/can-ban-gap-lo-i17-my-phuoc-3-huong-bac-duong-16m-ngay-khu-cho-dan-cu-dong-duc-i751676">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2014/01/09/thumb-198-C8ACE7.jpg" width="120" height="120" alt="Cần b&#225;n gấp l&#244; I17 Mỹ Phước 3, hướng Bắc đường 16m ngay khu chợ, d&#226;n cư đ&#244;ng đ&#250;c"/></a></div>
+                    <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($pro_new['loai_dia_oc'])))?>-c<?php echo $pro_new['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($pro_new['title'])))?>-h<?php echo $pro_new['id']?>">
+                                <?php 
+                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$pro_new['code'].'/'.$pro_new['img']))
+                                {
+                                ?>
+                                <img src="<?php echo base_url();?>/file/uploads/property/<?php echo $pro_new['code']?>/<?php echo $pro_new['img']?>" width="120" height="120" alt="<?php echo $pro_new['title']?>"/>
+                                <?php } else { ?> 
+                                <img src="<?php echo base_url();?>/file/uploads/no_image.gif" width="120" height="120" alt="<?php echo $pro_new['title']?>"/>
+                                <?php }?>
+                                </a></div>
                     <div class="posted_info">
-                        <h2><a href="/ban-dat-o-dat-tho-cu-c11/can-ban-gap-lo-i17-my-phuoc-3-huong-bac-duong-16m-ngay-khu-cho-dan-cu-dong-duc-i751676"><?php echo $pro_new['title']?></a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-dat-o-dat-tho-cu-c11/binh-duong-t61/ben-cat-q473">Bến Cát</a>, 
-                                                <a class="link-ext" href="/ban-dat-o-dat-tho-cu-c11/binh-duong-t61">Bình Dương</a></span><br />
+                        <h2><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($pro_new['loai_dia_oc'])))?>-c<?php echo $pro_new['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($pro_new['title'])))?>-h<?php echo $pro_new['id']?>"><?php echo $pro_new['title']?></a></h2>
+                        <span class="location"><?php echo $list_district[$pro_new['id_district']]?>, 
+                                                <?php echo $list_city[$pro_new['id_city']]?></span><br />
                         <span class="price">
                         <?php 
                         if(is_numeric($pro_new['price']))
@@ -319,12 +328,20 @@
         ?>
            
                 <div class="posted_block ">
-                    <div class="img"><a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778">
-                                <img src="http://image.diaoconline.vn/sieu-thi/2014/01/02/thumb-BA3-BC9149.jpg" width="120" height="120" alt="Qu&#253; kh&#225;ch h&#227;y sở hữu căn hộ 8X Đầm Sen - Chỉ với 600 tiệu/căn - Trả chậm 24 th&#225;ng kh&#244;ng l&#227;i suất"/></a></div>
+                    <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($low_rice['loai_dia_oc'])))?>-c<?php echo $low_rice['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($low_rice['title'])))?>-h<?php echo $low_rice['id']?>">
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$low_rice['code'].'/'.$low_rice['img']))
+                    {
+                    ?>
+                                <img src="<?php echo base_url();?>file/uploads/property/<?php echo $low_rice['code']?>/<?php echo $low_rice['img']?>" width="120" height="120" alt="<?php echo $low_rice['title']?>"/>
+                                <?php } else {?> 
+                                <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="120" height="120" alt="<?php echo $low_rice['title']?>"/>
+                                <?php } ?>
+                                </a></div>
                     <div class="posted_info">
-                        <h2><a href="/ban-can-ho-chung-cu-c8/quy-khach-hay-so-huu-can-ho-8x-dam-sen-chi-voi-600-tieucan-tra-cham-24-thang-khong-lai-suat-i748778"><?php echo $low_rice['title']?></a></h2>
-                        <span class="location"><a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3/quan-tan-phu-q142">Quận Tân Phú</a>, 
-                                                <a class="link-ext" href="/ban-can-ho-chung-cu-c8/tphcm-t3">TP.HCM</a></span><br />
+                        <h2><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($low_rice['loai_dia_oc'])))?>-c<?php echo $low_rice['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($low_rice['title'])))?>-h<?php echo $low_rice['id']?>"><?php echo $low_rice['title']?></a></h2>
+                        <span class="location"><?php echo $list_district[$low_rice['id_district']]?>, 
+                                                <?php echo $list_city[$low_rice['id_city']]?></span><br />
                         <span class="price"><?php 
                         if(is_numeric($low_rice['price']))
                         {
