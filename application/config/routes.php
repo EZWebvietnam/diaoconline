@@ -40,6 +40,12 @@
 
 $route['default_controller'] = "home/index";
 $route['nha/(:any)-c(:any)/(:any)-h(:any)'] = "home/property/detail/$4";
+$route['sieu-thi/(:any)-c(:any)'] = "home/property/list_property/$2";
+$route['sieu-thi/gia/gianho-(:any)-gialon-(:any)'] = "home/property/gia_nho/$1/$2";
+$route['sieu-thi'] = "home/property/sieu_thi";
+$route['sieu-thi/chinh-chu'] = "home/property/list_cc";
+$route['sieu-thi/nha-tro'] = "home/property/nha_tro";
+$route['sieu-thi/du-an.(:any).duan'] = "home/property/du_an/$1";
 $route['tin-tuc'] = "home/news/index";
 $route['du-an'] = "home/project/index";
 $route['du-an/page/(:any)'] = "home/project/index";

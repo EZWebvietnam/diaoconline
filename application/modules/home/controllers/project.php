@@ -17,6 +17,10 @@ class Project extends MY_Controller
         parent::cate_project_sub();
         parent::project_noi_bat_lm1();
         parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
+         // Tai san
+        parent::get_tai_san_lm3();
+        parent::get_ts_menu();
+        parent::cate_sieu_thi();
     }
     public function index()
     {

@@ -145,8 +145,8 @@ class MY_Controller extends CI_Controller
     public function list_city()
     {
         $this->load->model('cityhomemodel');
-        $list_city = $this->cityhomemodel->get_list_city();
-        foreach($list_city as $city)
+        $list_ = $this->cityhomemodel->get_list_city();
+        foreach($list_ as $city)
         {
             $data[$city['provinceid']]=$city['name'];
         }
@@ -155,8 +155,8 @@ class MY_Controller extends CI_Controller
     public function list_district()
     {
         $this->load->model('cityhomemodel');
-        $list_city = $this->cityhomemodel->get_list_district();
-        foreach($list_city as $city)
+        $list_ = $this->cityhomemodel->get_list_district();
+        foreach($list_ as $city)
         {
             $data[$city['districtid']]=$city['name'];
         }
@@ -205,6 +205,24 @@ class MY_Controller extends CI_Controller
         $prj = $this->projecthomemodel->project_noi_menu($id);
         $this->data['noi_bat_menu']=$prj;
         
+    }
+    public function get_tai_san_lm3()
+    {
+        $this->load->model('propertyhomemodel');
+        $prj = $this->propertyhomemodel->get_list_property_nav();
+        $this->data['tai_san_noi_bat']=$prj;
+    }
+    public function get_ts_menu()
+    {
+        $this->load->model('propertyhomemodel');
+        $prj = $this->propertyhomemodel->get_list_property_new();
+        $this->data['tai_san_noi_bat_khac']=$prj;
+    }
+    public function cate_sieu_thi()
+    {
+        $this->load->model('catepropertyhomemodel');
+        $list = $this->catepropertyhomemodel->cate_list();
+        $this->data['cate_sieu_thi_list']=$list;
     }
 }
 ?>

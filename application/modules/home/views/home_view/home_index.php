@@ -160,7 +160,7 @@
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <div class="content">
             <ul class="headline_tab">
-                <li class="actived"><span class="L"></span><a href="/du-an">DỰ ÁN NỔI BẬT</a><span class="R"></span></li>
+                <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>du-an">DỰ ÁN NỔI BẬT</a><span class="R"></span></li>
             </ul>
             <a href="/du-an" class="grey_link">Xem tất cả</a>
         </div>
@@ -189,7 +189,7 @@
                 <div class="prj_info prj_1">
                     <ul class="tabs">
                     <li class="actived"><span>THÔNG TIN DỰ ÁN</span></li>
-                    <li><a href="/sieu-thi/loc/?duan=1412">TÀI SẢN ĐANG GIAO DỊCH</a></li>
+                    <li><a href="<?php echo base_url();?>sieu-thi/du-an.<?php echo $l_pro['id_pro']?>.duan">TÀI SẢN ĐANG GIAO DỊCH</a></li>
                     </ul>
                     <div class="info_1 txt"><p><?php echo sub_string(loaibohtmltrongvanban($l_pro['content']),229); ?>...</p></div>
                 </div>
@@ -206,7 +206,7 @@
     <div class="group_real">
         <div class="headline_title_1 rounded_style_5 rounded_box">
             <ul class="headline_tab">
-                <li class="actived"><span class="L"></span><a href="/sieu-thi/loc?chinhchu=1">Tài sản chính chủ</a><span class="R"></span></li>
+                <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>sieu-thi/chinh-chu">Tài sản chính chủ</a><span class="R"></span></li>
             </ul>
         </div>
         <ul class="listing_1">
@@ -254,12 +254,12 @@
             
             </li>
         </ul>
-        <a class="view_all" href="/sieu-thi/loc?chinhchu=1">Xem tất cả</a>
+        <a class="view_all" href="<?php echo base_url();?>sieu-thi/chinh-chu">Xem tất cả</a>
     </div>
     <div class="group_real">
         <div class="headline_title_1 rounded_style_5 rounded_box">
             <ul class="headline_tab">
-                <li class="actived"><span class="L"></span><a href="/sieu-thi">Tài sản mới nhất</a><span class="R"></span></li>
+                <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>sieu-thi">Tài sản mới nhất</a><span class="R"></span></li>
             </ul>
         </div>
         <ul class="listing_1">
@@ -312,12 +312,12 @@
            
             
         </ul>
-        <a class="view_all" href="/sieu-thi">Xem tất cả</a>
+        <a class="view_all" href="<?php echo base_url();?>sieu-thi">Xem tất cả</a>
     </div>
     <div class="group_real">
         <div class="headline_title_1 rounded_style_5 rounded_box">
             <ul class="headline_tab">
-                <li class="actived"><span class="L"></span><a href="/sieu-thi/loc?gianho=300000000&amp;gialon=1000000000">Tài sản giá thấp</a><span class="R"></span></li>
+                <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>sieu-thi/gia/gianho-300000000-gialon-1000000000">Tài sản giá thấp</a><span class="R"></span></li>
             </ul>
         </div>
         <ul class="listing_1">
@@ -367,7 +367,7 @@
                 
             <?php $i++;} ?>
         </ul>
-        <a class="view_all" href="/sieu-thi/loc?gianho=300000000&amp;gialon=1000000000">Xem tất cả</a>
+        <a class="view_all" href="<?php echo base_url();?>sieu-thi/gia/gianho-300000000-gialon-1000000000">Xem tất cả</a>
     </div>
                     
                             </div>

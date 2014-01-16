@@ -2,13 +2,12 @@
                 <div id="result_detail" class="margin_bottom">
                     <div class="headline_title_1 rounded_style_5 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                         <ul class="headline_tab">
-                            <li class="actived"><span class="L"></span><a href="/sieu-thi">
+                            <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>sieu-thi">
                                 TÀI SẢN ĐANG GIAO DỊCH</a><span class="R"></span></li>
-                            <li><a href="/sieu-thi/loc?chinhchu=1">
+                            <li><a href="<?php echo base_url();?>sieu-thi/chinh-chu">
                                 <span>TÀI SẢN CHÍNH CHỦ</span></a></li>
-                            <li><a href="/tin-tuc/tai-san-dau-gia-c84">
-                                <span>TÀI SẢN ĐẤU GIÁ</span></a></li>
-                            <li><a href="/sieu-thi/loc?nhasv=1">
+                            
+                            <li><a href="<?php echo base_url();?>sieu-thi/nha-tro">
                                 <span>NHÀ TRỌ SINH VIÊN</span></a></li>
                             
                         </ul>
@@ -27,12 +26,12 @@
                             <div class="left">
                                 <div class="email_print">
                                     <ul>
-                                        <li><a href="/sieu-thi/in/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-540494">
+                                        <li><a href="javascript:window.print()">
                                             <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                         <li>
                                             <a href="javascript:void(0)" onclick="GetDataSaved('XgwcVO2PDyF9FMhC8+5KXw==','/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-i540494','.itemsaved')" class="itemsaved">
                                                 <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
-                                        <li><a href="http://www.diaoconline.vn/sieu-thi/loc?nhasv=1"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
+                                        <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -41,7 +40,7 @@
         <span class="tl">Chia sẻ</span>
         <ul>
         <li><a href="http://www.facebook.com/share.php?u=http://www.diaoconline.vn/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-i540494" target="_blank"><span class="ico_16 ico_facebook_16">facebook</span></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=Ph%c3%b2ng+tr%e1%bb%8d+cho+thu%c3%aa+qu%e1%ba%adn+B%c3%acnh+T%c3%a2n+-+1+tri%e1%bb%87u%2fth%c3%a1ng&amp;url=http://www.diaoconline.vn/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-i540494&amp;via=DiaOcOnlinevn" target="_blank"><span class="ico_16 ico_twitter_16">twitter</span></a></li>
+        
         
         </ul>
     </div>
@@ -460,7 +459,7 @@
             <h4>
                 »ĐỊA ỐC CÙNG TỈNH/THÀNH</h4>
             <ul>    <?php 
-                        foreach($list_district as $district)
+                        foreach($list_district_ as $district)
                         {
                             $count = $this->propertyhomemodel->count_dia_oc_district($district['districtid'])
                     ?>
@@ -488,7 +487,7 @@
                 »ĐỊA ỐC THEO TỈNH THÀNH</h4>
             <ul>
                     <?php 
-                    foreach($list_city as $city)
+                    foreach($list_city_ as $city)
                     {
                         $count = $this->propertyhomemodel->count_dia_oc_tinh_thanh($city['provinceid']);
                     ?>

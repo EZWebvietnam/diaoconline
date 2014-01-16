@@ -17,6 +17,9 @@ class Discovery extends MY_Controller
         parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
         parent::list_city();
         parent::list_district();
+         // Tai san
+        parent::get_tai_san_lm3();
+        parent::get_ts_menu();
     }
     public function index()
     {
