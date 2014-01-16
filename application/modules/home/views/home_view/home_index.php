@@ -174,7 +174,7 @@
         ?>
             <div class="block">
                 <div class="image_info">
-                    <a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412">
+                    <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($l_pro['name'])))?>-c<?php echo $l_pro['id_cate']?>/l<?php echo mb_strtolower(url_title(removesign($l_pro['title'])))?>-i<?php echo $l_pro['id_pro']?>">
                     <?php 
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$l_pro['img']))
                     {
@@ -182,7 +182,7 @@
                     <img src="<?php echo base_url();?>file/uploads/project/<?php echo $l_pro['img'];?>" width="300" height="200" alt="Lexington An Phú"/></a>
                     <?php }?>
                     <div class="txt">
-                        <h1><a href="/du-an/khu-can-ho-c27/lexington-an-phu-i1412" class="link-white"><?php echo $l_pro['title']?></a></h1>
+                        <h1><a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($l_pro['name'])))?>-c<?php echo $l_pro['id_cate']?>/l<?php echo mb_strtolower(url_title(removesign($l_pro['title'])))?>-i<?php echo $l_pro['id_pro']?>" class="link-white"><?php echo $l_pro['title']?></a></h1>
 						<p>Vị trí: <?php echo $list_district[$l_pro['id_district']]?>, <?php echo $list_city[$l_pro['id_city']]?></p>
                     </div>
                 </div>

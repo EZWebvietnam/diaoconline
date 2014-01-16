@@ -8,11 +8,9 @@ class Projecthomemodel extends CI_Model
     }
     public function get_list_project()
     {
-        $this->db->select();
-        $this->db->limit(2);
-        $this->db->order_by('id DESC');
-        $list_project = $this->db->get('project');
-        return $list_project->result_array();
+        $sql="SELECT project.id as id_pro,project.content, project.title,project.id_district,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate ORDER BY project.id DESC LIMIT 2";
+        $query = $this->db->query($sql);
+        return $query->result_array();
     }
     public function get_list_project_index($number,$offset)
     {
