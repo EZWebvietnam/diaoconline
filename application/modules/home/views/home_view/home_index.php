@@ -176,7 +176,7 @@
                 <div class="image_info">
                     <a href="<?php echo base_url();?>du-an/<?php echo mb_strtolower(url_title(removesign($l_pro['name'])))?>-c<?php echo $l_pro['id_cate']?>/l<?php echo mb_strtolower(url_title(removesign($l_pro['title'])))?>-i<?php echo $l_pro['id_pro']?>">
                     <?php 
-                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$l_pro['img']))
+                    if(is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$l_pro['img']))
                     {
                     ?>
                     <img src="<?php echo base_url();?>file/uploads/project/<?php echo $l_pro['img'];?>" width="300" height="200" alt="Lexington An Phú"/></a>

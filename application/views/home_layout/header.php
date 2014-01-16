@@ -148,7 +148,7 @@
                                             <ul>
                                             <?php foreach($tai_san_noi_bat_khac as $ts_khac) 
                                             {?>
-                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_khac['loai_dia_oc'])))?>-c<?php echo $ts_khac['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_khac['title'])))?>-h<?php $ts_khac['id']?>" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_khac['loai_dia_oc'])))?>-c<?php echo $ts_khac['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_khac['title'])))?>-h<?php echo $ts_khac['id']?>" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
                                                         <span><?php echo $list_city[$ts_khac['id_city']]?>: </span>
                                                         <?php echo sub_string(loaibohtmltrongvanban($ts_khac['content']),20);?></a> </li>
                                              <?php } ?>       

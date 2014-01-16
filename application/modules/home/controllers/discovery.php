@@ -20,6 +20,7 @@ class Discovery extends MY_Controller
          // Tai san
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
+        parent::cate_sieu_thi();
     }
     public function index()
     {
