@@ -92,6 +92,7 @@
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <?php include('header_.php');?>
     </div>
+    </div>
     <div id="content_container">
         
 <script type="text/javascript">
