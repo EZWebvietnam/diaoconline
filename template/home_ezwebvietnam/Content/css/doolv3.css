@@ -107,7 +107,7 @@
     -moz-border-radius:4px;
     border-radius:4px;
     font: Normal 12px Arial;
-    height:35px !important;
+    height:auto !important;
 }
 
 .validation-summary-errors ul

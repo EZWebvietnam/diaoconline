@@ -23,6 +23,8 @@ class Property extends MY_Controller
         parent::get_ts_menu();
         parent::cate_sieu_thi();
         $this->load->model('propertyhomemodel');
+        	$this->load->library('tank_auth');
+		$this->lang->load('tank_auth');
     }
     public function detail($id)
     {

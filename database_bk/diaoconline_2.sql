@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 16, 2014 at 03:31 PM
+-- Generation Time: Jan 20, 2014 at 02:53 PM
 -- Server version: 5.1.33
 -- PHP Version: 5.2.9
 
@@ -114,6 +114,29 @@ INSERT INTO `cate_project` (`id`, `name`, `parent`) VALUES
 (6, 'Khu căn hộ', 1),
 (7, 'Khu du lịch - Nghỉ dưỡng', 1),
 (8, 'Công trình công cộng', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ci_sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+  `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) COLLATE utf8_bin NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `user_data` text COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `ci_sessions`
+--
+
+INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
+('7532f11ca688e35b56b55dbf3634e595', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390204240, 0x613a313a7b733a393a22757365725f64617461223b733a303a22223b7d),
+('9f28d6837c761957949b7a0283abe51c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:26.0) Gecko/20100101 Firefox/26.0', 1390204160, '');
 
 -- --------------------------------------------------------
 
@@ -926,6 +949,25 @@ INSERT INTO `loai_dia_oc` (`id`, `name`, `parent`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `login_attempts`
+--
+
+CREATE TABLE IF NOT EXISTS `login_attempts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip_address` varchar(40) COLLATE utf8_bin NOT NULL,
+  `login` varchar(50) COLLATE utf8_bin NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `login_attempts`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `news`
 --
 
@@ -1103,6 +1145,8 @@ CREATE TABLE IF NOT EXISTS `property` (
   `id_city` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   `cho_dau_xe_hoi` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `id_duan` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
@@ -1111,11 +1155,11 @@ CREATE TABLE IF NOT EXISTS `property` (
 -- Dumping data for table `property`
 --
 
-INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `img`) VALUES
-(1, 1, 1, 1, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, ''),
-(2, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, ''),
-(3, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, ''),
-(4, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '310000000', '252888', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, '');
+INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`) VALUES
+(1, 1, 1, 1, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, 0, 0, '123.jpg'),
+(2, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, 0, 0, '123.jpg'),
+(3, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, 0, 0, '123.jpg'),
+(4, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '310000000', '252888', 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 0, 0, 0, '123.jpg');
 
 -- --------------------------------------------------------
 
@@ -1233,18 +1277,73 @@ INSERT INTO `tinh_trang_phap_ly` (`id`, `name`) VALUES
 
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `full_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(50) COLLATE utf8_bin NOT NULL,
+  `full_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `phone` varchar(255) COLLATE utf8_bin NOT NULL,
+  `address` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `activated` tinyint(1) NOT NULL DEFAULT '1',
+  `banned` tinyint(1) NOT NULL DEFAULT '0',
+  `ban_reason` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  `new_password_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `new_password_requested` datetime DEFAULT NULL,
+  `new_email` varchar(100) COLLATE utf8_bin DEFAULT NULL,
+  `new_email_key` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `full_name`, `phone`, `address`) VALUES
-(1, 'Nguyễn Trường Giang', '01667039939', 'sxzx');
+INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`) VALUES
+(1, 'admin', 'abcxyz', '030303030303', '', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'nguyentruonggiang91@gmail.com', 1, 0, NULL, NULL, NULL, NULL, NULL, '127.0.0.1', '2014-01-20 14:29:21', '2014-01-20 11:40:27', '2014-01-20 14:29:21');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_autologin`
+--
+
+CREATE TABLE IF NOT EXISTS `user_autologin` (
+  `key_id` char(32) COLLATE utf8_bin NOT NULL,
+  `user_id` int(11) NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`key_id`,`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+--
+-- Dumping data for table `user_autologin`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_profiles`
+--
+
+CREATE TABLE IF NOT EXISTS `user_profiles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `country` varchar(20) COLLATE utf8_bin DEFAULT NULL,
+  `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user_profiles`
+--
+
+INSERT INTO `user_profiles` (`id`, `user_id`, `country`, `website`) VALUES
+(1, 1, NULL, NULL);
 
 -- --------------------------------------------------------
 

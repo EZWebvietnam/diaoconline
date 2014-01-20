@@ -39,6 +39,14 @@
 */
 
 $route['default_controller'] = "home/index";
+$route['dang-ky'] = "home/auth/register";
+$route['thanh-vien/cap-nhap-tai-khoan'] = "home/member/change_email";
+$route['active-mailchange/(:any)/(:any)'] = "home/member/reset_email/$1/$2";
+$route['kich-hoat/(:any)/(:any)'] = "home/auth/activate";
+$route['quen-mk'] = "home/auth/forgot_password";
+$route['dang-nhap'] = "home/auth/login";
+$route['logout'] = "home/auth/logout";
+$route['active-pass/(:any)/(:any)'] = "home/auth/reset_password";
 $route['nha/(:any)-c(:any)/(:any)-h(:any)'] = "home/property/detail/$4";
 $route['sieu-thi/(:any)-c(:any)'] = "home/property/list_property/$2";
 $route['q-sieu-thi/(:any)-c(:any)/quan/(:any)-q(:any)'] = "home/property/get_theo_quan/$2/$4";
@@ -64,7 +72,7 @@ $route['tin-tuc/(:any)/(:any)-i(:any)'] = "home/news/news_detail/$3";
 $route['404_override'] = '';
 $route['admin'] = "admin/index/login";
 $route['admin/login.xxx'] = "admin/index/login";
-$route['dang-ky'] = "welcome/register/regis";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -84,23 +84,7 @@
             <?php 
             include('header_.php');
             ?>
-            <div id="acc_section">
-                <div class="left_cn">
-                </div>
-                <div class="right_cn">
-                </div>
-                    <div class="content default">
-                        <ul>
-                            <li class="login"><span class="login_ico ico_24 ico_login_24"></span><a href="/dang-nhap">
-                                Đăng nhập</a></li>
-                            <li class="register"><span class="register_ico ico_24 ico_register_24"></span><a href="/dang-ky" class="register">
-                                Đăng ký</a></li>
-                        </ul>
-                    </div>
-            </div>
-            <div class="post_propertise">
-                <a href="/thanh-vien/tai-san-dang-moi/540494">ĐĂNG TÀI SẢN CỦA BẠN</a>
-            </div>
+            
         </div>
     </div>
     <div id="content_container">

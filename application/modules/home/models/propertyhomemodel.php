@@ -25,7 +25,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN users
         ON users.id = property.id_user
         WHERE property.loai_hinh = 1
-        ORDER BY property.id
+        ORDER BY property.goi_giao_dich DESC
         LIMIT 6";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -49,7 +49,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        ORDER BY property.id
+         ORDER BY property.goi_giao_dich DESC
         LIMIT 6";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -73,7 +73,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        ORDER BY property.id
+         ORDER BY property.goi_giao_dich DESC
         LIMIT 3";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -173,7 +173,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.loai_dia_oc = $id ORDER BY property.id DESC LIMIT $offset,$number";
+        WHERE property.loai_dia_oc = $id  ORDER BY property.goi_giao_dich DESC LIMIT $offset,$number";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -225,6 +225,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
+         ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -278,6 +279,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN users
         ON users.id = property.id_user
         WHERE loai_hinh = 1
+         ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -333,6 +335,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN users
         ON users.id = property.id_user
         WHERE loai_hinh = 3
+         ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -391,6 +394,7 @@ class Propertyhomemodel extends CI_Model
         ON project.id = property.id_duan
         WHERE property.id_duan = $id AND
         loai_hinh = 2
+         ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -452,6 +456,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE  property.price >=$gianho AND property.price<=$gialon
+         ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -512,6 +517,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE  property.id_district = '$id_district' AND property.loai_dia_oc=$id
+         ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -571,6 +577,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE  property.id_city = '$id_city' AND property.loai_dia_oc=$id
+         ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
         $query = $this->db->query($sql);
@@ -627,7 +634,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE property.id_duan IN ($id)
-        ORDER BY property.id DESC
+         ORDER BY property.goi_giao_dich DESC
          LIMIT 3
         ";
         $query = $this->db->query($sql);
@@ -656,7 +663,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE property.id_user = $id
-        ORDER BY property.id DESC
+         ORDER BY property.goi_giao_dich DESC
          LIMIT 3
         ";
         $query = $this->db->query($sql);

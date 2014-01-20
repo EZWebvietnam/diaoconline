@@ -91,20 +91,7 @@
         <div id="head_content" class="wrap">
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <?php include('header_.php');?>
-            <div id="acc_section">
-                <div class="left_cn">
-                </div>
-                <div class="right_cn">
-                </div>
-                    <div class="login">
-                        <a href="/thanh-vien/trang-chu" class="signin"><span class="ico_16 ico_login_16">
-                        </span>Về trang cá nhân</a><div class="dropdown">
-                            <a href="/thanh-vien/thoat" title="Thoát">setting</a></div>
-                    </div>
-            </div>
-            <div class="post_propertise">
-                <a href="/thanh-vien/tai-san-dang-moi">ĐĂNG TÀI SẢN CỦA BẠN</a>
-            </div>
+            
         </div>
     </div>
     <div id="content_container">

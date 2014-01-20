@@ -149,6 +149,7 @@ class Users extends CI_Model
 	 */
 	function activate_user($user_id, $activation_key, $activate_by_email)
 	{
+	   
 		$this->db->select('1', FALSE);
 		$this->db->where('id', $user_id);
 		if ($activate_by_email) {
@@ -158,7 +159,7 @@ class Users extends CI_Model
 		}
 		$this->db->where('activated', 0);
 		$query = $this->db->get($this->table_name);
-
+        
 		if ($query->num_rows() == 1) {
 
 			$this->db->set('activated', 1);
@@ -307,6 +308,7 @@ class Users extends CI_Model
 	 */
 	function activate_new_email($user_id, $new_email_key)
 	{
+	   
 		$this->db->set('email', 'new_email', FALSE);
 		$this->db->set('new_email', NULL);
 		$this->db->set('new_email_key', NULL);

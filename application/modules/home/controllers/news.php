@@ -25,6 +25,8 @@ class News extends MY_Controller
         parent::get_ts_menu();
         parent::load_phong_thuy();
         $this->load->model('newshomemodel');
+        	$this->load->library('tank_auth');
+		$this->lang->load('tank_auth');
     }
     public function index()
     {

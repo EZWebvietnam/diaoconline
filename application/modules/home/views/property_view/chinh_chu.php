@@ -1,10 +1,16 @@
+<style>
+.rounded_style_10000 {
+background: #F7FCBD !important;
+}
+</style>
+
 <div class="col_600 margin_left">
                 <div id="result" class="margin_bottom">
                     <div class="headline_title_1 rounded_style_5 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                         <ul class="headline_tab">
                                     <li id="all"><a href="<?php echo base_url();?>sieu-thi"><span>TÀI SẢN ĐANG GIAO DỊCH</span></a></li>
                                     <li id="chinhchu"><a href="<?php echo base_url();?>sieu-thi/chinh-chu"><span>TÀI SẢN CHÍNH CHỦ</span></a></li>
-                                    <li id="nhasv"><a href="/sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
+                                    <li id="nhasv"><a href="<?php echo base_url();?>sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
                             
                         </ul>
                     </div>
@@ -53,9 +59,62 @@
                             <?php 
                             foreach($list as $list_property)
                             {
+                                switch($list_property['goi_giao_dich'])
+                                {
+                                    case 1: 
+                                    {
+                                        $class="hightlight_type_1 margin_bottom";
+                                        $round = "rounded_style_2 rounded_box";
+                                        $rate = "<div class='rate'>
+                                                    <ul>
+                                                        <li>1 rated</li>
+                                                        <li>2 rated</li>
+                                                        <li>3 rated</li>
+                                                    </ul>
+                                                </div>";
+                                        $title = "class='a-red'";
+                                        break;
+                                    }
+                                    case 3:
+                                    {
+                                       $class="hightlight_type_2 margin_bottom";
+                                        $round ="rounded_style_10000 rounded_box";
+                                        $rate = "<div class='rate'>
+                                                    <ul>
+                                                        <li>1 rated</li>
+                                                        <li>2 rated</li>
+                                                        <li>3 rated</li>
+                                                    </ul>
+                                                </div>";
+                                        $title = "class='a-red'";
+                                        break;
+                                    }
+                                    case 2:
+                                    {
+                                        $class="hightlight_type_2 margin_bottom";
+                                        $round ="rounded_style_10 rounded_box";
+                                        $rate = "<div class='rate'>
+                                                    <ul>
+                                                        <li>1 rated</li>
+                                                        <li>2 rated</li>
+                                                        <li>3 rated</li>
+                                                    </ul>
+                                                </div>";
+                                        $title = "";
+                                        break;
+                                    }
+                                    case 0:
+                                    {
+                                        $class="hightlight_type_1 margin_bottom";
+                                        $round ="rounded_style_2 rounded_box";
+                                        $rate = "";
+                                        $title = "";
+                                        break;
+                                    }
+                                }
                             ?>
-                                    <li class="hightlight_type_1 margin_bottom">
-                                        <div class="rounded_style_2 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
+                                    <li class="<?php echo $class;?>">
+                                        <div class="<?php echo $round;?>"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div><?php echo $rate;?>
                                             <div class="content">
                                                 <div class="img">
                                                     <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_property['loai_dia_oc'])))?>-c<?php echo $list_property['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_property['title'])))?>-h<?php echo $list_property['id']?>">
@@ -71,7 +130,7 @@
                                                 </div>
                                                 <div class="info margin_left">
                                                     <h2>
-                                                        <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_property['loai_dia_oc'])))?>-c<?php echo $list_property['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_property['title'])))?>-h<?php echo $list_property['id']?>"><?php echo $list_property['title']?></a></h2>
+                                                        <a <?php echo $title; ?> href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_property['loai_dia_oc'])))?>-c<?php echo $list_property['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_property['title'])))?>-h<?php echo $list_property['id']?>"><?php echo $list_property['title']?></a></h2>
                                                     <span class="location">Vị trí: 
                                                         <?php echo $list_district[$list_property['id_district']]?>, 
                                                         <?php echo $list_city[$list_property['id_city']]?></span>

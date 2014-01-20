@@ -311,3 +311,31 @@
                         NHÀ ĐẸP</a></li>
                 </ul>
             </div>
+            <div id="acc_section">
+                <div class="left_cn">
+                </div>
+                <div class="right_cn">
+                </div>
+                <?php 
+                if($this->tank_auth->is_logged_in())
+                {
+                ?>
+                <div class="login">
+                        <a href="/thanh-vien/trang-chu" class="signin"><span class="ico_16 ico_login_16">
+                        </span>Về trang cá nhân</a><div class="dropdown">
+                            <a href="<?php echo base_url();?>logout" title="Thoát">setting</a></div>
+                    </div>
+                <?php } else {  ?>
+                    <div class="content default">
+                        <ul>
+                            <li class="login"><span class="login_ico ico_24 ico_login_24"></span><a href="<?php echo base_url();?>dang-nhap">
+                                Đăng nhập</a></li>
+                            <li class="register"><span class="register_ico ico_24 ico_register_24"></span><a href="<?php echo base_url();?>dang-ky" class="register">
+                                Đăng ký</a></li>
+                        </ul>
+                    </div>
+                    <?php } ?>
+                    <div class="post_propertise">
+                <a href="/thanh-vien/tai-san-dang-moi">ĐĂNG TÀI SẢN CỦA BẠN</a>
+            </div>
+            </div>

@@ -108,6 +108,8 @@
         <div id="project_slider" class="wrap margin_bottom">
 <ul class="slide_horizone">
 <?php 
+if(!empty($slide))
+{
 foreach($slide as $pr_sl)
 {
 ?>
@@ -122,6 +124,14 @@ foreach($slide as $pr_sl)
         <div class="description">
             <h2><a href="<?php echo base_url();?>du-an/<?php echo  mb_strtolower(url_title(removesign($pr_sl['name'])))?>-c<?php echo $pr_sl['id_cate']?>/<?php echo  mb_strtolower(url_title(removesign($pr_sl['title'])))?>-i<?php echo $pr_sl['id_pro']?>"><?php echo $pr_sl['title']?></a></h2>
             <span>Vị trí: <?php echo $list_district[$pr_sl['id_district']]?>, <?php echo $list_city[$pr_sl['id_city']]?></span>
+        </div>
+    </li>
+ <?php }} else { ?> 
+ <li><a>
+    
+    </a>
+        <div class="description">
+           
         </div>
     </li>
  <?php } ?>   

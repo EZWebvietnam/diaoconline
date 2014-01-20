@@ -1,4 +1,9 @@
-
+<style>
+.hightlight_type_100000 {
+background: #FDFDFD;
+border: 1px solid #D6CACA;
+}
+</style>
 <div class="col_650  margin_bottom">
                 <div class="col_650 margin_bottom">
     <script type="text/javascript">
@@ -214,6 +219,14 @@
         $i = 1;
         foreach($list_pro as $list_prj)
         {
+            if($list_prj['goi_giao_dich']!=0)
+            {
+                $class = "posted_block hightlight_type_3";
+            }
+            else
+            {
+                $class = "posted_block hightlight_type_100000";
+            }
             if($i%2 == 0)
             {
         ?>
@@ -221,7 +234,7 @@
             <?php } else {?>
             <li >
             <?php } ?>
-                <div class="posted_block hightlight_type_3 ">
+                <div class="<?php echo $class;?>">
                     <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_prj['loai_dia_oc'])))?>-c<?php echo $list_prj['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_prj['title'])))?>-h<?php echo $list_prj['id']?>">
                                 <?php 
                                 if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$list_prj['code'].'/'.$list_prj['img']))
@@ -268,6 +281,14 @@
             
             foreach($list_pro_new as $pro_new)
             {
+                if($pro_new['goi_giao_dich']!=0)
+            {
+                $class = "posted_block hightlight_type_3";
+            }
+            else
+            {
+                $class = "posted_block hightlight_type_100000";
+            }
                 if($i%2==0)
                 {
                     ?> 
@@ -278,7 +299,7 @@
                 }
             ?>
             
-                <div class="posted_block ">
+                <div class="<?php echo $class;?>">
                     <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($pro_new['loai_dia_oc'])))?>-c<?php echo $pro_new['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($pro_new['title'])))?>-h<?php echo $pro_new['id']?>">
                                 <?php 
                                 if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$pro_new['code'].'/'.$pro_new['img']))
@@ -325,6 +346,14 @@
         $i = 1;
         foreach($property_low_price as $low_rice)
         {
+             if($low_rice['goi_giao_dich']!=0)
+            {
+                $class = "posted_block hightlight_type_3";
+            }
+            else
+            {
+                $class = "posted_block hightlight_type_100000";
+            }
             if($i%2==0)
             {
                 ?> 
@@ -335,7 +364,7 @@
             
         ?>
            
-                <div class="posted_block ">
+                <div class="<?php echo $class;?>">
                     <div class="img"><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($low_rice['loai_dia_oc'])))?>-c<?php echo $low_rice['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($low_rice['title'])))?>-h<?php echo $low_rice['id']?>">
                     <?php 
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$low_rice['code'].'/'.$low_rice['img']))

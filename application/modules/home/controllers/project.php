@@ -21,6 +21,8 @@ class Project extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
+        	$this->load->library('tank_auth');
+		$this->lang->load('tank_auth');
     }
     public function index()
     {
