@@ -452,7 +452,7 @@ class Auth extends MY_Controller
 	{
 	   $this->load->library('email');
 	     $this->load->library('maillinux');
-		$from = 'nguyentruonggiang91@gmail.com'
+		$from = 'nguyentruonggiang91@gmail.com';
 		$reply_to = $this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
 		//$this->email->to($email);
 		$subject = sprintf($this->lang->line('auth_subject_'.$type), $this->config->item('website_name', 'tank_auth'));
