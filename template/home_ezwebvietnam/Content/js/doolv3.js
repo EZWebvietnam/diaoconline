@@ -384,15 +384,17 @@ function GetReactive(url, ida) {
 //    });
 //}
 
-function GetDataSaved(urlData, urlReturn, idData) {
+function GetDataSaved(urlData, urlReturn, idData,type) {
+    if(type == 1)
+    {
     $.ajax({
         type: "POST"
-        , url: "/luu-tin?k=" + urlData
+        , url: "/diaoconline/luu-tin/k/" + urlData
         , cache: false
         , dataType: "json"
         , success: function (data) {
             if (data != null) {
-                if (data.msg == 'da-luu') {
+                
                     $(idData).fadeOut(500).fadeIn(600);
                     setTimeout(function () {
                         $(idData).html('<span class="ico_16 ico_save_2_16"></span> Tin đã lưu')
@@ -401,11 +403,78 @@ function GetDataSaved(urlData, urlReturn, idData) {
                 } else if (data.msg == 'dang-nhap') {
                     window.location = "/dang-nhap?ReturnUrl=" + urlReturn;
                 }
-            }
+            
+        }
+    });
+    }
+    if(type == 2)
+    {
+        
+        $.ajax({
+        type: "POST"
+        , url: "/diaoconline/luu-dis/k/" + urlData
+        , cache: false
+        , dataType: "json"
+        , success: function (data) {
+            if (data != null) {
+                
+                    $(idData).fadeOut(500).fadeIn(600);
+                    setTimeout(function () {
+                        $(idData).html('<span class="ico_16 ico_save_2_16"></span> Tin đã lưu')
+                    }, 700);
+
+                } else if (data.msg == 'dang-nhap') {
+                    window.location = "/dang-nhap?ReturnUrl=" + urlReturn;
+                }
+            
+        }
+    });
+    }
+}
+function GetDataSavedProject(urlData, urlReturn, idData) {
+    
+    $.ajax({
+        type: "POST"
+        , url: "/diaoconline/luu-prj/k/" + urlData
+        , cache: false
+        , dataType: "json"
+        , success: function (data) {
+            if (data != null) {
+                
+                    $(idData).fadeOut(500).fadeIn(600);
+                    setTimeout(function () {
+                        $(idData).html('<span class="ico_16 ico_save_2_16"></span> Dự án đã lưu')
+                    }, 700);
+
+                } else if (data.msg == 'dang-nhap') {
+                    window.location = "/dang-nhap?ReturnUrl=" + urlReturn;
+                }
+            
         }
     });
 }
+function GetDataSavedProperty(urlData, urlReturn, idData) {
+    
+    $.ajax({
+        type: "POST"
+        , url: "/diaoconline/luu-proper/k/" + urlData
+        , cache: false
+        , dataType: "json"
+        , success: function (data) {
+            if (data != null) {
+                
+                    $(idData).fadeOut(500).fadeIn(600);
+                    setTimeout(function () {
+                        $(idData).html('<span class="ico_16 ico_save_2_16"></span> Tài sản đã lưu')
+                    }, 700);
 
+                } else if (data.msg == 'dang-nhap') {
+                    window.location = "/dang-nhap?ReturnUrl=" + urlReturn;
+                }
+            
+        }
+    });
+}
 
 function DeleteDataSaved(urlData, urlReturn, idData) {
     $.ajax({

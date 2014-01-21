@@ -89,5 +89,24 @@ class Newshomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    //save_tin
+    public function check_save($id_user,$id_new)
+    {
+        $this->db->select();
+        $this->db->where('id_user',$id_user);
+        $this->db->where('id_new',$id_new);
+        $query = $this->db->get('save_tin');
+        return $query->result_array();
+    }
+    public function save_tin(array $data)
+    {
+        $this->db->insert('save_tin',$data);
+        return $this->db->insert_id();
+    }
+    public function delete_save($id)
+    {
+        $id = intval($id);
+        $this->db->delete('save_tin',array('id'=>$id));
+    }
 }
 ?>

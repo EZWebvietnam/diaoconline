@@ -327,5 +327,47 @@ class Property extends MY_Controller
        $this->data['main_content']='property_view/list_city';
        $this->load->view('home_layout/list_tai_san',$this->data);
     }
+    public function save_property($id)
+    {
+        
+        $id = intval($id);
+        
+        if($this->input->is_ajax_request())
+        {
+            if($this->tank_auth->is_logged_in())
+            {
+                $detail = $this->propertyhomemodel->check_save($this->session->userdata('user_id'),$id);
+               
+                if(!empty($detail))
+                {
+                    $array = array('msg'=>'da-luu');
+                }
+                else
+                {
+                    $data = array('id_property'=>$id,'id_user'=>$this->session->userdata('user_id'),'create_date'=>strtotime('now'));
+                    $id = $this->propertyhomemodel->save_property($data);
+                    if($id>0)
+                    {
+                        $array = array('msg'=>'da-luu');
+                    }
+                }
+            }
+            else
+            {
+                $array = array('msg'=>'dang-nhap');
+            }
+            echo  json_encode($array);
+        }
+    }
+    public function delete_save($id)
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id = intval($id);
+            $this->propertyhomemodel->delete_save($id);
+            $array = array('msg'=>TRUE);
+            echo json_encode($array);
+        }
+    }
 }
 ?>

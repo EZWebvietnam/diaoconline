@@ -25,6 +25,7 @@ class News extends MY_Controller
         parent::get_ts_menu();
         parent::load_phong_thuy();
         $this->load->model('newshomemodel');
+        $this->load->library('session');
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
     }
@@ -97,6 +98,46 @@ class News extends MY_Controller
         $this->data['detail'] = $news_detail;
         $this->data['title'] = $news_detail[0]['title'];
         $this->load->view('home_layout/news_detail_layout', $this->data);
+    }
+    public function save_new($id)
+    {
+        
+        $id = intval($id);
+        if($this->input->is_ajax_request())
+        {
+            if($this->tank_auth->is_logged_in())
+            {
+                $detail = $this->newshomemodel->check_save($this->session->userdata('user_id'),$id);
+                if(!empty($detail))
+                {
+                    $array = array('msg'=>'da-luu');
+                }
+                else
+                {
+                    $data = array('id_new'=>$id,'id_user'=>$this->session->userdata('user_id'),'create_date'=>strtotime('now'));
+                    $id = $this->newshomemodel->save_tin($data);
+                    if($id>0)
+                    {
+                        $array = array('msg'=>'da-luu');
+                    }
+                }
+            }
+            else
+            {
+                $array = array('msg'=>'dang-nhap');
+            }
+            echo  json_encode($array);
+        }
+    }
+    public function delete_save($id)
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id = intval($id);
+            $this->newshomemodel->delete_save($id);
+            $array = array('msg'=>TRUE);
+            echo json_encode($array);
+        }
     }
 }
 ?>

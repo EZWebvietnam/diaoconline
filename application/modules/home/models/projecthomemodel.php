@@ -92,5 +92,24 @@ class Projecthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    //save_tin
+    public function check_project($id_user,$id_prj)
+    {
+        $this->db->select();
+        $this->db->where('id_user',$id_user);
+        $this->db->where('id_project',$id_prj);
+        $query = $this->db->get('save_project');
+        return $query->result_array();
+    }
+    public function save_tin(array $data)
+    {
+        $this->db->insert('save_project',$data);
+        return $this->db->insert_id();
+    }
+    public function delete_save($id)
+    {
+        $id = intval($id);
+        $this->db->delete('save_project',array('id'=>$id));
+    }
 }
 ?>

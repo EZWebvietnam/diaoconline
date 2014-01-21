@@ -669,5 +669,56 @@ class Propertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    //save_tin
+    public function check_save($id_user,$id_new)
+    {
+        $this->db->select();
+        $this->db->where('id_user',$id_user);
+        $this->db->where('id_property',$id_new);
+        $query = $this->db->get('save_property');
+        return $query->result_array();
+    }
+    public function save_property(array $data)
+    {
+        $this->db->insert('save_property',$data);
+        return $this->db->insert_id();
+    }
+    public function delete_save($id)
+    {
+        $id = intval($id);
+        $this->db->delete('save_property',array('id'=>$id));
+    }
+    //Save tin List
+    public function list_property_save($number,$offset)
+    {
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo,save_property.id as id_save
+        FROM property
+        INNER JOIN save_property
+        ON save_property.id_property = property.id
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_save()
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN save_property
+        ON save_property.id_property = property.id
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
 }
 ?>

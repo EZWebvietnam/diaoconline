@@ -29,7 +29,7 @@
                                         <li><a href="javascript:window.print()">
                                             <span class="ico_16 ico_print_16"></span>Bản in</a></li>
                                         <li>
-                                            <a href="javascript:void(0)" onclick="GetDataSaved('XgwcVO2PDyF9FMhC8+5KXw==','/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-i540494','.itemsaved')" class="itemsaved">
+                                            <a href="javascript:void(0)" onclick="GetDataSavedProperty('<?php echo $detail[0]['id']?>','/thue-phong-tro-c16/phong-tro-cho-thue-quan-binh-tan-1-trieuthang-i540494','.itemsaved')" class="itemsaved">
                                                 <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
                                         <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                     </ul>

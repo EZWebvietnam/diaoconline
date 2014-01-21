@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.1.3.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 20, 2014 at 07:45 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Jan 21, 2014 at 02:20 PM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,8 +18,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `diaoconline`
 --
-CREATE DATABASE IF NOT EXISTS `diaoconline` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-USE `diaoconline`;
 
 -- --------------------------------------------------------
 
@@ -138,7 +135,9 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('03e2823ff68c74af34a5a707a2c29d7c', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390242533, 'a:7:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";}');
+('2bd75c4934aca171bd6fc7a9aa0bbac8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1; rv:26.0) Gecko/20100101 Firefox/26.0', 1390276928, 0x613a373a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b7d),
+('ec5e3920b2397b71746246396736d667', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390273908, 0x613a373a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b7d),
+('f5c0547f9d62648b1469790c93cae333', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390288588, 0x613a373a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b7d);
 
 -- --------------------------------------------------------
 
@@ -967,7 +966,7 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
 --
 
 INSERT INTO `login_attempts` (`id`, `ip_address`, `login`, `time`) VALUES
-(2, '::1', 'GiangBeo', '2014-01-20 17:13:37');
+(2, '::1', 'GiangBeo', '2014-01-21 00:13:37');
 
 -- --------------------------------------------------------
 
@@ -1252,6 +1251,90 @@ INSERT INTO `province` (`provinceid`, `name`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `save_disco`
+--
+
+CREATE TABLE IF NOT EXISTS `save_disco` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `id_disco` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `save_disco`
+--
+
+INSERT INTO `save_disco` (`id`, `id_user`, `id_disco`, `create_date`) VALUES
+(1, 1, 2, 1390275433);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `save_project`
+--
+
+CREATE TABLE IF NOT EXISTS `save_project` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `id_project` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `save_project`
+--
+
+INSERT INTO `save_project` (`id`, `id_user`, `id_project`, `create_date`) VALUES
+(1, 1, 1, 1390274680),
+(2, 1, 2, 1390275148);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `save_property`
+--
+
+CREATE TABLE IF NOT EXISTS `save_property` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `id_property` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `save_property`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `save_tin`
+--
+
+CREATE TABLE IF NOT EXISTS `save_tin` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `id_new` int(11) NOT NULL,
+  `create_date` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `save_tin`
+--
+
+INSERT INTO `save_tin` (`id`, `id_user`, `id_new`, `create_date`) VALUES
+(1, 1, 2, 1390273859),
+(2, 1, 0, 1390274328);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tinh_trang_phap_ly`
 --
 
@@ -1313,7 +1396,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-20 19:29:05', '2014-01-20 11:40:27', '2014-01-20 18:29:05', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '127.0.0.1', '2014-01-21 13:45:36', '2014-01-20 11:40:27', '2014-01-21 13:45:36', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
 
 -- --------------------------------------------------------
 
@@ -1335,7 +1418,7 @@ CREATE TABLE IF NOT EXISTS `user_autologin` (
 --
 
 INSERT INTO `user_autologin` (`key_id`, `user_id`, `user_agent`, `last_ip`, `last_login`) VALUES
-('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 12:10:20');
+('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 19:10:20');
 
 -- --------------------------------------------------------
 
@@ -12527,7 +12610,3 @@ INSERT INTO `ward` (`wardid`, `name`, `type`, `location`, `districtid`) VALUES
 ('32244', 'Rạch Gốc', 'Thị Trấn', '', '973'),
 ('32245', 'Tân Ân', 'Xã', '8 38 45N, 105 03 22E', '973'),
 ('32248', 'Đất Mũi', 'Xã', '8 36 41N, 104 47 12E', '973');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

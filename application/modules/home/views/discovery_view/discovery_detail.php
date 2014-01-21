@@ -7,7 +7,7 @@
                                 <ul>
                                     <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
-                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('hyWDobl1I+I=','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved')" class="itemsaved">
+                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('<?php echo $detail_dis[0]['id_disco']?>','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved','2')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
                                     <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
@@ -50,7 +50,7 @@
                                 <ul>
                                     <li><a href="javascript:window.print()">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
-                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('hyWDobl1I+I=','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved')" class="itemsaved">
+                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('hyWDobl1I+I=','/kham-pha/the-gioi-kien-truc-c4/nha-nguyen-trong-may-noi-thoi-gian-ngung-dong-i45176','.itemsaved','2')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
                                     <li><a href="javascript:history.go(-1)"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>

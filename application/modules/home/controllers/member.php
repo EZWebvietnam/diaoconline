@@ -156,5 +156,35 @@ class Member extends MY_Controller
 			$this->_show_message($this->lang->line('auth_message_new_email_failed'));
 		}
 	}
+    public function du_property_luu()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_save();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_save($config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tai_san_luu';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
 }
 ?>

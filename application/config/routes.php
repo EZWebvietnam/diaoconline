@@ -40,6 +40,12 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['thanh-vien/tai-san-luu'] = "home/member/du_property_luu";
+$route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
+$route['luu-tin/k/(:any)'] = "home/news/save_new/$1";
+$route['luu-prj/k/(:any)'] = "home/project/save_project/$1";
+$route['luu-dis/k/(:any)'] = "home/discovery/save_disco/$1";
+$route['luu-proper/k/(:any)'] = "home/property/save_property/$1";
 $route['thanh-vien/cap-nhap-tai-khoan'] = "home/member/change_email";
 $route['active-mailchange/(:any)/(:any)'] = "home/member/reset_email/$1/$2";
 $route['kich-hoat/(:any)/(:any)'] = "home/auth/activate";

@@ -104,5 +104,24 @@ class Discoveryhomemodel extends CI_Model
         $query = $this->db->query($sql_get_discovery);
         return $query->result_array();
     }
+    //save_tin
+    public function check_save($id_user,$id_new)
+    {
+        $this->db->select();
+        $this->db->where('id_user',$id_user);
+        $this->db->where('id_disco',$id_new);
+        $query = $this->db->get('save_disco');
+        return $query->result_array();
+    }
+    public function save_disco_(array $data)
+    {
+        $this->db->insert('save_disco',$data);
+        return $this->db->insert_id();
+    }
+    public function delete_save($id)
+    {
+        $id = intval($id);
+        $this->db->delete('save_disco',array('id'=>$id));
+    }
 }
 ?>

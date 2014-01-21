@@ -108,5 +108,48 @@ class Discovery extends MY_Controller
          $this->data['main_content']='discovery_view/list_disc';
          $this->load->view('home_layout/list_kham_pha_layout',$this->data);
     }
+    public function save_disco($id)
+    {
+        
+        $id = intval($id);
+        
+        if($this->input->is_ajax_request())
+        {
+            if($this->tank_auth->is_logged_in())
+            {
+                $detail = $this->discoveryhomemodel->check_save($this->session->userdata('user_id'),$id);
+               
+                if(!empty($detail))
+                {
+                    $array = array('msg'=>'da-luu');
+                }
+                else
+                {
+                    $data = array('id_disco'=>$id,'id_user'=>$this->session->userdata('user_id'),'create_date'=>strtotime('now'));
+                    $id = $this->discoveryhomemodel->save_disco_($data);
+                    if($id>0)
+                    {
+                        $array = array('msg'=>'da-luu');
+                    }
+                }
+            }
+            else
+            {
+                $array = array('msg'=>'dang-nhap');
+            }
+            echo  json_encode($array);
+        }
+    }
+    public function delete_save($id)
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id = intval($id);
+            $this->discoveryhomemodel->delete_save($id);
+            $array = array('msg'=>TRUE);
+            echo json_encode($array);
+        }
+    }
+    
 }
 ?>

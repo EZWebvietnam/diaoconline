@@ -7,7 +7,7 @@
                                 <ul>
                                     <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
-                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('J0X9Nwixfg0=','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved')" class="itemsaved">
+                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('<?php echo $detail[0]['id_new']?>','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
                                     <li><a href="javascript:history.go(-1);"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>
@@ -79,7 +79,7 @@
                                 <ul>
                                     <li><a href="javascript:window.print()" target="_blank">
                                         <span class="ico_16 ico_print_16"></span>Bản in</a></li>
-                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('J0X9Nwixfg0=','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved')" class="itemsaved">
+                                    <li><a href="javascript:void(0)" onclick="GetDataSaved('<?php echo $detail[0]['id_new']?>','/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146','.itemsaved','1')" class="itemsaved">
                                         <span class="ico_16 ico_save_2_16"></span>Lưu tin</a></li>
                                     <li><a href="javascript:history.go(-1);"><span class="ico_16 ico_back_16"></span>Quay lại</a></li>
                                 </ul>

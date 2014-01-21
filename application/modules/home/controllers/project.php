@@ -161,5 +161,45 @@ class Project extends MY_Controller
        $this->load->view('home_layout/project_list_layout', $this->data);
        
     }
+    public function save_project($id)
+    {
+        
+        $id = intval($id);
+        if($this->input->is_ajax_request())
+        {
+            if($this->tank_auth->is_logged_in())
+            {
+                $detail = $this->projecthomemodel->check_project($this->session->userdata('user_id'),$id);
+                if(!empty($detail))
+                {
+                    $array = array('msg'=>'da-luu');
+                }
+                else
+                {
+                    $data = array('id_project'=>$id,'id_user'=>$this->session->userdata('user_id'),'create_date'=>strtotime('now'));
+                    $id = $this->projecthomemodel->save_tin($data);
+                    if($id>0)
+                    {
+                        $array = array('msg'=>'da-luu');
+                    }
+                }
+            }
+            else
+            {
+                $array = array('msg'=>'dang-nhap');
+            }
+            echo  json_encode($array);
+        }
+    }
+    public function delete_save($id)
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id = intval($id);
+            $this->projecthomemodel->delete_save($id);
+            $array = array('msg'=>TRUE);
+            echo json_encode($array);
+        }
+    }
 }
 ?>
