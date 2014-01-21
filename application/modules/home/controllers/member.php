@@ -249,11 +249,258 @@ class Member extends MY_Controller
     public function tai_san_dang_moi()
     {
         $this->load->model('propertyhomemodel');
-        $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
-        $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
-         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
-        $this->data['main_content']='member/dang_tai_san';
-        $this->load->view('home_layout/member/user_index_layout',$this->data);
+            $this->load->model('memberhomemodel');
+        if($this->input->post())
+        {
+            $data_save = array();
+            $data_save = array(
+            'loai_hinh'=>$this->input->post('TinDang'),
+            'loai_dia_oc'=>$this->input->post('DioTypeList'),
+            'vi_tri_dia_oc'=>$this->input->post('DioLineList'),
+            'id_city'=>$this->input->post('CityListMember'),
+            'id_district'=>$this->input->post('DistrictListMember'),
+            'dia_chi'=>$this->input->post('HouseNumber'),
+            'price'=>$this->input->post('PriceMain'),
+            'asset'=>$this->input->post('AssetUnitList'),
+            'dien_tich'=>$this->input->post('DTSD'),
+            'chieu_ngang_truoc'=>$this->input->post('DTKVWidth'),
+            'chieu_dai'=>$this->input->post('DTKVLength'),
+            'xd_chieu_ngang_truoc'=>$this->input->post('DTXDWidth'),
+            'xd_chieu_dai'=>$this->input->post('DTXDLength'),
+            'tinh_trang_phap_ly'=>$this->input->post('DioStateLegalList'),
+            'huong'=>$this->input->post('DioDirectionList'),
+            'so_lau'=>$this->input->post('NumberOfFloorList'),
+            'so_phong_khach'=>$this->input->post('NumberOfLivingRoomList'),
+            'so_phong_ngu'=>$this->input->post('NumberOfBedRoomList'),
+            'so_phong_tam_wc'=>$this->input->post('NumberOfWCList'),
+            'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
+            'content'=>$this->input->post('Detail'),
+            'title'=>$this->input->post('Title')
+            );
+            
+            if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
+            {
+                $data_save['day_du_tien_nghi'] = 1;
+            }
+            if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
+            {
+                $data_save['cho_de_xe_hoi'] = 1;
+            }
+            if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
+            {
+                $data_save['san_vuon'] = 1;
+            }
+             if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
+            {
+                $data_save['ho_boi'] = 1;
+            }
+             if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
+            {
+                $data_save['tien_kinh_doanh'] = 1;
+            }
+            if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
+            {
+                $data_save['tien_de_o'] = 1;
+            }
+            if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
+            {
+                $data_save['tien_lam_van_phong'] = 1;
+            }
+            if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
+            {
+                $data_save['tien_cho_san_xuat'] = 1;
+            }
+            if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
+            {
+                $data_save['cho_sinh_vien_thue'] = 1;
+            }
+            if($this->input->post('DTKVWidthBehind'))
+            {
+                $data_save['chieu_ngang_sau'] = $this->input->post('DTKVWidthBehind');
+            }
+            if($this->input->post('DTXDWidthBehind'))
+            {
+                $data_save['xd_chieu_ngang_sau'] = $this->input->post('DTXDWidthBehind');
+            }
+            if($this->input->post('ProjectListMember') && $this->input->post('ProjectListMember') !='')
+            {
+                $data_save['id_duan'] =$this->input->post('ProjectListMember');
+            }
+            $data_save['id_user']=$this->session->userdata('user_id');
+            $data_save['status']=0;
+            $data_save['create_date']=strtotime('now');
+            if($this->input->post('SubmitNew'))
+            {
+                $this->propertyhomemodel->insert($data_save);
+                redirect('/thanh-vien/tai-san-dang-moi');
+            }
+            else
+            {
+                $this->propertyhomemodel->insert_tmp($data_save);
+                redirect('/thanh-vien/tai-san-dang-moi');
+            }
+            
+        }
+        else
+        {
+            
+              $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
+            $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
+            $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
+            $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+            $this->data['list_phap_ly'] = $this->propertyhomemodel->list_phap_ly();
+            $this->data['list_huong'] = $this->propertyhomemodel->list_huong();
+            $this->data['list_pn'] = $this->propertyhomemodel->list_pn();
+            $this->data['main_content']='member/dang_tai_san';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function ajax_get_district($id)
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_district']=$this->propertyhomemodel->list_district_by_city($id);
+        $this->load->view('member/ajax_list_district',$this->data);
+    }
+    public function ajax_get_ward($id)
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_ward']=$this->propertyhomemodel->list_ward_by_district($id);
+        $this->load->view('member/ajax_list_ward',$this->data);
+    }
+    public function get_project_by_district($id_district,$id_city)
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_project']=$this->propertyhomemodel->list_project_by_district($id_district,$id_city);
+        $this->load->view('member/ajax_list_project',$this->data);
+    }
+    public function dang_hien_thi()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_available($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_available($id_user,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tai_san_available';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function dang_hien_thi_search()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1
+        ";
+        
+        if ($page == '') {
+            $page = 1;
+        }
+        
+        $page1 = ($page - 1) * $config['per_page'];
+        
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       
+       $sql_query = "SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1";
+        
+        if($this->input->get('tp'))
+        {
+            
+             $sql_query .=" AND id_city=".$this->input->get('tp');
+             $sql .=" AND id_city=".$this->input->get('tp');
+        }
+        if($this->input->get('qh'))
+        {
+            $sql_query .=" AND id_district=".$this->input->get('qh');
+            $sql .=" AND id_district=".$this->input->get('qh');
+        }
+        if($this->input->get('tk'))
+        {
+            $pr = $this->input->get('tk');
+            $sql_query .=" AND title LIKE '%$pr%'";
+            $sql .=" AND title LIKE '%$pr%'";
+        }
+        $sql_query .="
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $page1,
+        ".$config['per_page'];
+       $config['total_rows'] = $this->propertyhomemodel->count_property_available_search($sql);
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_available_search($sql_query);
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tai_san_available';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function dang_cho_duyet()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_pending($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_pending($id_user,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tai_san_pending';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
     }
 }
 ?>

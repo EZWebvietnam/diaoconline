@@ -369,5 +369,16 @@ class Property extends MY_Controller
             echo json_encode($array);
         }
     }
+    public function delete($id)
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id = intval($id);
+            
+            $this->propertyhomemodel->delete($id);
+            $array = array('msg'=>TRUE);
+            echo json_encode($array);
+        }
+    }
 }
 ?>

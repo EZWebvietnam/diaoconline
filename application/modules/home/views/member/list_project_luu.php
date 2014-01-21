@@ -7,7 +7,7 @@
                                 <ul class="pager"></ul>
 <script type="text/javascript">
     $(function () {
-        $('.pager').html(LoadPagging(<?php echo $page;?>, <?php echo $total?>, '<?php echo base_url();?>thanh-vien/tai-san-luu',<?php echo $total_page?>));
+        $('.pager').html(LoadPagging(<?php echo $page;?>, <?php echo $total?>, '<?php echo base_url();?>thanh-vien/du-an-da-luu',<?php echo $total_page?>));
     });
 </script>
 
@@ -56,7 +56,7 @@
                     <ul class="pager"></ul>
 <script type="text/javascript">
     $(function () {
-        $('.pager').html(LoadPagging(<?php echo $page;?>, <?php echo $total?>, '<?php echo base_url();?>thanh-vien/tai-san-luu',<?php echo $total_page?>));
+        $('.pager').html(LoadPagging(<?php echo $page;?>, <?php echo $total?>, '<?php echo base_url();?>thanh-vien/du-an-da-luu',<?php echo $total_page?>));
     });
 </script>
 

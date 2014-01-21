@@ -688,6 +688,11 @@ class Propertyhomemodel extends CI_Model
         $id = intval($id);
         $this->db->delete('save_property',array('id'=>$id));
     }
+    public function delete($id)
+    {
+        $id = intval($id);
+        $this->db->delete('property',array('id'=>$id));
+    }
     //Save tin List
     public function list_property_save($number,$offset)
     {
@@ -738,6 +743,135 @@ class Propertyhomemodel extends CI_Model
         $sql = "SELECT * FROM province";
         $query = $this->db->query($sql);
         return $query->result_array();
+    }
+    public function list_phap_ly()
+    {
+        $sql = "SELECT * FROM tinh_trang_phap_ly";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_huong()
+    {
+        $sql = "SELECT * FROM huong";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_pn()
+    {
+        $sql = "SELECT * FROM phong_ngu";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_district_by_city($id)
+    {
+        $id = intval($id);
+        $sql = "SELECT * FROM district WHERE provinceid = $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_ward_by_district($id)
+    {
+        $id = intval($id);
+        $sql = "SELECT * FROM ward WHERE districtid = $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+     public function list_project_by_district($id,$id_city)
+    {
+       
+        $sql = "SELECT * FROM project WHERE id_district = '$id' AND id_city = '$id_city'";
+        
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function insert(array $data)
+    {
+        $this->db->insert('property',$data);
+        return $this->db->insert_id();
+    }
+    public function insert_tmp(array $data)
+    {
+        $this->db->insert('property_tmp',$data);
+        return $this->db->insert_id();
+    }
+    // Tai san dang hien thi
+    public function list_property_available($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_available($id_user)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    // Tai san dang hien thi search
+    public function list_property_available_search($sql)
+    {
+       
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_available_search($sql)
+    {
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    // Tai san cho duyet
+    public function list_property_pending($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 0
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_pending($id_user)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 0
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
     }
 }
 ?>

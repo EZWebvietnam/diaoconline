@@ -1,10 +1,11 @@
+ 
 <div class="col_790 margin_left">
             <div class="box">
               	<div class="headline_11"><h2>
                 ĐĂNG TÀI SẢN MỚI
                 </h2></div>
 
-                <form action="/thanh-vien/tai-san-dang-moi" method="post" class="form_style_3" enctype="multipart/form-data">
+                <form  method="post" class="form_style_3" enctype="multipart/form-data">
                 <div class="body">
                   <div class="mess_head margin_bottom"><strong>Điền chính xác các thông tin dưới đây giúp cho tài sản của bạn xuất hiện chính xác và đầy đủ trong các kết quả theo nhu cầu của người dùng, việc này giúp cho giao dịch của bạn sẽ nhanh hơn.</strong></div>
                   
@@ -53,13 +54,12 @@
 </select></span>
                                         <span id="wardMember"><select id="WardListMember" name="WardListMember"><option value="">Phường/Xã</option>
 </select></span>
-                                        <span id="streetMember"><select class="last" id="StreetListMember" name="StreetListMember"><option value="">Đường</option>
-</select></span>
-                                        <input id="HouseNumber" maxlength="150" name="HouseNumber" placeholder="Số nhà" type="text" value="">
+                                        
+                                        <span id="house"><input id="HouseNumberStreet" maxlength="150" name="HouseNumber" placeholder="Số nhà - Đường" type="text" value=""></span>
                                         <input type="hidden" id="tpName" name="tpName" value="Hà Nội">
                                         <input type="hidden" id="qhName" name="qhName" value="Quận/Huyện">
                                         <input type="hidden" id="pxName" name="pxName" value="Phường/Xã">
-                                        <input type="hidden" id="dgName" name="dgName" value="Đường">
+                                       
                                         <input type="hidden" id="daName" name="daName" value="Danh sách dự án">
                                         <input type="hidden" id="plName" name="plName" value="Chọn tình trạng">
                                         <input type="hidden" id="huongName" name="huongName" value="Chọn hướng địa ốc">
@@ -70,7 +70,7 @@
                                 <li class="map">
                                     <label>Bản đồ</label>
                                     <div id="IdMapReview">
-                                        <img alt="" src="/images/demo/map_member.jpg">
+                                        <img alt="" src="<?php echo base_url();?>template/home_ezwebvietnam/images/demo/map_member.jpg">
                                         <button class="btn_2" type="button" id="btnMapReview">
                                             <span>CẬP NHẬT VỊ TRÍ</span>
                                         </button>
@@ -86,7 +86,7 @@
                                             var myLatlng;
                                             var toggleLatlng;
 
-                                            var keyGmap = "AIzaSyBixWpmfc_hbMxjngkO2mxs8c3wvzAvwn8";
+                                            var keyGmap = "AIzaSyAUTPN4rOuvSRFrBmo00YCd6xhe8uUUqHQ";
                                             function initialize() {
                                                 myLatlng = new google.maps.LatLng(10.7410135269165, 106.700729370117);
                                                 var mapOptions = {
@@ -159,10 +159,7 @@
 </select>
                                     <p id="PriceMainConvert"></p>
                                     <p>Lưu ý: Muốn <strong>giá thương lượng</strong> thì <strong>để trống hoặc 0</strong>.</p>
-                                    <script type="text/javascript">
-                                        $('#PriceMain').val(FormatNumber('',false));
-                                        CheckNumberPrice('#PriceMain', false);
-                                    </script>
+                                    
                               	</li>
                                 <li class="agency"><label>Môi giới</label>
                                 	<div class="select">
@@ -176,10 +173,7 @@
                                 <li class="living_area"><label>Diện tích sử dụng <span class="hightlight">*</span></label>
                                 	<div class="number">
                                 		<input id="DTSD" maxlength="9" name="DTSD" type="text" value=""><label>m2</label>
-                                        <script type="text/javascript">
-                                            $('#DTSD').val(FormatNumber('0', true));
-                                            CheckNumberPrice('#DTSD', true);
-                                        </script>
+                                        
                                     </div>
                                 </li>
                                 <li class="total_area">
@@ -194,14 +188,7 @@
                                     <div class="number" id="dvDTKV" style="display:none">
                                         <input id="DTKVWidthBehind" name="DTKVWidthBehind" placeholder="chiều ngang sau" style="margin-top:1px;" type="text" value=""><label>m</label>
                                     </div>
-                                    <script type="text/javascript">
-                                        $('#DTKVWidth').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTKVWidth', true);
-                                        $('#DTKVLength').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTKVLength', true);
-                                        $('#DTKVWidthBehind').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTKVWidthBehind', true);
-                                    </script>
+                                    
                                 </li>
                                 <li class="used_area"><label>Diện tích xây dựng</label>
                                 	<div class="number">
@@ -214,14 +201,7 @@
                                     <div class="number" id="dvDTXD" style="display:none">
                                         <input id="DTXDWidthBehind" name="DTXDWidthBehind" placeholder="chiều ngang sau" style="margin-top:1px;" type="text" value=""><label>m</label>
                                     </div>
-                                    <script type="text/javascript">
-                                        $('#DTXDWidth').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTXDWidth', true);
-                                        $('#DTXDLength').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTXDLength', true);
-                                        $('#DTXDWidthBehind').val(FormatNumber('0', true));
-                                        CheckNumberPrice('#DTXDWidthBehind', true);
-                                    </script>
+                                   
                                 </li>
                                 
                                 </ul>
@@ -278,48 +258,25 @@
                            	    <ul>
                                	<li id="diostatelegal"><label>Tình trạng pháp lý</label>
                                     <select id="DioStateLegalList" name="DioStateLegalList"><option value="">Chọn tình trạng</option>
-<option value="1">Sổ hồng</option>
-<option value="2">Giấy đỏ</option>
-<option value="3">Giấy tay</option>
-<option value="4">Đang hợp thức hóa</option>
-<option value="5">Giấy tờ hợp lệ</option>
-<option value="6">Chủ quyền tư nhân</option>
-<option value="7">Hợp đồng</option>
-<option value="8">Không xác định</option>
+<?php 
+foreach($list_phap_ly as $phap_ly)
+{
+?>
+<option value="<?php echo $phap_ly['id']?>"><?php echo $phap_ly['name']?></option>
+<?php } ?>
 </select>
                                 </li>
                                 <li id="diodirection"><label>Hướng tài sản</label>
                                     <select id="DioDirectionList" name="DioDirectionList"><option value="">Chọn hướng địa ốc</option>
-<option value="1">Hướng Ðông</option>
-<option value="2">Hướng Tây</option>
-<option value="3">Hướng Nam</option>
-<option value="4">Hướng Bắc</option>
-<option value="5">Hướng Đông Bắc</option>
-<option value="6">Hướng Đông Nam</option>
-<option value="7">Hướng Tây Bắc</option>
-<option value="8">Hướng Tây Nam</option>
-<option value="9">Không xác định</option>
+<?php 
+foreach($list_huong as $huong)
+{
+?>
+<option value="<?php echo $huong['id']?>"><?php echo $huong['name']?></option>
+<?php } ?>
 </select>
                                 </li>
-                                <li><label>Đường trước nhà</label>
-                                    <select id="StreetBeforeHouseList" name="StreetBeforeHouseList"><option value="">Chọn đường trước nhà</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="15">15</option>
-<option value="20">20</option>
-<option value="30">30</option>
-<option value="40">40</option>
-<option value="50">50</option>
-</select>
-                                </li>
+                                
                                 <li><label>Số lầu</label>
                                     <select id="NumberOfFloorList" name="NumberOfFloorList"><option value="-1">Chọn số tầng</option>
 <option value="1">1</option>
@@ -390,36 +347,12 @@
                                 </li>
                                 <li><label>Số phòng ngủ</label>
                                     <select id="NumberOfBedRoomList" name="NumberOfBedRoomList"><option value="-1">Chọn số phòng ngủ</option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
+<?php 
+foreach($list_pn as $pn)
+{
+?>
+<option value="<?php echo $pn['id']?>"><?php echo $pn['name']?></option>
+<?php } ?>
 </select>
                                 </li>
                                 <li><label>Số phòng tắm/WC</label>
@@ -483,21 +416,21 @@
                                 <li><label>Các tiện ích</label></li>
                                 <li class="check"><input name="fea_1" id="fea_1" value="1" type="checkbox">
                                 <label for="fea_1">Đầy đủ tiện nghi</label></li>
-                                <li class="check"><input name="fea_6" id="fea_6" value="6" type="checkbox">
+                                <li class="check"><input name="fea_6" id="fea_6" value="1" type="checkbox">
                                 <label for="fea_6">Chỗ đậu xe hơi</label></li>
-                                <li class="check"><input name="fea_7" id="fea_7" value="7" type="checkbox">
+                                <li class="check"><input name="fea_7" id="fea_7" value="1" type="checkbox">
                                 <label for="fea_7">Sân vườn</label></li>
-                                <li class="check"><input name="fea_8" id="fea_8" value="8" type="checkbox">
+                                <li class="check"><input name="fea_8" id="fea_8" value="1" type="checkbox">
                                 <label for="fea_8">Hồ bơi</label></li>
-                                <li class="check"><input name="fea_14" id="fea_14" value="14" type="checkbox">
+                                <li class="check"><input name="fea_14" id="fea_14" value="1" type="checkbox">
                                 <label for="fea_14">Tiện kinh doanh</label></li>
-                                <li class="check"><input name="fea_20" id="fea_20" value="20" type="checkbox">
+                                <li class="check"><input name="fea_20" id="fea_20" value="1" type="checkbox">
                                 <label for="fea_20">Tiện để ở</label></li>
-                                <li class="check"><input name="fea_21" id="fea_21" value="21" type="checkbox">
+                                <li class="check"><input name="fea_21" id="fea_21" value="1" type="checkbox">
                                 <label for="fea_21">Tiện làm văn phòng</label></li>
-                                <li class="check"><input name="fea_23" id="fea_23" value="23" type="checkbox">
+                                <li class="check"><input name="fea_23" id="fea_23" value="1" type="checkbox">
                                 <label for="fea_23">Tiện cho sản xuất</label></li>
-                                <li class="check"><input name="fea_24" id="fea_24" value="24" type="checkbox">
+                                <li class="check"><input name="fea_24" id="fea_24" value="1" type="checkbox">
                                 <label for="fea_24">Cho sinh viên thuê</label></li>
                                 </ul>
                               </fieldset>
@@ -531,8 +464,8 @@
                         <div class="body">
                         	
                            	    <fieldset>
-                                    <link href="Content/js/ajaxupload/fileuploader.css" rel="stylesheet" type="text/css">
-                                    <script src="Content/js/ajaxupload/fileuploader.js" type="text/javascript"></script>
+                                    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/ajaxupload/fileuploader.css" rel="stylesheet" type="text/css">
+                                    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/ajaxupload/fileuploader.js" type="text/javascript"></script>
                                     
                                     <ul id="manualUploadModeExample"><div class="qq-uploader"><div class="qq-upload-drop-area" style="display: none;"><span>Drop files here to upload</span></div><div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Chọn file<input multiple="multiple" type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;"></div><ul class="qq-upload-list"></ul></div></ul>
                                     <div id="triggerUpload" class="qq-upload-button qq-trigger">Bắt đầu upload</div>
@@ -609,12 +542,12 @@
                            	  <fieldset>
                            	    <ul>
                                	<li><label>Họ và tên <span class="hightlight">*</span></label>
-                                    <input id="ContactName" maxlength="200" name="ContactName" type="text" value="Nguyễn Trường Giang"></li>
+                                    <input id="ContactName" maxlength="200" name="ContactName" type="text" value="<?php echo $userdetail[0]['full_name']?>"></li>
                                 <li class="phone"><label>Điện thoại</label>
                                     <input id="ContactPhone" maxlength="40" name="ContactPhone" placeholder="Điện thoại bàn" style="width:200px" type="text" value=""> 
-                                    <input id="ContactMobile" maxlength="40" name="ContactMobile" placeholder="Di động" style="width:200px" type="text" value="01667039939"><span class="hightlight">*</span></li>
+                                    <input id="ContactMobile" maxlength="40" name="ContactMobile" placeholder="Di động" style="width:200px" type="text" value="<?php echo $userdetail[0]['phone']?>"><span class="hightlight">*</span></li>
                                 <li><label>Địa chỉ</label>
-                                    <input id="ContactAddress" maxlength="200" name="ContactAddress" type="text" value="HCM"></li>
+                                    <input id="ContactAddress" maxlength="200" name="ContactAddress" type="text" value="<?php echo $userdetail[0]['address']?>"></li>
                                 <li><label>Ghi chú </label>
                                     <input id="ContactNotes" maxlength="200" name="ContactNotes" type="text" value=""></li>
                                 </ul>
@@ -634,8 +567,8 @@
                                 	<li class="agree"><div class="info">
                                         <p>Khi nhấn nút <strong>ĐĂNG MỚI TÀI SẢN</strong>, bạn đã xác nhận hoàn toàn đồng ý với những <a href="http://www.diaoconline.vn/dieu-khoan-thoa-thuan" target="_blank"><strong>điều khoản thỏa thuận</strong></a></p></div></li>
                                     <li>
-                                                <button type="submit" name="SubmitNew" class="btn_2"><span>ĐĂNG MỚI TÀI SẢN</span></button>
-                                        <button type="submit" name="SubmitSave" class="btn_2"><span>LƯU LẠI</span></button>
+                                                <button type="submit" name="SubmitNew" value="1" class="btn_2"><span>ĐĂNG MỚI TÀI SẢN</span></button>
+                                        <button type="submit" name="SubmitSave" value="2" class="btn_2"><span>LƯU LẠI</span></button>
                                     
                                         <a name="SubmitCancel" class="btn_3" href="/thanh-vien/trang-chu"><span>HỦY BỎ</span></a>
                                         <input id="Status" name="Status" type="hidden" value="0">

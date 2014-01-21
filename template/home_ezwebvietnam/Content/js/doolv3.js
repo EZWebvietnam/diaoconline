@@ -38,17 +38,16 @@ $(function () {
     });
 
     $('#CityListMember').change(function () {
-        GetData('District', '_DistrictByCityIdMember', $(this).val(), '#districtMember');
+        GetData('home','member', 'ajax_get_district', $(this).val(), '#districtMember');
         $('#WardListMember').find('option[value!=""]').remove();
-        $('#StreetListMember').find('option[value!=""]').remove();
+       
         $('#ProjectListMember').find('option[value!=""]').remove();
     });
 
     $("#districtMember").delegate('#DistrictListMember', 'change', function (e) {
-        GetData("Ward", "_WardByDistrictIdMember", $(this).val(), "#wardMember");
-        GetData("Street", "_StreetByDistrictIdMember", $(this).val(), "#streetMember");
-        var queryProject = $(this).val() + '?did=' + $("#DistrictListMember").val() + '&cid=' + $("#CityListMember").val();
-        GetData("Project", "_ProjectByCityIdDistrictIdMember", queryProject, "#projectMember");
+        GetData('home',"member", "ajax_get_ward", $(this).val(), "#wardMember");
+        var queryProject = $(this).val() + '/' + $("#CityListMember").val();
+        GetData('home',"member", "get_project_by_district", queryProject, "#projectMember");
     });
 
     // submit form
@@ -293,10 +292,10 @@ function PostComment(tid, id) {
         }
     });
 }
-function GetData(controller, action, id, idData) {
+function GetData(folder,controller, action, id, idData) {
     $.ajax({
         type: "GET"
-        , url: "/" + controller + "/" + action + "/" + id
+        , url: "/diaoconline/"+folder +'/'+ controller + "/" + action + "/" + id
         , cache: false
         , dataType: "html"
         , success: function (data) {
@@ -497,11 +496,14 @@ function DeleteDataSaved(urlData, urlReturn, idData) {
 }
 
 function BuildUrl() {
-    var act = $('#frmSearch').attr('action');
+    var act = '/diaoconline/thanh-vien/tai-san-dang-hien-thi-search';
+   
     var url = '';
     $('[param]').each(function () {
         var name = $(this).attr('param').trim();
+        
         var valParam = $(this).val().trim();
+        
         if (url.indexOf(name) < 0 && valParam != '') {
             url += name + '=' + valParam + '&';
         }
@@ -511,7 +513,8 @@ function BuildUrl() {
         url = url.substring(0, url.length - 1);
     }
     if (url.length != 0) {
-        window.location = act + "/?" + url;
+        
+        window.location = act + "?" + url;
     } else {
         window.location = act;
     }

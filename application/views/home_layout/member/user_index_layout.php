@@ -548,18 +548,18 @@
         <h2>
             <span class="ico_16 ico_panel_1"></span><a>QUẢN LÝ TÀI SẢN</a></h2>
         <ul>
-            <li><a href="/thanh-vien/tai-san-dang-moi">Đăng tài sản mới</a></li>
+            <li><a href="<?php echo base_url()?>thanh-vien/tai-san-dang-moi">Đăng tài sản mới</a></li>
             <li>
-                <a href="/thanh-vien/tai-san/dang-hien-thi">Đang hiển thị 
-                (0)
+                <a href="<?php echo base_url()?>thanh-vien/tai-san-dang-hien-thi">Đang hiển thị 
+                
                 </a></li>
             <li>
                 <a href="/thanh-vien/tai-san/het-han">Hết hạn 
-                (0)
+                
                 </a></li>
             <li>
-                <a href="/thanh-vien/tai-san/dang-cho-duyet">Đang chờ duyệt 
-                (0)
+                <a href="<?php echo base_url(); ?>thanh-vien/tai-san-cho-duyet">Đang chờ duyệt 
+                
                 </a></li>
             <li>
                 <a href="/thanh-vien/tai-san/chua-hop-le">Chưa hợp lệ 

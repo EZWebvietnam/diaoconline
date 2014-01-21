@@ -41,12 +41,21 @@
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
 $route['thanh-vien/tai-san-dang-moi'] = "home/member/tai_san_dang_moi";
+$route['thanh-vien/tai-san-dang-hien-thi'] = "home/member/dang_hien_thi";
+$route['thanh-vien/tai-san-dang-hien-thi/page/(:any)'] = "home/member/dang_hien_thi";
+$route['thanh-vien/tai-san-cho-duyet'] = "home/member/dang_cho_duyet";
+$route['thanh-vien/tai-san-cho-duyet/page/(:any)'] = "home/member/dang_cho_duyet";
+$route['thanh-vien/tai-san-dang-hien-thi-search?(:any)'] = "home/member/dang_hien_thi_search/$1";
+//$route['thanh-vien/tai-san-dang-hien-thi-search/(:any)/(:any)'] = "home/member/dang_hien_thi_search";
 $route['thanh-vien/tai-san-luu'] = "home/member/du_property_luu";
 $route['thanh-vien/tin-tuc-da-luu'] = "home/member/tin_tuc_luu";
 $route['thanh-vien/du-an-da-luu'] = "home/member/project_save";
 $route['thanh-vien/du-an-da-luu/page/(:any)'] = "home/member/project_save";
 $route['thanh-vien/tai-san-luu/page/(:any)'] = "home/member/du_property_luu";
 $route['thanh-vien/tin-tuc-da-luu/page/(:any)'] = "home/member/tin_tuc_luu";
+//
+$route['xoa-proper/k/(:any)'] = "home/property/delete/$1";
+//
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
 $route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";
 $route['xoa-project-luu/k/(:any)'] = "home/project/delete_save/$1";
