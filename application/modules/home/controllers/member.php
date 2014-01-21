@@ -186,5 +186,74 @@ class Member extends MY_Controller
        $this->data['main_content']='member/list_tai_san_luu';
        $this->load->view('home_layout/member/user_index_layout',$this->data);
     }
+    public function tin_tuc_luu()
+    {
+        $this->load->model('newshomemodel');
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+       
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->newshomemodel->get_count_new_save();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->newshomemodel->get_list_new_save($config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tin_tuc_luu';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function project_save()
+    {
+        $this->load->model('projecthomemodel');
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->projecthomemodel->count_save();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->projecthomemodel->get_list_project_save($config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_project_luu';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function tai_san_dang_moi()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
+        $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
+         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->data['main_content']='member/dang_tai_san';
+        $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
 }
 ?>

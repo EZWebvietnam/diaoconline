@@ -40,8 +40,16 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['thanh-vien/tai-san-dang-moi'] = "home/member/tai_san_dang_moi";
 $route['thanh-vien/tai-san-luu'] = "home/member/du_property_luu";
+$route['thanh-vien/tin-tuc-da-luu'] = "home/member/tin_tuc_luu";
+$route['thanh-vien/du-an-da-luu'] = "home/member/project_save";
+$route['thanh-vien/du-an-da-luu/page/(:any)'] = "home/member/project_save";
+$route['thanh-vien/tai-san-luu/page/(:any)'] = "home/member/du_property_luu";
+$route['thanh-vien/tin-tuc-da-luu/page/(:any)'] = "home/member/tin_tuc_luu";
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
+$route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";
+$route['xoa-project-luu/k/(:any)'] = "home/project/delete_save/$1";
 $route['luu-tin/k/(:any)'] = "home/news/save_new/$1";
 $route['luu-prj/k/(:any)'] = "home/project/save_project/$1";
 $route['luu-dis/k/(:any)'] = "home/discovery/save_disco/$1";

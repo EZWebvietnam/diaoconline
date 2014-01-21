@@ -111,5 +111,21 @@ class Projecthomemodel extends CI_Model
         $id = intval($id);
         $this->db->delete('save_project',array('id'=>$id));
     }
+    //
+     public function get_list_project_save($number,$offset)
+    {
+        $number = intval($number);
+        $offset = intval($offset);
+        $sql="SELECT save_project.id as id_save,save_project.create_date as ngay_luu,project.id as id_pro, project.title,project.id_district,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate INNER JOIN save_project ON save_project.id_project = project.id LIMIT $offset,$number";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_save()
+    {
+        
+        $sql="SELECT project.id as id_pro, project.title,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate INNER JOIN save_project ON save_project.id_project = project.id";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+    }
 }
 ?>

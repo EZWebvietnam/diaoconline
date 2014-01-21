@@ -720,5 +720,24 @@ class Propertyhomemodel extends CI_Model
         return count($query->result_array());
         
     }
+    /////////// For member function
+    public function list_loai_dia_oc_member()
+    {
+        $sql = "SELECT * FROM loai_dia_oc WHERE parent<>0";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_vt_dia_oc_member()
+    {
+        $sql = "SELECT * FROM vi_tri_dia_oc";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function list_tinh_member()
+    {
+        $sql = "SELECT * FROM province";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

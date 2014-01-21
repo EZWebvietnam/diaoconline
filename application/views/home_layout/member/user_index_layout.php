@@ -601,9 +601,9 @@
             <span class="ico_16 ico_panel_5"></span><a href="#">QUẢN LÝ TIN LƯU</a></h2>
         <ul>
             <li>
-                <a href="/thanh-vien/tin-da-luu/tai-san">Tài sản đã lưu</a></li>
+                <a href="<?php echo base_url();?>thanh-vien/tai-san-luu">Tài sản đã lưu</a></li>
             <li>
-                <a href="/thanh-vien/tin-da-luu/tin-tuc">Tin tức đã lưu</a></li>
+                <a href="<?php echo base_url();?>thanh-vien/tin-tuc-da-luu">Tin tức đã lưu</a></li>
             <li>
                 <a href="/thanh-vien/tin-da-luu/du-an">Dự án đã lưu</a></li>
             <li>
