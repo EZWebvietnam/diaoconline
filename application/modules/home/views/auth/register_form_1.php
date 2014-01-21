@@ -108,7 +108,7 @@ $captcha = array(
                         <fieldset>	
                             <ul>
                             <li><label for="FullName">Họ và Tên</label> <span class="hightlight">*</span>
-                                <?php echo form_password($fullname); ?></li>
+                                <?php echo form_input($fullname); ?></li>
                             <li><label for="BirthDay">Ngày sinh</label>
                                 <div class="dob">
                                     <select id="AllDay" name="AllDay"><option selected="selected" value="0">Chọn ngày</option>
