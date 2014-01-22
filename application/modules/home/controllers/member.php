@@ -7,6 +7,8 @@ class Member extends MY_Controller
         $this->load->library('session');
         $this->load->library('tank_auth');
         $this->load->library('form_validation');
+        parent::list_city();
+        parent::list_district();
     }
     function change_email()
 	{
@@ -254,7 +256,7 @@ class Member extends MY_Controller
         {
             $data_save = array();
             $data_save = array(
-            'loai_hinh'=>$this->input->post('TinDang'),
+            'loai_tin'=>$this->input->post('TinDang'),
             'loai_dia_oc'=>$this->input->post('DioTypeList'),
             'vi_tri_dia_oc'=>$this->input->post('DioLineList'),
             'id_city'=>$this->input->post('CityListMember'),
@@ -275,9 +277,26 @@ class Member extends MY_Controller
             'so_phong_tam_wc'=>$this->input->post('NumberOfWCList'),
             'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
             'content'=>$this->input->post('Detail'),
-            'title'=>$this->input->post('Title')
+            'title'=>$this->input->post('Title'),
+            'moi_gioi'=>$this->input->post('MoiGioi')
             );
-            
+            if($this->input->post('TinDang')==2)
+            {
+                $data_save['loai_hinh']=3;
+            }
+            else
+            {
+                if($this->input->post('MoiGioi')==1)
+                {
+                    $data_save['loai_hinh']=1;
+                }
+                
+            }
+            if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+            {
+                $data_save['loai_hinh']=2;
+                $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
+            }
             if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
             {
                 $data_save['day_du_tien_nghi'] = 1;
@@ -344,7 +363,7 @@ class Member extends MY_Controller
         else
         {
             
-              $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
+            $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
             $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
             $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
             $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
@@ -501,6 +520,131 @@ class Member extends MY_Controller
        $this->data['list']=$array_sv;
        $this->data['main_content']='member/list_tai_san_pending';
        $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function edit_tai_san_pending($id)
+    {
+        $this->load->model('memberhomemodel');
+        $this->load->model('propertyhomemodel');
+        if($this->input->post())
+        {
+            if($this->input->post('SubmitSave'))
+            {
+                $data_save = array();
+                $data_save = array(
+                'loai_tin'=>$this->input->post('TinDang'),
+                'loai_dia_oc'=>$this->input->post('DioTypeList'),
+                'vi_tri_dia_oc'=>$this->input->post('DioLineList'),
+                'id_city'=>$this->input->post('CityListMember'),
+                'id_district'=>$this->input->post('DistrictListMember'),
+                'dia_chi'=>$this->input->post('HouseNumber'),
+                'price'=>$this->input->post('PriceMain'),
+                'asset'=>$this->input->post('AssetUnitList'),
+                'dien_tich'=>$this->input->post('DTSD'),
+                'chieu_ngang_truoc'=>$this->input->post('DTKVWidth'),
+                'chieu_dai'=>$this->input->post('DTKVLength'),
+                'xd_chieu_ngang_truoc'=>$this->input->post('DTXDWidth'),
+                'xd_chieu_dai'=>$this->input->post('DTXDLength'),
+                'tinh_trang_phap_ly'=>$this->input->post('DioStateLegalList'),
+                'huong'=>$this->input->post('DioDirectionList'),
+                'so_lau'=>$this->input->post('NumberOfFloorList'),
+                'so_phong_khach'=>$this->input->post('NumberOfLivingRoomList'),
+                'so_phong_ngu'=>$this->input->post('NumberOfBedRoomList'),
+                'so_phong_tam_wc'=>$this->input->post('NumberOfWCList'),
+                'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
+                'content'=>$this->input->post('Detail'),
+                'title'=>$this->input->post('Title')
+                );
+                if($this->input->post('TinDang')==2)
+                {
+                    $data_save['loai_hinh']=3;
+                }
+                else
+                {
+                    if($this->input->post('MoiGioi'))
+                    {
+                        $data_save['loai_hinh']=2;
+                    }
+                    else
+                    {
+                        $data_save['loai_hinh']=1;
+                    }
+                }
+                if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+                {
+                    $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
+                }
+                if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
+                {
+                    $data_save['day_du_tien_nghi'] = 1;
+                }
+                if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
+                {
+                    $data_save['cho_de_xe_hoi'] = 1;
+                }
+                if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
+                {
+                    $data_save['san_vuon'] = 1;
+                }
+                 if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
+                {
+                    $data_save['ho_boi'] = 1;
+                }
+                 if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
+                {
+                    $data_save['tien_kinh_doanh'] = 1;
+                }
+                if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
+                {
+                    $data_save['tien_de_o'] = 1;
+                }
+                if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
+                {
+                    $data_save['tien_lam_van_phong'] = 1;
+                }
+                if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
+                {
+                    $data_save['tien_cho_san_xuat'] = 1;
+                }
+                if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
+                {
+                    $data_save['cho_sinh_vien_thue'] = 1;
+                }
+                if($this->input->post('DTKVWidthBehind'))
+                {
+                    $data_save['chieu_ngang_sau'] = $this->input->post('DTKVWidthBehind');
+                }
+                if($this->input->post('DTXDWidthBehind'))
+                {
+                    $data_save['xd_chieu_ngang_sau'] = $this->input->post('DTXDWidthBehind');
+                }
+                if($this->input->post('ProjectListMember') && $this->input->post('ProjectListMember') !='')
+                {
+                    $data_save['id_duan'] =$this->input->post('ProjectListMember');
+                }
+                $data_save['id_user']=$this->session->userdata('user_id');
+                $data_save['status']=0;
+                $data_save['create_date']=strtotime('now');
+                
+                $this->propertyhomemodel->update($id,$data_save);
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }
+        else
+        {
+            $this->data['detail']=$this->propertyhomemodel->property_pending_detail($this->session->userdata('user_id'),$id);
+            $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
+            $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
+            $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
+            $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+            $this->data['list_district_1'] = $this->propertyhomemodel->list_district_by_city($this->data['detail'][0]['id_city']);
+            $this->data['list_project_by_district']=$this->propertyhomemodel->list_project_by_district($this->data['detail'][0]['id_district'],$this->data['detail'][0]['id_city']);
+            $this->data['list_phap_ly'] = $this->propertyhomemodel->list_phap_ly();
+            $this->data['list_huong'] = $this->propertyhomemodel->list_huong();
+            $this->data['list_pn'] = $this->propertyhomemodel->list_pn();
+            
+            $this->data['main_content']='member/edit_tai_san_pending';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
     }
 }
 ?>

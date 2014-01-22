@@ -56,6 +56,8 @@ $route['thanh-vien/tin-tuc-da-luu/page/(:any)'] = "home/member/tin_tuc_luu";
 //
 $route['xoa-proper/k/(:any)'] = "home/property/delete/$1";
 //
+$route['thanh-vien/sua-ts-cho-duyet/(:any)'] = "home/member/edit_tai_san_pending/$1";
+//
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
 $route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";
 $route['xoa-project-luu/k/(:any)'] = "home/project/delete_save/$1";

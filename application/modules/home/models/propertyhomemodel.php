@@ -780,7 +780,7 @@ class Propertyhomemodel extends CI_Model
     {
        
         $sql = "SELECT * FROM project WHERE id_district = '$id' AND id_city = '$id_city'";
-        
+       
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -788,6 +788,12 @@ class Propertyhomemodel extends CI_Model
     {
         $this->db->insert('property',$data);
         return $this->db->insert_id();
+    }
+    public function update($id,array $data)
+    {
+        $id = intval($id);
+        $this->db->where('id',$id);
+        $this->db->update('property',$data);
     }
     public function insert_tmp(array $data)
     {
@@ -872,6 +878,23 @@ class Propertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return count($query->result_array());
         
+    }
+    public function property_pending_detail($id_user,$id)
+    {
+        $id_user = intval($id_user);
+        $id = intval($id);
+       
+        $sql="SELECT property.*,property.loai_dia_oc as ldo_proper,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 0
+        AND property.id = $id
+         ORDER BY property.goi_giao_dich DESC
+        ";
+       
+        $query = $this->db->query($sql);
+        return $query->result_array();
     }
 }
 ?>

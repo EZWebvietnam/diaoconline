@@ -55,7 +55,7 @@ function full_url($s)
                         </form>
                     </div>
                 <div class="body">
- 					<div class="propertise_list saved_management">
+ 					<div class="propertise_list unpaid">
                     	<ul>
                             <?php 
                             $i=1;
@@ -80,10 +80,16 @@ function full_url($s)
                                     <?php } ?>
                                     </div>
                                     <div class="text">
+                                    <span class="property_code">MSTS:<strong><?php echo $item['code']?></strong></span><br/>
                                         <h4><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($item['loai_dia_oc'])))?>-c<?php echo $item['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($item['title'])))?>-h<?php echo $item['id']?>"><?php echo $item['title']?></a></h4>
-                                        <span class="updated_date">Ngày tạo:<?php echo date('d/m/Y h:i',$item['create_date'])?></span>
+                                        <span class="location">Vị trí: <?php echo $list_district[$item['id_district']]?>, <?php echo $list_city[$item['id_city']]?></span>
+                                        
                                         </div>
                                 </div>
+                                <div class="repair_post">
+                                        <span class="updated_date">Ngày tạo:<?php echo date('d/m/Y h:i',$item['create_date'])?></span><br />
+                                        <a href="<?php echo base_url();?>thanh-vien/sua-ts-cho-duyet/<?php echo $item['id']?>" class="repair"><span class="ico_16 ico_repair_16"></span>Chỉnh sửa</a>
+                                        </div>
                                 <div class="remove"><a href="javascript:void(0)" onclick="DeleteDataSaved('<?php echo base_url();?>xoa-proper/k/<?php echo $item['id'] ?>','<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi','#item_<?php echo $item['id']?>')" title="Xóa tin lưu"><span class="ico_remove_11"></span></a></div>
                             </li>
                                 <?php $i++;} ?>
