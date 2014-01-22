@@ -28,7 +28,9 @@ class Member extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
-        if(!$this->tank_auth->is_logged_in())
+        $active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
         {
             redirect('/');
         }

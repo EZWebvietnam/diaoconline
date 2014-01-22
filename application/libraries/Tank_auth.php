@@ -28,7 +28,7 @@ class Tank_auth
 
 		$this->ci->load->library('session');
 		$this->ci->load->database();
-		$this->ci->load->model('users');
+		$this->ci->load->model('home/users');
 
 		// Try to autologin
 		$this->autologin();
@@ -75,6 +75,7 @@ class Tank_auth
                                 'created'	=> $user->created,
                                 'email'=>$user->email,
 								'status'	=> ($user->activated == 1) ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED,
+                                'role'=>$user->role
 						));
 
 						if ($user->activated == 0) {							// fail - not activated
@@ -127,8 +128,20 @@ class Tank_auth
 	 */
 	function is_logged_in($activated = TRUE)
 	{
-		return $this->ci->session->userdata('status') === ($activated ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED);
+        return $this->ci->session->userdata('status') === ($activated ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED);
 	}
+    function is_login_admin($activated = TRUE)
+    {
+        $array = $this->ci->users->get_user_role();
+        if(in_array($this->ci->session->userdata('role'),$array))
+        {
+            return $this->ci->session->userdata('status') === ($activated ? STATUS_ACTIVATED : STATUS_NOT_ACTIVATED);
+        }
+        else
+        {
+            return 0;
+        }
+    }
 
 	/**
 	 * Get user_id
@@ -352,7 +365,7 @@ class Tank_auth
 						$this->ci->config->item('forgot_password_expire', 'tank_auth'))) {	// success
 
 					// Clear all user's autologins
-					$this->ci->load->model('user_autologin');
+					$this->ci->load->model('home/user_autologin');
 					$this->ci->user_autologin->clear($user->id);
 
 					return array(
@@ -518,7 +531,7 @@ class Tank_auth
 		$this->ci->load->helper('cookie');
 		$key = substr(md5(uniqid(rand().get_cookie($this->ci->config->item('sess_cookie_name')))), 0, 16);
 
-		$this->ci->load->model('user_autologin');
+		$this->ci->load->model('home/user_autologin');
 		$this->ci->user_autologin->purge($user_id);
 
 		if ($this->ci->user_autologin->set($user_id, md5($key))) {
@@ -544,7 +557,7 @@ class Tank_auth
 
 			$data = unserialize($cookie);
 
-			$this->ci->load->model('user_autologin');
+			$this->ci->load->model('home/user_autologin');
 			$this->ci->user_autologin->delete($data['user_id'], md5($data['key']));
 
 			delete_cookie($this->ci->config->item('autologin_cookie_name', 'tank_auth'));
@@ -567,7 +580,7 @@ class Tank_auth
 
 				if (isset($data['key']) AND isset($data['user_id'])) {
 
-					$this->ci->load->model('user_autologin');
+					$this->ci->load->model('home/user_autologin');
 					if (!is_null($user = $this->ci->user_autologin->get($data['user_id'], md5($data['key'])))) {
 
 						// Login user
@@ -605,7 +618,7 @@ class Tank_auth
 	function is_max_login_attempts_exceeded($login)
 	{
 		if ($this->ci->config->item('login_count_attempts', 'tank_auth')) {
-			$this->ci->load->model('login_attempts');
+			$this->ci->load->model('home/login_attempts');
 			return $this->ci->login_attempts->get_attempts_num($this->ci->input->ip_address(), $login)
 					>= $this->ci->config->item('login_max_attempts', 'tank_auth');
 		}
@@ -623,7 +636,7 @@ class Tank_auth
 	{
 		if ($this->ci->config->item('login_count_attempts', 'tank_auth')) {
 			if (!$this->is_max_login_attempts_exceeded($login)) {
-				$this->ci->load->model('login_attempts');
+				$this->ci->load->model('home/login_attempts');
 				$this->ci->login_attempts->increase_attempt($this->ci->input->ip_address(), $login);
 			}
 		}
@@ -639,7 +652,7 @@ class Tank_auth
 	private function clear_login_attempts($login)
 	{
 		if ($this->ci->config->item('login_count_attempts', 'tank_auth')) {
-			$this->ci->load->model('login_attempts');
+			$this->ci->load->model('home/login_attempts');
 			$this->ci->login_attempts->clear_attempts(
 					$this->ci->input->ip_address(),
 					$login,

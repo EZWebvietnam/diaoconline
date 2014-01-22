@@ -144,7 +144,7 @@ class MY_Controller extends CI_Controller
     }
     public function list_city()
     {
-        $this->load->model('cityhomemodel');
+        $this->load->model('home/cityhomemodel');
         $list_ = $this->cityhomemodel->get_list_city();
         foreach($list_ as $city)
         {
@@ -154,7 +154,7 @@ class MY_Controller extends CI_Controller
     }
     public function list_district()
     {
-        $this->load->model('cityhomemodel');
+        $this->load->model('home/cityhomemodel');
         $list_ = $this->cityhomemodel->get_list_district();
         foreach($list_ as $city)
         {

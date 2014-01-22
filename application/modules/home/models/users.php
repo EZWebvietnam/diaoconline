@@ -40,7 +40,21 @@ class Users extends CI_Model
 		if ($query->num_rows() == 1) return $query->row();
 		return NULL;
 	}
-
+    /*
+    Get User Role
+    */
+    public function get_user_role()
+    {
+        $this->db->where('is_staff',1);
+        $query = $this->db->get('user_role');
+        $array = $query->result_array();
+        $data_return = array();
+        foreach($array as $data)
+        {
+            $data_return[$data['id']]=$data['id'];
+        }
+        return $data_return;
+    }
 	/**
 	 * Get user record by login (username or email)
 	 *

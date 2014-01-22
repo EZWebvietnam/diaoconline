@@ -45,6 +45,7 @@
         <link href='<?php echo base_url(); ?>template/admin_ninhbinhcoop/css/uploadify.css' rel='stylesheet'>
         <script src="<?php echo base_url(); ?>template/admin_ninhbinhcoop/js/jquery-1.7.2.min.js"></script>
         <script src="<?php echo base_url(); ?>template/admin_ninhbinhcoop/js/jquery-ui-1.8.21.custom.min.js"></script>
+        <script src="<?php echo base_url(); ?>plugin/ckeditor/ckeditor.js"></script>
         <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
           <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

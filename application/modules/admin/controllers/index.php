@@ -16,7 +16,7 @@ class Index extends MY_Controller
     function login()
 	{
             $data['main_content']='login/login';
-		if ($this->tank_auth->is_logged_in()) {						// logged in, not activated
+		if ($this->tank_auth->is_login_admin(TRUE)) {						// logged in, not activated
 			redirect('/admin/user/listuser');
 
 		} else {
