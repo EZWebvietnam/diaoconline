@@ -313,9 +313,13 @@ class Member extends MY_Controller
                 {
                     $data_save['loai_hinh']=1;
                 }
+                else
+                {
+                    $data_save['loai_hinh']=2;
+                }
                 
             }
-            if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+            if($this->input->post('MoiGioi')==2)
             {
                 $data_save['loai_hinh']=2;
                 $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
@@ -619,17 +623,19 @@ class Member extends MY_Controller
                 }
                 else
                 {
-                    if($this->input->post('MoiGioi'))
-                    {
-                        $data_save['loai_hinh']=2;
-                    }
-                    else
+                    if($this->input->post('MoiGioi')==1)
                     {
                         $data_save['loai_hinh']=1;
                     }
+                    else
+                    {
+                        $data_save['loai_hinh']=2;
+                    }
+                    
                 }
-                if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+                if($this->input->post('MoiGioi')==2)
                 {
+                    $data_save['loai_hinh']=2;
                     $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
                 }
                 if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
@@ -895,17 +901,19 @@ class Member extends MY_Controller
                 }
                 else
                 {
-                    if($this->input->post('MoiGioi'))
-                    {
-                        $data_save['loai_hinh']=2;
-                    }
-                    else
+                    if($this->input->post('MoiGioi')==1)
                     {
                         $data_save['loai_hinh']=1;
                     }
+                    else
+                    {
+                        $data_save['loai_hinh']=2;
+                    }
+                    
                 }
-                if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+                if($this->input->post('MoiGioi')==2)
                 {
+                    $data_save['loai_hinh']=2;
                     $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
                 }
                 if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)

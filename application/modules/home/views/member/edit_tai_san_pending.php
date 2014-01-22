@@ -88,7 +88,7 @@ foreach ($list_vi_tri as $l_vi_tri)
                                         <span id="wardMember"><select id="WardListMember" name="WardListMember"><option value="">Phường/Xã</option>
 </select></span>
                                         
-                                        <span id="house"><input id="HouseNumberStreet" maxlength="150" name="HouseNumber" placeholder="Số nhà - Đường" type="text" value=""></span>
+                                        <span id="house"><input id="HouseNumberStreet" maxlength="150" name="HouseNumber" placeholder="Số nhà - Đường" type="text" value="<?php echo $detail[0]['dia_chi']?>"></span>
                                         <input type="hidden" id="tpName" name="tpName" value="Hà Nội">
                                         <input type="hidden" id="qhName" name="qhName" value="Quận/Huyện">
                                         <input type="hidden" id="pxName" name="pxName" value="Phường/Xã">

@@ -91,7 +91,7 @@
         <div id="head_content" class="wrap">
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <?php 
-            $q = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'application/views/home_layout/header_.php';
+            $q = $_SERVER['DOCUMENT_ROOT'].'application/views/home_layout/header_.php';
             include($q);
             ?>
             
@@ -174,7 +174,7 @@
         <ul>
             
             <li>
-                <a href="<?php echo base_url()?>nap-tien">Nạp điểm</a></li>
+                <a href="<?php echo base_url()?>thanh-vien/nap-tien">Nạp điểm</a></li>
             <li>
                 <a href="<?php echo base_url();?>thanh-vien/log-giao-dich">Lịch sử giao dịch</a></li>
         </ul>

@@ -136,7 +136,7 @@ class Auth extends MY_Controller
 					if ($email_activation) {									// send "activate" email
 						$data['activation_period'] = $this->config->item('email_activation_expire', 'tank_auth') / 3600;
 
-						$this->_send_email('activate', $data['email'], $data);
+						//$this->_send_email('activate',$this->form_validation->set_value('email'),$data['email'], $data);
 
 						unset($data['password']); // Clear password (just for any case)
 
@@ -448,17 +448,19 @@ class Auth extends MY_Controller
 	 * @param	array
 	 * @return	void
 	 */
-	function _send_email($type, $email, &$data)
+	function _send_email($type, $to,$email, &$data)
 	{
-	   $this->load->library('email');
-	     $this->load->library('maillinux');
+        /*$this->load->library('email');
+        $this->load->library('maillinux');
 		$from = 'nguyentruonggiang91@gmail.com';
-		$reply_to = $this->email->reply_to($this->config->item('webmaster_email', 'tank_auth'), $this->config->item('website_name', 'tank_auth'));
-		//$this->email->to($email);
-		$subject = sprintf($this->lang->line('auth_subject_'.$type), $this->config->item('website_name', 'tank_auth'));
+		$subject = 'Register Account Success';
 		$messsage = $this->load->view('email/'.$type.'-html', $data, TRUE);
-        $this->maillinux->SendMail($from,$email,$subject,$messsage);
-		
+        $this->maillinux->SendMail($from,$email,$subject,$messsage);*/
+        $this->load->library('mailer');
+        $from = 'nguyentruonggiang91@gmail.com';
+        $subject = 'Register Account Success';
+		$messsage = $this->load->view('email/'.$type.'-html', $data, TRUE);
+        $this->mailer->sendmail($to,$to,$subject,$messsage);
 	}
 
 	/**

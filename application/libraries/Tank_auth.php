@@ -182,6 +182,7 @@ class Tank_auth
                 'full_name'=>$fullname,
                 'phone'=>$phone,
 				'last_ip'	=> $this->ci->input->ip_address(),
+                'activated'=>1
 			);
 
 			if ($email_activation) {

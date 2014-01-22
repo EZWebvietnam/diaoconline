@@ -209,11 +209,16 @@ if (defined('ENVIRONMENT'))
  }
  else
  {
-     define('DB_NAME','jcbckiod_9fay');
-     define('DB_USER','jcbckiod_9fay');
-     define('DB_PASS','a123456');
-     define('ROT_DIR','/diaoconline/');
-     define('BASE_URL','http://giangbeo.com/diaoconline/');
+     define('DB_NAME','echnair_diaoc');
+     define('DB_USER','echnair_diaoc');
+     define('DB_PASS','17121990');
+     define('ROT_DIR','/');
+     define('BASE_URL','http://dcbland.com');
+    // define('DB_NAME','jcbckiod_9fay');
+     //define('DB_USER','jcbckiod_9fay');
+     //define('DB_PASS','a123456');
+     //define('ROT_DIR','/diaoconline/');
+     //define('BASE_URL','http://giangbeo.com/diaoconline/');
  }
 require_once BASEPATH.'core/CodeIgniter.php';
 
