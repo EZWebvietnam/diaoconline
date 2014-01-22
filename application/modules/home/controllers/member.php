@@ -1114,5 +1114,48 @@ class Member extends MY_Controller
         $this->load->model('propertyhomemodel');
         $this->propertyhomemodel->delete_dich_vu_($id);
     }
+    public function nap_tien()
+    {
+        $this->load->library('nl');
+        if($this->input->post())
+        {
+            $url = base_url()."home/member/ket_qua";
+            $receiver ="nguyentruonggiang91@gmail.com";
+            $transaction_info='';
+            $order_code='TEST123';
+            $price = '2000';
+            $url = $this->nl->buildCheckoutUrlExpand($url,$receiver,$transaction_info,$order_code,$price);
+            redirect($url);
+        }
+        else
+        {
+            $this->data['main_content']='member/nap_tien';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function ket_qua()
+    {
+        $transaction_info    =    $_GET['transaction_info']; 
+        $order_code    =    $_GET['order_code']; 
+        $price    =    $_GET['price']; 
+        $payment_id    =    $_GET['payment_id']; 
+        $payment_type    =    $_GET['payment_type']; 
+        $error_text    =    $_GET['error_text']; 
+        $secure_code    =    $_GET['secure_code']; 
+        $this->load->library('nl');
+        $result = $this->nl->verifyPaymentUrl($transaction_info, $order_code, $price, $payment_id, $payment_type, $error_text, $secure_code); 
+        if($result===true)
+        {
+            if($error_text=='')
+            {
+                
+            }
+            else
+            {
+                
+            }
+        }
+    }  
+    
 }
 ?>
