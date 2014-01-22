@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2014 at 03:10 PM
+-- Generation Time: Jan 22, 2014 at 08:38 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -19,6 +19,7 @@ SET time_zone = "+00:00";
 --
 -- Database: `diaoconline`
 --
+
 
 -- --------------------------------------------------------
 
@@ -161,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('531aa2005dc898de6e56eda136620246', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390399772, 'a:1:{s:9:"user_data";s:0:"";}');
+('efa0278eb6f7d177c510d15b746a8f14', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390419377, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -1005,7 +1006,7 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `login` varchar(50) COLLATE utf8_bin NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -1176,14 +1177,14 @@ CREATE TABLE IF NOT EXISTS `project` (
   `create_date` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `project`
 --
 
 INSERT INTO `project` (`id`, `title`, `content`, `img`, `id_district`, `id_city`, `id_cate`, `tieu_diem`, `create_date`, `id_user`) VALUES
-(1, 'Lexington An Phú', 'Lexington là một dự án gồm 03 tòa tháp căn hộ cao cấp 25 tầng tọa lạc tại phường An Phú, Quận 2, Thành phố Hồ Chí Minh. Do Công ty Cổ phần bất động sản Novaland làm chủ đầu tư', 'thumb-DF0-lexington-an-phu.jpg', '001', '01', 2, 0, 0, 1);
+(1, 'Lexington An Phú', '<p>Lexington l&agrave; một dự &aacute;n gồm 03 t&ograve;a th&aacute;p căn hộ cao cấp 25 tầng tọa lạc tại phường An Ph&uacute;, Quận 2, Th&agrave;nh phố Hồ Ch&iacute; Minh. Do C&ocirc;ng ty Cổ phần bất động sản Novaland l&agrave;m chủ đầu tư</p>\r\n', 'thumb-DF0-lexington-an-phu.jpg', '001', '01', 1, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -1527,6 +1528,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `website` varchar(255) COLLATE utf8_bin NOT NULL,
   `birthday` varchar(255) COLLATE utf8_bin NOT NULL,
   `img` varchar(255) COLLATE utf8_bin NOT NULL,
+  `role` int(11) NOT NULL DEFAULT '3',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
 
@@ -1534,8 +1536,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-22 13:07:58', '2014-01-20 11:40:27', '2014-01-22 12:07:58', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
+INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`, `role`) VALUES
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-22 18:44:21', '2014-01-20 11:40:27', '2014-01-22 17:47:26', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -1599,6 +1601,28 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
 
 INSERT INTO `user_profiles` (`id`, `user_id`, `country`, `website`) VALUES
 (1, 1, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_role`
+--
+
+CREATE TABLE IF NOT EXISTS `user_role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `is_staff` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `user_role`
+--
+
+INSERT INTO `user_role` (`id`, `name`, `is_staff`) VALUES
+(1, 'Administrator', 1),
+(2, 'Staff', 1),
+(3, 'Member', 0);
 
 -- --------------------------------------------------------
 
