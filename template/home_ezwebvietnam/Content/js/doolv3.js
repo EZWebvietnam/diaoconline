@@ -43,7 +43,15 @@ $(function () {
        
         $('#ProjectListMember').find('option[value!=""]').remove();
     });
-
+    $('#list_sv').change(function () {
+        GetData('home','member', 'ajax_get_price_sv', $(this).val(), '#price_');
+       
+    });
+    $('#month').keyup(function () {
+        GetData('home','member', 'sum_time', $(this).val(), '#date');
+        $sv = $('#list_sv').val();
+        GetData_('home','member', 'ajax_total', $(this).val(),$sv, '#money_s');
+    });
     $("#districtMember").delegate('#DistrictListMember', 'change', function (e) {
         GetData('home',"member", "ajax_get_ward", $(this).val(), "#wardMember");
         var queryProject = $(this).val() + '/' + $("#CityListMember").val();
@@ -296,6 +304,19 @@ function GetData(folder,controller, action, id, idData) {
     $.ajax({
         type: "GET"
         , url: "/diaoconline/"+folder +'/'+ controller + "/" + action + "/" + id
+        , cache: false
+        , dataType: "html"
+        , success: function (data) {
+            if (data != null & data != "") {
+                $(idData).html(data);
+            }
+        }
+    });
+}
+function GetData_(folder,controller, action, id,abc, idData) {
+    $.ajax({
+        type: "GET"
+        , url: "/diaoconline/"+folder +'/'+ controller + "/" + action + "/" + id+'/'+abc
         , cache: false
         , dataType: "html"
         , success: function (data) {

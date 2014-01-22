@@ -795,6 +795,7 @@ class Propertyhomemodel extends CI_Model
         $this->db->where('id',$id);
         $this->db->update('property',$data);
     }
+   
     public function insert_tmp(array $data)
     {
         $this->db->insert('property_tmp',$data);
@@ -879,6 +880,47 @@ class Propertyhomemodel extends CI_Model
         return count($query->result_array());
         
     }
+     // Tai san chua thanh toan
+    public function list_property_waitpay($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,chi_tiet_dv_ts.id_ctdvts,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN chi_tiet_dv_ts
+        ON chi_tiet_dv_ts.id_tai_san = property.id
+        LEFT JOIN dich_vu_tai_san 
+        ON dich_vu_tai_san.id_service = chi_tiet_dv_ts.id_dich_vu
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND 
+        chi_tiet_dv_ts.tinh_trang = 0
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_waitpay($id_user)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN chi_tiet_dv_ts
+        ON chi_tiet_dv_ts.id_tai_san = property.id
+        LEFT JOIN dich_vu_tai_san ON dich_vu_tai_san.id_service = chi_tiet_dv_ts.id_dich_vu
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user
+        AND chi_tiet_dv_ts.tinh_trang = 0
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
     public function property_pending_detail($id_user,$id)
     {
         $id_user = intval($id_user);
@@ -895,6 +937,110 @@ class Propertyhomemodel extends CI_Model
        
         $query = $this->db->query($sql);
         return $query->result_array();
+    }
+    // Tai san dang soan
+    public function list_property_prepare($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property_tmp.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property_tmp
+        
+        LEFT JOIN loai_dia_oc
+        ON property_tmp.loai_dia_oc = loai_dia_oc.id
+        WHERE property_tmp.id_user = $id_user
+         ORDER BY property_tmp.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_prepare($id_user)
+    {
+        
+        $sql="SELECT property_tmp.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property_tmp
+        
+        LEFT JOIN loai_dia_oc
+        ON property_tmp.loai_dia_oc = loai_dia_oc.id
+        WHERE property_tmp.id_user = $id_user
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    public function detail_hs_dang_soan($id,$id_user)
+    {
+        $sql="SELECT property_tmp.*,property_tmp.loai_dia_oc as ldo_proper,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property_tmp
+        
+        LEFT JOIN loai_dia_oc
+        ON property_tmp.loai_dia_oc = loai_dia_oc.id
+        WHERE property_tmp.id_user = $id_user AND property_tmp.id = $id
+        ";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function delete_tmp($id)
+    {
+        $id = intval($id);
+        $this->db->delete('property_tmp',array('id'=>$id));
+    }
+    public function update_tmp($id,array $data)
+    {
+        $id = intval($id);
+        $this->db->where('id',$id);
+        $this->db->update('property_tmp',$data);
+    }
+  
+     // Tai san het han
+    public function list_property_exp($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,chi_tiet_dv_ts.id_ctdvts,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN chi_tiet_dv_ts
+        ON chi_tiet_dv_ts.id_tai_san = property.id
+        LEFT JOIN dich_vu_tai_san 
+        ON dich_vu_tai_san.id_service = chi_tiet_dv_ts.id_dich_vu
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND 
+        chi_tiet_dv_ts.tinh_trang = 1 AND ngay_het_han <=now()
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_exp($id_user)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN chi_tiet_dv_ts
+        ON chi_tiet_dv_ts.id_tai_san = property.id
+        LEFT JOIN dich_vu_tai_san ON dich_vu_tai_san.id_service = chi_tiet_dv_ts.id_dich_vu
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND ngay_het_han <=now()
+        AND chi_tiet_dv_ts.tinh_trang = 1
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    //Huy dich vu
+    public function delete_dich_vu_($id)
+    {
+        $id = intval($id);
+        $this->db->delete('chi_tiet_dv_ts',array('id_ctdvts'=>$id));
     }
 }
 ?>

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4.1
+-- version 3.1.3.1
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jan 21, 2014 at 08:47 PM
--- Server version: 5.5.32
--- PHP Version: 5.4.19
+-- Host: localhost
+-- Generation Time: Jan 22, 2014 at 04:14 PM
+-- Server version: 5.1.33
+-- PHP Version: 5.2.9
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -19,7 +18,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `diaoconline`
 --
-
 
 -- --------------------------------------------------------
 
@@ -120,6 +118,29 @@ INSERT INTO `cate_project` (`id`, `name`, `parent`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `chi_tiet_dv_ts`
+--
+
+CREATE TABLE IF NOT EXISTS `chi_tiet_dv_ts` (
+  `id_ctdvts` int(11) NOT NULL AUTO_INCREMENT,
+  `id_tai_san` int(11) NOT NULL,
+  `id_dich_vu` int(11) NOT NULL,
+  `ngay_het_han` datetime NOT NULL,
+  `thoi_gian_dang_ky` int(11) NOT NULL,
+  `tinh_trang` int(11) NOT NULL,
+  `tong_tien` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY (`id_ctdvts`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `chi_tiet_dv_ts`
+--
+
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `ci_sessions`
 --
 
@@ -137,8 +158,29 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('172c0557a6785bbd3ca133d2766e94b4', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390328145, 'a:7:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";}'),
-('2fa2f100f8e6505eb12c753462779736', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390333570, 'a:7:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";}');
+('80df4711f8c59afccc2cf687f18daa2c', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390381980, 0x613a373a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b7d);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dich_vu_tai_san`
+--
+
+CREATE TABLE IF NOT EXISTS `dich_vu_tai_san` (
+  `id_service` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `money` int(11) NOT NULL,
+  PRIMARY KEY (`id_service`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `dich_vu_tai_san`
+--
+
+INSERT INTO `dich_vu_tai_san` (`id_service`, `name`, `money`) VALUES
+(1, 'VIP 1', 2000000),
+(2, 'VIP 2', 3000000),
+(3, 'VIP 3', 4000000);
 
 -- --------------------------------------------------------
 
@@ -962,6 +1004,11 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
+--
+-- Dumping data for table `login_attempts`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1152,18 +1199,19 @@ CREATE TABLE IF NOT EXISTS `property` (
   `moi_gioi` int(11) NOT NULL,
   `asset` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
+  `phi_ky_gui` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `property`
 --
 
-INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`, `goi_giao_dich`, `loai_tin`, `moi_gioi`, `asset`, `status`) VALUES
-(1, 1, 1, 1, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, 0, 0, '123.jpg', 2, 0, 0, '', 1),
-(2, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 3, 0, 0, '', 1),
-(3, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1),
-(11, 1, 1, 1, 'sss', '123', 'sss', '1', '', 1, 1, 2, 1, 1, 1, 1, 1, 1, 15, 17, 1, 18, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, 1, 0, '', 0, 0, 0, 'tongdientich', 0);
+INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`, `goi_giao_dich`, `loai_tin`, `moi_gioi`, `asset`, `status`, `phi_ky_gui`) VALUES
+(1, 1, 1, 1, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', '84000000', '252888', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, 0, 0, '123.jpg', 2, 0, 0, '', 1, '0'),
+(3, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0'),
+(12, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0'),
+(20, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -1216,15 +1264,16 @@ CREATE TABLE IF NOT EXISTS `property_tmp` (
   `moi_gioi` int(11) NOT NULL,
   `asset` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `status` int(11) NOT NULL,
+  `phi_ky_gui` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `property_tmp`
 --
 
-INSERT INTO `property_tmp` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`, `goi_giao_dich`, `loai_tin`, `moi_gioi`, `asset`, `status`) VALUES
-(8, 1, 1, 1, 'ssss', 'sss', 'ssss', '1', '', 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '', '01', 0, 1, 0, 0, '', 0, 0, 0, 'tongdientich', 0);
+INSERT INTO `property_tmp` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`, `goi_giao_dich`, `loai_tin`, `moi_gioi`, `asset`, `status`, `phi_ky_gui`) VALUES
+(9, 1, 1, 1, 'ssssssssssss', '', 'sss', '1111', '', 121, 2, 0, 1, 1, 1, 1, 2, 3, 4, 2, 3, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '001', '01', 0, 1, 1, 1390376451, '', 0, 1, 2, 'tongdientich', 0, 20);
 
 -- --------------------------------------------------------
 
@@ -1364,6 +1413,11 @@ CREATE TABLE IF NOT EXISTS `save_property` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
+--
+-- Dumping data for table `save_property`
+--
+
+
 -- --------------------------------------------------------
 
 --
@@ -1449,7 +1503,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-21 19:18:23', '2014-01-20 11:40:27', '2014-01-21 18:18:23', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '127.0.0.1', '2014-01-22 10:07:08', '2014-01-20 11:40:27', '2014-01-22 10:07:08', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
 
 -- --------------------------------------------------------
 
@@ -1471,7 +1525,27 @@ CREATE TABLE IF NOT EXISTS `user_autologin` (
 --
 
 INSERT INTO `user_autologin` (`key_id`, `user_id`, `user_agent`, `last_ip`, `last_login`) VALUES
-('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 12:10:20');
+('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 19:10:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_blance`
+--
+
+CREATE TABLE IF NOT EXISTS `user_blance` (
+  `id_blance` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `so_du` int(11) NOT NULL,
+  PRIMARY KEY (`id_blance`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `user_blance`
+--
+
+INSERT INTO `user_blance` (`id_blance`, `id_user`, `so_du`) VALUES
+(1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -12663,7 +12737,3 @@ INSERT INTO `ward` (`wardid`, `name`, `type`, `location`, `districtid`) VALUES
 ('32244', 'Rạch Gốc', 'Thị Trấn', '', '973'),
 ('32245', 'Tân Ân', 'Xã', '8 38 45N, 105 03 22E', '973'),
 ('32248', 'Đất Mũi', 'Xã', '8 36 41N, 104 47 12E', '973');
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

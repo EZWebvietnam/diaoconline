@@ -41,6 +41,9 @@
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
 $route['thanh-vien/tai-san-dang-moi'] = "home/member/tai_san_dang_moi";
+$route['thanh-vien/dich-vu-chua-thanh-toan'] = "home/member/chua_thanh_toan";
+$route['thanh-vien/thanh-toan-dich-vu/(:any)'] = "home/member/thanh_toan/$1";
+$route['thanh-vien/dich-vu-chua-thanh-toan/page/(:any)'] = "home/member/chua_thanh_toan";
 $route['thanh-vien/tai-san-dang-hien-thi'] = "home/member/dang_hien_thi";
 $route['thanh-vien/tai-san-dang-hien-thi/page/(:any)'] = "home/member/dang_hien_thi";
 $route['thanh-vien/tai-san-cho-duyet'] = "home/member/dang_cho_duyet";
@@ -55,8 +58,17 @@ $route['thanh-vien/tai-san-luu/page/(:any)'] = "home/member/du_property_luu";
 $route['thanh-vien/tin-tuc-da-luu/page/(:any)'] = "home/member/tin_tuc_luu";
 //
 $route['xoa-proper/k/(:any)'] = "home/property/delete/$1";
+$route['huy-dich-vu/k/(:any)'] = "home/member/huy_dich_vu/$1";
 //
 $route['thanh-vien/sua-ts-cho-duyet/(:any)'] = "home/member/edit_tai_san_pending/$1";
+//
+$route['thanh-vien/tai-san-dang-soan'] = "home/member/list_dang_soan";
+$route['thanh-vien/tai-san-dang-soan/page/(:any)'] = "home/member/list_dang_soan";
+$route['thanh-vien/sua-hs-dang-soan/(:any)'] = "home/member/sua_hs_dang_soan/$1";
+//
+$route['thanh-vien/tai-san-het-han'] = "home/member/list_het_han";
+$route['thanh-vien/tai-san-het-han/page/(:any)'] = "home/member/list_het_han";
+$route['thanh-vien/gia-han-dich-vu/(:any)'] = "home/member/gia_han_dich_vu/$1";
 //
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
 $route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";

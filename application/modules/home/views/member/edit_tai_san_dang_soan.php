@@ -1,4 +1,4 @@
- 
+
 <div class="col_790 margin_left">
             <div class="box">
               	<div class="headline_11"><h2>
@@ -678,7 +678,7 @@ for($b=1;$b<=20;$b++)
                                 	<li class="agree"><div class="info">
                                         <p>Khi nhấn nút <strong>ĐĂNG MỚI TÀI SẢN</strong>, bạn đã xác nhận hoàn toàn đồng ý với những <a href="http://www.diaoconline.vn/dieu-khoan-thoa-thuan" target="_blank"><strong>điều khoản thỏa thuận</strong></a></p></div></li>
                                     <li>
-                                                
+                                        <button type="submit" name="SubmitPost" value="1" class="btn_2"><span>ĐĂNG TIN</span></button>            
                                         <button type="submit" name="SubmitSave" value="2" class="btn_2"><span>LƯU LẠI</span></button>
                                     
                                         <a name="SubmitCancel" class="btn_3" href="/thanh-vien/trang-chu"><span>HỦY BỎ</span></a>

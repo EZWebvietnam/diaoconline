@@ -298,41 +298,77 @@ class Member extends MY_Controller
                 $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
             }
             if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
-            {
-                $data_save['day_du_tien_nghi'] = 1;
-            }
-            if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
-            {
-                $data_save['cho_de_xe_hoi'] = 1;
-            }
-            if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
-            {
-                $data_save['san_vuon'] = 1;
-            }
-             if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
-            {
-                $data_save['ho_boi'] = 1;
-            }
-             if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
-            {
-                $data_save['tien_kinh_doanh'] = 1;
-            }
-            if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
-            {
-                $data_save['tien_de_o'] = 1;
-            }
-            if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
-            {
-                $data_save['tien_lam_van_phong'] = 1;
-            }
-            if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
-            {
-                $data_save['tien_cho_san_xuat'] = 1;
-            }
-            if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
-            {
-                $data_save['cho_sinh_vien_thue'] = 1;
-            }
+                {
+                    $data_save['day_du_tien_nghi'] = 1;
+                }
+                else
+                {
+                    $data_save['day_du_tien_nghi'] = 0;
+                }
+                if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
+                {
+                    $data_save['cho_de_xe_hoi'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_de_xe_hoi'] = 0;
+                }
+                if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
+                {
+                    $data_save['san_vuon'] = 1;
+                }
+                else
+                {
+                    $data_save['san_vuon'] = 0;
+                }
+                 if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
+                {
+                    $data_save['ho_boi'] = 1;
+                }
+                else
+                {
+                    $data_save['ho_boi'] = 0;
+                }
+                 if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
+                {
+                    $data_save['tien_kinh_doanh'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_kinh_doanh'] = 0;
+                }
+                if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
+                {
+                    $data_save['tien_de_o'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_de_o'] = 0;
+                }
+                if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
+                {
+                    $data_save['tien_lam_van_phong'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_lam_van_phong'] = 0;
+                }
+                if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
+                {
+                    $data_save['tien_cho_san_xuat'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_cho_san_xuat'] = 0;
+                }
+                if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
+                {
+                    $data_save['cho_sinh_vien_thue'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_sinh_vien_thue'] = 0;
+                }
             if($this->input->post('DTKVWidthBehind'))
             {
                 $data_save['chieu_ngang_sau'] = $this->input->post('DTKVWidthBehind');
@@ -577,37 +613,73 @@ class Member extends MY_Controller
                 {
                     $data_save['day_du_tien_nghi'] = 1;
                 }
+                else
+                {
+                    $data_save['day_du_tien_nghi'] = 0;
+                }
                 if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
                 {
                     $data_save['cho_de_xe_hoi'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_de_xe_hoi'] = 0;
                 }
                 if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
                 {
                     $data_save['san_vuon'] = 1;
                 }
+                else
+                {
+                    $data_save['san_vuon'] = 0;
+                }
                  if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
                 {
                     $data_save['ho_boi'] = 1;
+                }
+                else
+                {
+                    $data_save['ho_boi'] = 0;
                 }
                  if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
                 {
                     $data_save['tien_kinh_doanh'] = 1;
                 }
+                else
+                {
+                    $data_save['tien_kinh_doanh'] = 0;
+                }
                 if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
                 {
                     $data_save['tien_de_o'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_de_o'] = 0;
                 }
                 if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
                 {
                     $data_save['tien_lam_van_phong'] = 1;
                 }
+                else
+                {
+                    $data_save['tien_lam_van_phong'] = 0;
+                }
                 if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
                 {
                     $data_save['tien_cho_san_xuat'] = 1;
                 }
+                else
+                {
+                    $data_save['tien_cho_san_xuat'] = 0;
+                }
                 if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
                 {
                     $data_save['cho_sinh_vien_thue'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_sinh_vien_thue'] = 0;
                 }
                 if($this->input->post('DTKVWidthBehind'))
                 {
@@ -645,6 +717,402 @@ class Member extends MY_Controller
             $this->data['main_content']='member/edit_tai_san_pending';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
+    }
+    public function chua_thanh_toan()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_waitpay($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_waitpay($id_user,$config['per_page'], $page1);
+        
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_tai_san_chua_thanh_toan';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function thanh_toan($id)
+    {
+        $id_user= $this->session->userdata('user_id');
+        $this->load->model('propertyhomemodel');
+        $this->load->model('blancehomemodel');
+        $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
+        $this->data['detail_order']=$this->blancehomemodel->detail_dv($id,$id_user);
+       
+        if($this->input->post())
+        {
+            $tien = $this->data['so_du'][0]['so_du'];
+            $tien_tra = $this->data['detail_order'][0]['tong_tien'];
+            if($tien == 0)
+            {
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+            else
+            {
+                if($tien < $tien_tra)
+                {
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                else
+                {
+                    $tien_up = $tien - $tien_tra;
+                    $data_update_order = array(
+                    'ngay_het_han'=>'',
+                    'tinh_trang'=>1
+                    );
+                    $data_user_blance = array('so_du'=>$tien_up);
+                    $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+                    $data_pro = array('goi_giao_dich'=>$this->data['detail_order'][0]['id_dich_vu']);
+                    $this->blancehomemodel->update_blance($this->data['detail_order'][0]['id_ctdvts'],$data_update_order);
+                    $this->propertyhomemodel->update($this->data['detail_order'][0]['id_tai_san'],$data_pro);
+                    redirect('/thanh-vien/dich-vu-chua-thanh-toan');
+                }
+            }
+        }
+        else
+        {
+            
+            $this->data['main_content']='member/thanh_toan';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function list_dang_soan()
+    {
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_prepare($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_prepare($id_user,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_dang_soan';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function sua_hs_dang_soan($id)
+    {
+       $id_user= $this->session->userdata('user_id');
+       $this->load->model('propertyhomemodel');
+       $this->load->model('memberhomemodel');
+       if($this->input->post())
+       {
+            $data_save = array();
+                $data_save = array(
+                'loai_tin'=>$this->input->post('TinDang'),
+                'loai_dia_oc'=>$this->input->post('DioTypeList'),
+                'vi_tri_dia_oc'=>$this->input->post('DioLineList'),
+                'id_city'=>$this->input->post('CityListMember'),
+                'id_district'=>$this->input->post('DistrictListMember'),
+                'dia_chi'=>$this->input->post('HouseNumber'),
+                'price'=>$this->input->post('PriceMain'),
+                'asset'=>$this->input->post('AssetUnitList'),
+                'dien_tich'=>$this->input->post('DTSD'),
+                'chieu_ngang_truoc'=>$this->input->post('DTKVWidth'),
+                'chieu_dai'=>$this->input->post('DTKVLength'),
+                'xd_chieu_ngang_truoc'=>$this->input->post('DTXDWidth'),
+                'xd_chieu_dai'=>$this->input->post('DTXDLength'),
+                'tinh_trang_phap_ly'=>$this->input->post('DioStateLegalList'),
+                'huong'=>$this->input->post('DioDirectionList'),
+                'so_lau'=>$this->input->post('NumberOfFloorList'),
+                'so_phong_khach'=>$this->input->post('NumberOfLivingRoomList'),
+                'so_phong_ngu'=>$this->input->post('NumberOfBedRoomList'),
+                'so_phong_tam_wc'=>$this->input->post('NumberOfWCList'),
+                'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
+                'content'=>$this->input->post('Detail'),
+                'title'=>$this->input->post('Title')
+                );
+                if($this->input->post('TinDang')==2)
+                {
+                    $data_save['loai_hinh']=3;
+                }
+                else
+                {
+                    if($this->input->post('MoiGioi'))
+                    {
+                        $data_save['loai_hinh']=2;
+                    }
+                    else
+                    {
+                        $data_save['loai_hinh']=1;
+                    }
+                }
+                if($this->input->post('MoiGioi') && $this->input->post('MoiGioi')==2)
+                {
+                    $data_save['phi_ky_gui']=$this->input->post('FeeConsign');
+                }
+                if($this->input->post('fea_1') && $this->input->post('fea_1') == 1)
+                {
+                    $data_save['day_du_tien_nghi'] = 1;
+                }
+                else
+                {
+                    $data_save['day_du_tien_nghi'] = 0;
+                }
+                if($this->input->post('fea_6') && $this->input->post('fea_6') == 1)
+                {
+                    $data_save['cho_de_xe_hoi'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_de_xe_hoi'] = 0;
+                }
+                if($this->input->post('fea_7') && $this->input->post('fea_7') == 1)
+                {
+                    $data_save['san_vuon'] = 1;
+                }
+                else
+                {
+                    $data_save['san_vuon'] = 0;
+                }
+                 if($this->input->post('fea_8') && $this->input->post('fea_8') == 1)
+                {
+                    $data_save['ho_boi'] = 1;
+                }
+                else
+                {
+                    $data_save['ho_boi'] = 0;
+                }
+                 if($this->input->post('fea_14') && $this->input->post('fea_14') == 1)
+                {
+                    $data_save['tien_kinh_doanh'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_kinh_doanh'] = 0;
+                }
+                if($this->input->post('fea_20') && $this->input->post('fea_20') == 1)
+                {
+                    $data_save['tien_de_o'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_de_o'] = 0;
+                }
+                if($this->input->post('fea_21') && $this->input->post('fea_21') == 1)
+                {
+                    $data_save['tien_lam_van_phong'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_lam_van_phong'] = 0;
+                }
+                if($this->input->post('fea_23') && $this->input->post('fea_23') == 1)
+                {
+                    $data_save['tien_cho_san_xuat'] = 1;
+                }
+                else
+                {
+                    $data_save['tien_cho_san_xuat'] = 0;
+                }
+                if($this->input->post('fea_24') && $this->input->post('fea_24') == 1)
+                {
+                    $data_save['cho_sinh_vien_thue'] = 1;
+                }
+                else
+                {
+                    $data_save['cho_sinh_vien_thue'] = 0;
+                }
+                if($this->input->post('DTKVWidthBehind'))
+                {
+                    $data_save['chieu_ngang_sau'] = $this->input->post('DTKVWidthBehind');
+                }
+                if($this->input->post('DTXDWidthBehind'))
+                {
+                    $data_save['xd_chieu_ngang_sau'] = $this->input->post('DTXDWidthBehind');
+                }
+                if($this->input->post('ProjectListMember') && $this->input->post('ProjectListMember') !='')
+                {
+                    $data_save['id_duan'] =$this->input->post('ProjectListMember');
+                }
+                $data_save['id_user']=$this->session->userdata('user_id');
+                $data_save['status']=0;
+                $data_save['create_date']=strtotime('now');
+                if($this->input->post('SubmitPost'))
+                {
+                    $id_ins = $this->propertyhomemodel->insert($data_save);
+                    if($id_ins>0)
+                    {
+                        $this->propertyhomemodel->delete_tmp($id);
+                        redirect('/thanh-vien/tai-san-dang-soan');
+                    }
+                }
+                if($this->input->post('SubmitSave'))
+                {
+                    $this->propertyhomemodel->update_tmp($id,$data_save);
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+       }
+       else
+       {
+            $this->data['detail']=$this->propertyhomemodel->detail_hs_dang_soan($id,$id_user);
+            $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
+            $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
+            $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
+            $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+            $this->data['list_district_1'] = $this->propertyhomemodel->list_district_by_city($this->data['detail'][0]['id_city']);
+            $this->data['list_project_by_district']=$this->propertyhomemodel->list_project_by_district($this->data['detail'][0]['id_district'],$this->data['detail'][0]['id_city']);
+            $this->data['list_phap_ly'] = $this->propertyhomemodel->list_phap_ly();
+            $this->data['list_huong'] = $this->propertyhomemodel->list_huong();
+            $this->data['list_pn'] = $this->propertyhomemodel->list_pn();
+            $this->data['main_content']='member/edit_tai_san_dang_soan';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+       }
+    }
+    public function list_het_han()
+    {
+        /*$tomorrow  = mktime(0, 0, 0, date("m")+1  , date("d"), date("Y"));
+        echo date('d/m/Y',$tomorrow);
+        echo $tomorrow;exit;*/
+        $this->load->model('propertyhomemodel');
+        $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_exp($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_exp($id_user,$config['per_page'], $page1);
+       
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='member/list_het_han';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function gia_han_dich_vu($id)
+    {
+        $id_user= $this->session->userdata('user_id');
+        $this->load->model('propertyhomemodel');
+        $this->load->model('blancehomemodel');
+        $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
+        $this->data['detail_order']=$this->blancehomemodel->detail_dv_hh($id,$id_user);
+       
+        if($this->input->post())
+        {
+            $tien = $this->data['so_du'][0]['so_du'];
+            $tien_dv = $this->blancehomemodel->sv_detail($this->input->post('dich_vu'));
+            $tien_tra = $tien_dv[0]['money'] * $this->input->post('time');
+            if($tien == 0)
+            {
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+            else
+            {
+                if($tien < $tien_tra)
+                {
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                else
+                {
+                    $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
+                    $date_exp = date('Y-m-d h:i:s',$tomorrow);
+                    $tien_up = $tien - $tien_tra;
+                    $data_update_order = array(
+                    'ngay_het_han'=>$date_exp,
+                    'tinh_trang'=>1,
+                    'id_dich_vu'=>$this->input->post('dich_vu'),
+                    'tong_tien'=>$tien_tra,
+                    'time'=>$this->input->post('time')
+                    );
+                    $data_user_blance = array('so_du'=>$tien_up);
+                    $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+                    $data_pro = array('goi_giao_dich'=>$this->input->post('dich_vu'));
+                    $this->blancehomemodel->update_blance($this->data['detail_order'][0]['id_ctdvts'],$data_update_order);
+                    $this->propertyhomemodel->update($this->data['detail_order'][0]['id_tai_san'],$data_pro);
+                    redirect('/thanh-vien/tai-san-het-han');
+                }
+            }
+        }
+        else
+        {
+            $this->data['list_dv']=$this->blancehomemodel->list_dv();
+            $this->data['main_content']='member/gia_han_dich_vu';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function ajax_get_price_sv($id)
+    {
+        $this->load->model('blancehomemodel');
+        $id = intval($id);
+        $detail = $this->blancehomemodel->sv_detail($id);
+        echo $detail[0]['money'];
+    }
+    public function get_price_sv($id)
+    {
+        $this->load->model('blancehomemodel');
+        $id = intval($id);
+        $detail = $this->blancehomemodel->sv_detail($id);
+        
+        return $detail[0]['money'];
+    }
+    public function sum_time($count)
+    {
+        $count = intval($count);
+        $tomorrow  = mktime(0, 0, 0, date("m")+$count, date("d"), date("Y"));
+        echo date('Y-m-d h:i:s',$tomorrow);
+    }
+     public function ajax_total($month,$id)
+    {
+        
+        $this->load->model('blancehomemodel');
+        $id = intval($id);
+        $month = intval($month);
+        $money = $this->get_price_sv($id);
+        echo $month * $money;
+    }
+    public function huy_dich_vu($id)
+    {
+        $id = intval($id);
+        $this->load->model('propertyhomemodel');
+        $this->propertyhomemodel->delete_dich_vu_($id);
     }
 }
 ?>

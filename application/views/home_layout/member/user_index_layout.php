@@ -554,7 +554,7 @@
                 
                 </a></li>
             <li>
-                <a href="/thanh-vien/tai-san/het-han">Hết hạn 
+                <a href="<?php echo base_url()?>thanh-vien/tai-san-het-han">Hết hạn 
                 
                 </a></li>
             <li>
@@ -562,23 +562,15 @@
                 
                 </a></li>
             <li>
-                <a href="/thanh-vien/tai-san/chua-hop-le">Chưa hợp lệ 
-                (0)
+                <a href="<?php echo base_url();?>thanh-vien/dich-vu-chua-thanh-toan">Chưa trả phí 
+               
                 </a></li>
             <li>
-                <a href="/thanh-vien/tai-san/chua-tra-phi">Chưa trả phí 
-                (0)
+                <a href="<?php echo base_url();?>thanh-vien/tai-san-dang-soan">Đang soạn 
+                
                 </a></li>
-            <li>
-                <a href="/thanh-vien/tai-san/dang-soan">Đang soạn 
-                (1)
-                </a></li>
-            <li>
-                <a href="/thanh-vien/tai-san/ngung-dang">Ngừng đăng 
-                (0)
-                </a></li>
-            <li>
-                <a href="/thanh-vien/tien-ich/dang-ky-yardsign">Đăng ký yard sign</a></li>
+            
+            
            
         </ul>
     </div>
