@@ -24,7 +24,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.loai_hinh = 1
+        WHERE property.loai_hinh = 1 AND property.status = 1
         ORDER BY property.goi_giao_dich DESC
         LIMIT 6";
         $query = $this->db->query($sql);
@@ -48,7 +48,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN phong_ngu
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
-        ON users.id = property.id_user
+        ON users.id = property.id_user AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
         LIMIT 6";
         $query = $this->db->query($sql);
@@ -73,6 +73,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
+        WHERE property.status = 1
          ORDER BY property.goi_giao_dich DESC
         LIMIT 3";
         $query = $this->db->query($sql);
@@ -96,7 +97,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.price REGEXP '^-?[0-9]+$' AND property.price>=300000000 AND property.price <= 1000000000 
+        WHERE property.price REGEXP '^-?[0-9]+$' AND property.price>=300000000 AND property.price <= 1000000000 AND property.status = 1  
         ORDER BY RAND()
         LIMIT 6";
         $query = $this->db->query($sql);
@@ -122,7 +123,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.id = $id";
+        WHERE property.id = $id AND property.status = 1";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -173,7 +174,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.loai_dia_oc = $id  ORDER BY property.goi_giao_dich DESC LIMIT $offset,$number";
+        WHERE property.loai_dia_oc = $id AND property.status = 1 ORDER BY property.goi_giao_dich DESC LIMIT $offset,$number";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -197,7 +198,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE property.loai_dia_oc = $id";
+        WHERE property.loai_dia_oc = $id AND property.status = 1";
         $query = $this->db->query($sql);
         return count($query->result_array());
         
@@ -225,6 +226,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
+        WHERE property.status = 1
          ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
@@ -250,7 +252,9 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN phong_ngu
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
-        ON users.id = property.id_user";
+        ON users.id = property.id_user
+        WHERE property.status = 1
+        ";
         $query = $this->db->query($sql);
         return count($query->result_array());
         
@@ -278,7 +282,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE loai_hinh = 1
+        WHERE loai_hinh = 1 AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
@@ -305,7 +309,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE loai_hinh = 1
+        WHERE loai_hinh = 1 AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -334,7 +338,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE loai_hinh = 3
+        WHERE loai_hinh = 3 AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
         LIMIT $offset,$number
         ";
@@ -361,7 +365,7 @@ class Propertyhomemodel extends CI_Model
         ON property.so_phong_ngu = phong_ngu.id
         LEFT JOIN users
         ON users.id = property.id_user
-        WHERE loai_hinh = 3
+        WHERE loai_hinh = 3 AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -393,7 +397,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE property.id_duan = $id AND
-        loai_hinh = 2
+        loai_hinh = 2 AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
@@ -423,7 +427,7 @@ class Propertyhomemodel extends CI_Model
         LEFT JOIN project
         ON project.id = property.id_duan
         WHERE property.id_duan = $id AND
-        loai_hinh = 2
+        loai_hinh = 2 AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -455,7 +459,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE  property.price >=$gianho AND property.price<=$gialon
+        WHERE  property.price >=$gianho AND property.price<=$gialon AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
@@ -485,7 +489,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE property.price >=$gianho AND property.price<=$gialon
+        WHERE property.price >=$gianho AND property.price<=$gialon AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -516,7 +520,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE  property.id_district = '$id_district' AND property.loai_dia_oc=$id
+        WHERE  property.id_district = '$id_district' AND property.loai_dia_oc=$id AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
@@ -545,7 +549,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE property.id_district = '$id_district' AND property.loai_dia_oc=$id
+        WHERE property.id_district = '$id_district' AND property.loai_dia_oc=$id AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -576,7 +580,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE  property.id_city = '$id_city' AND property.loai_dia_oc=$id
+        WHERE  property.id_city = '$id_city' AND property.loai_dia_oc=$id AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT $offset,$number
         ";
@@ -605,7 +609,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE property.id_city = '$id_city' AND property.loai_dia_oc=$id
+        WHERE property.id_city = '$id_city' AND property.loai_dia_oc=$id AND property.status = 1
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
@@ -633,7 +637,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE property.id_duan IN ($id)
+        WHERE property.id_duan IN ($id) AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT 3
         ";
@@ -662,7 +666,7 @@ class Propertyhomemodel extends CI_Model
         ON users.id = property.id_user
         LEFT JOIN project
         ON project.id = property.id_duan
-        WHERE property.id_user = $id
+        WHERE property.id_user = $id AND property.status = 1
          ORDER BY property.goi_giao_dich DESC
          LIMIT 3
         ";
@@ -1042,5 +1046,14 @@ class Propertyhomemodel extends CI_Model
         $id = intval($id);
         $this->db->delete('chi_tiet_dv_ts',array('id_ctdvts'=>$id));
     }
+    //
+    public function search_ct_dv($id)
+    {
+        $id = intval($id);
+        $sql = "SELECT * FROM chi_tiet_dv_ts WHERE time<=now() AND tinh_trang = 1";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    
 }
 ?>

@@ -40,6 +40,10 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['thanh-vien/nang-cap-tai-san/(:any)'] = "home/member/nang_cap/$1";
+$route['thanh-vien/log-giao-dich'] = "home/member/list_giao_dich";
+$route['thanh-vien/nap-tien'] = "home/member/nap_tien";
+$route['thanh-vien/log-giao-dich/page/(:any)'] = "home/member/list_giao_dich";
 $route['thanh-vien/tai-san-dang-moi'] = "home/member/tai_san_dang_moi";
 $route['thanh-vien/dich-vu-chua-thanh-toan'] = "home/member/chua_thanh_toan";
 $route['thanh-vien/thanh-toan-dich-vu/(:any)'] = "home/member/thanh_toan/$1";

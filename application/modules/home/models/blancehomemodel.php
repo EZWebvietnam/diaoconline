@@ -34,10 +34,22 @@ class Blancehomemodel extends CI_Model
         $this->db->where('id_ctdvts',$id);
         $this->db->update('chi_tiet_dv_ts',$data);
     }
+    public function insert_ct(array $data)
+    {
+       
+        $this->db->insert('chi_tiet_dv_ts',$data);
+        return $this->db->insert_id();
+    }
     public function update_blance_user($id,array $data)
     {
         $this->db->where('id_user',$id);
         $this->db->update('user_blance',$data);
+    }
+    public function insert_blance_user(array $data)
+    {
+        
+        $this->db->insert('user_blance',$data);
+        return $this->db->insert_id();
     }
     public function list_dv()
     {
@@ -52,6 +64,18 @@ class Blancehomemodel extends CI_Model
         $this->db->where('id_service',$id);
         $query = $this->db->get('dich_vu_tai_san');
         return $query->result_array();
+    }
+    public function insert_order(array $data)
+    {
+        $this->db->insert('order',$data);
+        return $this->db->insert_id();
+    }
+    public function update_order($code,array $data)
+    {
+        $code = "'".$code."'";
+        $this->db->where('code',$code);
+        $this->db->update('order',$data);
+        
     }
 }
 ?>

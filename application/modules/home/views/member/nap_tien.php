@@ -58,7 +58,7 @@
                             <li>
                                 <label>
                                     Hình thức <span class="hightlight">*</span></label>
-                                <select id="ServiceList" name="ServiceList"><option selected="selected" value="-1">--- Chọn loại thẻ ---</option>
+                                <select id="ServiceList" name="ServiceList"><option selected="selected" value="-1">--- Chọn loại giao dịch ---</option>
 <option value="1">Ngân Lượng</option>
 
 </select>
@@ -68,7 +68,12 @@
                                     Nhập mã số tiền <span class="hightlight">*</span></label>
                                 <input class="keypress" id="code" name="code" type="text" value="">
                             </li>
-                            
+                            <li>
+                                <label>
+                                    Code <span class="hightlight">*</span></label>
+                                    <?php echo $code?>
+                                <input  id="order_code" name="order_code" type="hidden" value="<?php echo $code?>">
+                            </li>
                             <li>
                                 <label>
                                     Tài khoản nhận điểm DOOL</label>

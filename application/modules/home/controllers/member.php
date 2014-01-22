@@ -9,6 +9,29 @@ class Member extends MY_Controller
         $this->load->library('form_validation');
         parent::list_city();
         parent::list_district();
+        parent::so_du();
+        //
+        parent::get_menu_new_nav();
+        parent::load_last_new();
+        parent::load_list_last_new($this->data['new_on_nav'][0]['id_new']);
+        parent::get_cate_dis_nav();
+        parent::dis_noi_bat();
+        parent::dis_noi_bat_other($this->data['last_dis'][0]['id_disco']);
+        parent::list_city();
+        parent::list_district();
+         parent::cate_project_sub();
+        parent::project_noi_bat_lm1();
+        parent::get_list_cafe_law();
+        parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
+        
+        // Tai san
+        parent::get_tai_san_lm3();
+        parent::get_ts_menu();
+        parent::cate_sieu_thi();
+        if(!$this->tank_auth->is_logged_in())
+        {
+            redirect('/');
+        }
     }
     function change_email()
 	{
@@ -777,6 +800,16 @@ class Member extends MY_Controller
                     'ngay_het_han'=>'',
                     'tinh_trang'=>1
                     );
+                    $data_log_gd = array(
+                    'id_user'=>$id_user,
+                    'thoi_gian'=>strtotime('now'),
+                    'so_tien'=>$tien_tra,
+                    'loai_giao_dich'=>'Thanh toán dịch vụ',
+                    'trang_thai'=>1,
+                    'hinh_thuc'=>'-'
+                    );
+                    $this->load->model('logblancehomemodel');
+                    $this->logblancehomemodel->insert($data_log_gd);
                     $data_user_blance = array('so_du'=>$tien_up);
                     $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
                     $data_pro = array('goi_giao_dich'=>$this->data['detail_order'][0]['id_dich_vu']);
@@ -1062,6 +1095,16 @@ class Member extends MY_Controller
                     'tong_tien'=>$tien_tra,
                     'time'=>$this->input->post('time')
                     );
+                    $data_log_gd = array(
+                    'id_user'=>$id_user,
+                    'thoi_gian'=>strtotime('now'),
+                    'so_tien'=>$tien_up,
+                    'loai_giao_dich'=>'Gia hạn dịch vụ',
+                    'trang_thai'=>1,
+                    'hinh_thuc'=>'-'
+                    );
+                    $this->load->model('logblancehomemodel');
+                    $this->logblancehomemodel->insert($data_log_gd);
                     $data_user_blance = array('so_du'=>$tien_up);
                     $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
                     $data_pro = array('goi_giao_dich'=>$this->input->post('dich_vu'));
@@ -1122,13 +1165,22 @@ class Member extends MY_Controller
             $url = base_url()."home/member/ket_qua";
             $receiver ="nguyentruonggiang91@gmail.com";
             $transaction_info='';
-            $order_code='TEST123';
-            $price = '2000';
+            $order_code= $this->input->post('order_code');
+            $price = $this->input->post('code');
+            $this->load->model('blancehomemodel');
+            $data = array(
+            'id_user'=>$this->session->userdata('user_id'),
+            'code'=>$order_code,
+            'money'=>$price,
+            'status'=>0
+            );
+            $this->blancehomemodel->insert_order($data);
             $url = $this->nl->buildCheckoutUrlExpand($url,$receiver,$transaction_info,$order_code,$price);
             redirect($url);
         }
         else
         {
+            $this->data['code'] = rand_string(6);
             $this->data['main_content']='member/nap_tien';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
@@ -1148,14 +1200,167 @@ class Member extends MY_Controller
         {
             if($error_text=='')
             {
-                
+                    $data_log_gd = array(
+                    'id_user'=>$id_user,
+                    'thoi_gian'=>strtotime('now'),
+                    'so_tien'=>$price,
+                    'loai_giao_dich'=>'Nạp tiền',
+                    'trang_thai'=>1,
+                    'hinh_thuc'=>'+'
+                    );
+                    $this->load->model('logblancehomemodel');
+                    $this->logblancehomemodel->insert($data_log_gd);
+                    $data = array('status'=>1);
+                    $this->load->model('blancehomemodel');
+                    $this->blancehomemodel->update_order($data);
+                    $this->data['error']='Nạp tiền thành công !';
             }
             else
             {
-                
+                 $this->data['error']=$error_text;
             }
+            $this->data['main_content']='member/nap_tien_success';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
     }  
+    public function list_giao_dich()
+    {
+        $this->load->model('logblancehomemodel');
+        
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+        $id_user = $this->session->userdata('user_id');
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->logblancehomemodel->count_giao_dich($id_user);
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->logblancehomemodel->list_giao_dich($id_user,$config['per_page'], $page1);
+       
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       
+        $this->data['main_content']='member/list_giao_dich';
+         $this->load->view('home_layout/member/user_index_layout',$this->data);
+    }
+    public function nang_cap($id)
+    {
+         $id_user= $this->session->userdata('user_id');
+        $this->load->model('propertyhomemodel');
+        $this->load->model('blancehomemodel');
+        $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
+        
+       
+        if($this->input->post())
+        {
+            $tien = $this->data['so_du'][0]['so_du'];
+            $tien_dv = $this->blancehomemodel->sv_detail($this->input->post('dich_vu'));
+            $detail = $this->propertyhomemodel->search_ct_dv($id);
+            $tien_tra = $tien_dv[0]['money'] * $this->input->post('time');
+            $this->load->model('logblancehomemodel');
+            if(!empty($detail))
+            {
+                if($tien == 0)
+                {
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                else
+                {
+                    $day = intval(time_diff_string('now',$detail[0]['ngay_het_han']))*30;
+                    $money_per_day = $detail[0]['money']/($detail[0]['time']*30);
+                    $day_use = $day * $money_per_day;
+                    $tien_du = $detail[0]['money']-$day_use;
+                    $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
+                    $date_exp = date('Y-m-d h:i:s',$tomorrow);
+                    $tien_up = $tien_tra - $tien_du;
+                    $tien_con = $tien - $tien_up;
+                    $data_update_order = array(
+                        'ngay_het_han'=>$date_exp,
+                        'tinh_trang'=>1,
+                        'id_dich_vu'=>$this->input->post('dich_vu'),
+                        'tong_tien'=>$tien_up,
+                        'time'=>$this->input->post('time')
+                        );
+                        
+                    $this->blancehomemodel->update_blance($detail[0]['id_ctdvts'],$data_update_order);
+                    $data_user_blance = array('so_du'=>$tien_con);
+                    $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+                    $data_log_gd = array(
+                    'id_user'=>$id_user,
+                    'thoi_gian'=>strtotime('now'),
+                    'so_tien'=>$tien_up,
+                    'loai_giao_dich'=>'Nâng cấp dịch vụ',
+                    'trang_thai'=>1,
+                    'hinh_thuc'=>'-'
+                    );
+                    
+                    $this->logblancehomemodel->insert($data_log_gd);
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+            }
+            else
+            {
+                if($tien == 0)
+                {
+                    redirect($_SERVER['HTTP_REFERER']);
+                }
+                else
+                {
+                    if($tien < $tien_tra)
+                    {
+                        redirect($_SERVER['HTTP_REFERER']);
+                    }
+                    else
+                    {
+                        $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
+                        $date_exp = date('Y-m-d h:i:s',$tomorrow);
+                        
+                        $tien_up = $tien - $tien_tra;
+                        $data_update_order = array(
+                        'id_tai_san'=>$id,
+                        'ngay_het_han'=>$date_exp,
+                        'tinh_trang'=>1,
+                        'id_dich_vu'=>$this->input->post('dich_vu'),
+                        'tong_tien'=>$tien_tra,
+                        'time'=>$this->input->post('time')
+                        );
+                        $this->blancehomemodel->insert_ct($data_update_order);
+                        $data_user_blance = array('so_du'=>$tien_up);
+                        $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+                         $data_log_gd = array(
+                        'id_user'=>$id_user,
+                        'thoi_gian'=>strtotime('now'),
+                        'so_tien'=>$tien_up,
+                        'loai_giao_dich'=>'Nâng cấp dịch vụ',
+                        'trang_thai'=>1,
+                        'hinh_thuc'=>'-'
+                        );
+                        
+                        $this->logblancehomemodel->insert($data_log_gd);
+                        redirect('/thanh-vien/dich-vu-chua-thanh-toan');
+                    }
+                }
+            }
+        }
+        else
+        {
+            $this->data['list_dv']=$this->blancehomemodel->list_dv();
+            $this->data['main_content']='member/nang_cap_dich_vu';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
     
 }
 ?>

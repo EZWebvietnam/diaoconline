@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.3.1
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jan 22, 2014 at 05:20 PM
--- Server version: 5.1.33
--- PHP Version: 5.2.9
+-- Host: 127.0.0.1
+-- Generation Time: Jan 22, 2014 at 03:10 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `diaoconline`
 --
+CREATE DATABASE IF NOT EXISTS `diaoconline` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `diaoconline`;
 
 -- --------------------------------------------------------
 
@@ -131,12 +134,14 @@ CREATE TABLE IF NOT EXISTS `chi_tiet_dv_ts` (
   `tong_tien` int(11) NOT NULL,
   `time` int(11) NOT NULL,
   PRIMARY KEY (`id_ctdvts`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `chi_tiet_dv_ts`
 --
 
+INSERT INTO `chi_tiet_dv_ts` (`id_ctdvts`, `id_tai_san`, `id_dich_vu`, `ngay_het_han`, `thoi_gian_dang_ky`, `tinh_trang`, `tong_tien`, `time`) VALUES
+(4, 1, 3, '2014-04-22 12:00:00', 0, 1, 12000000, 3);
 
 -- --------------------------------------------------------
 
@@ -158,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('82f14f7a2400eadd5025f273656da5d8', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390385563, 0x613a373a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b7d);
+('531aa2005dc898de6e56eda136620246', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390399772, 'a:1:{s:9:"user_data";s:0:"";}');
 
 -- --------------------------------------------------------
 
@@ -1004,10 +1009,29 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `login_attempts`
+-- Table structure for table `log_giao_dich`
 --
 
+CREATE TABLE IF NOT EXISTS `log_giao_dich` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `thoi_gian` int(11) NOT NULL,
+  `so_tien` int(11) NOT NULL,
+  `loai_giao_dich` text COLLATE utf8_unicode_ci NOT NULL,
+  `trang_thai` int(11) NOT NULL,
+  `hinh_thuc` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `log_giao_dich`
+--
+
+INSERT INTO `log_giao_dich` (`id`, `id_user`, `thoi_gian`, `so_tien`, `loai_giao_dich`, `trang_thai`, `hinh_thuc`) VALUES
+(4, 1, 1390398502, 12000000, 'Nâng cấp dịch vụ', 1, '-');
 
 -- --------------------------------------------------------
 
@@ -1096,6 +1120,21 @@ INSERT INTO `news` (`id`, `title`, `content`, `create_date`, `hot`, `id_cate`, `
 INSERT INTO `news` (`id`, `title`, `content`, `create_date`, `hot`, `id_cate`, `tag_key`, `view`, `img`) VALUES
 (56, 'Hàng triệu tỷ đồng bị vứt ở đồng hoang', 'Trên địa bàn Hà Nội hiện đang xuất hiện hàng trăm dự án bất động sản, hàng ngàn biệt thự, nhà vườn bị bỏ hoang hàng năm trời.\r\nĐứng đầu danh sách các quận, huyện có số dự án “chết” nhiều nhất Hà Nội là huyện Mê Linh với khoảng 50 dự án, có quy mô từ 10 - 100 héc-ta như Hà Phong, River Land, AIC, Phúc Việt,… Hầu hết các dự án trong số này đều được khởi công từ năm 2008 - 2009, nhưng đến nay vẫn đang bị “đắp chiếu”.\r\n\r\nKế đến là huyện Hoài Đức với 14 dự án bỏ hoang. Hầu hết các chủ đầu tư dự án mới chỉ giải phóng xong mặt bằng, không tiếp tục đầu tư xây dựng. Hiện số dự án hoàn thành xong chỉ lác đác vài dự án như Lideco, Bắc An Khánh…\r\n\r\nTuy nhiên, số phận những dự án khu đô thị biệt thự, nhà vườn sau khi hoàn thiện cũng không khá khẩm hơn khi chịu cảnh bị bỏ hoang, không người ở, khiến hàng triệu tỷ đồng “bị chôn” hoang phí.\r\n\r\nTrong khi nhu cầu nhà ở thực sự của người dân vẫn chưa được đáp ứng và rất nhiều địa phương, nhiều hộ nông dân đang thiếu đất trồng, đất canh tác sản xuất, thì tình trạng bỏ hoang vẫn kéo dài năm này quá năm khác đang gây bức xúc dư luận.\r\n\r\nTrước thức trạng trên, Bộ Xây dựng và Bộ Nội vụ đã bán hành Thông tư liên tịch số 20. Theo đó, kể từ ngày 5/1/2014, các dự án bất động sản chậm tiến độ sẽ bị xem xét thu hồi, tránh lãng phí nguồn tài nguyên đất và gây ảnh hưởng đến cuộc sống dân sinh các khu vực có dự án.\r\n\r\nNhiều địa phương như Hà Nội, TP. HCM, Đà Nẵng cũng quyết tâm chỉ đạo kiểm tra, rà soát, thu hồi các dự án triển khai chậm. Đặc biệt, UBND TP. Đà Nẵng vừa có văn bản thống nhất đề xuất của Sở Xây dựng về việc công bố danh sách các dự án chậm triển khai cho dân biết.\r\n', 0, 1, 2, 'Thu hồi dự án, Dự án đắp chiếu, Hàng chục tỷ đồng bỏ hoang, Nhà ở bị bỏ hoang', 0, '6BD-vuthoang.jpg'),
 (57, 'Hàng triệu tỷ đồng bị vứt ở đồng hoang', 'Trên địa bàn Hà Nội hiện đang xuất hiện hàng trăm dự án bất động sản, hàng ngàn biệt thự, nhà vườn bị bỏ hoang hàng năm trời.\r\nĐứng đầu danh sách các quận, huyện có số dự án “chết” nhiều nhất Hà Nội là huyện Mê Linh với khoảng 50 dự án, có quy mô từ 10 - 100 héc-ta như Hà Phong, River Land, AIC, Phúc Việt,… Hầu hết các dự án trong số này đều được khởi công từ năm 2008 - 2009, nhưng đến nay vẫn đang bị “đắp chiếu”.\r\n\r\nKế đến là huyện Hoài Đức với 14 dự án bỏ hoang. Hầu hết các chủ đầu tư dự án mới chỉ giải phóng xong mặt bằng, không tiếp tục đầu tư xây dựng. Hiện số dự án hoàn thành xong chỉ lác đác vài dự án như Lideco, Bắc An Khánh…\r\n\r\nTuy nhiên, số phận những dự án khu đô thị biệt thự, nhà vườn sau khi hoàn thiện cũng không khá khẩm hơn khi chịu cảnh bị bỏ hoang, không người ở, khiến hàng triệu tỷ đồng “bị chôn” hoang phí.\r\n\r\nTrong khi nhu cầu nhà ở thực sự của người dân vẫn chưa được đáp ứng và rất nhiều địa phương, nhiều hộ nông dân đang thiếu đất trồng, đất canh tác sản xuất, thì tình trạng bỏ hoang vẫn kéo dài năm này quá năm khác đang gây bức xúc dư luận.\r\n\r\nTrước thức trạng trên, Bộ Xây dựng và Bộ Nội vụ đã bán hành Thông tư liên tịch số 20. Theo đó, kể từ ngày 5/1/2014, các dự án bất động sản chậm tiến độ sẽ bị xem xét thu hồi, tránh lãng phí nguồn tài nguyên đất và gây ảnh hưởng đến cuộc sống dân sinh các khu vực có dự án.\r\n\r\nNhiều địa phương như Hà Nội, TP. HCM, Đà Nẵng cũng quyết tâm chỉ đạo kiểm tra, rà soát, thu hồi các dự án triển khai chậm. Đặc biệt, UBND TP. Đà Nẵng vừa có văn bản thống nhất đề xuất của Sở Xây dựng về việc công bố danh sách các dự án chậm triển khai cho dân biết.\r\n', 0, 1, 2, 'Thu hồi dự án, Dự án đắp chiếu, Hàng chục tỷ đồng bỏ hoang, Nhà ở bị bỏ hoang', 0, '6BD-vuthoang.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order`
+--
+
+CREATE TABLE IF NOT EXISTS `order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_user` int(11) NOT NULL,
+  `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `money` int(11) NOT NULL,
+  `status` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1413,11 +1452,6 @@ CREATE TABLE IF NOT EXISTS `save_property` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
---
--- Dumping data for table `save_property`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1503,7 +1537,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '127.0.0.1', '2014-01-22 10:07:08', '2014-01-20 11:40:27', '2014-01-22 10:07:08', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-22 13:07:58', '2014-01-20 11:40:27', '2014-01-22 12:07:58', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg');
 
 -- --------------------------------------------------------
 
@@ -1525,7 +1559,7 @@ CREATE TABLE IF NOT EXISTS `user_autologin` (
 --
 
 INSERT INTO `user_autologin` (`key_id`, `user_id`, `user_agent`, `last_ip`, `last_login`) VALUES
-('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 19:10:20');
+('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 12:10:20');
 
 -- --------------------------------------------------------
 
@@ -1545,7 +1579,7 @@ CREATE TABLE IF NOT EXISTS `user_blance` (
 --
 
 INSERT INTO `user_blance` (`id_blance`, `id_user`, `so_du`) VALUES
-(1, 1, 0);
+(1, 1, 88000000);
 
 -- --------------------------------------------------------
 
@@ -12737,3 +12771,7 @@ INSERT INTO `ward` (`wardid`, `name`, `type`, `location`, `districtid`) VALUES
 ('32244', 'Rạch Gốc', 'Thị Trấn', '', '973'),
 ('32245', 'Tân Ân', 'Xã', '8 38 45N, 105 03 22E', '973'),
 ('32248', 'Đất Mũi', 'Xã', '8 36 41N, 104 47 12E', '973');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -321,7 +321,7 @@
                 {
                 ?>
                 <div class="login">
-                        <a href="/thanh-vien/trang-chu" class="signin"><span class="ico_16 ico_login_16">
+                        <a href="<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi" class="signin"><span class="ico_16 ico_login_16">
                         </span>Về trang cá nhân</a><div class="dropdown">
                             <a href="<?php echo base_url();?>logout" title="Thoát">setting</a></div>
                     </div>
@@ -337,6 +337,6 @@
                     <?php } ?>
             </div>
             <div class="post_propertise">
-                <a href="/thanh-vien/tai-san-dang-moi">ĐĂNG TÀI SẢN CỦA BẠN</a>
+                <a href="<?php echo base_url();?>thanh-vien/tai-san-dang-moi">ĐĂNG TÀI SẢN CỦA BẠN</a>
             </div>
         </div>

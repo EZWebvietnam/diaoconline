@@ -416,5 +416,35 @@ if (!function_exists('columnSort_desc')) {
             return $protocol . '://' . $host . $port . $s['REQUEST_URI'];
         }
     }
+    if(!function_exists('time_diff_string'))
+    {
+        function time_diff_string($from, $to, $full = false) {
+        $from = new DateTime($from);
+        $to = new DateTime($to);
+        $diff = $to->diff($from);
+    
+        $diff->w = floor($diff->d / 7);
+        $diff->d -= $diff->w * 7;
+    
+        $string = array(
+            'y' => 'year',
+            'm' => 'month',
+            'w' => 'week',
+            'd' => 'day',
+            'h' => 'hour',
+            'i' => 'minute',
+            's' => 'second',
+        );
+        foreach ($string as $k => &$v) {
+            if ($diff->$k) {
+                $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+            } else {
+                unset($string[$k]);
+            }
+        }
+        if (!$full) $string = array_slice($string, 0, 1);
+        return $string ? implode(', ', $string) . '' : '';
+}
+    }
 }
 ?>

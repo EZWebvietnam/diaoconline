@@ -82,6 +82,7 @@ function full_url($s)
                                     <div class="text">
                                         <h4><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($item['loai_dia_oc'])))?>-c<?php echo $item['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($item['title'])))?>-h<?php echo $item['id']?>"><?php echo $item['title']?></a></h4>
                                         <span class="updated_date">Ngày lưu:<?php echo date('d/m/Y h:i',$item['create_date'])?></span>
+                                        <span class="updated_date"><a href="<?php echo base_url();?>thanh-vien/nang-cap-tai-san/<?php echo $item['id']?>">Nâng cấp dịch vụ</a></span>
                                         </div>
                                 </div>
                                 <div class="remove"><a href="javascript:void(0)" onclick="DeleteDataSaved('<?php echo base_url();?>xoa-proper/k/<?php echo $item['id'] ?>','<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi','#item_<?php echo $item['id']?>')" title="Xóa tin lưu"><span class="ico_remove_11"></span></a></div>

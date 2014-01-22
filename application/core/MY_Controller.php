@@ -230,5 +230,11 @@ class MY_Controller extends CI_Controller
         $phong_thuy = $this->discoveryhomemodel->load_phong_thuy();
         $this->data['list_phong_thuy']=$phong_thuy;
     }
+    public function so_du()
+    {
+        $this->load->model('blancehomemodel');
+        $id_user = $this->session->userdata('user_id');
+        $this->data['so_du_nav']=$this->blancehomemodel->so_du($id_user);
+    }
 }
 ?>
