@@ -552,7 +552,7 @@ for($b=1;$b<=20;$b++)
                     	<div class="headline_12"><h2>MÔ TẢ CHI TIẾT</h2></div>
                         <div class="body">
                         	<div class="headline_text">
-                        		<p><span class="hightlight">Vùng nội dung mô tả này sẽ được kiểm duyệt thông tin trước khi cho phép hiển thị trên DiaOcOnline.vn</span></p>
+                        		<p><span class="hightlight">Vùng nội dung mô tả này sẽ được kiểm duyệt thông tin trước khi cho phép hiển thị trên DCBLand.COM</span></p>
 								<p>Tin đăng nhập nội dung theo đúng quy định sẽ được ưu tiên duyệt hiển thị nhanh hơn.</p>
 								<p>Vui lòng nhập tiếng Việt có dấu. Nếu bạn không nhập mô tả, hệ thống sẽ lấy mô tả tự động.</p>
 							</div>
@@ -672,7 +672,7 @@ for($b=1;$b<=20;$b++)
                         	<div class="content">   	
                             	<h5>Lưu ý:</h5>
                             	<p>Những mục có dấu * là thông tin phải điền đầy đủ. Chỉ khi bạn hoàn tất những thông tin được yêu cầu điền đầy đủ thì các chức năng <strong>Đăng tài sản</strong> mới được kích hoạt</p>
-                                <p>DiaOcOnline không chịu trách nhiệm về những nội dung (chữ/ hình ảnh/ Video) do bạn đăng tải</p>
+                                <p>DCBLand không chịu trách nhiệm về những nội dung (chữ/ hình ảnh/ Video) do bạn đăng tải</p>
                            	  <fieldset>
                            	    <ul>
                                 	<li class="agree"><div class="info">

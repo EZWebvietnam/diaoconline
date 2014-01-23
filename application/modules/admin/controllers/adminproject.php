@@ -8,6 +8,12 @@ class Adminproject extends MY_Controller
         $this->load->library('session');
         parent::list_city();
         parent::list_district();
+        $this->load->library('tank_auth');
+		$this->lang->load('tank_auth');
+        if (!$this->tank_auth->is_login_admin()) {						// logged in, not activated
+			redirect('/admin/login');
+
+		}
     }
     public function index()
     {
@@ -194,6 +200,15 @@ class Adminproject extends MY_Controller
         }
         $this->projectmodel->delete($id);
         redirect('/admin/adminproject');
+    }
+    public function ajax_get_project_city()
+    {
+        if($this->input->is_ajax_request())
+        {
+            $id_city = $this->input->post('id_tinh');
+            $this->data['list_district_ajax']=$this->projectmodel->get_list_project_city($id_city);
+            $this->load->view('project/ajax_project_city',$this->data);
+        }
     }
 }
 ?>

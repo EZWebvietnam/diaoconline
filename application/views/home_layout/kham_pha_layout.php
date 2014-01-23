@@ -4,8 +4,8 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Trải nghiệm Khám phá các mẫu nhà đẹp tại Địa Ốc Trực Tuyến - DiaOcOnline - DiaOcOnline</title>
-    <meta name="description" content="Trải nghiệm Khám phá các mẫu nhà đẹp tại Địa Ốc Trực Tuyến - DiaOcOnline" />
+    <title>Trải nghiệm Khám phá các mẫu nhà đẹp tại Địa Ốc Trực Tuyến - DCBLand.COM - DCBLand.COM</title>
+    <meta name="description" content="Trải nghiệm Khám phá các mẫu nhà đẹp tại Địa Ốc Trực Tuyến - DCBLand.COM" />
     <meta name="keywords" content="thế giới kiến trúc, mách bạn, phong thủy nhà ở, phong thủy nhà bếp, không gian sống của người nổi tiếng, không gian sống hiện đại, nhà của sao, những thương hiệu nổi tiếng, địa chỉ shopping, phong thủy xây nhà" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
@@ -89,7 +89,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <?php include('header_.php');?>
             
         </div>

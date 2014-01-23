@@ -8,7 +8,7 @@
     <meta name="description" content="<?php echo $title;?>" />
     <meta name="keywords" content="<?php echo $title;?>" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="image_src" href="http://image.diaoconline.vn/sieu-thi/phong-tro.jpg" />
+    
     <link href="<?php echo base_url(); ?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url(); ?>template/home_ezwebvietnam/Content/css/general.css?1029" rel="stylesheet" type="text/css" />
     <!--[if IE 7]>
@@ -80,7 +80,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <?php 
             include('header_.php');
             ?>

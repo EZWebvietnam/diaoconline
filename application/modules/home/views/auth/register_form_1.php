@@ -301,12 +301,12 @@ $captcha = array(
                 
                 <div id="benefit" class="rounded_style_2 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                     <div class="body">
-                        <h4>Là thành viên chuyên trang DiaOcOnline.vn, bạn sẽ có cơ hội trải nghiệm các tiện ích khác biệt</h4>
+                        <h4>Là thành viên chuyên trang DCBLand.COM, bạn sẽ có cơ hội trải nghiệm các tiện ích khác biệt</h4>
                         <ul>
                         <li><span class="img_email"></span>Cập nhật thông tin địa ốc hàng tuần qua hệ thống e-newsletter.</li>
                         <li><span class="img_post"></span>Các bài viết, thông tin tài sản quan tâm để dễ dàng truy cập lại khi cần thiết.</li>
                         <li><span class="img_search"></span>Sử dụng các tiện ích tìm kiếm tài sản qua email, điện thoại di động.</li>
-                        <li><span class="img_app"></span>Có cơ hội được thử nghiệm các tính năng mới của DiaOcOnline.vn.</li>
+                        <li><span class="img_app"></span>Có cơ hội được thử nghiệm các tính năng mới của DCBLand.Com.</li>
                         </ul>
                     </div>
                 </div>

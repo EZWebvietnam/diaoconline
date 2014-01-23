@@ -19,6 +19,13 @@ class Projectmodel extends CI_Model
         $query = $this->db->get('district');
         return $query->result_array();
     }
+    public function get_list_project_city($id)
+    {
+        $this->db->select('*');
+        $this->db->where('id_city',$id);
+        $query = $this->db->get('project');
+        return $query->result_array();
+    }
     public function insert(array $data)
     {
         $this->db->insert('project',$data);

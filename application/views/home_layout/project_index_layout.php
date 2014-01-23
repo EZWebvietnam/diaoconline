@@ -4,7 +4,7 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Các dự án địa ốc, bất động sản, khu công nghiệp, khu du lịch nghỉ dưỡng - DiaOcOnline</title>
+    <title>Các dự án địa ốc, bất động sản, khu công nghiệp, khu du lịch nghỉ dưỡng - DCBLand.COM</title>
     <meta name="description" content="Các dự án địa ốc, bất động sản, khu công nghiệp, khu du lịch nghỉ dưỡng" />
     <meta name="keywords" content="Các dự án địa ốc, bất động sản, khu công nghiệp, khu du lịch nghỉ dưỡng" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -89,7 +89,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <?php include('header_.php');?>
     </div>
     </div>

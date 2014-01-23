@@ -112,7 +112,7 @@ $route['tin-tuc-c/(:any)-c(:any)'] = "home/news/list_new/$2";
 $route['tin-tuc/(:any)/(:any)-i(:any)'] = "home/news/news_detail/$3";
 $route['404_override'] = '';
 $route['admin'] = "admin/index/login";
-$route['admin/login.xxx'] = "admin/index/login";
+$route['admin/login'] = "admin/index/login";
 
 
 /* End of file routes.php */

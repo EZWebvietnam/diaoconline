@@ -441,7 +441,7 @@ foreach($list_pn as $pn)
                     	<div class="headline_12"><h2>MÔ TẢ CHI TIẾT</h2></div>
                         <div class="body">
                         	<div class="headline_text">
-                        		<p><span class="hightlight">Vùng nội dung mô tả này sẽ được kiểm duyệt thông tin trước khi cho phép hiển thị trên DiaOcOnline.vn</span></p>
+                        		<p><span class="hightlight">Vùng nội dung mô tả này sẽ được kiểm duyệt thông tin trước khi cho phép hiển thị trên DCBLand.Com</span></p>
 								<p>Tin đăng nhập nội dung theo đúng quy định sẽ được ưu tiên duyệt hiển thị nhanh hơn.</p>
 								<p>Vui lòng nhập tiếng Việt có dấu. Nếu bạn không nhập mô tả, hệ thống sẽ lấy mô tả tự động.</p>
 							</div>
@@ -565,7 +565,7 @@ foreach($list_pn as $pn)
                            	  <fieldset>
                            	    <ul>
                                 	<li class="agree"><div class="info">
-                                        <p>Khi nhấn nút <strong>ĐĂNG MỚI TÀI SẢN</strong>, bạn đã xác nhận hoàn toàn đồng ý với những <a href="http://www.diaoconline.vn/dieu-khoan-thoa-thuan" target="_blank"><strong>điều khoản thỏa thuận</strong></a></p></div></li>
+                                        <p>Khi nhấn nút <strong>ĐĂNG MỚI TÀI SẢN</strong>, bạn đã xác nhận hoàn toàn đồng ý với những <a href="http://www.dcbland.com/dieu-khoan-thoa-thuan" target="_blank"><strong>điều khoản thỏa thuận</strong></a></p></div></li>
                                     <li>
                                                 <button type="submit" name="SubmitNew" value="1" class="btn_2"><span>ĐĂNG MỚI TÀI SẢN</span></button>
                                         <button type="submit" name="SubmitSave" value="2" class="btn_2"><span>LƯU LẠI</span></button>

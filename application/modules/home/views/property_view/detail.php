@@ -50,16 +50,16 @@
                         <div>
     <div class="breadcrumb">
             <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/sieu-thi" itemprop="url" title="Siêu thị địa ốc"><span itemprop="title">Siêu thị địa ốc</span></a>
+                <a href="<?php echo base_url();?>sieu-thi" itemprop="url" title="Siêu thị địa ốc"><span itemprop="title">Siêu thị địa ốc</span></a>
 »            </div>
             <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/thue-phong-tro-c16" itemprop="url" title="Thuê Phòng trọ"><span itemprop="title">Thuê Phòng trọ</span></a>
+                <a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($detail[0]['loai_dia_oc'])))?>-c<?php echo $detail[0]['id_ldo']?>" itemprop="url" title="<?php echo $detail[0]['loai_dia_oc']?>"><span itemprop="title"><?php echo $detail[0]['loai_dia_oc']?></span></a>
 »            </div>
             <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/thue-phong-tro-c16/tphcm-t3" itemprop="url" title="Thuê Phòng trọ TP.HCM"><span itemprop="title">TP.HCM</span></a>
+               <span itemprop="title"><?php echo $list_city[$detail[0]['id_city']]?></span></a>
 »            </div>
             <div itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
-                <a href="http://www.diaoconline.vn/thue-phong-tro-c16/tphcm-t3/quan-binh-tan-q145" itemprop="url" title="Thuê Phòng trọ Quận Bình Tân TP.HCM"><span itemprop="title">Quận Bình Tân</span></a>
+                <span itemprop="title"><?php echo $list_district[$detail[0]['id_district']] ?></span>
             </div>
     </div>
                         </div>
@@ -359,7 +359,7 @@
                                     <tr class="bg_grey">
                                         <td>Chỗ đậu xe hơi
                                         <?php 
-                                        if($detail[0]['cho_dau_xe_hoi']==1)
+                                        if($detail[0]['cho_de_xe_hoi']==1)
                                         {
                                         ?>
                                         <span class="ico_16 ico_check_16"></span>

@@ -4,7 +4,7 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Cổng thông tin & Giao dịch - DiaOcOnline.vn</title>
+    <title>Cổng thông tin & Giao dịch - DCBLand.COM</title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -89,7 +89,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <div id="head_nav">
                 <ul>
                     <li id="news_item" ><a href="/tin-tuc">

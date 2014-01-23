@@ -4,8 +4,8 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Cổng thông tin & Giao dịch - DiaOcOnline.vn</title>
-    <meta name="description" content=" với hơn 308 tài sản chỉ có tại DiaOcOnline.vn" />
+    <title>Cổng thông tin & Giao dịch - DCBLand.COM</title>
+    <meta name="description" content=" với hơn 308 tài sản chỉ có tại DCBLand.COM" />
     <meta name="keywords" content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
@@ -79,7 +79,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <?php include('header_.php');?>
             
         </div>

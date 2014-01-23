@@ -4,7 +4,7 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Cổng thông tin và giao dịch nhà đất - DiaOcOnline</title>
+    <title>Cổng thông tin và giao dịch nhà đất - DCBLand.COM</title>
     <meta name="description" content="Cổng thông tin và giao dịch nhà đất. Đăng tin mua bán nhà đất nhanh chóng, hiệu quả. Siêu thị địa ốc sôi nổi nhất cả nước như: TPHCM, Bình Dương, Đồng Nai, Vũng Tàu..." />
     <meta name="keywords" content="đăng tin địa ốc, đăng tin bán nhà, đăng tin bán đất, nhà ở xã hội, dự án chung cư, bán nhà quận, bảng giá nhà đất 2013, công ty địa ốc, địa ốc online, mua nhà trả góp, mua nhà chung cư, siêu thị địa ốc, nhà trọ sinh viên, cho thuê nhà nguyên căn, nhà cho người thu nhập thấp" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,7 +78,7 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="<?php echo base_url();?>" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="<?php echo base_url();?>" title="Về trang chủ DCBLand.COM">DCBLand.COM</a></span>
             <?php 
             include('header.php');
             ?>
