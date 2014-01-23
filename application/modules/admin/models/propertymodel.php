@@ -36,7 +36,7 @@ class Propertymodel extends CI_Model
         $query = $this->db->get('property');
         return $query->result_array();
     }
-    public function update_propery($id,array $data)
+    public function update_property($id,array $data)
     {
         $id = intval($id);
         $this->db->where('id',$id);
@@ -46,6 +46,10 @@ class Propertymodel extends CI_Model
     {
         $this->db->insert('property',$data);
         return $this->db->insert_id();
+    }
+    public function delete_property($id = null)
+    {
+        $this->db->delete('property',array('id'=>$id));
     }
 }
 ?>

@@ -20,8 +20,10 @@ $(document).ready(function(){
 	{
             switch (document.location.hostname)
             {
-                    case 'dev.giangbeo.com':
+                    case 'dcbland.com':
                                       var rootFolder = ''; break;
+					case 'www.dcbland.com':
+                                      var rootFolder = ''; break;				  
                     case 'giangbeo.com':
                                       var rootFolder = '/vantai'; break;
                     case 'localhost' :

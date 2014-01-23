@@ -99,6 +99,8 @@ class MY_Controller extends CI_Controller
                 $cate_s[$c_s['id']]=$c_s['name'];
             }
             $list_cate[]=array('cate_parent'=>$cate_p,'cate_sub'=>$cate_s);
+            $cate_p = array();
+            $cate_s = array();
         }
         $this->data['list_cate_left']=$list_cate;
     }
@@ -108,16 +110,19 @@ class MY_Controller extends CI_Controller
         $cate_sub = $this->catediscoveryhomemodel->get_cate_from_parent(1);
         $list_new = array();
         $list_new_ = array();
+        
         foreach($cate_sub as $c_s)
         {
            $cate_s[$c_s['id']]=$c_s['name'];
            $list_new = $this->discoveryhomemodel->load_discovery_cate($c_s['id']);
            $list_new_[$c_s['id']] = $list_new;
            
+           
         }
         $list_cate=array('cate_sub'=>$cate_s,'list_new'=>$list_new_);
         $list_new_ = array();
         $list_new = array();
+        $cate_s = array();
         $this->data['main']=$list_cate;
     }
     public function get_cate_dis_nav()
@@ -179,6 +184,8 @@ class MY_Controller extends CI_Controller
                 $cate_s[$c_s['id']]=$c_s['name'];
             }
             $list_cate[]=array('cate_parent'=>$cate_p,'cate_sub'=>$cate_s);
+            $cate_p = array();
+            $cate_s = array();
         }
         $this->data['list_cate_project_left']=$list_cate;
     }

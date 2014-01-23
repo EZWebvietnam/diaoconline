@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 3.1.3.1
+-- version 4.0.4.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Jan 23, 2014 at 04:51 PM
--- Server version: 5.1.33
--- PHP Version: 5.2.9
+-- Host: 127.0.0.1
+-- Generation Time: Jan 23, 2014 at 04:57 PM
+-- Server version: 5.5.32
+-- PHP Version: 5.4.19
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -18,6 +19,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `diaoconline`
 --
+CREATE DATABASE IF NOT EXISTS `diaoconline` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `diaoconline`;
 
 -- --------------------------------------------------------
 
@@ -30,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `cate_discovery` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `cate_discovery`
@@ -44,7 +47,9 @@ INSERT INTO `cate_discovery` (`id`, `name`, `parent`) VALUES
 (5, 'Không gian sống', 1),
 (6, 'Thương hiệu', 1),
 (7, 'Shopping cùng DOOL', 1),
-(8, 'Nhà của sao', 1);
+(8, 'Nhà của sao', 1),
+(9, 'test ', 0),
+(10, 'ssss', 9);
 
 -- --------------------------------------------------------
 
@@ -99,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `cate_project` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `cate_project`
@@ -160,8 +165,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('7d1902625a60ca36695147eaabfaa579', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390470149, 0x613a383a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b733a343a22726f6c65223b733a313a2231223b7d),
-('c79668a7f8f4cf16f57cc191a4ef0a14', '127.0.0.1', 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390459429, 0x613a383a7b733a393a22757365725f64617461223b733a303a22223b733a373a22757365725f6964223b733a313a2231223b733a383a22757365726e616d65223b733a353a2261646d696e223b733a393a2266756c6c5f6e616d65223b733a32343a224e677579e1bb856e205472c6b0e1bb9d6e67204769616e67223b733a373a2263726561746564223b733a31393a22323031342d30312d32302031313a34303a3237223b733a353a22656d61696c223b733a32303a226769616e6762656f697440676d61696c2e636f6d223b733a363a22737461747573223b733a313a2231223b733a343a22726f6c65223b733a313a2231223b7d);
+('a8e5128b856e1d6c952b15183c8a3f8b', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390485547, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -966,7 +970,7 @@ CREATE TABLE IF NOT EXISTS `loai_dia_oc` (
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `parent` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `loai_dia_oc`
@@ -991,7 +995,8 @@ INSERT INTO `loai_dia_oc` (`id`, `name`, `parent`) VALUES
 (16, 'Nhà kho - Xưởng', 15),
 (17, 'Nhà hàng - Khách sạn', 15),
 (18, 'Mặt bằng - Cửa hàng', 15),
-(19, 'Phòng trọ', 15);
+(19, 'Phòng trọ', 15),
+(20, 'test 2', 0);
 
 -- --------------------------------------------------------
 
@@ -1006,11 +1011,6 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `login_attempts`
---
-
 
 -- --------------------------------------------------------
 
@@ -1139,11 +1139,6 @@ CREATE TABLE IF NOT EXISTS `order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `order`
---
-
-
 -- --------------------------------------------------------
 
 --
@@ -1248,7 +1243,7 @@ CREATE TABLE IF NOT EXISTS `property` (
   `status` int(11) NOT NULL,
   `phi_ky_gui` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
 -- Dumping data for table `property`
@@ -1260,7 +1255,8 @@ INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_
 (12, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0'),
 (20, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0'),
 (21, 1, 0, 1, '1 test', '', '', '1', '', 1, 3, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, '001', '01', 0, 1, 1, 0, '', 0, 1, 0, '', 1, ''),
-(22, 11, 0, 11, '1', '', '', '1111', '', 11, 2, 1, 11, 0, 11, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '001', '01', 0, 1, 1, 0, '', 0, 2, 2, '', 1, '12');
+(22, 11, 0, 11, '1', '', '<p>ssss</p>\r\n', '1111', '', 11, 1, 1, 11, 0, 11, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, '001', '01', 0, 1, 1, 1390480894, 'e750b612ef7b7f41b9abf572924dd5c6.PNG', 0, 1, 1, '', 1, '12'),
+(23, 1, 0, 1, 'test', '', '<p>test h&agrave;m</p>\r\n', '1000000000', '7xmTzf', 1, 1, 1, 1, 0, 1, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '004', '01', 0, 1, 0, 1390481764, '07dad2605bcff804a0f12f2b2cfcc358.PNG', 0, 1, 1, '', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -1555,7 +1551,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`, `role`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '127.0.0.1', '2014-01-23 13:44:15', '2014-01-20 11:40:27', '2014-01-23 13:44:15', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-23 12:57:38', '2014-01-20 11:40:27', '2014-01-23 11:57:38', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -1577,7 +1573,7 @@ CREATE TABLE IF NOT EXISTS `user_autologin` (
 --
 
 INSERT INTO `user_autologin` (`key_id`, `user_id`, `user_agent`, `last_ip`, `last_login`) VALUES
-('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 19:10:20');
+('9cb4c70cb4146090f5919115023bf43d', 1, 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', '113.162.180.25', '2014-01-20 12:10:20');
 
 -- --------------------------------------------------------
 
@@ -12811,3 +12807,7 @@ INSERT INTO `ward` (`wardid`, `name`, `type`, `location`, `districtid`) VALUES
 ('32244', 'Rạch Gốc', 'Thị Trấn', '', '973'),
 ('32245', 'Tân Ân', 'Xã', '8 38 45N, 105 03 22E', '973'),
 ('32248', 'Đất Mũi', 'Xã', '8 36 41N, 104 47 12E', '973');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

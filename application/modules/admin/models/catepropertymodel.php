@@ -36,5 +36,35 @@ class Catepropertymodel extends CI_Model
         $query = $this->db->get('phong_ngu');
         return $query->result_array();
     }
+    public function list_cate_property()
+    {
+        $sql="SELECT * FROM loai_dia_oc";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function detail($id)
+    {
+        $id = intval($id);
+        $this->db->select();
+        $this->db->where('id',$id);
+        $query = $this->db->get('loai_dia_oc');
+        return $query->result_array();
+    }
+    public function insert(array $data)
+    {
+        $this->db->insert('loai_dia_oc',$data);
+        return $this->db->insert_id();
+    }
+    public function update($id,array $data)
+    {
+        $id = intval($id);
+        $this->db->where('id',$id);
+        $this->db->update('loai_dia_oc',$data);
+    }
+    public function delete($id)
+    {
+        $id = intval($id);
+        $this->db->delete('loai_dia_oc',array('id'=>$id));
+    }
 }
 ?>
