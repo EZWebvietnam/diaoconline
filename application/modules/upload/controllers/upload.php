@@ -26,10 +26,10 @@ class Upload extends CI_Controller {
         $this->load->view('uploadify_v3', $this->view_data);
     }
 
-    public function do_upload() {
+    public function do_upload($code) {
         $this->load->library('upload');
 
-        $image_upload_folder = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'file/uploads/post';
+        $image_upload_folder = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'file/uploads/nhadep/'.$code;
 
         if (!file_exists($image_upload_folder)) {
             mkdir($image_upload_folder, DIR_WRITE_MODE, true);
