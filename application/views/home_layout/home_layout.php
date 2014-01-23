@@ -661,6 +661,8 @@
         </div>
     </div>    
 </div>            </div>
+
+
 <div id="shopping" class="wrap margin_bottom">
     <div class="rounded_style_4 rounded_box">
         <div class="content">
@@ -716,33 +718,7 @@
     </div>
     <p class="note"></p>
 </div>
-            <div id="video" class="wrap margin_bottom">
-                <div class="rounded_style_5 rounded_box">
-                    <div class="content">
-                        <div class="infiniteCarousel">
-                            <div class="wrapper">
-                                <ul>
-                                    <li><a href="http://tv.diaoconline.vn/DuAn/Post/3018/2012/02/17/arista-villa--dac-dia-the-dac-anh-tai.aspx"
-                                        target="_blank">
-                                        <img src="/images/demo/video_1.jpg" alt="" /><span class="play"></span></a></li>
-                                    <li><a href="http://tv.diaoconline.vn/DuAn/Post/3015/2012/02/13/tropic-garden-residence.aspx"
-                                        target="_blank">
-                                        <img src="/images/demo/video_2.jpg" alt="" /><span class="play"></span></a></li>
-                                    <li><a href="http://tv.diaoconline.vn/DuAn/Post/3014/2012/02/08/song-da-riverside--noi-cuoc-song-an-vui.aspx"
-                                        target="_blank">
-                                        <img src="/images/demo/video_3.jpg" alt="" /><span class="play"></span></a></li>
-                                    <li><a href="http://tv.diaoconline.vn/DuAn/Post/3011/2012/01/05/mandarin-garden--vi-tri-khong-the-dep-hon.aspx"
-                                        target="_blank">
-                                        <img src="/images/demo/video_4.jpg" alt="" /><span class="play"></span></a></li>
-                                    <li><a href="http://tv.diaoconline.vn/DuAn/Post/1167/2008/07/23/du-an-the-mansion.aspx"
-                                        target="_blank">
-                                        <img src="/images/demo/video_5.jpg" alt="" /><span class="play"></span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
