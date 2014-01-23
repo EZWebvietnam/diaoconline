@@ -100,7 +100,8 @@ class Adminproperty extends MY_Controller
                 'img'=>$file,
                 'code'=>$this->input->post('code'),
                 'content'=>stripslashes($this->input->post('editor1')),
-                'create_date'=>strtotime('now')
+                'create_date'=>strtotime('now'),
+                'vi_tri_dia_oc'=>$this->input->post('vi_tri_dia_oc')
             );
             $data['loai_hinh']=1;
             if($this->input->post('day_du_tien_nghi'))
@@ -265,7 +266,10 @@ class Adminproperty extends MY_Controller
             {
                 if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']))
                 {
-                    unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']);
+                    is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img'])
+                    {
+                        unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']);
+                    }
                 }
                 $data_save = array(
                     'loai_tin'=>$this->input->post('loai_tin'),
@@ -291,7 +295,8 @@ class Adminproperty extends MY_Controller
                     'status'=>1,
                     'img'=>$file,
                     'content'=>stripslashes($this->input->post('editor1')),
-                    'create_date'=>strtotime('now')
+                    'create_date'=>strtotime('now'),
+                    'vi_tri_dia_oc'=>$this->input->post('vi_tri_dia_oc')
                 );
             }
             else
@@ -319,7 +324,8 @@ class Adminproperty extends MY_Controller
                     'phong_khac'=>$this->input->post('phong_khac'),
                     'status'=>1,
                     'content'=>stripslashes($this->input->post('editor1')),
-                    'create_date'=>strtotime('now')
+                    'create_date'=>strtotime('now'),
+                    'vi_tri_dia_oc'=>$this->input->post('vi_tri_dia_oc')
                 );
             }
             $data['loai_hinh']=1;
@@ -451,11 +457,15 @@ class Adminproperty extends MY_Controller
         }
         else 
         {
+            
             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$detail[0]['code'].'/'.$detail[0]['img']))
             {
-                unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$detail[0]['img'].'/'.$detail[0]['img']);
+                if(is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$detail[0]['code'].'/'.$detail[0]['img']))
+                {
+                    unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$detail[0]['img'].'/'.$detail[0]['img']);
+                }
             }
-            $this->propertymodel->delete($id);
+            $this->propertymodel->delete_property($id);
             $this->session->set_flashdata('type','success');
             $this->session->set_flashdata('message','Xóa thành công');
             redirect('/admin/adminproperty');

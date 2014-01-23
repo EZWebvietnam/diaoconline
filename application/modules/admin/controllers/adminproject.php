@@ -129,7 +129,10 @@ class Adminproject extends MY_Controller
                 );
                 if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$this->input->post('old_file')))
                 {
-                    unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$this->input->post('old_file'));
+                    if(is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$this->input->post('old_file')))
+                    {
+                        unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$this->input->post('old_file'));
+                    }
                 }
             }
             else
@@ -196,7 +199,10 @@ class Adminproject extends MY_Controller
         }
         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$detail[0]['img']))
         {
-           unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$detail[0]['old_file']);
+            if(is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$detail[0]['img']))
+            {
+                unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/project/'.$detail[0]['old_file']);
+           }
         }
         $this->projectmodel->delete($id);
         redirect('/admin/adminproject');

@@ -63,7 +63,7 @@
                                                         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$list_property['code'].'/'.$list_property['img']))
                                                         {
                                                         ?>
-                                                        <img src="<?php echo base_url();?>file/uploads/property/<?php $list_property['code'] ?>/<?php echo $list_property['img']?>" width="150" height="150" alt="<?php echo $list_property['title']?>">
+                                                        <img src="<?php echo base_url();?>file/uploads/property/<?php echo $list_property['code'] ?>/<?php echo $list_property['img']?>" width="150" height="150" alt="<?php echo $list_property['title']?>">
                                                         <?php } else {?> 
                                                         <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="150" height="150" alt="<?php echo $list_property['title']?>">
                                                         <?php }?>

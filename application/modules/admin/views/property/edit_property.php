@@ -138,7 +138,7 @@
                     <div class="control-group">
                         <label class="control-label" for="disabledInput">Vị trí địa ốc</label>
                         <div class="controls">
-                           <select name="id_cate" >
+                           <select name="vi_tri_dia_oc" >
                            <?php 
                            foreach($vi_tri_dia_oc as $cate)
                            {
