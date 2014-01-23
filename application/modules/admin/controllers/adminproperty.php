@@ -266,7 +266,7 @@ class Adminproperty extends MY_Controller
             {
                 if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']))
                 {
-                    is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img'])
+                    if(is_file($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']))
                     {
                         unlink($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->data['detail'][0]['code'].'/'.$this->data['detail'][0]['img']);
                     }

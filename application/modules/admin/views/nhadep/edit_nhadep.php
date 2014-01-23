@@ -27,8 +27,8 @@
                     <div class="control-group">
                         <label class="control-label" for="disabledInput">Tiêu đề</label>
                         <div class="controls">
-                            <input class="input-xlarge disabled" id="disabledInput" type="text" name="title">
-                            <input class="input-xlarge disabled" id="disabledInput" type="hidden" name="code" value="<?php echo $code ?>">
+                            <input class="input-xlarge disabled" id="disabledInput" type="text" name="title" value="<?php echo $detail[0]['title']?>">
+                            
                         </div>
                     </div>
                     <div class="control-group">
@@ -38,19 +38,18 @@
                             <?php 
                             foreach($cate as $list_cate)
                             {
+                                if($list_cate['id']==$detail[0]['id_cate'])
+                                {
                             ?>
+                            <option selected="" value="<?php echo $list_cate['id']?>"><?php echo $list_cate['name']?></option>
+                            <?php } else { ?> 
                             <option value="<?php echo $list_cate['id']?>"><?php echo $list_cate['name']?></option>
-                            <?php } ?>
+                            <?php } } ?>
                             </select>
                             
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label class="control-label" for="disabledInput">Up hình</label>
-                        <div class="controls">
-                            <input id="userfile" name="userfile" type="file" multiple="true">
-                        </div>
-                    </div>
+                    
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Thêm</button>
                     </div>

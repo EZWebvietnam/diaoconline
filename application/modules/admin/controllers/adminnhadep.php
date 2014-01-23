@@ -45,7 +45,8 @@ class Adminnhadep extends MY_Controller
             'title'=>$this->input->post('title'),
             'id_cate'=>$this->input->post('id_cate'),
             'img'=>$img,
-            'create_date'=>strtotime('now')
+            'create_date'=>strtotime('now'),
+            'code'=>$this->input->post('code')
             );
             $id = $this->nhadepmodel->insert($data_save);
             if($id>0)
@@ -77,7 +78,61 @@ class Adminnhadep extends MY_Controller
     }
     public function edit($id = null)
     {
-        
+        if(empty($id))
+        {
+            show_404();exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();exit;
+        }
+        $detail = $this->nhadepmodel->nhadep_dt($id);
+        if(empty($detail))
+        {
+            show_404();exit;
+        }
+        if($this->input->post())
+        {
+            $data_save = array(
+            'title'=>$this->input->post('title'),
+            'id_cate'=>$this->input->post('id_cate'),
+            
+            'create_date'=>strtotime('now')
+            
+            );
+            $this->nhadepmodel->update($id,$data_save);
+            $this->session->set_flashdata('type','success');
+            $this->session->set_flashdata('message','Sửa thành công');
+            redirect('/admin/adminnhadep');
+        }
+        else
+        {
+            $this->data['detail']=$detail;
+            $this->data['cate']=$this->nhadepmodel->nha_dep_cate();
+            $this->data['main_content']='nhadep/edit_nhadep';
+            $this->load->view('admin/layout_form',$this->data);
+        }
+    }
+    public function delete($id)
+    {
+        if(empty($id))
+        {
+            show_404();exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();exit;
+        }
+        $detail = $this->nhadepmodel->nhadep_dt($id);
+        if(empty($detail))
+        {
+            show_404();exit;
+        }
+        $this->nhadepmodel->delete($id);
+        $this->nhadepmodel->delete_img($id);
+        $this->session->set_flashdata('type','success');
+        $this->session->set_flashdata('message','Xóa thành công');
+        redirect('/admin/adminnhadep');
     }
 }
 ?>

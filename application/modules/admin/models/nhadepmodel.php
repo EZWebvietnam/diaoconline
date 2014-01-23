@@ -8,7 +8,7 @@ class Nhadepmodel extends CI_Model
     }
     public function list_nha_dep()
     {
-        $sql ="SELECT * FROM nhadep INNER JOIN cate_nhadep ON nhadep.id_cate = cate_nhadep.id";
+        $sql ="SELECT *,nhadep.id as id_nha FROM nhadep LEFT JOIN cate_nhadep ON nhadep.id_cate = cate_nhadep.id";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
@@ -31,14 +31,25 @@ class Nhadepmodel extends CI_Model
     public function nhadep_dt($id)
     {
         $id = intval($id);
-        $sql ="SELECT * FROM nhadep INNER JOIN cate_nhadep ON nhadep.id_cate = cate_nhadep.id WHERE nhadep.id =$id";
+        $sql ="SELECT * FROM nhadep WHERE nhadep.id =$id";
         $query = $this->db->query($sql);
         return $query->result_array();
+    }
+    public function update($id, array $data)
+    {
+        $id = intval($id);
+        $this->db->where('id',$id);
+        $this->db->update('nhadep',$data);
     }
     public function delete($id)
     {
         $id = intval($id);
         $this->db->delete('nhadep',array('id'=>$id));
+    }
+    public function delete_img($id)
+    {
+        $id = intval($id);
+        $this->db->delete('nhadep_img',array('id_nha'=>$id));
     }
 }
 ?>

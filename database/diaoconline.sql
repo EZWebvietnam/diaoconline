@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2014 at 08:35 PM
+-- Generation Time: Jan 23, 2014 at 09:24 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -215,7 +215,8 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('26853b6d5146fa9786c4f435a3b27c7f', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390505317, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
+('1cd0f60cab8088a0d23e456dd2152f52', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390507137, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}'),
+('a20a47959448e8d2e084611954061359', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390508117, 'a:7:{s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -1186,6 +1187,7 @@ CREATE TABLE IF NOT EXISTS `nhadep` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_cate` int(11) NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
@@ -1194,10 +1196,9 @@ CREATE TABLE IF NOT EXISTS `nhadep` (
 -- Dumping data for table `nhadep`
 --
 
-INSERT INTO `nhadep` (`id`, `title`, `id_cate`, `img`, `create_date`) VALUES
-(1, '1', 1, '1', 1),
-(2, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', 1390505393),
-(3, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', 1390505417);
+INSERT INTO `nhadep` (`id`, `title`, `id_cate`, `img`, `code`, `create_date`) VALUES
+(2, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', '', 1390505393),
+(3, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', '', 1390505417);
 
 -- --------------------------------------------------------
 
@@ -1647,7 +1648,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`, `role`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-23 17:33:03', '2014-01-20 11:40:27', '2014-01-23 16:33:03', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-23 21:09:57', '2014-01-20 11:40:27', '2014-01-23 20:09:57', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
 
 -- --------------------------------------------------------
 

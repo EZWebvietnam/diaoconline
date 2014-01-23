@@ -32,7 +32,7 @@ border-radius: 4px;
 color: #EDF5FA;
 }
 </style>
-<a class="btn btn-primary" href="<?php echo base_url();?>admin/adminhnhadep/add">
+<a class="btn btn-primary" href="<?php echo base_url();?>admin/adminnhadep/add">
     <i  class="icon icon-color icon-plus"></i> 
                                 Thêm Nhà Đẹp
                             </a>
@@ -80,11 +80,11 @@ color: #EDF5FA;
                                 <i class="icon-zoom-in icon-white"></i>  
                                 Xem chi tiết                                            
                             </a>
-                            <a class="btn btn-info" href="<?php echo base_url(); ?>admin/adminnhadep/edit/<?php echo $prj['id']?>">
+                            <a class="btn btn-info" href="<?php echo base_url(); ?>admin/adminnhadep/edit/<?php echo $prj['id_nha']?>">
                                 <i class="icon-edit icon-white"></i>  
                                Sửa                                        
                             </a>
-                            <a onclick="confirm('Bạn có chắc muốn xóa hay không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/adminnhadep/delete/<?php echo $prj['id']?>">
+                            <a onclick="confirm('Bạn có chắc muốn xóa hay không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/adminnhadep/delete/<?php echo $prj['id_nha']?>">
                                 <i class="icon-trash icon-white"></i> 
                                 Xóa
                             </a>

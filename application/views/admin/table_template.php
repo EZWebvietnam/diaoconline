@@ -65,7 +65,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href=""> <img alt="" src="<?php echo base_url();?>template/admin_ninhbinhcoop/img/logo20.png" /> <span>NINHBINH COOP</span></a>
+				<a class="brand" href=""> <img alt="" src="<?php echo base_url();?>template/admin_ninhbinhcoop/img/logo20.png" /> <span>DCBLAND</span></a>
 				
 				<!-- theme selector starts -->
 				<div class="btn-group pull-right theme-container" >
@@ -124,12 +124,16 @@
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li class="nav-header hidden-tablet">Main</li>
 						<li><a class="ajax-link" href="<?php echo base_url(); ?>admin/user/listuser"><i class="icon-user"></i><span class="hidden-tablet">Thanh vien</span></a></li>
-                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/about"><i class="icon-info-sign"></i><span class="hidden-tablet">Gioi thieu</span></a></li>
-                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/servicesadm"><i class="icon-plane"></i><span class="hidden-tablet">Dich vu</span></a></li>
-                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/servicespost"><i class="icon-th-large"></i><span class="hidden-tablet">Gioi thieu dich vu</span></a></li>
-                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/cate/listcate"><i class="icon-th-list"></i><span class="hidden-tablet">Danh muc tin tuc</span></a></li>
-                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/post/listpost"><i class="icon-list-alt"></i><span class="hidden-tablet">Tin tuc</span></a></li>
-                              
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincatediscovery"><i class="icon-info-sign"></i><span class="hidden-tablet">Danh muc Kham Pha</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincateproject"><i class="icon-plane"></i><span class="hidden-tablet">Danh muc Du an</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincateproperty"><i class="icon-th-large"></i><span class="hidden-tablet">Danh muc tai san</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincatenew"><i class="icon-th-list"></i><span class="hidden-tablet">Danh muc tin tuc</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admindiscovery"><i class="icon-list-alt"></i><span class="hidden-tablet">Kham pha</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminproperty"><i class="icon-list-alt"></i><span class="hidden-tablet">Tai san</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminproject"><i class="icon-list-alt"></i><span class="hidden-tablet">Du an</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnew"><i class="icon-list-alt"></i><span class="hidden-tablet">Tin tuc</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminbusiness"><i class="icon-list-alt"></i><span class="hidden-tablet">Doanh nghiep</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnhadep"><i class="icon-list-alt"></i><span class="hidden-tablet">Nha dep</span></a></li>
 					</ul>
 					
 				</div><!--/.well -->
