@@ -663,61 +663,7 @@
 </div>            </div>
 
 
-<div id="shopping" class="wrap margin_bottom">
-    <div class="rounded_style_4 rounded_box">
-        <div class="content">
-            <div class="top">
-                <h2 class="headline"><a href="/kham-pha/shopping-cung-dool-c10"><span>Shopping Cùng DOOL</span></a></h2>
-                
-            </div>
-            <div class="show">
-                <ul>
-                    <li class="shop_block ">
-                        <div class="BL"></div>
-                        <div class="BR"></div>
-                        <div class="content">
-                            <a href="/kham-pha/shopping-cung-dool-c10/tet-sum-vay-voi-bo-ban-an-dep-lung-linh-gia-duoi-2-trieu-dong-i45094"><img src="http://image.diaoconline.vn/kham-pha/2014/01/07/thumb-E94-tet-sum-vay-voi-bo-ban-an-dep-lung-linh-gia-duoi-2-trieu-dong.jpg" width="160" height="124" alt="Tết sum vầy với bộ bàn ăn đẹp lung linh giá dưới 2 triệu đồng"/></a>
-                            <a href="/kham-pha/shopping-cung-dool-c10/tet-sum-vay-voi-bo-ban-an-dep-lung-linh-gia-duoi-2-trieu-dong-i45094">Tết sum vầy với bộ bàn ăn đẹp lung linh giá dưới 2 triệu đồng</a> 
-	                    </div>
-                    </li>
-                    <li class="shop_block ">
-                        <div class="BL"></div>
-                        <div class="BR"></div>
-                        <div class="content">
-                            <a href="/kham-pha/shopping-cung-dool-c10/ke-dung-gia-vi-dep-cho-bep-them-phong-cach-i44992"><img src="http://image.diaoconline.vn/kham-pha/2014/01/02/thumb-D21-ke-dung-gia-vi-dep-cho-bep-them-phong-cach.jpg" width="160" height="124" alt="Kệ đựng gia vị đẹp cho bếp thêm phong cách"/></a>
-                            <a href="/kham-pha/shopping-cung-dool-c10/ke-dung-gia-vi-dep-cho-bep-them-phong-cach-i44992">Kệ đựng gia vị đẹp cho bếp thêm phong cách</a> 
-	                    </div>
-                    </li>
-                    <li class="shop_block ">
-                        <div class="BL"></div>
-                        <div class="BR"></div>
-                        <div class="content">
-                            <a href="/kham-pha/shopping-cung-dool-c10/mua-sam-tet-voi-uu-dai-den-70-cung-edena-i44854"><img src="http://image.diaoconline.vn/kham-pha/2013/12/26/thumb-BA6-mua-sam-tet-voi-uu-dai-den-70-cung-edena.jpg" width="160" height="124" alt="Mua sắm tết với ưu đãi đến 70% cùng Edena"/></a>
-                            <a href="/kham-pha/shopping-cung-dool-c10/mua-sam-tet-voi-uu-dai-den-70-cung-edena-i44854">Mua sắm tết với ưu đãi đến 70% cùng Edena</a> 
-	                    </div>
-                    </li>
-                    <li class="shop_block ">
-                        <div class="BL"></div>
-                        <div class="BR"></div>
-                        <div class="content">
-                            <a href="/kham-pha/shopping-cung-dool-c10/giang-sinh-ron-rang-cung-sac-do-i44790"><img src="http://image.diaoconline.vn/kham-pha/2013/12/23/thumb-D39-giang-sinh-ron-rang-cung-sac-do.jpg" width="160" height="124" alt="Giáng sinh rộn ràng cùng sắc đỏ"/></a>
-                            <a href="/kham-pha/shopping-cung-dool-c10/giang-sinh-ron-rang-cung-sac-do-i44790">Giáng sinh rộn ràng cùng sắc đỏ</a> 
-	                    </div>
-                    </li>
-                    <li class="shop_block last">
-                        <div class="BL"></div>
-                        <div class="BR"></div>
-                        <div class="content">
-                            <a href="/kham-pha/shopping-cung-dool-c10/mua-gi-de-trang-tri-dip-giang-sinh-nay-i44500"><img src="http://image.diaoconline.vn/kham-pha/2013/12/10/thumb-36F-trang-tri-giang-sinh-phong-cach-tay-gia-viet.jpg" width="160" height="124" alt="Mua gì để trang trí dịp giáng sinh này?"/></a>
-                            <a href="/kham-pha/shopping-cung-dool-c10/mua-gi-de-trang-tri-dip-giang-sinh-nay-i44500">Mua gì để trang trí dịp giáng sinh này?</a> 
-	                    </div>
-                    </li>
-                </ul>
-            </div>
-        </div>    
-    </div>
-    <p class="note"></p>
-</div>
+
             
         </div>
     </div>

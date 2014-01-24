@@ -177,30 +177,22 @@
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-officetel-dt-140m2-3-phong-ngu-2wc-noi-that-cao-cap-gia-re-i751458" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2014/01/08/thumb-CCD-3D017C.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ" title="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ" />
-                                   Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ</h2></a>
-                        </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/chinh-chu-cho-thue-can-ho-saigon-pearl-topaz-2-dt-135m2-3-phong-ngu-lau-29-view-dep-i751100" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2014/01/07/thumb-2BA-276BDD.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp" title="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp" />
-                                   Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-the-manor-dt-124m2-3-phong-ngu-noi-that-dep-view-thoang-mat-i741605" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/20/thumb-274-FB85B9.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát" title="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát" />
-                                   Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-CF7-EBE8CB.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" title="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" />
-                                   Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt</h2></a>
-                        </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-ii-qbt-dt-95m2-2-phong-ngu-lau-cao-tien-nghi-cao-cap-i735038" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-795-7B6FD7.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp" title="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp" />
-                                   Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp</h2></a>
-                        </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-officetel-dt-38m2-1-phong-ngu-dang-studio-du-tien-nghi-i712623" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/11/11/thumb-F18-A306BE.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi" title="Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi" />
-                                   Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi</h2></a>
-                        </li>
+                <?php 
+                    foreach($tai_san_noi_bat_khac as $tai_san)
+                    {
+                    ?>
+                            <li><a href="<?php echo base_url();?>nha/<?php echo  mb_strtolower(url_title(removesign($tai_san['loai_dia_oc'])))?>-c<?php echo $tai_san['id_ldo']?>/<?php echo  mb_strtolower(url_title(removesign($tai_san['title'])))?>-h<?php echo $tai_san['id']?>" >
+                                <?php 
+                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$tai_san['code'].'/'.$tai_san['img']))
+                                {
+                                ?>
+                                <h2><img src="<?php echo base_url();?>file/uploads/property/<?php echo $tai_san['code']?>/<?php echo $tai_san['img']?>" width="75" height="75" alt="<?php echo $tai_san['title']?>" title="<?php echo $tai_san['title']?>" />
+                                <?php } ?> <?php echo $tai_san['title']?></a></h2>
+                                    
+                                
+                            </li>
+                     <?php } ?>   
+                
                 </ul>
             </div>
         </div>
@@ -272,36 +264,7 @@
         <a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></h2>
         <a href="/kham-pha/phong-thuy-c9" class="grey_link">Xem thêm</a>
     </div>
-    <div class="rounded_style_2 rounded_box">
-        <div class="body">
-			<ul class="listing_1">
-                    <li >
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-va-nhung-dai-ky-cua-nam-moi-i45095">
-                        <img src="http://image.diaoconline.vn/kham-pha/2014/01/07/thumb-698-phong-thuy-va-nhung-dai-ky-cua-nam-moi.jpg" alt="Phong thủy và những đại kỵ của năm mới" width="80" height="61" class="img-left"/>
-                         Phong thủy và những đại kỵ của năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/cay-canh-mang-may-man-trong-nam-moi-i45037">
-                         Cây cảnh mang may mắn trong năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-nha-o-hut-tai-loc-trong-nam-moi-i44986">
-                         Phong thủy nhà ở hút tài lộc trong năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/nam-2014-tuoi-xong-dat-va-gio-dep-xuat-hanh-i44961">
-                         Năm 2014: Tuổi xông đất và giờ đẹp xuất hành?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/8-linh-vat-cho-cuoc-song-truong-tho-i44934">
-                         8 linh vật cho cuộc sống trường thọ</a></li>
-                    <li  class=last >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-rem-cua-hut-vuong-khi-vao-nha-i44901">
-                         Phong thủy rèm cửa hút vượng khí vào nhà</a></li>
-            </ul>
-        </div>
-    </div>
+    
 </div>            
         </div>
     </div>

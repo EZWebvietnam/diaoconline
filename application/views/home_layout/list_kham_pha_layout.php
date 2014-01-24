@@ -162,30 +162,23 @@
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/ban-dat-o-dat-tho-cu-c11/ban-300m2-dat-o-do-thi-tai-binh-duong-gia-300-trieu-xay-18-phong-tro-thu-nhap-16-trieuthang-i754156" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2014/01/15/thumb-248-4D2742.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán 300m2 đất ở đô thị tại Bình Dương, giá: 300 triệu, xây 18 phòng trọ thu nhập 16 triệu/tháng" title="Bán 300m2 đất ở đô thị tại Bình Dương, giá: 300 triệu, xây 18 phòng trọ thu nhập 16 triệu/tháng" />
-                                   Bán 300m2 đất ở đô thị tại Bình Dương, giá: 300 triệu, xây 18 phòng trọ thu nhập 16 triệu/tháng</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-cao-cap-c10/ban-can-ho-him-lam-nam-khanh-khu-hiep-an-duong-ta-quang-buu-p5-q8-i754141" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/can-ho-cao-cap.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán căn hộ Him Lam – Nam Khánh, khu Hiệp Ân, đường Tạ Quang Bửu, P.5, Q.8" title="Bán căn hộ Him Lam – Nam Khánh, khu Hiệp Ân, đường Tạ Quang Bửu, P.5, Q.8" />
-                                   Bán căn hộ Him Lam – Nam Khánh, khu Hiệp Ân, đường Tạ Quang Bửu, P.5, Q.8</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/can-ban-gap-420m2-dat-mat-tien-truong-quoc-dung-gan-duong-nguyen-van-troi-i754129" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần bán gấp 420m2 đất mặt tiền Trương Quốc Dung, gần đường Nguyễn Văn Trỗi" title="Cần bán gấp 420m2 đất mặt tiền Trương Quốc Dung, gần đường Nguyễn Văn Trỗi" />
-                                   Cần bán gấp 420m2 đất mặt tiền Trương Quốc Dung, gần đường Nguyễn Văn Trỗi</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/ra-nuoc-ngoai-can-ban-gap-dat-mat-tien-nguyen-tri-phuong-ngang-52m-i754113" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Ra nước ngoài cần bán gấp đất mặt tiền Nguyễn Tri Phương, ngang: 5,2m" title="Ra nước ngoài cần bán gấp đất mặt tiền Nguyễn Tri Phương, ngang: 5,2m" />
-                                   Ra nước ngoài cần bán gấp đất mặt tiền Nguyễn Tri Phương, ngang: 5,2m</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/can-ban-gap-dat-mat-tien-nguyen-tri-phuong-p8-quan-10-tphcm-ngang-52m-i754106" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần bán gấp đất mặt tiền Nguyễn Tri Phương, P.8, quận 10, TPHCM, ngang: 5,2m" title="Cần bán gấp đất mặt tiền Nguyễn Tri Phương, P.8, quận 10, TPHCM, ngang: 5,2m" />
-                                   Cần bán gấp đất mặt tiền Nguyễn Tri Phương, P.8, quận 10, TPHCM, ngang: 5,2m</h2></a>
-                        </li>
-                        <li><a href="/ban-nha-pho-c20/can-ban-nha-sh-tang-thue-truoc-ba-hem-lon-12m-dnguyen-thai-binh-p12-qtan-binh-i754084" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/nha-pho.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cần bán nhà SH tặng thuế trước bạ, hẻm lớn 12m, Đ.Nguyễn Thái Bình, P.12, Q.Tân Bình" title="Cần bán nhà SH tặng thuế trước bạ, hẻm lớn 12m, Đ.Nguyễn Thái Bình, P.12, Q.Tân Bình" />
-                                   Cần bán nhà SH tặng thuế trước bạ, hẻm lớn 12m, Đ.Nguyễn Thái Bình, P.12, Q.Tân Bình</h2></a>
-                        </li>
+                <?php 
+                    foreach($tai_san_noi_bat_khac as $tai_san)
+                    {
+                    ?>
+                            <li><a href="<?php echo base_url();?>nha/<?php echo  mb_strtolower(url_title(removesign($tai_san['loai_dia_oc'])))?>-c<?php echo $tai_san['id_ldo']?>/<?php echo  mb_strtolower(url_title(removesign($tai_san['title'])))?>-h<?php echo $tai_san['id']?>" >
+                                <?php 
+                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$tai_san['code'].'/'.$tai_san['img']))
+                                {
+                                ?>
+                                <h2><img src="<?php echo base_url();?>file/uploads/property/<?php echo $tai_san['code']?>/<?php echo $tai_san['img']?>" width="75" height="75" alt="<?php echo $tai_san['title']?>" title="<?php echo $tai_san['title']?>" />
+                                <?php } ?> <?php echo $tai_san['title']?></a></h2>
+                                    
+                                
+                            </li>
+                     <?php } ?>   
+                
+                        
                 </ul>
             </div>
         </div>

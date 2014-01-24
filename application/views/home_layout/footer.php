@@ -5,46 +5,37 @@
                 <div id="news_menu">
                     <h4>»THÔNG TIN ĐỊA ỐC</h4>
                     <ul>
-                        <li><a href="/tin-tuc/thi-truong-dia-oc-c18">Thị trường địa ốc</a></li>
-                        <li><a href="/tin-tuc/hoat-dong-doanh-nghiep-c23">Hoạt động Doanh nghiệp</a></li>
-                        <li><a href="/tin-tuc/chinh-sach-quy-hoach-c16">Chính sách - Quy hoạch</a></li>
-                        <li><a href="/tin-tuc/tai-chinh-chung-khoan-c57">Tài chính - Chứng khoán</a></li>
-                        <li><a href="/tin-tuc/xay-dung-c25">Xây dựng</a></li>
-                        <li><a href="/tin-tuc/bat-dong-san-the-gioi-c24">Bất động sản thế giới</a></li>
+                    <?php 
+                                                foreach($new_nav as $menu_new)
+                                                {
+                                                ?>
+                                                <li><a href="<?php echo base_url();?>tin-tuc-c/<?php echo mb_strtolower(url_title(removesign($menu_new['name'])))?>-c<?php echo $menu_new['id']?>"><?php echo $menu_new['name']?></a>
+                                                </li>
+                                                <?php } ?>
+                        
                     </ul>
                 </div>
                 <div id="market_menu">
                     <h4>»SIÊU THỊ ĐỊA ỐC</h4>
                     <ul>
-                        <li>
-                            <a href="/sieu-thi/nha-pho-c20">Nhà phố</a>
-                        </li>
-                        <li>
-                            <a href="/sieu-thi/villa-biet-thu-c1">Villa - Biệt thự</a>
-                        </li>
-                        <li>
-                            <a href="/sieu-thi/can-ho-chung-cu-c8">Căn hộ chung cư</a>
-                        </li>
-                        <li>
-                            <a href="/sieu-thi/dat-o-dat-tho-cu-c11">Đất ở - Đất thổ cư</a>
-                        </li>
-                        <li>
-                            <a href="/sieu-thi/dat-du-an-quy-hoach-c12">Đất dự án - Quy hoạch</a>
-                        </li>
-                        <li>
-                            <a href="/sieu-thi/van-phong-c9">Văn phòng</a>
-                        </li>
+                        <?php 
+                                                foreach($cate_sieu_thi_list as $cate_st)
+                                                {
+                                                ?>
+                                                <li><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($cate_st['name'])))?>-c<?php echo $cate_st['id']?>"><?php echo $cate_st['name']?></a>
+                                                </li>
+                                                <?php } ?>
                     </ul>
                 </div>
                 <div id="project_menu">
                     <h4>»DỰ ÁN</h4>
                     <ul>
-                            <li><a href="/du-an/khu-cong-nghiep-c11">Khu công nghiệp</a></li>
-                            <li><a href="/du-an/khu-dan-cu-do-thi-moi-c24">Khu dân cư – Đô thị mới </a></li>
-                            <li><a href="/du-an/khu-phuc-hop-thuong-mai-c25">Khu phức hợp - Thương mại</a></li>
-                            <li><a href="/du-an/cao-oc-van-phong-c26">Cao ốc văn phòng</a></li>
-                            <li><a href="/du-an/khu-can-ho-c27">Khu căn hộ</a></li>
-                            <li><a href="/du-an/khu-du-lich-nghi-duong-c28">Khu du lịch - Nghỉ dưỡng</a></li>
+                            <?php 
+                                                foreach($cate_pro_nav as $cate_pro)
+                                                {
+                                            ?>
+                                            <li><a href="<?php echo base_url();?>du-an-c/<?php echo  mb_strtolower(url_title(removesign($cate_pro['name'])))?>-c<?php echo $cate_pro['id']?>"><?php echo $cate_pro['name']?></a></li>
+                                            <?php } ?>
                     </ul>
                 </div>
                 <div id="company_menu">
@@ -74,12 +65,12 @@
                     <h4>
                         »KHÁM PHÁ - TRẢI NGHIỆM</h4>
                     <ul>
-                            <li><a href="/kham-pha/the-gioi-kien-truc-c4">Thế giới kiến trúc</a></li>
-                            <li><a href="/kham-pha/mach-ban-c6">Mách bạn</a></li>
-                            <li><a href="/kham-pha/phong-thuy-c9">Phong thủy</a></li>
-                            <li><a href="/kham-pha/khong-gian-song-c7">Không gian sống</a></li>
-                            <li><a href="/kham-pha/shopping-cung-dool-c10">Shopping cùng DOOL</a></li>
-                            <li><a href="/kham-pha/thuong-hieu-c11">Thương hiệu</a></li>
+                            <?php 
+                                        foreach($nav_cate_dis as $cate_nav)
+                                        {
+                                        ?>
+                                                <li><a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($cate_nav['name'])))?>-c<?php echo $cate_nav['id']?>"><?php echo $cate_nav['name']?></a></li>
+                                        <?php } ?>    
                     </ul>
                 </div>
 </div>
@@ -89,12 +80,13 @@
                 <div class="content">
                     <div class="like">
                     <div style="margin-bottom:5px;">
-                        <h2>Hỗ trợ kỹ thuật</h2>
-                        <span class="phone">0909<span></span>480<span></span>599</span><span>(Mr. Đạt)</span>
+                        <b>Hỗ trợ kỹ thuật</b>
+                        <span class="phone">0947098968</span>
                         </div>
                         <br />
                         
-                        <h2><a href="http://adv.diaoconline.vn/AboutUs/hotrotructuyen.html" target="_blank">Hỗ trợ trực tuyến</a></h2>
+                        <b>Hỗ trợ trực tuyến</b>
+						<a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="142" height="40"></a>
                     </div>
                     <div class="join_network">
                         <h4>KẾT NỐI VỚI CHÚNG TÔI TẠI: </h4>
@@ -110,12 +102,12 @@
             </div>
             <div id="dool_network" class="white_border_box rounded_box">
                 <div class="content">
-					<h4>DIAOCONLINE.VN NETWORK</h4>
+					<h4>DCBLAND.COM NETWORK</h4>
                     <ul>  
-                    <li class="dool"><a href="http://www.diaoconline.vn">Diaoconline</a></li>
-                    <li class="roi"><a href="http://www.rol.vn">Vietnam Real estate Online</a></li>
-                    <li class="tv"><a href="http://tv.diaoconline.vn">địa ốc TV</a></li>
-                    <li class="map"><a href="http://map.diaoconline.vn">địa ốc map</a></li>
+                    <li class="dool"><a href="#">DCBLAND.COM</a></li>
+                    <li class="roi"><a href="#">DCBLAND.COM</a></li>
+                    <li class="tv"><a href="#">DCBLAND.COM</a></li>
+                    <li class="map"><a href="#">DCBLAND.COM</a></li>
                     </ul>
                 </div>
             </div>
