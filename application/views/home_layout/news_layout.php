@@ -296,19 +296,7 @@ foreach($left_menu as $left_mn)
 <div id="position_60" class ='banner_300x250'><div><a href="http://www.diaoconline.vn/quangcao/98/60" target="_blank"><img src="http://image1.diaoconline.vn/banner-dool/2012/12/11/835-679-300x250.jpg" width="300px" height="250px"/></a></div><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/08/632-dangky_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/401/60"/></div><div><a href="http://www.diaoconline.vn/quangcao/371/60" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/15/6B1-phongthuy_300x250.gif" width="300px" height="250px"/></a></div></div><script type='text/javascript'>var Banner60=1;function Random_Banner60(){    var _Arr=document.getElementById("position_60").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner60 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner60 - 1]).html(); $(_Arr[Banner60 - 1]).html(''); $(_Arr[Banner60 - 1]).html(tempBanner);    window.setTimeout("Random_Banner60()" ,25000);    Banner60 = Banner60 + 1;    if(Banner60 > _Arr.length)        Banner60 = 1;}Random_Banner60();</script>
             
 
-    <div id="event" class="margin_bottom">
-        <div class="headline_title_1 rounded_style_5 rounded_box">
-            <h2 class="headline">
-                VIỆT NAM ĐẸP QUA ẢNH
-            </h2>
-            <a href="/viet-nam-dep-qua-anh" class="grey_link">Xem thêm</a>
-        </div>
-        <div>
-            <img src="http://image.diaoconline.vn/vietnam-dep-qua-anh/2014/01/10/thumb-A07-nang-som-tren-doi-cat-mui-ne-phan-thiet.jpg" alt="Nắng sớm trên đồi cát Mũi Né - Phan Thiết" width="310" height="175" />
-            <div style="font: Bold 12px Arial; padding: 5px 0px;">
-                Nắng sớm trên đồi cát Mũi Né - Phan Thiết</div>
-        </div>
-    </div>
+    
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
@@ -345,8 +333,8 @@ foreach($left_menu as $left_mn)
 </div><div id="fengsui_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline">
-        <a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></h2>
-        <a href="/kham-pha/phong-thuy-c9" class="grey_link">Xem thêm</a>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4"><span>Phong Thủy</span></a></h2>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4" class="grey_link">Xem thêm</a>
     </div>
     <div class="rounded_style_2 rounded_box">
         <div class="body">

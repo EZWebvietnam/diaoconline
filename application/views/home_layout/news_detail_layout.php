@@ -177,30 +177,21 @@
         <div class="rounded_style_2 rounded_box">
             <div class="content">
                 <ul class="listing_1">
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-officetel-dt-140m2-3-phong-ngu-2wc-noi-that-cao-cap-gia-re-i751458" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2014/01/08/thumb-CCD-3D017C.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ" title="Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ" />
-                                   Cho thuê căn hộ The Manor Officetel, DT: 140m2, 3 phòng ngủ, 2WC, nội thất cao cấp, giá rẻ</h2></a>
+                <?php 
+                foreach($tai_san_noi_bat_khac as $ts_nb)
+                {
+                ?>
+                        <li><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_nb['loai_dia_oc'])))?>-c<?php echo $ts_nb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_nb['title'])))?>-h<?php echo $ts_nb['id']?>" >
+                             <h2>
+                             <?php 
+                             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$ts_nb['code'].'/'.$ts_nb['img']))
+                             {
+                             ?>
+                             <img src="<?php echo base_url();?>file/uploads/property/<?php echo $ts_nb['code']?>/<?php echo $ts_nb['img']?>" style="float:left; margin-right:5px;" width="45" height="45" alt="<?php echo $ts_nb['title']?>" title="<?php echo $ts_nb['title']?>" />
+                             <?php } ?>
+                                   <?php echo $ts_nb['title']?></h2></a>
                         </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/chinh-chu-cho-thue-can-ho-saigon-pearl-topaz-2-dt-135m2-3-phong-ngu-lau-29-view-dep-i751100" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2014/01/07/thumb-2BA-276BDD.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp" title="Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp" />
-                                   Chính chủ cho thuê căn hộ Saigon Pearl - Topaz 2, DT: 135m2, 3 phòng ngủ, lầu 29, view đẹp</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-cao-cap-c10/ban-gap-trong-ngay-can-ho-the-manor-dt-124m2-3-phong-ngu-noi-that-dep-view-thoang-mat-i741605" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/20/thumb-274-FB85B9.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát" title="Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát" />
-                                   Bán gấp trong ngày căn hộ The Manor, DT: 124m2, 3 phòng ngủ, nội thất đẹp, view thoáng mát</h2></a>
-                        </li>
-                        <li><a href="/ban-can-ho-cao-cap-c10/ban-gap-can-ho-the-manor-dt-157m2-3-phong-ngu-lau-cao-noi-that-cao-cap-gia-tot-i735021" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-CF7-EBE8CB.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" title="Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt" />
-                                   Bán gấp căn hộ The Manor, DT: 157m2, 3 phòng ngủ, lầu cao, nội thất cao cấp, giá tốt</h2></a>
-                        </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-ii-qbt-dt-95m2-2-phong-ngu-lau-cao-tien-nghi-cao-cap-i735038" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/12/10/thumb-795-7B6FD7.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp" title="Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp" />
-                                   Cho thuê căn hộ The Manor II, Q.BT. DT: 95m2, 2 phòng ngủ, lầu cao, tiện nghi cao cấp</h2></a>
-                        </li>
-                        <li><a href="/thue-can-ho-cao-cap-c10/cho-thue-can-ho-the-manor-officetel-dt-38m2-1-phong-ngu-dang-studio-du-tien-nghi-i712623" >
-                             <h2><img src="http://image.diaoconline.vn/sieu-thi/2013/11/11/thumb-F18-A306BE.jpg" style="float:left; margin-right:5px;" width="45" height="45" alt="Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi" title="Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi" />
-                                   Cho thuê căn hộ The Manor Officetel, DT: 38m2, 1 phòng ngủ, dạng studio, đủ tiện nghi</h2></a>
-                        </li>
+                 <?php } ?>       
                 </ul>
             </div>
         </div>
@@ -220,19 +211,7 @@
 <div id="position_62" class ='banner_300x250'><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/11/11/BD9-smilescard_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/361/62"/></div><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/11/11/BD9-smilescard_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/361/62"/></div></div><script type='text/javascript'>var Banner62=1;function Random_Banner62(){    var _Arr=document.getElementById("position_62").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner62 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner62 - 1]).html(); $(_Arr[Banner62 - 1]).html(''); $(_Arr[Banner62 - 1]).html(tempBanner);    window.setTimeout("Random_Banner62()" ,25000);    Banner62 = Banner62 + 1;    if(Banner62 > _Arr.length)        Banner62 = 1;}Random_Banner62();</script>
             
 
-    <div id="event" class="margin_bottom">
-        <div class="headline_title_1 rounded_style_5 rounded_box">
-            <h2 class="headline">
-                VIỆT NAM ĐẸP QUA ẢNH
-            </h2>
-            <a href="/viet-nam-dep-qua-anh" class="grey_link">Xem thêm</a>
-        </div>
-        <div>
-            <img src="http://image.diaoconline.vn/vietnam-dep-qua-anh/2014/01/09/thumb-A5A-thap-cham-phan-rang.jpg" alt="Tháp Chàm Phan Rang" width="310" height="175" />
-            <div style="font: Bold 12px Arial; padding: 5px 0px;">
-                Tháp Chàm Phan Rang</div>
-        </div>
-    </div>
+    
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
@@ -269,40 +248,30 @@
 </div><div id="fengsui_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline">
-        <a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></h2>
-        <a href="/kham-pha/phong-thuy-c9" class="grey_link">Xem thêm</a>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4"><span>Phong Thủy</span></a></h2>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4" class="grey_link">Xem thêm</a>
     </div>
     <div class="rounded_style_2 rounded_box">
         <div class="body">
 			<ul class="listing_1">
+                    <?php 
+                    foreach($list_phong_thuy as $phong_thuy)
+                    {
+                    ?>
                     <li >
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-va-nhung-dai-ky-cua-nam-moi-i45095">
-                        <img src="http://image.diaoconline.vn/kham-pha/2014/01/07/thumb-698-phong-thuy-va-nhung-dai-ky-cua-nam-moi.jpg" alt="Phong thủy và những đại kỵ của năm mới" width="80" height="61" class="img-left"/>
-                         Phong thủy và những đại kỵ của năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/cay-canh-mang-may-man-trong-nam-moi-i45037">
-                         Cây cảnh mang may mắn trong năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-nha-o-hut-tai-loc-trong-nam-moi-i44986">
-                         Phong thủy nhà ở hút tài lộc trong năm mới</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/nam-2014-tuoi-xong-dat-va-gio-dep-xuat-hanh-i44961">
-                         Năm 2014: Tuổi xông đất và giờ đẹp xuất hành?</a></li>
-                    <li >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/8-linh-vat-cho-cuoc-song-truong-tho-i44934">
-                         8 linh vật cho cuộc sống trường thọ</a></li>
-                    <li  class=last >
-                        <span class="arrow"></span> 
-                        <a href="/kham-pha/phong-thuy-c9/phong-thuy-rem-cua-hut-vuong-khi-vao-nha-i44901">
-                         Phong thủy rèm cửa hút vượng khí vào nhà</a></li>
+                        <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($phong_thuy['name'])))?>-c<?php echo $phong_thuy['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($phong_thuy['title'])))?>-i<?php echo $phong_thuy['id_disco']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$phong_thuy['img']))
+                        {
+                        ?>
+                        <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $phong_thuy['img']?>" alt=<?php echo $phong_thuy['title']?>" width="80" height="61" class="img-left"/>
+                        <?php } ?>
+                         <?php echo $phong_thuy['title']?></a></li>
+                    <?php } ?>
             </ul>
         </div>
     </div>
-</div>            
+</div>             
         </div>
     </div>
 

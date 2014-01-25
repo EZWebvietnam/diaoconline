@@ -74,6 +74,10 @@ $route['thanh-vien/tai-san-het-han'] = "home/member/list_het_han";
 $route['thanh-vien/tai-san-het-han/page/(:any)'] = "home/member/list_het_han";
 $route['thanh-vien/gia-han-dich-vu/(:any)'] = "home/member/gia_han_dich_vu/$1";
 //
+$route['nha-dep'] = "home/nhadep/list_nhadep";
+$route['nha-dep/(:any)-c(:any)/(:any)-i(:any)'] = "home/nhadep/nhadep_detail/$4";
+$route['nha-dep-c/(:any)-c(:any)'] = "home/nhadep/list_nhadep_cate/$2";
+//
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
 $route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";
 $route['xoa-project-luu/k/(:any)'] = "home/project/delete_save/$1";

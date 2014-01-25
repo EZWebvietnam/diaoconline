@@ -38,5 +38,6 @@ class Catediscoveryhomemodel extends CI_Model
         $query = $this->db->get('cate_discovery');
         return $query->result_array();
     }
+    
 }
 ?>

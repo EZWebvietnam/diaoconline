@@ -243,5 +243,15 @@ class MY_Controller extends CI_Controller
         $id_user = $this->session->userdata('user_id');
         $this->data['so_du_nav']=$this->blancehomemodel->so_du($id_user);
     }
+    public function nha_cua_sao()
+    {
+        $this->load->model('discoveryhomemodel');
+        $this->data['nha_dep_cua_sao']=$this->discoveryhomemodel->load_nha_cua_sao();
+    }
+    public function nha_dep()
+    {
+        $this->load->model('nhadephomemodel');
+        $this->data['nha_dep']=$this->nhadephomemodel->load_nha_dep_();
+    }
 }
 ?>

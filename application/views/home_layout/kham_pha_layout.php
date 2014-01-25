@@ -215,6 +215,7 @@
             });
         });
     </script>
+   
     <div id="star_house" class="margin_bottom">
         <div class="headline_title_1 rounded_style_5 rounded_box">
             <div class="TL">
@@ -243,86 +244,25 @@
                 <div class="img_galery">
                     <div id="hstarslider" class="flexslider">
                         <ul class="slides">
-                                <li><a href="/kham-pha/nha-cua-sao-c76/chi-tiet-doc-trong-biet-thu-cua-bill-gates-i45166">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/10/large-3E8-chi-tiet-doc-trong-biet-thu-cua-bill-gates.jpg" alt="Chi tiết độc trong biệt thự của Bill Gates" style="width:290px;height:200px;" /></a>
+                        <?php 
+                        foreach($nha_dep_cua_sao as $nha_cua_sao)
+                        {
+                        ?>
+                                <li><a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($nha_cua_sao['name'])))?>-c<?php echo $nha_cua_sao['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($nha_cua_sao['title'])))?>-i<?php echo $nha_cua_sao['id_disco']?>">
+                                <?php 
+                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$nha_cua_sao['img']))
+                                { ?>
+                                <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $nha_cua_sao['img']?>" alt="<?php echo $nha_cua_sao['title']?>" style="width:290px;height:200px;" />
+                                <?php }
+                                ?>
+                                    </a>
                                     <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/chi-tiet-doc-trong-biet-thu-cua-bill-gates-i45166">
-                                        Chi tiết độc trong biệt thự của Bill Gates
+                                        <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($nha_cua_sao['name'])))?>-c<?php echo $nha_cua_sao['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($nha_cua_sao['title'])))?>-i<?php echo $nha_cua_sao['id_disco']?>">
+                                        <?php echo $nha_cua_sao['title']?>
                                         </a>
                                     </div>
                                 </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/co-ngoi-hoanh-trang-cua-ngoc-trinh-i45124">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/08/large-CAC-co-ngoi-hoanh-trang-cua-ngoc-trinh.jpg" alt="Cơ ngơi hoành tráng của Ngọc Trinh" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/co-ngoi-hoanh-trang-cua-ngoc-trinh-i45124">
-                                        Cơ ngơi hoành tráng của Ngọc Trinh
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/nha-moi-dep-lung-linh-cua-keira-knightley-i45086">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/07/large-13F-nha-moi-dep-lung-linh-cua-keira-knightley.jpg" alt="Nhà mới đẹp lung linh của Keira Knightley" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/nha-moi-dep-lung-linh-cua-keira-knightley-i45086">
-                                        Nhà mới đẹp lung linh của Keira Knightley
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/soi-can-ho-doc-than-cua-miranda-kerr-i45025">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/03/large-4B2-soi-can-ho-doc-than-cua-miranda-kerr.jpg" alt="Soi căn hộ độc thân của Miranda Kerr" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/soi-can-ho-doc-than-cua-miranda-kerr-i45025">
-                                        Soi căn hộ độc thân của Miranda Kerr
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/nha-sang-cua-dien-vien-hai-anh-o-royal-city-i44994">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/02/large-E8D-nha-sang-cua-dien-vien-hai-anh-o-royal-city.jpg" alt="Nhà sang của diễn viên Hải Anh ở Royal City" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/nha-sang-cua-dien-vien-hai-anh-o-royal-city-i44994">
-                                        Nhà sang của diễn viên Hải Anh ở Royal City
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/choang-ngop-can-ho-97-ty-cua-ly-bang-bang-i44842">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2013/12/26/large-31E-choang-ngop-can-ho-97-ty-cua-ly-bang-bang.jpg" alt="Choáng ngợp căn hộ 97 tỷ của Lý Băng Băng" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/choang-ngop-can-ho-97-ty-cua-ly-bang-bang-i44842">
-                                        Choáng ngợp căn hộ 97 tỷ của Lý Băng Băng
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/biet-thu-xa-hoa-rong-lon-cua-tran-khon-i44820">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2013/12/25/large-C80-biet-thu-xa-hoa-rong-lon-cua-tran-khon.jpg" alt="Biệt thự xa hoa, rộng lớn của Trần Khôn" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/biet-thu-xa-hoa-rong-lon-cua-tran-khon-i44820">
-                                        Biệt thự xa hoa, rộng lớn của Trần Khôn
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/a-hau-thai-nhu-ngoc-don-noel-trong-biet-thu-trieu-do-i44993">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2014/01/02/large-492-a-hau-thai-nhu-ngoc-don-noel-trong-biet-thu-trieu-do.jpg" alt="Á hậu Thái Như Ngọc đón Noel trong biệt thự triệu đô" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/a-hau-thai-nhu-ngoc-don-noel-trong-biet-thu-trieu-do-i44993">
-                                        Á hậu Thái Như Ngọc đón Noel trong biệt thự triệu đô
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/can-ho-hang-hieu-cua-nu-giam-doc-pr-thuong-hieu-michael-kors-i44799">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2013/12/24/large-BA3-can-ho-hang-hieu-cua-nu-giam-doc-pr-thuong-hieu-michael-kors.jpg" alt="Căn hộ hàng hiệu của nữ giám đốc PR thương hiệu Michael Kors" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/can-ho-hang-hieu-cua-nu-giam-doc-pr-thuong-hieu-michael-kors-i44799">
-                                        Căn hộ hàng hiệu của nữ giám đốc PR thương hiệu Michael Kors
-                                        </a>
-                                    </div>
-                                </li>
-                                <li><a href="/kham-pha/nha-cua-sao-c76/kham-pha-phong-rieng-cua-cong-chua-hoang-tu-nha-sao-viet-i44773">
-                                    <img src="http://image.diaoconline.vn/kham-pha/2013/12/23/large-BA3-kham-pha-phong-rieng-cua-cong-chua-hoang-tu-nha-sao-viet.jpg" alt="Khám phá phòng riêng của 'công chúa - hoàng tử' nhà sao Việt" style="width:290px;height:200px;" /></a>
-                                    <div class="housetitle">
-                                        <a href="/kham-pha/nha-cua-sao-c76/kham-pha-phong-rieng-cua-cong-chua-hoang-tu-nha-sao-viet-i44773">
-                                        Khám phá phòng riêng của 'công chúa - hoàng tử' nhà sao Việt
-                                        </a>
-                                    </div>
-                                </li>
+                         <?php } ?>      
                         </ul>
                         <div class="housebor">
                             <ul>
@@ -334,6 +274,7 @@
             </div>
         </div>
     </div>
+    
      <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slidejs/house_outstanding.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slidejs/jquery.flexslider.js" type="text/javascript"></script>
      <script type="text/javascript">
@@ -357,36 +298,24 @@
             <h3>Bộ sưu tập nhà đẹp</h3>
             <div id="houseslider" class="flexslider">
                 <ul class="slides">
+                    <?php 
+                    foreach($nha_dep as $l_nha_dep)
+                    {
+                    ?>
                     <li>
                         <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/ai-noi-mau-xam-khong-thu-hut-i413"><img src="http://image.diaoconline.vn/nha-dep/2014/01/10/special-022-ai-noi-mau-xam-khong-thu-hut.jpg" alt="0" /></a>
+  	    	            <a href="<?php echo base_url();?>nha-dep/<?php echo mb_strtolower(url_title(removesign($l_nha_dep['name'])))?>-c<?php echo $l_nha_dep['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_nha_dep['title'])))?>-i<?php echo $l_nha_dep['id']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/nhadep/'.$l_nha_dep['code'].'/'.$l_nha_dep['img']))
+                        {
+                        ?>
+                          <img src="<?php echo base_url();?>file/uploads/nhadep/<?php echo $l_nha_dep['code']?>/<?php echo $l_nha_dep['img']?>" alt="0" />
+                          <?php } ?>
+                          </a>
                         </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/ai-noi-mau-xam-khong-thu-hut-i413">Ai n&#243;i m&#224;u x&#225;m kh&#244;ng thu h&#250;t?</a></div>
+                        <div class="housetitle"><a href="<?php echo base_url();?>nha-dep/<?php echo mb_strtolower(url_title(removesign($l_nha_dep['name'])))?>-c<?php echo $l_nha_dep['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($l_nha_dep['title'])))?>-i<?php echo $l_nha_dep['id']?>"><?php echo $l_nha_dep['title']?></a></div>
   	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/phong-cach-vintage-cho-can-nha-hien-dai-i412"><img src="http://image.diaoconline.vn/nha-dep/2014/01/10/special-E77-phong-cach-vintage-cho-can-nha-hien-dai.jpg" alt="1" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/phong-cach-vintage-cho-can-nha-hien-dai-i412">Phong c&#225;ch Vintage cho căn nh&#224; hiện đại</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/nha-bep-c2/nhung-mau-phong-an-dep-cho-khach-san-i411"><img src="http://image.diaoconline.vn/nha-dep/2014/01/09/special-758-nhung-mau-phong-an-dep-cho-khach-san.jpg" alt="2" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/nha-bep-c2/nhung-mau-phong-an-dep-cho-khach-san-i411">Những mẫu ph&#242;ng ăn đẹp cho kh&#225;ch sạn</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach-i410"><img src="http://image.diaoconline.vn/nha-dep/2014/01/08/special-939-gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach.jpg" alt="3" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach-i410">G&#226;y ấn tượng bằng nội thất m&#224;u đen trong ph&#242;ng kh&#225;ch</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/phong-ngu-c3/mau-neon-cho-phong-ngu-ban-da-thu-chua-i409"><img src="http://image.diaoconline.vn/nha-dep/2014/01/08/special-FA3-mau-neon-cho-phong-ngu-ban-da-thu-chua.jpg" alt="4" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/phong-ngu-c3/mau-neon-cho-phong-ngu-ban-da-thu-chua-i409">M&#224;u Neon cho ph&#242;ng ngủ - Bạn đ&#227; thử chưa?</a></div>
-  	    		    </li>
+                   <?php } ?> 
                 </ul>
                  <div class="housebor"><ul><li></li></ul></div>
             </div>

@@ -123,5 +123,13 @@ class Discoveryhomemodel extends CI_Model
         $id = intval($id);
         $this->db->delete('save_disco',array('id'=>$id));
     }
+    public function load_nha_cua_sao()
+    {
+        
+        $sql_get_discovery = "SELECT discovery.title,discovery.img,discovery.content,discovery.create_date,discovery.id as id_disco, cate_discovery.id as id_cate,cate_discovery.name
+        FROM discovery INNER JOIN cate_discovery ON cate_discovery.id = discovery.id_cate WHERE  discovery.id_cate = 8 ORDER BY discovery.id DESC LIMIT 8";
+        $query = $this->db->query($sql_get_discovery);
+        return $query->result_array();
+    }
 }
 ?>

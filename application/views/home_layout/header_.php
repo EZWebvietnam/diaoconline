@@ -29,7 +29,7 @@
                                         <div class="content_inner rounded_style_7 rounded_box">
                                                 <div class="content">
                                                     <div class="img">
-                                                        <a href="/tin-tuc/thi-truong-dia-oc-c18/ha-noi-dung-dau-tu-xay-dung-14-nha-ve-sinh-tien-ty-i45146">
+                                                        <a href="<?php echo base_url();?>tin-tuc/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['name'])))?>-c<?php echo $new_on_nav[0]['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($new_on_nav[0]['title'])))?>-i<?php echo $new_on_nav[0]['id_new']?>">
                                                         <?php
                                                         
                                                         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/news/'.$new_on_nav[0]['img'])){
@@ -106,8 +106,10 @@
                                             <div class="content">
                                                    <?php 
                                             $i = 1;
+                                            
                                             foreach($tai_san_noi_bat as $tsnb)
                                             {
+                                                
                                                 if($i==3)
                                                 {
                                             ?>
@@ -115,7 +117,7 @@
                                                     <?php } else {?>
                                                     <div class="real_block last">
                                                     <?php } ?>
-                                                        <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($tsnb['loai_dia_oc'])))?>-c<?php echo $tsnb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($tsnb['title'])))?>-h<?php echo $tsnb['id']?>">
+                                                        <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($tsnb['loai_dia_oc'])))?>-c<?php echo $tsnb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($tsnb['title'])))?>-h<?php echo $tsnb['id_proper']?>">
                                                         <?php 
                                                         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$tsnb['code'].'/'.$tsnb['img'])){
                                                         ?>
@@ -125,7 +127,7 @@
                                                             <?php } ?>
                                                             </a>
                                                         <h3>
-                                                            <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($tsnb['loai_dia_oc'])))?>-c<?php echo $tsnb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($tsnb['title'])))?>-h<?php echo $tsnb['id']?>">
+                                                            <a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($tsnb['loai_dia_oc'])))?>-c<?php echo $tsnb['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($tsnb['title'])))?>-h<?php echo $tsnb['id_proper']?>">
                                                                 <?php echo sub_string(loaibohtmltrongvanban($tsnb['content']),30);?>
                                                             </a>
                                                         </h3>
@@ -147,7 +149,7 @@
                                             <ul>
                                             <?php foreach($tai_san_noi_bat_khac as $ts_khac) 
                                             {?>
-                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_khac['loai_dia_oc'])))?>-c<?php echo $ts_khac['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_khac['title'])))?>-h<?php $ts_khac['id']?>" title="Chỉ 600 triệu/căn - Quý khách sẽ sở hữu tổ ấm của riêng mình ngay cạnh KDL Đầm Sen">
+                                                    <li><span class="bullet"></span><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($ts_khac['loai_dia_oc'])))?>-c<?php echo $ts_khac['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($ts_khac['title'])))?>-h<?php echo $ts_khac['id_proper']?>" title="<?php echo $ts_khac['title']?>">
                                                         <span><?php echo $list_city[$ts_khac['id_city']]?>: </span>
                                                         <?php echo sub_string(loaibohtmltrongvanban($ts_khac['content']),20);?></a> </li>
                                              <?php } ?>       
@@ -307,7 +309,7 @@
                             </div>
                         </div>
                     </li>
-                    <li ><a href="/nha-dep" >
+                    <li ><a href="<?php echo base_url();?>nha-dep" >
                         NHÀ ĐẸP</a></li>
                 </ul>
             </div>

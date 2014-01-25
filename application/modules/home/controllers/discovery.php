@@ -21,6 +21,8 @@ class Discovery extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
+        parent::nha_cua_sao();
+        parent::nha_dep();
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
     }

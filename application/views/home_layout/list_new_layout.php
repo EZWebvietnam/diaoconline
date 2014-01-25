@@ -212,19 +212,7 @@
 <div id="position_62" class ='banner_300x250'><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/11/11/BD9-smilescard_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/361/62"/></div><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/11/11/BD9-smilescard_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/361/62"/></div></div><script type='text/javascript'>var Banner62=1;function Random_Banner62(){    var _Arr=document.getElementById("position_62").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner62 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner62 - 1]).html(); $(_Arr[Banner62 - 1]).html(''); $(_Arr[Banner62 - 1]).html(tempBanner);    window.setTimeout("Random_Banner62()" ,25000);    Banner62 = Banner62 + 1;    if(Banner62 > _Arr.length)        Banner62 = 1;}Random_Banner62();</script>
             
 
-    <div id="event" class="margin_bottom">
-        <div class="headline_title_1 rounded_style_5 rounded_box">
-            <h2 class="headline">
-                VIỆT NAM ĐẸP QUA ẢNH
-            </h2>
-            <a href="/viet-nam-dep-qua-anh" class="grey_link">Xem thêm</a>
-        </div>
-        <div>
-            <img src="http://image.diaoconline.vn/vietnam-dep-qua-anh/2014/01/09/thumb-A5A-thap-cham-phan-rang.jpg" alt="Tháp Chàm Phan Rang" width="310" height="175" />
-            <div style="font: Bold 12px Arial; padding: 5px 0px;">
-                Tháp Chàm Phan Rang</div>
-        </div>
-    </div>
+    
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
@@ -261,8 +249,8 @@
 </div><div id="fengsui_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
         <h2 class="headline">
-        <a href="/kham-pha/phong-thuy-c9"><span>Phong Thủy</span></a></h2>
-        <a href="/kham-pha/phong-thuy-c9" class="grey_link">Xem thêm</a>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4"><span>Phong Thủy</span></a></h2>
+        <a href="<?php echo base_url();?>kham-pha-c/phong-thuy-c4" class="grey_link">Xem thêm</a>
     </div>
     
 </div>            
