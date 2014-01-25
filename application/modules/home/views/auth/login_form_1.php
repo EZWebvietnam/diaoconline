@@ -45,7 +45,7 @@ $captcha = array(
                     <h2>ĐĂNG NHẬP</h2>
                 </div>
                 <div class="body">
-                    <h3>Bạn chưa có tài khoản DiaOcOnline. <a href="/dang-ky">Đăng ký tại đây?</a>
+                    <h3>Bạn chưa có tài khoản DCBLand. <a href="/dang-ky">Đăng ký tại đây?</a>
                     </h3>
                     <form  id="FormMain" method="post" class="form_style_3">
                     <div class="validation-summary-errors"><ul>

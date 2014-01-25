@@ -91,7 +91,7 @@
         <div id="head_content" class="wrap">
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <?php 
-            $q = $_SERVER['DOCUMENT_ROOT'].'application/views/home_layout/header_.php';
+            $q = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'application/views/home_layout/header_.php';
             include($q);
             ?>
             
@@ -201,7 +201,7 @@
 	</div>
     <!--FOOTER-->
 <?php 
-$q = $_SERVER['DOCUMENT_ROOT'].'application/views/home_layout/footer.php';
+$q = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'application/views/home_layout/footer.php';
 include($q)?>
     <script src="<?php echo base_url(); ?>template/home_ezwebvietnam/Content/js/uniform/uniform.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>template/home_ezwebvietnam/Content/js/script.js" type="text/javascript"></script>

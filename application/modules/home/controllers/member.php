@@ -279,6 +279,14 @@ class Member extends MY_Controller
             $this->load->model('memberhomemodel');
         if($this->input->post())
         {
+            if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
+            {
+                $price = "Thương lượng";
+            }
+            else
+            {
+                $price = $this->input->post('PriceMain');
+            }
             $data_save = array();
             $data_save = array(
             'loai_tin'=>$this->input->post('TinDang'),
@@ -287,7 +295,7 @@ class Member extends MY_Controller
             'id_city'=>$this->input->post('CityListMember'),
             'id_district'=>$this->input->post('DistrictListMember'),
             'dia_chi'=>$this->input->post('HouseNumber'),
-            'price'=>$this->input->post('PriceMain'),
+            'price'=>$price,
             'asset'=>$this->input->post('AssetUnitList'),
             'dien_tich'=>$this->input->post('DTSD'),
             'chieu_ngang_truoc'=>$this->input->post('DTKVWidth'),
@@ -427,7 +435,11 @@ class Member extends MY_Controller
         }
         else
         {
-            
+            $code = rand_string(6);
+            $image_upload_folder = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'file/uploads/property/'.$code;
+            if (!file_exists($image_upload_folder)) {
+                mkdir($image_upload_folder, DIR_WRITE_MODE, true);
+            }
             $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
             $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
             $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();
@@ -594,6 +606,14 @@ class Member extends MY_Controller
         {
             if($this->input->post('SubmitSave'))
             {
+                if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
+            {
+                $price = "Thương lượng";
+            }
+            else
+            {
+                $price = $this->input->post('PriceMain');
+            }
                 $data_save = array();
                 $data_save = array(
                 'loai_tin'=>$this->input->post('TinDang'),
@@ -602,7 +622,7 @@ class Member extends MY_Controller
                 'id_city'=>$this->input->post('CityListMember'),
                 'id_district'=>$this->input->post('DistrictListMember'),
                 'dia_chi'=>$this->input->post('HouseNumber'),
-                'price'=>$this->input->post('PriceMain'),
+                'price'=>$price,
                 'asset'=>$this->input->post('AssetUnitList'),
                 'dien_tich'=>$this->input->post('DTSD'),
                 'chieu_ngang_truoc'=>$this->input->post('DTKVWidth'),

@@ -32,14 +32,14 @@ border-radius: 4px;
 color: #EDF5FA;
 }
 </style>
-<a class="btn btn-primary" href="<?php echo base_url();?>admin/adminnew/add">
+<a class="btn btn-primary" href="<?php echo base_url();?>admin/admindiscovery/add">
     <i  class="icon icon-color icon-plus"></i> 
-                                Thêm Tin Tức
+                                Thêm Khám Phá
                             </a>
 <div class="row-fluid sortable">		
     <div class="box span12">
         <div class="box-header well" data-original-title>
-            <h2><i class="icon-user"></i> Members</h2>
+            <h2><i class="icon-user"></i> Khám phá</h2>
             <div class="box-icon">
 
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>

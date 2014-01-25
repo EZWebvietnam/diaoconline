@@ -149,10 +149,7 @@
                               	</li>
                                 <li class="price"><label>Giá <span class="hightlight">*</span></label>
                                     <input id="PriceMain" maxlength="18" name="PriceMain" style="margin-right:13px;" type="text" value="">
-                                    <select id="AssetPriceList" name="AssetPriceList"><option value="VND">VND</option>
-<option value="SJC">SJC</option>
-<option value="USD">USD</option>
-</select>
+                                    
                                     <select id="AssetUnitList" name="AssetUnitList"><option value="tongdientich">tổng diện tích</option>
 <option value="m2">m2</option>
 <option value="thang">tháng</option>

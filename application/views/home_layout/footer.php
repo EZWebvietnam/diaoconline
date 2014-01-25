@@ -81,36 +81,36 @@
                     <div class="like">
                     <div style="margin-bottom:5px;">
                         <b>Hỗ trợ kỹ thuật</b>
-                        <span class="phone">0947098968</span>
+                        <p><b>Hotline:</b> 0947098968</p>
                         </div>
                         <br />
-                        
-                        <b>Hỗ trợ trực tuyến</b>
-						<a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="142" height="40"></a>
+                       
+						
                     </div>
                     <div class="join_network">
-                        <h4>KẾT NỐI VỚI CHÚNG TÔI TẠI: </h4>
-                        <ul>
+                        <h4>Hỗ trợ trực tuyến: </h4>
+                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                        <!--<ul>
                         <li class="facebook"><a href="http://facebook.com/diaoconlinefc" target="_blank">facebook</a></li>
                         <li class="twitter"><a href="https://twitter.com/DiaOcOnlinevn" target="_blank">twitter</a></li>
                         <li class="youtube"><a href="http://www.youtube.com/diaoconline" target="_blank">youtube</a></li>
                         <li class="google"><a href="https://plus.google.com/u/1/b/101503616522434888485/" target="_blank">google</a></li>
                         <li class="linkedin"><a href="http://www.linkedin.com/in/diaoconline" target="_blank">linkedin</a></li>
-                        </ul>
+                        </ul>-->
                     </div>
                 </div>
             </div>
-            <div id="dool_network" class="white_border_box rounded_box">
+          <!-- <div id="dool_network" class="white_border_box rounded_box">
                 <div class="content">
 					<h4>DCBLAND.COM NETWORK</h4>
-                    <ul>  
+                   <ul>  
                     <li class="dool"><a href="#">DCBLAND.COM</a></li>
                     <li class="roi"><a href="#">DCBLAND.COM</a></li>
                     <li class="tv"><a href="#">DCBLAND.COM</a></li>
                     <li class="map"><a href="#">DCBLAND.COM</a></li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
             <div id="misc" class="rounded_style_3 rounded_box">
                 <div class="content">
                    	<ul>

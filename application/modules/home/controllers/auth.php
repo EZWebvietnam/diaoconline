@@ -12,6 +12,31 @@ class Auth extends MY_Controller
 		$this->load->library('security');
 		$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
+        
+        parent::list_city();
+        parent::list_district();
+        parent::so_du();
+        //
+        parent::get_menu_new_nav();
+        parent::load_last_new();
+        parent::load_list_last_new($this->data['new_on_nav'][0]['id_new']);
+        parent::get_cate_dis_nav();
+        parent::dis_noi_bat();
+        parent::dis_noi_bat_other($this->data['last_dis'][0]['id_disco']);
+        parent::list_city();
+        parent::list_district();
+         parent::cate_project_sub();
+        parent::project_noi_bat_lm1();
+        parent::get_list_cafe_law();
+        parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
+        
+        // Tai san
+        parent::get_tai_san_lm3();
+        parent::get_ts_menu();
+        parent::cate_sieu_thi();
+        $active = TRUE;
+        $location = 'home';
+        
 	}
 
 	function index()
@@ -31,7 +56,7 @@ class Auth extends MY_Controller
 	function login()
 	{
 		if ($this->tank_auth->is_logged_in()) {									// logged in
-			redirect('');
+			redirect('/thanh-vien/tai-san-dang-hien-thi');
 
 		}
 		 else {

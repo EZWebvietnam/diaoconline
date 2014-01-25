@@ -89,28 +89,12 @@
         
 </script>    <div id="header" class="margin_bottom">
         <div id="head_content" class="wrap">
-            <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
+            <span id="logo"><a href="/" title="Về trang chủ DCBLand.COM">DCB Land</a></span>
             <?php 
-            $q = $_SERVER['DOCUMENT_ROOT'].'application/views/home_layout/header_.php';
+            $q = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'application/views/home_layout/header_.php';
             include($q);
             ?>
-            <div id="acc_section">
-                <div class="left_cn">
-                </div>
-                <div class="right_cn">
-                </div>
-                    <div class="content default">
-                        <ul>
-                            <li class="login"><span class="login_ico ico_24 ico_login_24"></span><a href="/dang-nhap">
-                                Đăng nhập</a></li>
-                            <li class="register"><span class="register_ico ico_24 ico_register_24"></span><a href="/dang-ky" class="register">
-                                Đăng ký</a></li>
-                        </ul>
-                    </div>
-            </div>
-            <div class="post_propertise">
-                <a href="/thanh-vien/tai-san-dang-moi">ĐĂNG TÀI SẢN CỦA BẠN</a>
-            </div>
+           
         </div>
     </div>
     <div id="content_container">
@@ -123,7 +107,7 @@
 	</div>
     <!--FOOTER-->
  <?php 
-            $q = $_SERVER['DOCUMENT_ROOT'].'application/views/home_layout/footer.php';
+            $q = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'application/views/home_layout/footer.php';
             include($q);
             ?>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/uniform/uniform.js" type="text/javascript"></script>
