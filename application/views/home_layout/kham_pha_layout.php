@@ -128,34 +128,7 @@
                             </div>
                             <?php $i++;} ?>
                     </div>
-                <div id="discover_search" class="rounded_style_1 rounded_box margin_bottom">
-                <h3 class="small_headline">Tìm kiếm</h3>
-
-                        <script type="text/javascript">
-        $(function () {
-            $("#FormSearch").submit(function () {
-                if ($('#KeySearch').val().trim().length <= 2) {
-                    $('#KeySearch').focus();
-                    return false;
-                } else {
-                    return true;
-                }
-            });
-        });
-    </script>
-    <div class="body">
-        <form action="/Discovery/Search" id="FormSearch" method="post" class="form_style_1">
-        <fieldset>
-            <div class="business_search_type margin_bottom_form">
-                <input type="text" class="input_text" value="" id="KeySearch" name="KeySearch" placeholder="Nhập từ khóa cần tìm"/>
-                <button type="submit" name="Submit" id="Submit" class="btn_2">
-                    <span>TÌM KIẾM</span></button>
-            </div>
-        </fieldset>
-        </form>
-    </div>
-
-                </div>
+               
                 <?php 
                 foreach($main['cate_sub'] as $k=>$_cate)
                 {
@@ -364,6 +337,7 @@
             <div class="show">
                 <ul>
                 <?php 
+               
                 foreach($list_shopping as $list_shop)
                 {
                 ?>
@@ -371,7 +345,7 @@
                         <div class="BL"></div>
                         <div class="BR"></div>
                         <div class="content">
-                            <a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>">
+                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>">
                             <?php 
                             if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$list_shop['img']))
                             {
@@ -379,7 +353,7 @@
                             <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $list_shop['img']?>" width="160" height="124" alt="<?php echo $list_shop['title']?>"/>
                             <?php } ?>
                             </a>
-                            <a href="<?php echo base_url();?>kham-pha-c/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>"><?php echo $list_shop['title']?></a> 
+                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>"><?php echo $list_shop['title']?></a> 
 	                    </div>
                     </li>
                  <?php } ?>   

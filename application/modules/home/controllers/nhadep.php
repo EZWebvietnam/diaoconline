@@ -56,6 +56,8 @@ class Nhadep extends MY_Controller
        $this->data['list']=$array_sv;
        $this->data['list_slide']=$this->nhadephomemodel->load_nha_dep_slide();
        $this->data['cate_nha_dep']=$this->nhadephomemodel->select_cate_nha();
+       $this->load->model('discoveryhomemodel');
+        $this->data['list_shopping']=$this->discoveryhomemodel->load_detail_other(0,7);
        $this->load->view('home_layout/nhadep_layout',$this->data);
     }
     public function nhadep_detail($id)
