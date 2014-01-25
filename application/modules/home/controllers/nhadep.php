@@ -33,9 +33,10 @@ class Nhadep extends MY_Controller
     {
         $this->load->helper('url');
         $config['uri_segment'] = 5;
-        $page = $this->uri->segment(4);
+        $page = $this->uri->segment(3);
         $config['per_page'] = 10;
         $config['total_rows'] = $this->nhadephomemodel->count_nha_dep_home();
+       
         if ($page == '') {
             $page = 1;
         }

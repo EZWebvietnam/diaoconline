@@ -235,7 +235,7 @@
                             </div>
                         </div>
                     </li>
-                    <li ><a href="/doanh-nghiep">
+                    <li ><a href="<?php echo base_url();?>doanh-nghiep">
                         DOANH NGHIỆP</a></li>
                     <li ><a href="<?php echo base_url();?>kham-pha" >
                         KHÁM PHÁ</a>

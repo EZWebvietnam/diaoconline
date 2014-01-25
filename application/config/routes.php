@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['doanh-nghiep'] = "home/businesshome/load_dn";
+$route['doanh-nghiep/page/(:any)'] = "home/businesshome/load_dn";
 $route['thanh-vien/nang-cap-tai-san/(:any)'] = "home/member/nang_cap/$1";
 $route['thanh-vien/log-giao-dich'] = "home/member/list_giao_dich";
 $route['thanh-vien/nap-tien'] = "home/member/nap_tien";
@@ -75,6 +77,7 @@ $route['thanh-vien/tai-san-het-han/page/(:any)'] = "home/member/list_het_han";
 $route['thanh-vien/gia-han-dich-vu/(:any)'] = "home/member/gia_han_dich_vu/$1";
 //
 $route['nha-dep'] = "home/nhadep/list_nhadep";
+$route['nha-dep/page/(:any)'] = "home/nhadep/list_nhadep";
 $route['nha-dep/(:any)-c(:any)/(:any)-i(:any)'] = "home/nhadep/nhadep_detail/$4";
 $route['nha-dep-c/(:any)-c(:any)'] = "home/nhadep/list_nhadep_cate/$2";
 //
