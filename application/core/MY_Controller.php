@@ -253,5 +253,10 @@ class MY_Controller extends CI_Controller
         $this->load->model('nhadephomemodel');
         $this->data['nha_dep']=$this->nhadephomemodel->load_nha_dep_();
     }
+    public function dn_nb()
+    {
+        $this->load->model('doanhnghiephomemodel');
+        $this->data['dn_nb_core']=$this->doanhnghiephomemodel->list_doanh_nghiep_nb();
+    }
 }
 ?>

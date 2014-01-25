@@ -127,5 +127,30 @@ class Projecthomemodel extends CI_Model
         $query = $this->db->query($sql);
         return count($query->result_array());
     }
+    //
+     public function get_list_project_dn($id,$number,$offset)
+    {
+        $id = intval($id);
+        $offset = intval($offset);
+        $number = intval($number);
+        $sql="SELECT project.id as id_pro,project.content, project.title,project.id_district,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate 
+        INNER JOIN users ON users.id = project.id_user
+        INNER JOIN business ON users.id = business.id_user
+        WHERE business.id = $id
+        ORDER BY project.id DESC LIMIT $offset,$number";
+        
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+     public function count_list_project_dn($id)
+    {
+        $id = intval($id);
+        $sql="SELECT project.id as id_pro,project.content, project.title,project.id_district,project.id_city,project.img,cate_project.id as id_cate, cate_project.name  FROM project INNER JOIN cate_project ON cate_project.id = project.id_cate 
+        INNER JOIN users ON users.id = project.id_user
+        INNER JOIN business ON users.id = business.id_user
+        WHERE business.id = $id";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+    }
 }
 ?>

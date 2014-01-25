@@ -22,6 +22,7 @@ class Home extends MY_Controller
         parent::get_ts_menu();
         parent::cate_sieu_thi();
         //
+        parent::dn_nb();
         $this->load->library('tank_auth');
     }
     public function index()

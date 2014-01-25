@@ -104,50 +104,31 @@
         });
     </script>
     <ul class=newslogost>
+         <?php 
+    foreach($dn_nb_core as $dn_nb)
+    {
+    ?>
             <li >
-                    <a href="/sieu-thi/loc?cty=1466">
-                        <img src="http://image.diaoconline.vn/doanh-nghiep/2013/11/11/logo-68F-cong-ty-co-phan-kinh-doanh-dia-oc-truong-nguyen.jpg" width="75" height="75" alt="C&#244;ng ty Cổ phần Kinh doanh Địa ốc Trường Nguyễn"/></a>
+                    <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn_nb['ten_dn'])))?>-i<?php echo $dn_nb['id']?>/gioi-thieu">
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$dn_nb['logo']))
+                    {
+                    ?>
+                        <img src="<?php echo base_url();?>file/uploads/business/<?php echo $dn_nb['logo']?>" width="75" height="75" alt="<?php echo $dn_nb['ten_dn']?>"/>
+                         
+                          <?php } else { ?>
+                    <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="75" height="75" alt="<?php echo $dn_nb['ten_dn']?>"/>
+                    <?php } ?>
+                        </a>
             
                 <div class="textQTip">
-                    <p><strong>C&#244;ng ty Cổ phần Kinh doanh Địa ốc Trường Nguyễn</strong></p>
-                    <p>357-359 An Dương Vương , Phường 3, Quận 5, TP.HCM
+                    <p><strong><?php echo $dn_nb['ten_dn']?></strong></p>
+                    <p><?php echo $dn_nb['dia_chi_dn']?>
                         <br />
-                            ĐT: (08) 3830 4671</p>
+                            ĐT: <?php echo $dn_nb['sdt']?></p>
                 </div>
             </li>
-            <li >
-                    <a href="/sieu-thi/loc?cty=1488">
-                        <img src="http://image.diaoconline.vn/doanh-nghiep/2013/11/13/logo-89C-cong-ty-tnhh-bat-dong-san-smartland.jpg" width="75" height="75" alt="C&#244;ng ty TNHH Bất Động Sản Smartland"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty TNHH Bất Động Sản Smartland</strong></p>
-                    <p>S53-1  Phạm Văn Nghị , Quận 7, TP.HCM
-                        <br />
-                            ĐT: (08)54110808 </p>
-                </div>
-            </li>
-            <li >
-                    <a href="/sieu-thi/loc?cty=1484">
-                        <img src="http://image.diaoconline.vn/doanh-nghiep/2013/10/25/logo-53D-cong-ty-tnhh-dich-vu-ky-thuat-tan-ky-nguyen.jpg" width="75" height="75" alt="C&#244;ng ty TNHH Dịch vụ &amp; Kỹ thuật T&#226;n Kỷ Nguy&#234;n"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty TNHH Dịch vụ &amp; Kỹ thuật T&#226;n Kỷ Nguy&#234;n</strong></p>
-                    <p>87 Trần Thiện Ch&#225;nh , Phường 12, Quận 10, TP.HCM
-                        <br />
-                            ĐT: (08) 38623563 - 66567979 - 0977283995</p>
-                </div>
-            </li>
-            <li >
-                    <a href="/sieu-thi/loc?cty=1467">
-                        <img src="http://image.diaoconline.vn/doanh-nghiep/2013/05/22/logo-3F7-cong-ty-co-phan-dich-vu-bat-dong-san-ht-real.jpg" width="75" height="75" alt="C&#244;ng ty cổ phần dịch vụ bất động sản HT Real"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty cổ phần dịch vụ bất động sản HT Real</strong></p>
-                    <p>19A Cộng Ho&#224; , Phường 12, Quận T&#226;n B&#236;nh, TP.HCM
-                        <br />
-                            ĐT: (08) 62 98 39 39</p>
-                </div>
-            </li>
+     <?php } ?>            
     </ul>
                 </div>
             </div>

@@ -89,72 +89,30 @@ border: 1px solid #D6CACA;
         });
     </script>
     <ul class=new_logos>
+    <?php 
+    foreach($dn_nb_core as $dn_nb)
+    {
+    ?>
             <li >
-                    <a href="/doanh-nghiep/cong-ty-co-phan-tac-dat-tac-vang-i934/gioi-thieu">
-                <img src="http://image.diaoconline.vn/CompanyImageSmall/2011/07/18_Diaoconline_TDTV_75x75.jpg" width="75" height="75" alt="C&#244;ng ty Cổ phần Tấc Đất Tấc V&#224;ng"/></a>
+                    <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn_nb['ten_dn'])))?>-i<?php echo $dn_nb['id']?>/gioi-thieu">
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$dn_nb['logo']))
+                    {
+                    ?>
+                <img src="<?php echo base_url();?>file/uploads/business/<?php echo $dn_nb['logo']?>" width="75" height="75" alt="<?php echo $dn_nb['ten_dn']?>"/>
+                <?php } else { ?>
+                <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="75" height="75" alt="<?php echo $dn_nb['ten_dn']?>"/>
+                <?php } ?>
+                </a>
             
                 <div class="textQTip">
-                    <p><strong>C&#244;ng ty Cổ phần Tấc Đất Tấc V&#224;ng</strong></p>
-                    <p>120-122 Đường D1, Phường 25, Quận B&#236;nh Thạnh, TP.HCM
+                    <p><strong><?php echo $dn_nb['ten_dn']?></strong></p>
+                    <p><?php echo $dn_nb['dia_chi_dn']?>
                         <br />
-                            ĐT: 84.8.3512 7788 - 3512 7799</p>
+                            ĐT: <?php echo $dn_nb['sdt']?></p>
                 </div>
             </li>
-            <li >
-                    <a href="/doanh-nghiep/cong-ty-tnhh-thiet-ke-xay-dung-kien-phat-i1107/gioi-thieu">
-                <img src="http://image.diaoconline.vn/CompanyImageSmall/2010/12/02_KienPhat_75x75.jpg" width="75" height="75" alt="C&#244;ng ty TNHH Thiết kế - X&#226;y dựng Kiến Ph&#225;t"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty TNHH Thiết kế - X&#226;y dựng Kiến Ph&#225;t</strong></p>
-                    <p>1126 Lạc Long Qu&#226;n , Phường 8, Quận T&#226;n B&#236;nh, TP.HCM
-                        <br />
-                            ĐT: 84.8.3869 1529 - 0918 29 39 59</p>
-                </div>
-            </li>
-            <li >
-                    <a href="/doanh-nghiep/cong-ty-co-phan-dich-vu-dia-oc-hoang-khang-i1489/gioi-thieu">
-                <img src="http://image.diaoconline.vn/doanh-nghiep/2013/11/27/logo-5C8-cong-ty-hoang-khang.jpg" width="75" height="75" alt="C&#244;ng ty Cổ phần Dịch vụ Địa ốc Ho&#224;ng Khang"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty Cổ phần Dịch vụ Địa ốc Ho&#224;ng Khang</strong></p>
-                    <p>111 Nguyễn Thị Thập, KDC Him Lam, T&#226;n Hưng, Quận 7, TP.HCM
-                        <br />
-                            ĐT: (08) 629 88111 </p>
-                </div>
-            </li>
-            <li >
-                    <a href="/doanh-nghiep/cong-ty-co-phan-dau-tu-nam-long-i308/gioi-thieu">
-                <img src="http://image.diaoconline.vn/upload/Images/hinhLogo75/namlong-logo.gif" width="75" height="75" alt="C&#244;ng ty Cổ phần Đầu tư Nam Long"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty Cổ phần Đầu tư Nam Long</strong></p>
-                    <p>Số 06 Nguyễn Khắc Viện , T&#226;n Phong, Quận 7, TP.HCM
-                        <br />
-                            ĐT: 84.8.5416 1718</p>
-                </div>
-            </li>
-            <li >
-                    <a href="/doanh-nghiep/cong-ty-co-phan-dia-oc-phu-long-i255/gioi-thieu">
-                <img src="http://image.diaoconline.vn/CongTy/2009/03/20_Kiva_PhuLong_75x75.gif" width="75" height="75" alt="C&#244;ng ty Cổ phần Địa Ốc Ph&#250; Long"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty Cổ phần Địa Ốc Ph&#250; Long</strong></p>
-                    <p>41 Nguyễn Văn Linh, T&#226;n Phong, Quận 7, TP.HCM
-                        <br />
-                            ĐT: (08) 5412 1818</p>
-                </div>
-            </li>
-            <li >
-                    <a href="/doanh-nghiep/cong-ty-co-phan-dich-vu-bat-dong-san-ht-real-i1467/gioi-thieu">
-                <img src="http://image.diaoconline.vn/doanh-nghiep/2013/05/22/logo-3F7-cong-ty-co-phan-dich-vu-bat-dong-san-ht-real.jpg" width="75" height="75" alt="C&#244;ng ty cổ phần dịch vụ bất động sản HT Real"/></a>
-            
-                <div class="textQTip">
-                    <p><strong>C&#244;ng ty cổ phần dịch vụ bất động sản HT Real</strong></p>
-                    <p>19A Cộng Ho&#224; , Phường 12, Quận T&#226;n B&#236;nh, TP.HCM
-                        <br />
-                            ĐT: (08) 62 98 39 39</p>
-                </div>
-            </li>
+     <?php } ?>       
     </ul>
                         </div>
                     </div>
@@ -167,7 +125,7 @@ border: 1px solid #D6CACA;
             <ul class="headline_tab">
                 <li class="actived"><span class="L"></span><a href="<?php echo base_url();?>du-an">DỰ ÁN NỔI BẬT</a><span class="R"></span></li>
             </ul>
-            <a href="/du-an" class="grey_link">Xem tất cả</a>
+            <a href="<?php echo base_url();?>du-an" class="grey_link">Xem tất cả</a>
         </div>
     </div>
 

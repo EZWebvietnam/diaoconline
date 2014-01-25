@@ -4,12 +4,12 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Trang chủ doanh nghiệp - DiaOcOnline</title>
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <title><?php echo $title;?></title>
+    <meta name="description" content="<?php echo $des;?>" />
+    <meta name="keywords" content="<?php echo $title;?>" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?1843" rel="stylesheet" type="text/css" />
+    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?0008" rel="stylesheet" type="text/css" />
     <!--[if IE 7]>
     <link href="css/ie7.css" rel="stylesheet" type="text/css" />
     <![endif]-->
@@ -92,14 +92,18 @@
             <span id="logo"><a href="/" title="Về trang chủ DiaOcOnline.vn">Địa Ốc Online</a></span>
             <?php include('header_.php');?>
             
-            
         </div>
     </div>
     <div id="content_container">
         
+    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/normalize.css" rel="stylesheet" type="text/css" />
+    <input type="hidden" id="hdLeftTabActive" name="hdLeftTabActive" value="#Intro" />
+    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/normalize.css" rel="stylesheet" type="text/css" />
     <div class="wrap">
+        <!--Top banner -->
 
-<div id="position_32" class ='banner_960x75 margin_bottom'><div><a href="http://www.diaoconline.vn/quangcao/415/32" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/16/19E-duan_960x90.gif" width="960px" height="90px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/415/32" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/16/19E-duan_960x90.gif" width="960px" height="90px"/></a></div></div><script type='text/javascript'>var Banner32=1;function Random_Banner32(){    var _Arr=document.getElementById("position_32").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner32 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner32 - 1]).html(); $(_Arr[Banner32 - 1]).html(''); $(_Arr[Banner32 - 1]).html(tempBanner);    window.setTimeout("Random_Banner32()" ,25000);    Banner32 = Banner32 + 1;    if(Banner32 > _Arr.length)        Banner32 = 1;}Random_Banner32();</script>
+
+        <!--Search Box -->
 <form action="/Company/Search" id="formV3" method="post" pi=""><script type="text/javascript">
     $(function () {
         $("#CityList,#DistrictList,#CompanyTypeList").uniform({
@@ -109,7 +113,7 @@
 </script>
     <div id="business_search" class="margin_bottom">
         <div class="form_style_1 margin_right_form">
-            
+           
             <div id="alphabet_search" class="rounded_style_1 rounded_box">
                 <div class="body">
                     <ul>
@@ -186,7 +190,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url();?>doanh-nghiep/tim-kiem/tukhoa_O">
+                                    <a href="/doanh-nghiep/tim-kiem/tukhoa_O">
                                         <span>O</span>
                                     </a>
                                 </li>
@@ -251,129 +255,94 @@
             </div>
         </div>
     </div>
-</form>        <div id="business_posted" class="wrap margin_bottom">
-                <?php 
-                foreach($dn_noi_bat as $dn_nb)
-                {
-                ?>
-                <div class="business_block rounded_style_1 rounded_box last">
-                    <div class="content">
-                        <h2>
-                            <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn_nb['ten_dn'])))?>-i<?php echo $dn_nb['id']?>/gioi-thieu">
-                                <?php echo $dn_nb['ten_dn']?>
-                            </a>
-                        </h2>
-                        <div class="logo">
-                            <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn_nb['ten_dn'])))?>-i<?php echo $dn_nb['id']?>/gioi-thieu">
-                            <?php 
-                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$dn_nb['logo']))
-                                {
-                                ?>
-                                <img src="<?php echo base_url();?>file/uploads/business/<?php echo $dn_nb['logo']?>" width="306" height="90" alt="<?php echo $dn_nb['ten_dn']?>" />
-                                <?php }  else {?>  
-                                <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="306" height="90" alt="<?php echo $dn_nb['ten_dn']?>" />
-                                <?php } ?>
-                            </a>
-                        </div>
-                        <div class="infor_descript">
-                            <ul>
-                                <li><a href="#">THÔNG TIN LIÊN HỆ</a>
-                                    <div class="text">
-                                        <strong>Trụ sở chính:</strong>
-                                        <p><?php echo $dn_nb['dia_chi_dn']?></p>
-                                        <p>
-                                            Điện thoại: <?php echo $dn_nb['sdt']?> </p>
-                                        <p>
-                                            Fax: <?php echo $dn_nb['fax']?></p>
-                                        <p>
-                                            Email: <a href="mailto:<?php echo $dn_nb['mail']?>" class="lnk_spec_const"><?php echo $dn_nb['mail']?>                                                                                                                                                                                                                                </a></p>
-                                        <p>
-                                            Website: <a href="http://<?php echo $dn_nb['web']?>" class="lnk_spec_const" target="_blank"><?php echo $dn_nb['web']?></a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="view_full">
-                            <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn_nb['ten_dn'])))?>-i<?php echo $dn_nb['id']?>/gioi-thieu">&#171;XEM CHI TIẾT HỒ SƠ C&#212;NG TY&#187;</a>
-                        </div>
-                    </div>
-                </div>
-                <?php } ?>
-        </div>
-       
-                
-                
-            </div>
-            <div class="wrap margin_bottom">
-        <div class="headline_title_1 rounded_style_5 rounded_box">
+</form>        <!--End Search Box -->
+        <div class="wrap margin_bottom">
+    <div class="col_180">
+        <div id="profile_menu" class="rounded_style_1 rounded_box">
             <div class="content">
-                <h2 class="headline">
-                    <a href="#">
-                        <span>Doanh nghiệp</span></a></h2>
-                
-                <div class="paging_2">
-                    <ul class="pager"></ul>
-<script type="text/javascript">
-    $(function () {
-        $('.pager').html(LoadPagging(<?php echo $page ?>, <?php echo $total?>, '<?php echo base_url();?>du-an',<?php echo $total_page;?>));
-    });
-</script>
-
+                <div class="logo_wrap">
+                    <div class="logo">
+                    <?php 
+                    if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$about[0]['logo']))
+                    {
+                    ?>
+                        <img width="90" height="90" src="<?php echo base_url();?>file/uploads/business/<?php echo $about[0]['logo']?>" alt="<?php echo $about[0]['ten_dn']?>" />
+                        <?php }  else {?>
+                        <img width="90" height="90" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $about[0]['ten_dn']?>" />
+                        <?php } ?>
+                        </div>
+                </div>
+                <div id="menu_item">
+                    <ul>
+                        <li id="gioi_thieu" ><a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($about[0]['ten_dn'])))?>-i<?php echo $about[0]['id']?>/gioi-thieu">
+                            GIỚI THIỆU</a> </li>
+                        
+            
+            <li id="dau_tu_du_an" ><a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($about[0]['ten_dn'])))?>-i<?php echo $about[0]['id']?>/dau-tu-du-an">ĐẦU TƯ - DỰ &#193;N</a>
+            </li>
+                       
+                    </ul>
                 </div>
             </div>
-        </div>
-        <div class="wrap">
-        <?php 
-        foreach($list as $list_dn)
-        {
-        ?>
-                <div class="info_block_1 rounded_style_1 rounded_box">
-                    <div class="content">
-                        <div class="logo_agency_wrap">
-                            <div class="logo">
-                                <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($list_dn['ten_dn'])))?>-i<?php echo $list_dn['id']?>/gioi-thieu">
-                                <?php 
-                                if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$list_dn['logo']))
-                                {
-                                ?>
-                                    <img width="80" height="80" src="<?php echo base_url();?>file/uploads/business/<?php echo $list_dn['logo']?>" alt="<?php echo $list_dn['ten_dn']?>" />
-                                    <?php }  else {?> 
-                                    <img src="<?php echo base_url();?>file/uploads/no_image.gif" alt="<?php echo $list_dn['ten_dn']?>" />
-                                    <?php } ?>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="agency_address">
-                            <h3>
-                                <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($list_dn['ten_dn'])))?>-i<?php echo $list_dn['id']?>/gioi-thieu">
-                                    <?php echo $list_dn['ten_dn']?>
-                                </a>
-                            </h3>
-                            <p>
-                                <?php echo $list_dn['dia_chi_dn']?>
-                            </p>
-                        </div>
-                        <div class="view_full">
-                            <a href="<?php echo base_url();?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($list_dn['ten_dn'])))?>-i<?php echo $list_dn['id']?>/gioi-thieu">&#171;XEM HỒ SƠ&#187;</a>
-                        </div>
-                    </div>
-                </div>
-             <?php } ?>  
-                
         </div>
     </div>
-
-
+            <div class="col_770 margin_left">
+                <div id="profile_detail" class="rounded_style_2 rounded_box">
+                    <div class="TL">
+                    </div>
+                    <div class="TR">
+                    </div>
+                    <div class="BL">
+                    </div>
+                    <div class="BR">
+                    </div>
+                    <div class="info_head">
+<div class="info_content">
+    <h2>
+        <?php echo $about[0]['ten_dn']?>
+    </h2>
+    <p>
+        Địa chỉ:
+        <?php echo $about[0]['dia_chi_dn']?>
+    </p>
+    <p>
+                <span>Điện thoại: <?php echo $about[0]['sdt']?></span>
+                <span>Fax: <?php echo $about[0]['fax']?></span>
+    </p>
+    <p>
+            <span>E-mail: <a style="color:#187FC4;" href="mailto:<?php echo $about[0]['mail']?>"><?php echo $about[0]['mail']?><?php echo $about[0]['mail']?>                                                                                                                                                                                                                                  </a>
+                &nbsp; &nbsp; &nbsp; &nbsp; </span>
+            <span>Website: <a href="<?php echo $about[0]['web']?>" target="_blank" style="color:#187FC4;" ><?php echo $about[0]['web']?></a>
+            </span>
+    </p>
+</div>
+                    </div>
+                   <?php echo $this->load->view($main_content);?>
+                </div>
+            </div>
+        </div>
     </div>
 
 	</div>
     <!--FOOTER-->
 <?php include('footer.php');?>
+<script>
+$(function() {
+    var parent_id = ''+<?php 
+    $a =  str_replace('-','_',$this->uri->segment(3));
+    echo $a;
+    ?>;
+    if(parent_id!='')
+    {
+            $('#<?php echo $a;?>').attr("class","actived");
+     }   
+    });
+</script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/uniform/uniform.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/script.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/tooltip/tooltipsy.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slides/slides.min.jquery.js" type="text/javascript"></script>
-    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/doolv3.js?1843" type="text/javascript"></script>
+    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/doolv3.js?0008" type="text/javascript"></script>
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 </div>
 </body>
