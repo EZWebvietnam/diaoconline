@@ -6,6 +6,7 @@
                 </h2></div>
 
                 <form  method="post" class="form_style_3" enctype="multipart/form-data">
+                <input type="hidden" value="<?php echo $code?>" name="code"/>
                 <div class="body">
                   <div class="mess_head margin_bottom"><strong>Điền chính xác các thông tin dưới đây giúp cho tài sản của bạn xuất hiện chính xác và đầy đủ trong các kết quả theo nhu cầu của người dùng, việc này giúp cho giao dịch của bạn sẽ nhanh hơn.</strong></div>
                   
@@ -461,75 +462,40 @@ foreach($list_pn as $pn)
                         <div class="body">
                         	
                            	    <fieldset>
-                                    <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/ajaxupload/fileuploader.css" rel="stylesheet" type="text/css">
-                                    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/ajaxupload/fileuploader.js" type="text/javascript"></script>
                                     
-                                    <ul id="manualUploadModeExample"><div class="qq-uploader"><div class="qq-upload-drop-area" style="display: none;"><span>Drop files here to upload</span></div><div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Chọn file<input multiple="multiple" type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;"></div><ul class="qq-upload-list"></ul></div></ul>
-                                    <div id="triggerUpload" class="qq-upload-button qq-trigger">Bắt đầu upload</div>
-                                    <script type="text/javascript">
-                                        var uploader2;
-                                        var uploadCount;
-                                        $(document).ready(function () {
-                                            uploadCount = $('.qq-upload-success').length;
-                                            var uploadMax = 10;
-                                            uploader2 = new qq.FileUploader({
-                                                element: $('#manualUploadModeExample')[0],
-                                                action: '/thanh-vien/them-hinh',
-                                                autoUpload: false,
-                                                allowedExtensions: ['jpeg', 'jpg', 'png'],
-                                                sizeLimit: 5242880,
-                                                //minSizeLimit:30720,
-                                                uploadButtonText: "Chọn file",
-                                                cancelButtonText: "Xóa",
-                                                failUploadText: "Upload thất bại",
-                                                maxFile: uploadMax,
-                                                onComplete: function (id, fileName, responseJSON) {
-                                                    removeFail();
-                                                },
-                                                onUpload: function (id, fileName, xhr) {
-                                                }
-                                            });
-                                            $('.qq-upload-button').delegate('input[type=file]', 'click', function () {
-                                                uploader2._maxFile = uploadCount = $('.qq-upload-success').length;
-                                                if (uploadCount >= uploadMax) {
-                                                    return false;
-                                                }
-                                            });
-                                            $('#triggerUpload').click(function () {
-                                                uploader2.uploadStoredFiles();
-                                            });
-                                        });
-                                        function removeFail() {
-                                            setTimeout(function () {
-                                                $('.qq-upload-fail').fadeOut('300');
-                                                setTimeout(function () {
-                                                    $('.qq-upload-fail').remove();
-                                                }, 300);
-                                            }, 3000);
-                                        }
-                                        function DeleteImage(id) {
-                                            if (id.length > 0) {
-                                                $.ajax({
-                                                    type: "POST"
-                                                    , url: '/thanh-vien/xoa-hinh'
-                                                    , data: { gid: id }
-                                                    , cache: false
-                                                    , dataType: "json"
-                                                    , success: function (data) {
-                                                        if (data != null) {
-                                                            if (data.msg == true) {
-                                                                $('#' + id).fadeOut('300');
-                                                                setTimeout(function () {
-                                                                    $('#' + id).remove();
-                                                                }, 300);
-                                                                uploader2._maxFile--;
-                                                            }
-                                                        }
-                                                    }
-                                                });
-                                            }
-                                        }
-                                        </script>    
+                                    
+                                     <input id="userfile" name="userfile" type="file" multiple="true">
+                                   
+                                    <script src="<?php echo base_url()?>assets/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+		<?php $timestamp = time();?>
+		$(function() {
+			$('#userfile').uploadify({
+				'formData'     : {
+					'timestamp' : '<?php echo $timestamp;?>',
+					'token'     : '<?php echo md5('unique_salt' . $timestamp);?>'
+				},
+				'swf'      : '<?php echo base_url()?>assets/js/jquery/uploadify_31/uploadify.swf',
+				'uploader' : '<?php echo base_url()?>upload/do_upload_property/<?php echo $code;?>',
+                                'debug':false,
+                                'auto':true,
+                                'cancelImg': '<?php echo base_url()?>assets/javascript/jquery/uploadify_31/uploadify-cancel.png',
+                                'fileTypeExts':'*.jpg;*.bmp;*.png;*.tif',
+                                'fileTypeDesc':'Image Files (.jpg,.bmp,.png,.tif)',
+                                'fileSizeLimit':'2MB',
+                                'fileObjName':'userfile',
+                                'buttonText':'Select Photo(s)',
+                                'multi':true,
+                                'removeCompleted':false,
+                                'onUploadError' : function(file, errorCode, errorMsg, errorString) {
+                                    alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
+                                },
+                                 'onUploadSuccess':function(file){
+                                    
+                                 }
+			});
+		});
+	</script>
                               </fieldset>
                         </div>
                     </div>

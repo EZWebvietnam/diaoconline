@@ -1069,5 +1069,50 @@ class Propertyhomemodel extends CI_Model
         return count($query->result_array());
         
     }
+    public function list_property_member($id_user,$number,$offset)
+    {
+        $id_user = intval($id_user);
+        $number = intval($number);
+        $offset = intval($offset);
+       
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo,users.full_name,
+        users.phone
+        FROM property
+        INNER JOIN users
+        ON users.id = property.id_user
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1
+         ORDER BY property.goi_giao_dich DESC
+         LIMIT $offset,$number
+        ";
+        
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_member($id_user)
+    {
+        
+        $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+        FROM property
+        INNER JOIN users
+        ON users.id = property.id_user
+        
+        LEFT JOIN loai_dia_oc
+        ON property.loai_dia_oc = loai_dia_oc.id
+        WHERE property.id_user = $id_user AND property.status = 1
+        ";
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
+    public function get_image($id)
+    {
+        $id = intval($id);
+        $sql ="SELECT * FROM property_image WHERE id_pro = $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

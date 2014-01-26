@@ -502,5 +502,46 @@ class Property extends MY_Controller
        $this->data['main_content']='property_view/list_search';
        $this->load->view('home_layout/list_tai_san',$this->data);
     }
+     public function get_theo_mem($id)
+    {
+        $id = intval($id);
+        $id = intval($id);
+        if(empty($id))
+        {
+            show_404();exit;
+        }
+        if(!is_numeric($id))
+        {
+            show_404();
+            exit;
+        }
+        $this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(6);
+        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_member($id);
+        
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_member($id,$config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='property_view/list_mem';
+       $this->load->view('home_layout/list_tai_san',$this->data);
+    }
 }
 ?>

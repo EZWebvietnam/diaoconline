@@ -42,6 +42,8 @@ class Home extends MY_Controller
          $this->load->model('discoveryhomemodel');
          $this->load->model('catepropertyhomemodel');
         $this->load->model('nhadephomemodel');
+        $this->load->model('memberhomemodel');
+        $this->data['list_mem']=$this->memberhomemodel->list_mem();
         $this->data['list_nha_dep']=$this->nhadephomemodel->load_nha_dep_home_page();
         $this->data['list_shopping']=$this->discoveryhomemodel->load_detail_other(0,7);
         $list_project = $this->projecthomemodel->get_list_project();

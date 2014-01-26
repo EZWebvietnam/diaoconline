@@ -53,7 +53,33 @@ class Upload extends CI_Controller {
             echo json_encode($file_info);
         }
     }
+     public function do_upload_property($code) {
+        $this->load->library('upload');
 
+        $image_upload_folder = $_SERVER['DOCUMENT_ROOT'] . ROT_DIR . 'file/uploads/property/'.$code;
+
+        if (!file_exists($image_upload_folder)) {
+            mkdir($image_upload_folder, DIR_WRITE_MODE, true);
+        }
+
+        $this->upload_config = array(
+            'upload_path' => $image_upload_folder,
+            'allowed_types' => 'png|jpg|jpeg|bmp|tiff',
+            'max_size' => 2048,
+            'remove_space' => TRUE,
+            'encrypt_name' => TRUE,
+        );
+
+        $this->upload->initialize($this->upload_config);
+
+        if (!$this->upload->do_upload()) {
+            $upload_error = $this->upload->display_errors();
+            echo json_encode($upload_error);
+        } else {
+            $file_info = $this->upload->data();
+            echo json_encode($file_info);
+        }
+    }
     public function do_workshop($id) {
       
         $this->load->library('upload');

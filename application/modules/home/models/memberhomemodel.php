@@ -20,6 +20,16 @@ class Memberhomemodel extends CI_Model
         $query = $this->db->get('users');
         return $query->result_array();
     }
+    public function list_mem()
+    {
+        $this->db->select();
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
+    public function insert_img_proper(array $data)
+    {
+        $this->db->insert('property_image',$data);
+    }
     
 }
 ?>

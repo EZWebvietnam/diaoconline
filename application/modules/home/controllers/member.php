@@ -279,6 +279,17 @@ class Member extends MY_Controller
             $this->load->model('memberhomemodel');
         if($this->input->post())
         {
+            $path = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->input->post('code');
+            $files = array();
+            $dir = opendir($path); // open the cwd..also do an err check.
+            while(false != ($file = readdir($dir))) {
+                    if(($file != ".") and ($file != "..") and ($file != "index.php")) {
+                            $files[] = $file; // put in array.
+                    }   
+            }
+            
+            natsort($files);
+            
             if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
             {
                 $price = "Thương lượng";
@@ -423,7 +434,16 @@ class Member extends MY_Controller
             $data_save['create_date']=strtotime('now');
             if($this->input->post('SubmitNew'))
             {
-                $this->propertyhomemodel->insert($data_save);
+                $id = $this->propertyhomemodel->insert($data_save);
+                if($id>0)
+                {
+                    $data_file = array();
+                    foreach($files as $v)
+                    {
+                        $data_file = array('id_pro'=>$id,'file'=>$v);
+                        $this->memberhomemodel->insert_img_proper($data_file);
+                    }
+                }
                 redirect('/thanh-vien/tai-san-dang-moi');
             }
             else
@@ -440,6 +460,7 @@ class Member extends MY_Controller
             if (!file_exists($image_upload_folder)) {
                 mkdir($image_upload_folder, DIR_WRITE_MODE, true);
             }
+            $this->data['code']=$code;
             $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
             $this->data['loai_dia_oc']=$this->propertyhomemodel->list_loai_dia_oc_member();
             $this->data['list_vi_tri'] = $this->propertyhomemodel->list_vt_dia_oc_member();

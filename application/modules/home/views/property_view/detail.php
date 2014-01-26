@@ -126,11 +126,91 @@
 <?php echo $detail[0]['dia_chi']?></span>
         <div class="detail_info">
                 <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slidejs/asset_detail.css" rel="stylesheet" type="text/css">
+                <?php 
+                
+                $list_image = $this->propertyhomemodel->get_image($detail[0]['id']);
+                if(!empty($list_image))
+                {
+                ?>
                 <div id="image_gallery" class="rounded_box rounded_style_2"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
+                    <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/slidejs/jquery.flexslider.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                        $(window).load(function () {
+                            $('#carousel').flexslider({
+                                startAt: 0,
+                                animation: "slide",
+                                controlNav: false,
+                                animationLoop: true,
+                                slideshow: true,
+                                itemWidth: 100,
+                                itemMargin: 0,
+                                itemMarginAdd: 0,
+                                asNavFor: '#slider'
+                            });
+                            $('#slider').flexslider({
+                                startAt: 0,
+                                animation: "slide",
+                                controlNav: false,
+                                animationLoop: true,
+                                slideshow: true,
+                                slideshowSpeed: 4000,           //Integer: Set the speed of the slideshow cycling, in milliseconds
+                                animationSpeed: 600,
+                                itemWidth: 350,
+                                smoothHeight: false,
+                                sync: "#carousel",
+                                start: function (slider) {
+                                    $('body').removeClass('loading');
+                                },
+                                after: function (slider) {
+                                    $('#imge_count span').text(slider.currentSlide + 1);
+                                }
+                            });
+                            $('')
+                        });
+                    </script>
+                    <div id="slider" class="flexslider">
+                        <div id="imge_count" style="left: 30% !important; z-index: 1 !important;">
+                            Hình <span>1</span>/6</div>
+                        
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 1200%; -webkit-transition: 0s; transition: 0s; -webkit-transform: translate3d(0px, 0, 0);">
+                                <?php 
+                                $i=0;
+                                foreach($list_image as $image)
+                                {
+                                ?>
+                                <li style="width: 350px; float: left; display: block;">
+                                    <div class="slideLarge" style="vertical-align:middle">
+                                        <a href="<?php echo base_url();?>file/uploads/property/<?php echo $detail[0]['code']?>/<?php echo $image['file']?>">
+                                            <img src="<?php echo base_url();?>file/uploads/property/<?php echo $detail[0]['code']?>/<?php echo $image['file']?>" alt="<?php echo $i;?>" style="max-width:350px;max-height:362px;vertical-align:middle"></a>
+                                    </div>
+                                </li>
+                                <?php $i++;} ?>
+                                
+                        </ul></div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+                    <div id="carousel" class="flex-control-thumbs">
+                        
+                    <div class="flex-viewport" style="overflow: hidden; position: relative;">
+                    <ul class="slides" style="width: 1200%; -webkit-transition: 0.6s; transition: 0.6s; -webkit-transform: translate3d(0px, 0, 0);">
+                            <?php 
+                                $i=0;
+                                foreach($list_image as $image)
+                                {
+                                ?>
+                            <li class="flex-active-slide" style="width: 100px; float: left; display: block;">
+                                <div class="bor">
+                                    <img src="<?php echo base_url();?>file/uploads/property/<?php echo $detail[0]['code']?>/<?php echo $image['file']?>" alt="<?php echo $i;?>" style="width:75px;height:50px">
+                                </div>
+                            </li>
+                            <?php $i++;}?>
+                        </ul></div><ul class="flex-direction-nav"><li><a class="flex-prev" href="#">Previous</a></li><li><a class="flex-next" href="#">Next</a></li></ul></div>
+                </div>
+                <?php } else {?>
+                <div id="image_gallery" class="rounded_box rounded_style_2"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                     <div class="flexslider">
-                        <img src="http://image.diaoconline.vn/sieu-thi/phong-tro_350.jpg" alt="" style="max-width:350px;max-height:362px;">
+                        <img src="<?php echo base_url();?>file/uploads/property/<?php echo $detail[0]['code']?>/<?php echo $image['file']?>" alt="" style="max-width:350px;max-height:362px;">
                     </div>
                 </div>
+                <?php } ?>
             <div class="right margin_left">
                 <div class="features margin_bottom">
                     <div class="currency_convertor">

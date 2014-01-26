@@ -412,112 +412,32 @@ if(empty($vi_tri_5))
 	</div>
 	<div class="rounded_style_2 rounded_box scroll" >
 		<div class="content">
-            
+            <?php 
+            foreach($list_mem as $mem)
+            {
+            ?>
 			<div class="agency_info_descript">
 				<div class="head_info">
 					<div class="logo">
-						<a href="http://www.diaoconline.vn/sieu-thi/loc?tv=47643">
-						<img src="http://image.diaoconline.vn/LogoMember/2012/05/05_chan_dung_Nguyen_Ngoc_Ha.jpg" width="75" height="75" 
-						alt="Nguyễn Ngọc Hà" title="Nguyễn Ngọc Hà"/></a>
+						<a href="<?php echo base_url();?>sieu-thi/tv/<?php echo $mem['id']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/avatar/'.$mem['img']) && $mem['img']!='')
+                        {
+                        ?>
+						<img src="<?php echo base_url();?>file/uploads/avatar/<?php echo $mem['img']?>" width="75" height="75" alt="<?php echo $mem['full_name']?>" title="<?php echo $mem['full_name']?>"/>
+                        <?php } else {?>
+                        <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="75" height="75" alt="<?php echo $mem['full_name']?>" title="<?php echo $mem['full_name']?>"/>
+                        <?php } ?> 
+						</a>
 					</div>
 					<div class="agency_name">
-					<h2><a href="http://www.diaoconline.vn/sieu-thi/loc?tv=47643">Nguyễn Ngọc Hà</a></h2>
-					<p>Nhà môi giới Gò Vấp</p>
+					<h2><a href="<?php echo base_url();?>sieu-thi/tv/<?php echo $mem['id']?>"><?php echo $mem['full_name']?></a></h2>
+					<p>Nhà môi giới</p>
 					</div>
 				</div>
 			</div>
-            <div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=105301">
-						<img src="http://image.diaoconline.vn/avatar/Ma-Tu-Phuong.jpg" width="75" height="75"
-						 alt="Ma Tú Phương" title="Ma Tú Phương"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=105301">Ma Tú Phương</a></h2>
-					<p>Nhà môi giới đất nền Quận 8, Quận 9, Nhà Bè</p>
-					</div>
-				</div>
-			</div>
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=98398">
-						<img src="http://image.diaoconline.vn/avatar/nguyenvantruong.jpg" width="75" height="75"
-						 alt="Nguyễn Văn Trường" title="Nguyễn Văn Trường"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=98398">Nguyễn Văn Trường</a></h2>
-					<p>Nhà môi giới Quận Tân Bình</p>
-					</div>
-				</div>
-			</div>
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=72112">
-						<img src="http://image.diaoconline.vn/avatar/hinhanhSang.jpg" width="75" height="75"
-						 alt="Võ Văn Sang" title="Võ Văn Sang"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=72112">Võ Văn Sang</a></h2>
-					<p>Nhà môi giới Quận 2</p>
-					</div>
-				</div>
-			</div>
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=125243">
-						<img src="http://image.diaoconline.vn/avatar/Nguyen-Van-Thanh.jpg" width="75" height="75"
-						 alt="Nguyễn Văn Thành" title="Nguyễn Văn Thành"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=125243">Nguyễn Văn Thành</a></h2>
-					<p>Nhà môi giới Quận 2</p>
-					</div>
-				</div>
-			</div>
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=22526">
-						<img src="http://image.diaoconline.vn/avatar/Nguyen-Thuan.jpg" width="75" height="75"
-						 alt="Nguyễn Thuận" title="Nguyễn Thuận"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=22526">Nguyễn Thuận</a></h2>
-					<p>Nhà môi giới Quận 7</p>
-					</div>
-				</div>
-			</div>
-					
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=44975">
-						<img src="http://image.diaoconline.vn/avatar/daohuuco.jpg" width="75" height="75"
-						 alt="Đào Hữu Có" title="Đào Hữu Có"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=44975">Đào Hữu Có</a></h2>
-					<p>Nhà môi giới Quận 7</p>
-					</div>
-				</div>
-			</div>		   
-			<div class="agency_info_descript">
-				<div class="head_info">
-					<div class="logo">
-						<a href="http://diaoconline.vn/sieu-thi/loc?tv=79578">
-						<img src="http://image.diaoconline.vn/avatar/daotholuong.jpg" width="75" height="75"
-						 alt="Đào Thọ Lương" title="Đào Thọ Lương"/></a>
-					</div>
-					<div class="agency_name">
-					<h2><a href="http://diaoconline.vn/sieu-thi/loc?tv=79578">Đào Thọ Lương</a></h2>
-					<p>Nhà môi giới Quận 7</p>
-					</div>
-				</div>
-			</div>
+            <?php } ?>	   
+			
 		</div>
 	</div>
 </div>

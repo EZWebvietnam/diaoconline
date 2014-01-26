@@ -136,6 +136,7 @@
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnew"><i class="icon-list-alt"></i><span class="hidden-tablet">Tin tức</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminbusiness"><i class="icon-list-alt"></i><span class="hidden-tablet">Doanh nghiệp</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnhadep"><i class="icon-list-alt"></i><span class="hidden-tablet">Nhà đẹp</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminadv"><i class="icon-list-alt"></i><span class="hidden-tablet">Quảng cáo</span></a></li>
                            
 
                         </ul>

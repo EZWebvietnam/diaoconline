@@ -134,6 +134,7 @@
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnew"><i class="icon-list-alt"></i><span class="hidden-tablet">Tin tuc</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminbusiness"><i class="icon-list-alt"></i><span class="hidden-tablet">Doanh nghiep</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminnhadep"><i class="icon-list-alt"></i><span class="hidden-tablet">Nha dep</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminadv"><i class="icon-list-alt"></i><span class="hidden-tablet">Quang cao</span></a></li>
 					</ul>
 					
 				</div><!--/.well -->
