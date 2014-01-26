@@ -24,6 +24,10 @@ class Nhadep extends MY_Controller
         parent::cate_sieu_thi();
         parent::get_ts_menu();
         parent::load_phong_thuy();
+        parent::load_adv_home_p1();
+        parent::load_adv_home_p2();
+        parent::load_adv_home_p3();
+        parent::load_adv_home_p4();
         $this->load->library('session');
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
