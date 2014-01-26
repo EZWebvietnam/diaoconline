@@ -32,7 +32,7 @@ border-radius: 4px;
 color: #EDF5FA;
 }
 </style>
-<a class="btn btn-primary" href="<?php echo base_url();?>admin/admibusiness/add">
+<a class="btn btn-primary" href="<?php echo base_url();?>admin/adminbusiness/add">
     <i  class="icon icon-color icon-plus"></i> 
                                 Thêm Doanh Nghiệp
                             </a>

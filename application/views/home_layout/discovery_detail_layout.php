@@ -208,7 +208,35 @@ else
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/normalize.css" rel="stylesheet" type="text/css" />
     <div class="wrap">
 
-<div id="position_43" class ='banner_960x75 margin_bottom'><div><a href="http://www.diaoconline.vn/quangcao/362/43" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/11/92E-smilecard_960x90.gif" width="960px" height="90px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/362/43" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/11/92E-smilecard_960x90.gif" width="960px" height="90px"/></a></div></div><script type='text/javascript'>var Banner43=1;function Random_Banner43(){    var _Arr=document.getElementById("position_43").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner43 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner43 - 1]).html(); $(_Arr[Banner43 - 1]).html(''); $(_Arr[Banner43 - 1]).html(tempBanner);    window.setTimeout("Random_Banner43()" ,25000);    Banner43 = Banner43 + 1;    if(Banner43 > _Arr.length)        Banner43 = 1;}Random_Banner43();</script>
+<div id="position_43" class ='banner_960x75 margin_bottom'>
+<?php 
+if(empty($vi_tri_8))
+{
+?>
+<?php
+}
+else
+{
+    $i = 1;
+    foreach($vi_tri_8 as $vt_8)
+    {
+        if($i==1)
+        {
+    ?>
+<div class="bannerHide">
+<a href="<?php echo $vt_8['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
+</a>
+</div>
+<?php } if($i==2)
+{?>
+<div class="bannerShow">
+<a href="<?php echo $vt_8['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
+</a>
+</div>
+<?php } $i++;} } ?>
+</div><script type='text/javascript'>var Banner43=1;function Random_Banner43(){    var _Arr=document.getElementById("position_43").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner43 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner43 - 1]).html(); $(_Arr[Banner43 - 1]).html(''); $(_Arr[Banner43 - 1]).html(tempBanner);    window.setTimeout("Random_Banner43()" ,25000);    Banner43 = Banner43 + 1;    if(Banner43 > _Arr.length)        Banner43 = 1;}Random_Banner43();</script>
         <div class="col_180">
         <?php 
         foreach($list_cate_left as $cate)
