@@ -23,7 +23,7 @@ class User extends CI_Controller {
     }
     public function view($id = null) {
         if (!$this->tank_auth->is_logged_in()) {
-            redirect('/admin/login.xxx');
+            redirect('/admin/login');
         }
         if (empty($id)) {
             redirect('admin/user/listuser');
@@ -41,7 +41,7 @@ class User extends CI_Controller {
 
     function add() {
         if (!$this->tank_auth->is_logged_in()) {
-            redirect('/admin/login.xxx');
+            redirect('/admin/login');
         } elseif (!$this->config->item('allow_registration', 'tank_auth')) { // registration is off
             $this->_show_message($this->lang->line('auth_message_registration_disabled'));
         } else {
@@ -57,9 +57,9 @@ class User extends CI_Controller {
            
             if ($this->form_validation->run()==TRUE) {
                
-                $this->test_send_mail($this->form_validation->set_value('email'), $this->form_validation->set_value('username'), $this->form_validation->set_value('password'));
+                
                 if (!is_null($data = $this->tank_auth->create_user(
-                                $use_username ? $this->form_validation->set_value('username') : '', $this->form_validation->set_value('email'), $this->form_validation->set_value('password')))) {         // success
+                                $use_username ? $this->form_validation->set_value('username') : '', $this->form_validation->set_value('email'), $this->form_validation->set_value('password'),$this->input->post('fullname'),$this->input->post('phone'),$this->input->post('role')))) {         // success
                     $data['site_name'] = $this->config->item('website_name', 'tank_auth');
                     if ($this->config->item('email_account_details', 'tank_auth')) { // send "welcome" email
                     }
@@ -72,6 +72,7 @@ class User extends CI_Controller {
                 }
                 redirect('admin/user/listuser');
             }
+            $data['user_role']=$this->usermodel->get_user_role();
             $data['use_username'] = $use_username;
             $data['use_recaptcha'] = $use_recaptcha;
             $data['main_content'] = 'users/add_user';
@@ -189,6 +190,41 @@ class User extends CI_Controller {
         $data['main_content'] = 'users/edit_user';
          $data['user_info'] = $this->usermodel->get_user($this->session->userdata['user_id']);
         $this->load->view('admin/layout_form', $data);
+    }
+    public function update_role($id)
+    {
+        if($this->input->post())
+        {
+            $data_save = array(
+            'role'=>$this->input->post('role')
+            );
+            $this->usermodel->update_user($id,$data_save);
+            redirect('/admin/user/listuser');
+        }
+        else
+        {
+            if(empty($id))
+            {
+                show_404();
+                exit;
+            }
+            if(!is_numeric($id))
+            {
+                show_404();
+                exit;
+            }
+  
+            $detail_user = $this->usermodel->get_user($id);
+            if(empty($detail_user))
+            {
+                show_404();
+                exit;
+            }
+            $data['main_content'] = 'users/edit_user_1';
+            $data['detail']=$detail_user;
+            $data['user_role']=$this->usermodel->get_user_role();
+            $this->load->view('admin/layout_form', $data);
+        }
     }
 
 }

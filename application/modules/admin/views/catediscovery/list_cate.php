@@ -39,7 +39,7 @@ color: #EDF5FA;
 <div class="row-fluid sortable">		
     <div class="box span12">
         <div class="box-header well" data-original-title>
-            <h2><i class="icon-user"></i> Danh mục tin tức</h2>
+            <h2><i class="icon-user"></i> Danh mục Khám phá</h2>
             <div class="box-icon">
 
                 <a href="#" class="btn btn-minimize btn-round"><i class="icon-chevron-up"></i></a>
@@ -72,11 +72,11 @@ color: #EDF5FA;
                         
                         <td class="center">
                             
-                            <a class="btn btn-info" href="<?php echo base_url();?>admin/admincateproject/edit/<?php echo $cate['id']?>">
+                            <a class="btn btn-info" href="<?php echo base_url();?>admin/admincatediscovery/edit/<?php echo $cate['id']?>">
                                 <i class="icon-edit icon-white"></i>  
                                Sửa                                        
                             </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/admincateproject/delete/<?php echo $cate['id']?>">
+                            <a onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/admincatediscovery/delete/<?php echo $cate['id']?>">
                                 <i class="icon-trash icon-white"></i> 
                                 Xóa
                             </a>

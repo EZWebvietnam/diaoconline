@@ -464,10 +464,17 @@ class Property extends MY_Controller
             $sql.=" AND property.loai_tin = $loai_tin";
             $sql_count.=" AND property.loai_tin = $loai_tin";
         }
-        if($this->input->get('LoaiDiaOcLis') && $this->input->get('LoaiDiaOcLis')!='')
+        if($this->input->get('LoaiDiaOcList') && $this->input->get('LoaiDiaOcList')!='')
+        {
+            $loai_do  = $this->input->get('LoaiDiaOcList');
+            
+            $sql.=" AND property.loai_dia_oc = $loai_do";
+            $sql_count.=" AND property.loai_dia_oc = $loai_do";
+        }
+         if($this->input->get('LoaiDiaOcLis') && $this->input->get('LoaiDiaOcLis')!='')
         {
             $loai_do  = $this->input->get('LoaiDiaOcLis');
-            
+           
             $sql.=" AND property.loai_dia_oc = $loai_do";
             $sql_count.=" AND property.loai_dia_oc = $loai_do";
         }
@@ -483,7 +490,7 @@ class Property extends MY_Controller
          ORDER BY property.goi_giao_dich DESC
          LIMIT $page1,$per_page
         ";
-        
+       
         $config['total_rows'] = $this->propertyhomemodel->count_property_timkiem($sql_count);
         
         if (!is_numeric($page)) {

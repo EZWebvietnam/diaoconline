@@ -51,6 +51,10 @@
                                 <i class="icon-edit icon-white"></i>  
                                Sửa                                        
                             </a>
+                            <a class="btn btn-info" href="<?php echo base_url();?>admin/user/update_role/<?php echo $member['id']?>">
+                                <i class="icon-edit icon-white"></i>  
+                              Update Role                                       
+                            </a>
                             <a class="btn btn-danger" href="#">
                                 <i class="icon-trash icon-white"></i> 
                                 Xóa

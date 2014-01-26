@@ -60,7 +60,7 @@ class Index extends MY_Controller
         function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/admin/login.xxx');
+		redirect('/admin/login');
 	}
 }
 ?>

@@ -23,7 +23,12 @@
             <form class="form-horizontal" id='view' method="post">
                 <fieldset>
 
-
+                    <div class="control-group">
+                        <label class="control-label" for="disabledInput">Full Name</label>
+                        <div class="controls">
+                            <input type="text" name="fullname"/>
+                        </div>
+                    </div>
                     <div class="control-group">
                         <label class="control-label" for="disabledInput">Email</label>
                         <div class="controls">
@@ -94,7 +99,20 @@
                             <?php echo form_error($password['name']); ?>
                         </div>
                     </div>
-
+                    
+                    <div class="control-group">
+                        <label class="control-label" for="disabledInput">User Role</label>
+                        <div class="controls">
+                            <select name="role">
+                            <?php 
+                            foreach($user_role as $role)
+                            {
+                            ?>
+                            <option value="<?php echo $role['id']?>"><?php echo $role['name']?></option>
+                            <?php } ?>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Thêm</button>
                     </div>

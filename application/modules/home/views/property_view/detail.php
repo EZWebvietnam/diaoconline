@@ -207,7 +207,7 @@
                 <?php } else {?>
                 <div id="image_gallery" class="rounded_box rounded_style_2"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                     <div class="flexslider">
-                        <img src="<?php echo base_url();?>file/uploads/property/<?php echo $detail[0]['code']?>/<?php echo $image['file']?>" alt="" style="max-width:350px;max-height:362px;">
+                        <img src="<?php echo base_url();?>file/uploads/no_image.gif" alt="" style="max-width:350px;max-height:362px;">
                     </div>
                 </div>
                 <?php } ?>

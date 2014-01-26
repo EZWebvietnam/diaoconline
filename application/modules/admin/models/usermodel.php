@@ -31,6 +31,12 @@ class Usermodel extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('users', $data);
     }
+    public function get_user_role()
+    {
+        $this->db->select();
+        $query = $this->db->get('user_role');
+        return $query->result_array();
+    }
 
 }
 
