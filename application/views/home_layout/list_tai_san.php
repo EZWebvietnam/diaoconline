@@ -46,8 +46,7 @@
 		width:100px;
 	}
 </style>
-    <div id="b_left" style="left:90px" ><img src="Content/Images/Dool_qc_100x300.jpg" /></div>
-    <div id="b_right" style="right:90px"  ><img src="Content/Images/Dool_qc_100x300.jpg" /></div>
+
     <script type="text/javascript">
         $(function () {
             WindowResize();
