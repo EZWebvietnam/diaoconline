@@ -24,6 +24,9 @@ class Property extends MY_Controller
         parent::cate_sieu_thi();
         //
         parent::dn_nb();
+        //
+        parent::load_adv_home_p6();
+        parent::load_adv_home_p7();
         $this->load->model('propertyhomemodel');
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');

@@ -49,15 +49,127 @@
 </style>
     <div id="b_left" style="left:90px">
 
-<div id="position_64" class =''><div><a href="http://www.diaoconline.vn/quangcao/405/64" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/10/E1A-TTdecor_100x300.gif" width="100px" height="300px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/405/64" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/10/E1A-TTdecor_100x300.gif" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner64=1;function Random_Banner64(){    var _Arr=document.getElementById("position_64").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner64 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner64 - 1]).html(); $(_Arr[Banner64 - 1]).html(''); $(_Arr[Banner64 - 1]).html(tempBanner);    window.setTimeout("Random_Banner64()" ,25000);    Banner64 = Banner64 + 1;    if(Banner64 > _Arr.length)        Banner64 = 1;}Random_Banner64();</script>
+<div id="position_64" class =''>
+<?php 
+if(empty($vi_tri_1))
+{
+    ?> 
+    
+    <?php 
+}
+else
+{
+    $i=1;
+    foreach($vi_tri_1 as $vt_1)
+    {
+        if($i==1)
+        {
+?>
+<div class="bannerShow">
+<a href="<?php echo $vt_1['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_1['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } if($i==2)
+{?>
+<div class="bannerHide">
+<a href="<?php echo $vt_1['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_1['file']?>" width="100px" height="300px"></a>
+</div>
+<?php } $i++;}} ?>
+</div>
+<script type='text/javascript'>var Banner64=1;function Random_Banner64(){    var _Arr=document.getElementById("position_64").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner64 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner64 - 1]).html(); $(_Arr[Banner64 - 1]).html(''); $(_Arr[Banner64 - 1]).html(tempBanner);    window.setTimeout("Random_Banner64()" ,25000);    Banner64 = Banner64 + 1;    if(Banner64 > _Arr.length)        Banner64 = 1;}Random_Banner64();</script>
 
-<div id="position_65" class =''><div style="margin-top:5px" ><a href="http://www.diaoconline.vn/quangcao/419/65" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/17/BAA-phulong_100x300.gif" width="100px" height="300px"/></a></div><div style="margin-top:5px" ><a href="http://www.diaoconline.vn/quangcao/419/65" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/17/BAA-phulong_100x300.gif" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner65=1;function Random_Banner65(){    var _Arr=document.getElementById("position_65").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner65 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner65 - 1]).html(); $(_Arr[Banner65 - 1]).html(''); $(_Arr[Banner65 - 1]).html(tempBanner);    window.setTimeout("Random_Banner65()" ,25000);    Banner65 = Banner65 + 1;    if(Banner65 > _Arr.length)        Banner65 = 1;}Random_Banner65();</script>
+<div id="position_65" class =''>
+<?php 
+if(empty($vi_tri_2))
+{
+?>
+<?php
+} else {
+    $i=1;
+    foreach($vi_tri_2 as $vt_2)
+    {
+        if($i==1)
+        {
+?>
+<div style="margin-top:5px" class="bannerShow"><a href="<?php echo $vt_2['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_2['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } if($i==2)
+{?>
+<div style="margin-top:5px" class="bannerHide"><a href="<?php echo $vt_2['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_2['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } $i++;} } ?>
+</div>
+<script type='text/javascript'>var Banner65=1;function Random_Banner65(){    var _Arr=document.getElementById("position_65").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner65 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner65 - 1]).html(); $(_Arr[Banner65 - 1]).html(''); $(_Arr[Banner65 - 1]).html(tempBanner);    window.setTimeout("Random_Banner65()" ,25000);    Banner65 = Banner65 + 1;    if(Banner65 > _Arr.length)        Banner65 = 1;}Random_Banner65();</script>
     </div>
     <div id="b_right" style="right:90px">
 
-<div id="position_66" class =''><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
+<div id="position_66" class =''>
+<?php 
+if(empty($vi_tri_3))
+{
+?>
+<?php
+}
+else
+{
+    $i = 1;
+    foreach($vi_tri_3 as $vt_3)
+    {
+        if($i==1)
+        {
+    ?>
+<div class="bannerHide">
+<a href="<?php echo $vt_3['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_3['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } if($i==2)
+{?>
+<div class="bannerShow">
+<a href="<?php echo $vt_3['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_3['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } $i++;} } ?>
+</div>
+<script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
 
-<div id="position_67" class =''><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div></div><script type='text/javascript'>var Banner67=1;function Random_Banner67(){    var _Arr=document.getElementById("position_67").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner67 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner67 - 1]).html(); $(_Arr[Banner67 - 1]).html(''); $(_Arr[Banner67 - 1]).html(tempBanner);    window.setTimeout("Random_Banner67()" ,25000);    Banner67 = Banner67 + 1;    if(Banner67 > _Arr.length)        Banner67 = 1;}Random_Banner67();</script>
+<div id="position_67" class =''>
+<?php 
+if(empty($vi_tri_4))
+{
+?>
+<?php
+}
+else
+{
+    $i = 1;
+    foreach($vi_tri_4 as $vt_4)
+    {
+        if($i==1)
+        {
+    ?>
+<div class="bannerHide">
+<a href="<?php echo $vt_4['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_4['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } if($i==2)
+{?>
+<div class="bannerShow">
+<a href="<?php echo $vt_4['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_4['file']?>" width="100px" height="300px">
+</a>
+</div>
+<?php } $i++;} } ?>
+</div>
+<script type='text/javascript'>var Banner67=1;function Random_Banner67(){    var _Arr=document.getElementById("position_67").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner67 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner67 - 1]).html(); $(_Arr[Banner67 - 1]).html(''); $(_Arr[Banner67 - 1]).html(tempBanner);    window.setTimeout("Random_Banner67()" ,25000);    Banner67 = Banner67 + 1;    if(Banner67 > _Arr.length)        Banner67 = 1;}Random_Banner67();</script>
     </div>
     <script type="text/javascript">
         $(function () {

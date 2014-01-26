@@ -49,15 +49,152 @@
 </style>
     <div id="b_left" style="left:90px">
 
-<div id="position_64" class =''><div><a href="http://www.diaoconline.vn/quangcao/405/64" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/10/E1A-TTdecor_100x300.gif" width="100px" height="300px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/405/64" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/10/E1A-TTdecor_100x300.gif" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner64=1;function Random_Banner64(){    var _Arr=document.getElementById("position_64").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner64 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner64 - 1]).html(); $(_Arr[Banner64 - 1]).html(''); $(_Arr[Banner64 - 1]).html(tempBanner);    window.setTimeout("Random_Banner64()" ,25000);    Banner64 = Banner64 + 1;    if(Banner64 > _Arr.length)        Banner64 = 1;}Random_Banner64();</script>
+<div id="position_64" class =''>
+<?php 
+if(empty($vi_tri_1))
+{
+?>
+<div>
+<a href="#" target="_blank">
+<img src="<?php echo base_url();?>template/home_ezwebvietnam/Content/images/Dool_qc_100x300.jpg" width="100px" height="300px"/>
+</a>
+</div>
+<?php 
+}
+else
+{
+    $i=1;
+    foreach($vi_tri_1 as $vt_1)
+    {
+        if($i==1)
+        {
+?>
+<div>
+<a href="<?php echo $vt_1['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_1['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php }
+if($i==2)
+{?>
+<div>
+<a href="<?php echo $vt_1['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_1['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php } $i++;} } ?>
+</div>
+<script type='text/javascript'>var Banner64=1;function Random_Banner64(){    var _Arr=document.getElementById("position_64").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner64 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner64 - 1]).html(); $(_Arr[Banner64 - 1]).html(''); $(_Arr[Banner64 - 1]).html(tempBanner);    window.setTimeout("Random_Banner64()" ,25000);    Banner64 = Banner64 + 1;    if(Banner64 > _Arr.length)        Banner64 = 1;}Random_Banner64();</script>
 
-<div id="position_65" class =''><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/65"/></div><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/65"/></div></div><script type='text/javascript'>var Banner65=1;function Random_Banner65(){    var _Arr=document.getElementById("position_65").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner65 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner65 - 1]).html(); $(_Arr[Banner65 - 1]).html(''); $(_Arr[Banner65 - 1]).html(tempBanner);    window.setTimeout("Random_Banner65()" ,25000);    Banner65 = Banner65 + 1;    if(Banner65 > _Arr.length)        Banner65 = 1;}Random_Banner65();</script>
+<div id="position_65" class =''>
+<?php 
+if(empty($vi_tri_2))
+{
+?>
+<div>
+<a href="#" target="_blank">
+<img src="<?php echo base_url();?>template/home_ezwebvietnam/Content/images/Dool_qc_100x300.jpg" width="100px" height="300px"/>
+</a>
+</div>
+<?php 
+}
+else
+{
+    $i=1;
+    foreach($vi_tri_2 as $vt_2)
+    {
+        if($i==1)
+        {
+?>
+<div>
+<a href="<?php echo $vt_2['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_2['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php }
+if($i==2)
+{?>
+<div>
+<a href="<?php echo $vt_2['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_2['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php } $i++;} } ?>
+</div><script type='text/javascript'>var Banner65=1;function Random_Banner65(){    var _Arr=document.getElementById("position_65").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner65 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner65 - 1]).html(); $(_Arr[Banner65 - 1]).html(''); $(_Arr[Banner65 - 1]).html(tempBanner);    window.setTimeout("Random_Banner65()" ,25000);    Banner65 = Banner65 + 1;    if(Banner65 > _Arr.length)        Banner65 = 1;}Random_Banner65();</script>
     </div>
     <div id="b_right" style="right:90px">
 
-<div id="position_66" class =''><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div><div><a href="http://www.diaoconline.vn/quangcao/408/66" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/14/01E-seareal_100x300.jpg" width="100px" height="300px"/></a></div></div><script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
+<div id="position_66" class =''>
+<?php 
+if(empty($vi_tri_3))
+{
+?>
+<div>
+<a href="#" target="_blank">
+<img src="<?php echo base_url();?>template/home_ezwebvietnam/Content/images/Dool_qc_100x300.jpg" width="100px" height="300px"/>
+</a>
+</div>
+<?php 
+}
+else
+{
+    $i=1;
+    foreach($vi_tri_3 as $vt_3)
+    {
+        if($i==1)
+        {
+?>
+<div>
+<a href="<?php echo $vt_3['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_3['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php }
+if($i==2)
+{?>
+<div>
+<a href="<?php echo $vt_3['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_3['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php } $i++;} } ?>
+</div><script type='text/javascript'>var Banner66=1;function Random_Banner66(){    var _Arr=document.getElementById("position_66").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner66 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner66 - 1]).html(); $(_Arr[Banner66 - 1]).html(''); $(_Arr[Banner66 - 1]).html(tempBanner);    window.setTimeout("Random_Banner66()" ,25000);    Banner66 = Banner66 + 1;    if(Banner66 > _Arr.length)        Banner66 = 1;}Random_Banner66();</script>
 
-<div id="position_67" class =''><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div><div style="margin-top:5px" ><embed height="300" width="100" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/09/FE7-lienhe_qc_100x300.swf?clicktag=http://www.diaoconline.vn/quangcao/403/67"/></div></div><script type='text/javascript'>var Banner67=1;function Random_Banner67(){    var _Arr=document.getElementById("position_67").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner67 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner67 - 1]).html(); $(_Arr[Banner67 - 1]).html(''); $(_Arr[Banner67 - 1]).html(tempBanner);    window.setTimeout("Random_Banner67()" ,25000);    Banner67 = Banner67 + 1;    if(Banner67 > _Arr.length)        Banner67 = 1;}Random_Banner67();</script>
+<div id="position_67" class =''>
+<?php 
+if(empty($vi_tri_4))
+{
+?>
+<div>
+<a href="#" target="_blank">
+<img src="<?php echo base_url();?>template/home_ezwebvietnam/Content/images/Dool_qc_100x300.jpg" width="100px" height="300px"/>
+</a>
+</div>
+<?php 
+}
+else
+{
+    $i=1;
+    foreach($vi_tri_4 as $vt_4)
+    {
+        if($i==1)
+        {
+?>
+<div>
+<a href="<?php echo $vt_4['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_4['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php }
+if($i==2)
+{?>
+<div>
+<a href="<?php echo $vt_4['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_4['file']?>" width="100px" height="300px"/>
+</a>
+</div>
+<?php } $i++;} } ?>
+</div><script type='text/javascript'>var Banner67=1;function Random_Banner67(){    var _Arr=document.getElementById("position_67").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner67 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner67 - 1]).html(); $(_Arr[Banner67 - 1]).html(''); $(_Arr[Banner67 - 1]).html(tempBanner);    window.setTimeout("Random_Banner67()" ,25000);    Banner67 = Banner67 + 1;    if(Banner67 > _Arr.length)        Banner67 = 1;}Random_Banner67();</script>
     </div>
     <script type="text/javascript">
         $(function () {
@@ -162,133 +299,10 @@ foreach($slide as $pr_sl)
     })
 </script>        </div>
         <div id="search" class="clearfix">
-            <div class="col_650">
-                <div id="top_invest" class="rounded_style_6 rounded_box margin_bottom">
-                    <div class="content">
-                        <h3 class="small_headline">CÁC CHỦ ĐẦU TƯ NỔI BẬT</h3>
-                    </div>
-                </div>
-                <div id="business_search" class="margin_bottom">
-                    <div id="project_search" class="rounded_style_1 rounded_box margin_bottom">
-                        <div class="content">
-                            <h3 class="small_headline">TÌM KIẾM DỰ ÁN</h3>
-                            <form action="/du-an/tim-kiem" id="frmSearch" method="post" class="form_style_1">
-                            <fieldset>
-                                <div class="business_search_type">
-                                    <div class="rowElem">
-                                        <input param="td" type="text" placeholder="Nhập từ khóa cần tìm" class="input_text" value=""/>
-                                    </div>
-                                    <div class="propertise_type margin_right_form">
-                                        <div class="city">
-                                            <div class="divUni-3">
-                                                <div class="wid-left"></div>
-	                                            <div class="wid">
-                                            <select id="CityList" name="CityList" param="tp"><option value="">Tỉnh/Th&#224;nh phố</option>
-<option value="2">H&#224; Nội</option>
-<option value="3">TP.HCM</option>
-<option value="71">Đ&#224; Nẵng</option>
-<option value="53">Đồng Nai</option>
-<option value="61">B&#236;nh Dương</option>
-<option value="35">Long An</option>
-<option value="69">An Giang</option>
-<option value="68">B&#224; Rịa - Vũng T&#224;u</option>
-<option value="67">Bắc Giang</option>
-<option value="66">Bắc Kạn</option>
-<option value="65">Bạc Li&#234;u</option>
-<option value="64">Bắc Ninh</option>
-<option value="63">Bến Tre</option>
-<option value="62">B&#236;nh Định</option>
-<option value="60">B&#236;nh Phước</option>
-<option value="59">B&#236;nh Thuận</option>
-<option value="58">C&#224; Mau</option>
-<option value="72">Cần Thơ</option>
-<option value="57">Cao Bằng</option>
-<option value="56">Đắk Lắk</option>
-<option value="55">Đắk N&#244;ng</option>
-<option value="54">Điện Bi&#234;n</option>
-<option value="52">Đồng Th&#225;p</option>
-<option value="51">Gia Lai</option>
-<option value="50">H&#224; Giang</option>
-<option value="49">H&#224; Nam </option>
-<option value="47">H&#224; Tĩnh</option>
-<option value="46">Hải Dương</option>
-<option value="70">Hải Ph&#242;ng</option>
-<option value="45">Hậu Giang</option>
-<option value="44">H&#242;a B&#236;nh</option>
-<option value="43">Hưng Y&#234;n</option>
-<option value="42">Kh&#225;nh H&#242;a</option>
-<option value="41">Ki&#234;n Giang</option>
-<option value="40">Kon Tum</option>
-<option value="39">Lai Ch&#226;u</option>
-<option value="38">L&#226;m Đồng</option>
-<option value="37">Lạng Sơn</option>
-<option value="36">L&#224;o Cai</option>
-<option value="34">Nam Định</option>
-<option value="33">Nghệ An</option>
-<option value="32">Ninh B&#236;nh</option>
-<option value="31">Ninh Thuận</option>
-<option value="30">Ph&#250; Thọ</option>
-<option value="29">Ph&#250; Y&#234;n</option>
-<option value="28">Quảng B&#236;nh</option>
-<option value="27">Quảng Nam</option>
-<option value="26">Quảng Ng&#227;i</option>
-<option value="25">Quảng Ninh</option>
-<option value="24">Quảng Trị</option>
-<option value="23">S&#243;c Trăng</option>
-<option value="22">Sơn La</option>
-<option value="21">T&#226;y Ninh</option>
-<option value="19">Th&#225;i B&#236;nh</option>
-<option value="18">Th&#225;i Nguy&#234;n</option>
-<option value="17">Thanh H&#243;a</option>
-<option value="16">Thừa Thi&#234;n Huế</option>
-<option value="15">Tiền Giang</option>
-<option value="14">Tr&#224; Vinh</option>
-<option value="13">Tuy&#234;n Quang</option>
-<option value="12">Vĩnh Long</option>
-<option value="11">Vĩnh Ph&#250;c</option>
-<option value="10">Y&#234;n B&#225;i</option>
-</select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="district" id="district">
-                                            <div class="divUni-3">
-                                                <div class="wid-left"></div>
-	                                            <div class="wid">
-                                            <select id="DistrictList" name="DistrictList" param="qh"><option value="">Quận/Huyện</option>
-</select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="bussiness_type">
-                                            <div class="divUni-3">
-                                                <div class="wid-left"></div>
-	                                            <div class="wid">
-                                            <select id="ProjectTypeList" name="ProjectTypeList" param="loai"><option value="">Loại dự &#225;n</option>
-<option value="11">Khu c&#244;ng nghiệp</option>
-<option value="24">Khu d&#226;n cư – Đ&#244; thị mới </option>
-<option value="25">Khu phức hợp - Thương mại</option>
-<option value="26">Cao ốc văn ph&#242;ng</option>
-<option value="27">Khu căn hộ</option>
-<option value="28">Khu du lịch - Nghỉ dưỡng</option>
-<option value="29">C&#244;ng tr&#236;nh c&#244;ng cộng</option>
-</select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <button type="button" class="btn_2" id="SearchSubmit">
-                                            <span>TÌM KIẾM</span></button>
-                                    </div>
-                                </div>
-                            </fieldset>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
             <div class="col_300 margin_left">
 
-<div id="position_29" class ='banner_300x250'><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/07/8E9-06012014_EHome4.swf?clicktag=http://www.diaoconline.vn/quangcao/398/29"/></div><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/12/23/67C-phuLong_1707_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/385/29"/></div><div><embed height="250" width="300" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2013/11/11/BD9-smilescard_300x250.swf?clicktag=http://www.diaoconline.vn/quangcao/361/29"/></div></div><script type='text/javascript'>var Banner29=1;function Random_Banner29(){    var _Arr=document.getElementById("position_29").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner29 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner29 - 1]).html(); $(_Arr[Banner29 - 1]).html(''); $(_Arr[Banner29 - 1]).html(tempBanner);    window.setTimeout("Random_Banner29()" ,25000);    Banner29 = Banner29 + 1;    if(Banner29 > _Arr.length)        Banner29 = 1;}Random_Banner29();</script>
+<script type='text/javascript'>var Banner29=1;function Random_Banner29(){    var _Arr=document.getElementById("position_29").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner29 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner29 - 1]).html(); $(_Arr[Banner29 - 1]).html(''); $(_Arr[Banner29 - 1]).html(tempBanner);    window.setTimeout("Random_Banner29()" ,25000);    Banner29 = Banner29 + 1;    if(Banner29 > _Arr.length)        Banner29 = 1;}Random_Banner29();</script>
             </div>
         </div>
         <div id="alphabet_search" class="rounded_style_1 rounded_box margin_bottom">

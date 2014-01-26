@@ -23,6 +23,13 @@ class Home extends MY_Controller
         parent::cate_sieu_thi();
         //
         parent::dn_nb();
+        //Load Adv
+        parent::load_adv_home_p1();
+        parent::load_adv_home_p2();
+        parent::load_adv_home_p3();
+        parent::load_adv_home_p4();
+        parent::load_adv_home_p5();
+        
         $this->load->library('tank_auth');
     }
     public function index()

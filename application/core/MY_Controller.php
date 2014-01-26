@@ -258,5 +258,45 @@ class MY_Controller extends CI_Controller
         $this->load->model('doanhnghiephomemodel');
         $this->data['dn_nb_core']=$this->doanhnghiephomemodel->list_doanh_nghiep_nb();
     }
+    public function load_adv_home_p1()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_1']=$this->advhomemodel->adv_home_p1();
+    }
+    public function load_adv_home_p2()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_2']=$this->advhomemodel->adv_home_p2();
+    }
+    public function load_adv_home_p3()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_3']=$this->advhomemodel->adv_home_p3();
+    }
+    public function load_adv_home_p4()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_4']=$this->advhomemodel->adv_home_p4();
+    }
+    public function load_adv_home_p5()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_5']=$this->advhomemodel->adv_home_p5();
+    }
+    public function load_adv_home_p6()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_6']=$this->advhomemodel->adv_home_p6();
+    }
+     public function load_adv_home_p7()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_7']=$this->advhomemodel->adv_home_p7();
+    }
+    public function load_adv_home_p8()
+    {
+        $this->load->model('advhomemodel');
+        $this->data['vi_tri_8']=$this->advhomemodel->adv_home_p8();
+    }
 }
 ?>

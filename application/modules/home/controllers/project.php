@@ -21,6 +21,12 @@ class Project extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
+        //
+        parent::load_adv_home_p1();
+        parent::load_adv_home_p2();
+        parent::load_adv_home_p3();
+        parent::load_adv_home_p4();
+        parent::load_adv_home_p5();
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
     }

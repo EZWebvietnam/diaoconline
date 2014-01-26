@@ -23,6 +23,13 @@ class Discovery extends MY_Controller
         parent::cate_sieu_thi();
         parent::nha_cua_sao();
         parent::nha_dep();
+        //Load Adv
+        parent::load_adv_home_p1();
+        parent::load_adv_home_p2();
+        parent::load_adv_home_p3();
+        parent::load_adv_home_p4();
+        parent::load_adv_home_p5();
+         parent::load_adv_home_p8();
         	$this->load->library('tank_auth');
 		$this->lang->load('tank_auth');
     }

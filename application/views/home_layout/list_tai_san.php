@@ -674,15 +674,28 @@
     
 
 </form>
-
-<div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/394/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/02/057-nha_GoVap_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/354/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/06/40D-EverRich_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/376/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/12/02/48D-nha_DBP_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/357/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/10/31/561-bietthu_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/356/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/10/31/754-nha_TanBinh_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/355/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/10/31/640-EverRich_170x100.gif" width="170px" height="100px"/></a></div></div><div class ='banner_170x100'><div><a href="http://www.diaoconline.vn/quangcao/330/49" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/10/04/65C-PrinceResidence_170x100.gif" width="170px" height="100px"/></a></div></div>
+<?php 
+foreach($vi_tri_6 as $vt_9)
+{
+?>
+<div class ='banner_170x100'>
+<div>
+<a href="<?php echo $vt_9['link']?>" target="_blank">
+<img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_9['file']?>" width="170px" height="100px"/>
+</a>
+</div></div>
+<?php } ?>
             </div>
             <?php echo $this->load->view($main_content);?>
             <div class="col_170 margin_left">
 
+<?php 
+foreach($vi_tri_7 as $vt_10)
+{
+?>
+<div class ='banner_170x200'><div><a href="<?php echo $vt_10['link']?>" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_10['file']?>" width="170px" height="200px"/></a></div></div>
+<?php } ?>
 
-<div class ='banner_170x200'><div><a href="http://www.diaoconline.vn/quangcao/206/18" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/12/16/BCD-xuong_DN_170x200.gif" width="170px" height="200px"/></a></div></div>
-<div class ='banner_170x200'><div><a href="http://www.diaoconline.vn/quangcao/397/18" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/03/E2F-nha_BienHoa_170x200.gif" width="170px" height="200px"/></a></div></div><div class ='banner_170x200'><div><a href="http://www.diaoconline.vn/quangcao/333/18" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/10/10/A93-nha_CuLao_170x200.gif" width="170px" height="200px"/></a></div></div><div class ='banner_170x200'><div><a href="http://www.diaoconline.vn/quangcao/375/18" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/11/22/ED4-nha_BinhThanh_170x200.gif" width="170px" height="200px"/></a></div></div><div class ='banner_170x200'><div><a href="http://www.diaoconline.vn/quangcao/377/18" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2013/12/10/8FC-HaPhanBuilding_170x200.gif" width="170px" height="200px"/></a></div></div><div class ='banner_170x200'><div><embed height="200" width="170" scale="exactfit" menu="false" AllowScriptAccess="always" wmode="transparent" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" quality="high" src="http://image.diaoconline.vn/banner-dool/2014/01/07/4A3-ThuDucHomes_170x200.swf?clicktag=http://www.diaoconline.vn/quangcao/254/18"/></div></div>
             </div>
         </div>
     </div>
