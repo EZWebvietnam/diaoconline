@@ -24,5 +24,11 @@ class Catepropertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function cate_list_2()
+    {
+        $sql="SELECT * FROM loai_dia_oc";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

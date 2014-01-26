@@ -253,7 +253,7 @@ else
                         </div>
                     </div>
                     <div id="timkiemts" class="search_form">
-                        <form class="form_style_1" action="/sieu-thi/loc" method="post">
+                        <form class="form_style_1" action="<?php echo base_url();?>tim-kiem" method="get">
                         <fieldset>
                             <div class="left_form">
                                 <div class="rowElem">
@@ -266,8 +266,7 @@ else
                                         <div class="wid">
                                             <select id="LoaiTinDang" name="LoaiTinDangList" style="width:150px"><option value="1">Cần b&#225;n</option>
 <option value="2">Cho thu&#234;</option>
-<option value="3">Cần mua</option>
-<option value="4">Cần thu&#234;</option>
+
 </select>
                                         </div>
                                     </div>
@@ -276,21 +275,12 @@ else
                                         </div>
                                         <div class="wid">
                                             <select id="LoaiDiaOc" name="LoaiDiaOcList"><option value="">Chọn loại địa ốc</option>
-<option value="1">Villa - Biệt thự</option>
-<option value="20">Nh&#224; phố</option>
-<option value="6">Nh&#224; tạm</option>
-<option value="9">Văn ph&#242;ng</option>
-<option value="8">Căn hộ chung cư</option>
-<option value="10">Căn hộ cao cấp</option>
-<option value="12">Đất dự &#225;n - Quy hoạch</option>
-<option value="11">Đất ở - Đất thổ cư</option>
-<option value="23">Đất l&#226;m nghiệp</option>
-<option value="14">Đất cho sản xuất</option>
-<option value="13">Đất n&#244;ng nghiệp</option>
-<option value="19">Nh&#224; Kho - Xưởng</option>
-<option value="17">Nh&#224; h&#224;ng - Kh&#225;ch sạn</option>
-<option value="15">Mặt bằng - Cửa h&#224;ng</option>
-<option value="16">Ph&#242;ng trọ</option>
+<?php 
+foreach($list_loai_dia_oc_ as $l_d_o)
+{
+?>
+<option value="<?php echo $l_d_o['id'] ?>"><?php echo $l_d_o['name']?></option>
+<?php } ?>
 </select>
                                         </div>
                                     </div>
@@ -299,90 +289,16 @@ else
                                         </div>
                                         <div class="wid">
                                             <select id="KhuVuc" name="ThanhPhoList"><option value="">Tỉnh/Th&#224;nh phố</option>
-<option value="2">H&#224; Nội</option>
-<option value="3">TP.HCM</option>
-<option value="71">Đ&#224; Nẵng</option>
-<option value="53">Đồng Nai</option>
-<option value="61">B&#236;nh Dương</option>
-<option value="35">Long An</option>
-<option value="69">An Giang</option>
-<option value="68">B&#224; Rịa - Vũng T&#224;u</option>
-<option value="67">Bắc Giang</option>
-<option value="66">Bắc Kạn</option>
-<option value="65">Bạc Li&#234;u</option>
-<option value="64">Bắc Ninh</option>
-<option value="63">Bến Tre</option>
-<option value="62">B&#236;nh Định</option>
-<option value="60">B&#236;nh Phước</option>
-<option value="59">B&#236;nh Thuận</option>
-<option value="58">C&#224; Mau</option>
-<option value="72">Cần Thơ</option>
-<option value="57">Cao Bằng</option>
-<option value="56">Đắk Lắk</option>
-<option value="55">Đắk N&#244;ng</option>
-<option value="54">Điện Bi&#234;n</option>
-<option value="52">Đồng Th&#225;p</option>
-<option value="51">Gia Lai</option>
-<option value="50">H&#224; Giang</option>
-<option value="49">H&#224; Nam </option>
-<option value="47">H&#224; Tĩnh</option>
-<option value="46">Hải Dương</option>
-<option value="70">Hải Ph&#242;ng</option>
-<option value="45">Hậu Giang</option>
-<option value="44">H&#242;a B&#236;nh</option>
-<option value="43">Hưng Y&#234;n</option>
-<option value="42">Kh&#225;nh H&#242;a</option>
-<option value="41">Ki&#234;n Giang</option>
-<option value="40">Kon Tum</option>
-<option value="39">Lai Ch&#226;u</option>
-<option value="38">L&#226;m Đồng</option>
-<option value="37">Lạng Sơn</option>
-<option value="36">L&#224;o Cai</option>
-<option value="34">Nam Định</option>
-<option value="33">Nghệ An</option>
-<option value="32">Ninh B&#236;nh</option>
-<option value="31">Ninh Thuận</option>
-<option value="30">Ph&#250; Thọ</option>
-<option value="29">Ph&#250; Y&#234;n</option>
-<option value="28">Quảng B&#236;nh</option>
-<option value="27">Quảng Nam</option>
-<option value="26">Quảng Ng&#227;i</option>
-<option value="25">Quảng Ninh</option>
-<option value="24">Quảng Trị</option>
-<option value="23">S&#243;c Trăng</option>
-<option value="22">Sơn La</option>
-<option value="21">T&#226;y Ninh</option>
-<option value="19">Th&#225;i B&#236;nh</option>
-<option value="18">Th&#225;i Nguy&#234;n</option>
-<option value="17">Thanh H&#243;a</option>
-<option value="16">Thừa Thi&#234;n Huế</option>
-<option value="15">Tiền Giang</option>
-<option value="14">Tr&#224; Vinh</option>
-<option value="13">Tuy&#234;n Quang</option>
-<option value="12">Vĩnh Long</option>
-<option value="11">Vĩnh Ph&#250;c</option>
-<option value="10">Y&#234;n B&#225;i</option>
+<?php 
+foreach($list_city as $k=>$v)
+{
+?>
+<option value="<?php echo $k ?>"><?php echo $v;?></option>
+<?php } ?>
 </select>
                                         </div>
                                     </div>
-                                    <div class="divUni-2">
-                                        <div class="wid-left">
-                                        </div>
-                                        <div class="wid">
-                                            <select id="KhoangGia" name="KhoangGiaList"><option value="0#0">Khoảng gi&#225;</option>
-<option value="0#0">Gi&#225; thương lượng</option>
-<option value="0#5000000">dưới 5 triệu</option>
-<option value="5000000#20000000">5 triệu - 20 triệu</option>
-<option value="20000000#100000000">20 triệu - 100 triệu</option>
-<option value="100000000#500000000">100 triệu - 500 triệu</option>
-<option value="500000000#1200000000">500 triệu - 1,2 tỷ</option>
-<option value="1200000000#2000000000">1,2 tỷ - 2 tỷ</option>
-<option value="2000000000#3000000000">2 tỷ - 3 tỷ</option>
-<option value="3000000000#5000000000">3 tỷ - 5 tỷ</option>
-<option value="5000000000#0">tr&#234;n 5 tỷ</option>
-</select>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                             <button type="submit" class="btn_home_search">
@@ -647,24 +563,32 @@ if(empty($vi_tri_5))
     </div>
     <div class="rounded_style_2 rounded_box">
             <div class="content">
+            <?php 
+            foreach($list_dn as $dn)
+            {
+            ?>
 			    <div class="agency_info_descript">
                     <div class="head_info">
                         <div class="logo">
-                        <a href="/doanh-nghiep/cong-ty-co-phan-dia-oc-phu-long-i255/gioi-thieu"><img src="http://image.diaoconline.vn/CongTy/2009/03/20_Kiva_PhuLong_75x75.gif" width="75" height="75" alt="Công ty Cổ phần Địa Ốc Phú Long"/></a>
+                        <a href="/doanh-nghiep/cong-ty-co-phan-dia-oc-phu-long-i255/gioi-thieu">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/business/'.$dn['logo']))
+                        {
+                        ?>
+                        <img src="<?php echo base_url();?>file/uploads/business/<?php echo $dn['logo']?>" width="75" height="75" alt="<?php echo $dn['ten_dn']?>"/>
+                        <?php } else {?>
+                        <img src="<?php echo base_url();?>file/uploads/no_image.gif" width="75" height="75" alt="<?php echo $dn['ten_dn']?>"/>
+                        <?php } ?>
+                        </a>
                     </div>
                         <div class="agency_name">
-                        <h2><a href="/doanh-nghiep/cong-ty-co-phan-dia-oc-phu-long-i255/gioi-thieu">Công ty Cổ phần Địa Ốc Phú Long</a></h2>
+                        <h2><a href="<?php echo base_url(); ?>doanh-nghiep/<?php echo mb_strtolower(url_title(removesign($dn['ten_dn'])))?>-i<?php echo $dn['id']?>/gioi-thieu"><?php echo $dn['ten_dn']?></a></h2>
                     </div>
                     </div>
-                    <p>Địa chỉ: 41 Nguyễn Văn Linh, Tân Phong, Quận 7, TP.HCM</p>
-                    <a href="/doanh-nghiep" class="more">Xem thêm »</a>
-                    <ul class="prj">
-                        <li><a href="/du-an/khu-can-ho-c27/dragon-hill-residence-and-suites-i1086" title="Dragon Hill Residence and Suites">Dragon Hill Residence and  ...</a></li>
-                        <li><a href="/du-an/khu-can-ho-c27/dragon-pvfc-land-i1033" title="Dragon PVFC Land">Dragon PVFC Land</a></li>
-                        <li><a href="/du-an/khu-dan-cu-do-thi-moi-c24/kim-long-the-gioi-cua-phon-vinh-i623" title="Kim Long - Thế giới của phồn vinh">Kim Long - Thế giới của phồn  ...</a></li>
-                        <li><a href="/du-an/cao-oc-van-phong-c26/dragon-tower-i348" title="Dragon Tower">Dragon Tower</a></li>
-                    </ul>
+                    <p>Địa chỉ: <?php echo $dn['dia_chi_dn']?></p>
+                    <a href="<?php echo base_url();?>doanh-nghiep" class="more">Xem thêm »</a> 
                 </div>
+            <?php } ?>
         </div>
     </div>
 </div>                <div id="subscribe" class="margin_bottom">
@@ -776,36 +700,26 @@ if(empty($vi_tri_7))
             <h3>Bộ sưu tập nhà đẹp</h3>
             <div id="houseslider" class="flexslider">
                 <ul class="slides">
+                    <?php 
+                    foreach($list_nha_dep as $nha_dep)
+                    {
+                    ?>
                     <li>
                         <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach-i410"><img src="http://image.diaoconline.vn/nha-dep/2014/01/08/special-939-gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach.jpg" alt="0" /></a>
+  	    	            <a href="<?php echo base_url();?>nha-dep/<?php echo mb_strtolower(url_title(removesign($nha_dep['name'])))?>-c<?php echo $nha_dep['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($nha_dep['title'])))?>-i<?php echo $nha_dep['id']?>">
+                        <?php 
+                        if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/nhadep/'.$nha_dep['code'].'/'.$nha_dep['img']))
+                        {
+                        ?>
+                          <img width="196" height="263" src="<?php echo base_url();?>file/uploads/nhadep/<?php echo $nha_dep['code']?>/<?php echo $nha_dep['img']?>" alt="0" />
+                        <?php } else { ?>
+                         <img width="196" height="263" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="0" />
+                        <?php } ?>
+                          </a>
                         </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/gay-an-tuong-bang-noi-that-mau-den-trong-phong-khach-i410">G&#226;y ấn tượng bằng nội thất m&#224;u đen trong ph&#242;ng kh&#225;ch</a></div>
+                        <div class="housetitle"><a href="<?php echo base_url();?>nha-dep/<?php echo mb_strtolower(url_title(removesign($nha_dep['name'])))?>-c<?php echo $nha_dep['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($nha_dep['title'])))?>-i<?php echo $nha_dep['id']?>"><?php echo $nha_dep['title']?></a></div>
   	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/phong-ngu-c3/mau-neon-cho-phong-ngu-ban-da-thu-chua-i409"><img src="http://image.diaoconline.vn/nha-dep/2014/01/08/special-FA3-mau-neon-cho-phong-ngu-ban-da-thu-chua.jpg" alt="1" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/phong-ngu-c3/mau-neon-cho-phong-ngu-ban-da-thu-chua-i409">M&#224;u Neon cho ph&#242;ng ngủ - Bạn đ&#227; thử chưa?</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/khac-c12/my-man-vi-goc-lam-viec-qua-phong-cach-i408"><img src="http://image.diaoconline.vn/nha-dep/2014/01/06/special-FAA-my-man-vi-goc-lam-viec-qua-phong-cach.jpg" alt="2" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/khac-c12/my-man-vi-goc-lam-viec-qua-phong-cach-i408">Mỹ m&#227;n v&#236; g&#243;c l&#224;m việc qu&#225; phong c&#225;ch</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/ngam-can-ho-cuc-an-tuong-nho-phu-kien-sac-so-i407"><img src="http://image.diaoconline.vn/nha-dep/2014/01/06/special-086-ngam-can-ho-cuc-an-tuong-nho-phu-kien-sac-so.jpg" alt="3" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/ngam-can-ho-cuc-an-tuong-nho-phu-kien-sac-so-i407">Ngắm căn hộ cực ấn tượng nhờ phụ kiện sặc sỡ</a></div>
-  	    		    </li>
-                    <li>
-                        <div class="houseimg">
-  	    	            <a href="/nha-dep/noi-that-c7/nhung-mau-ghe-tuyet-dep-cho-ngoi-nha-them-xinh-i406"><img src="http://image.diaoconline.vn/nha-dep/2014/01/06/special-4DF-nhung-mau-ghe-tuyet-dep-cho-ngoi-nha-them-xinh.jpg" alt="4" /></a>
-                        </div>
-                        <div class="housetitle"><a href="/nha-dep/noi-that-c7/nhung-mau-ghe-tuyet-dep-cho-ngoi-nha-them-xinh-i406">Những mẫu ghế tuyệt đẹp cho ng&#244;i nh&#224; th&#234;m xinh</a></div>
-  	    		    </li>
+                    <?php } ?>
                 </ul>
                  <div class="housebor"><ul><li></li></ul></div>
             </div>
@@ -869,7 +783,42 @@ if(empty($vi_tri_7))
             
         </div>
     </div>
-
+<div id="shopping" class="wrap margin_bottom">
+    <div class="rounded_style_4 rounded_box">
+        <div class="content">
+            <div class="top">
+                <h2 class="headline"><a href="<?php echo base_url();?>kham-pha-c/shopping-cung-dool-c7"><span>Shopping Cùng DCBLand</span></a></h2>
+                
+            </div>
+            <div class="show">
+                <ul>
+                <?php 
+               
+                foreach($list_shopping as $list_shop)
+                {
+                ?>
+                    <li class="shop_block ">
+                        <div class="BL"></div>
+                        <div class="BR"></div>
+                        <div class="content">
+                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>">
+                            <?php 
+                            if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/discovery/'.$list_shop['img']))
+                            {
+                            ?>
+                            <img src="<?php echo base_url();?>file/uploads/discovery/<?php echo $list_shop['img']?>" width="160" height="124" alt="<?php echo $list_shop['title']?>"/>
+                            <?php } ?>
+                            </a>
+                            <a href="<?php echo base_url();?>kham-pha/<?php echo mb_strtolower(url_title(removesign($list_shop['name'])))?>-c<?php echo $list_shop['id_cate']?>/<?php echo mb_strtolower(url_title(removesign($list_shop['title'])))?>-i<?php echo $list_shop['id_disco']?>"><?php echo $list_shop['title']?></a> 
+	                    </div>
+                    </li>
+                 <?php } ?>   
+                </ul>
+            </div>
+        </div>    
+    </div>
+    <p class="note"></p>
+</div>
 	</div>
     <!--FOOTER-->
 <?php include('footer.php')?>

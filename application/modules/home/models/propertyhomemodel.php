@@ -1054,6 +1054,20 @@ class Propertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
-    
+    //Tim kiem
+    //---List quan
+     public function list_property_timkiem($sql)
+    {
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    public function count_property_timkiem($sql)
+    {
+        
+        
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+        
+    }
 }
 ?>

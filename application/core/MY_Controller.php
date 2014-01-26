@@ -298,5 +298,10 @@ class MY_Controller extends CI_Controller
         $this->load->model('advhomemodel');
         $this->data['vi_tri_8']=$this->advhomemodel->adv_home_p8();
     }
+    public function get_loai_dia_oc()
+    {
+        $this->load->model('catepropertyhomemodel');
+        $this->data['list_loai_dia_oc_']=$this->catepropertyhomemodel->cate_list_2();
+    }
 }
 ?>

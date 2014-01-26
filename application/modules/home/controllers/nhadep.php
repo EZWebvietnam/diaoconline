@@ -66,6 +66,8 @@ class Nhadep extends MY_Controller
     }
     public function nhadep_detail($id)
     {
+       
+        $this->data['list_shopping']=$this->discoveryhomemodel->load_detail_other(0,7);
         if(empty($id))
         {
             show_404();
@@ -82,6 +84,7 @@ class Nhadep extends MY_Controller
             show_404();
             exit;
         }
+        
         $this->data['cate_nha_dep']=$this->nhadephomemodel->select_cate_nha();
         $this->data['detail']=$detail;
         $this->data['title']=$detail[0]['title'];
@@ -92,6 +95,9 @@ class Nhadep extends MY_Controller
     }
     public function list_nhadep_cate($id)
     {
+       
+        $this->load->model('discoveryhomemodel');
+        $this->data['list_shopping']=$this->discoveryhomemodel->load_detail_other(0,7);
         if(empty($id))
         {
             show_404();

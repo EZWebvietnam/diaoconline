@@ -107,6 +107,7 @@ $route['sieu-thi'] = "home/property/sieu_thi";
 $route['sieu-thi/chinh-chu'] = "home/property/list_cc";
 $route['sieu-thi/nha-tro'] = "home/property/nha_tro";
 $route['sieu-thi/du-an.(:any).duan'] = "home/property/du_an/$1";
+$route['tim-kiem?(:any)'] = "home/property/tim_kiem";
 $route['tin-tuc'] = "home/news/index";
 $route['du-an'] = "home/project/index";
 $route['du-an/page/(:any)'] = "home/project/index";

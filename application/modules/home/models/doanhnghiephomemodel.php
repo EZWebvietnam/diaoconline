@@ -48,5 +48,13 @@ class Doanhnghiephomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function list_doanh_nghiep_home()
+    {
+        
+        $sql="SELECT business.* FROM business WHERE status = 1 ORDER BY rand() LIMIT 1";
+       
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

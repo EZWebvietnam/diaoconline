@@ -21,6 +21,7 @@ class Home extends MY_Controller
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
         parent::cate_sieu_thi();
+        parent::get_loai_dia_oc();
         //
         parent::dn_nb();
         //Load Adv
@@ -36,10 +37,13 @@ class Home extends MY_Controller
     {
        
         $this->load->model('projecthomemodel');
-        $this->load->model('propertyhomemodel');
+        $this->load->model('doanhnghiephomemodel');
          $this->load->model('newshomemodel');
          $this->load->model('discoveryhomemodel');
          $this->load->model('catepropertyhomemodel');
+        $this->load->model('nhadephomemodel');
+        $this->data['list_nha_dep']=$this->nhadephomemodel->load_nha_dep_home_page();
+        $this->data['list_shopping']=$this->discoveryhomemodel->load_detail_other(0,7);
         $list_project = $this->projecthomemodel->get_list_project();
         $list_pro = $this->propertyhomemodel->get_list_property_cc();
         $list_pro_new = $this->propertyhomemodel->get_list_property_new();
@@ -48,6 +52,7 @@ class Home extends MY_Controller
         $list_new_slide_ = $this->newshomemodel->load_news_slide_();
         $list_new_slide_d = $this->discoveryhomemodel->load_news_slide();
         $list_new_slide_d_ = $this->discoveryhomemodel->load_news_slide_($list_new_slide_d[0]['id_disco']);
+        $this->data['list_dn']=$this->doanhnghiephomemodel->list_doanh_nghiep_home();
         $this->data['cate_proper_list']=$this->catepropertyhomemodel->cate_list_();
         $this->data['list_project']=$list_project;
         $this->data['list_new_slide']=$list_new_slide;

@@ -144,5 +144,17 @@ class Nhadephomemodel extends CI_Model
         $query = $this->db->query($sql_get);
         return $query->result_array();
     }
+     public function load_nha_dep_home_page()
+    {
+        $sql_get = "SELECT nhadep.id, nhadep.title,nhadep.id_cate,nhadep.img,nhadep.code,nhadep.create_date,cate_nhadep.id as id_catend,cate_nhadep.name
+        FROM nhadep
+        INNER JOIN cate_nhadep
+        ON nhadep.id_cate = cate_nhadep.id
+        ORDER BY rand()
+        LIMIT 10
+        ";
+        $query = $this->db->query($sql_get);
+        return $query->result_array();
+    }
 }
 ?>

@@ -205,8 +205,8 @@ border: 1px solid #D6CACA;
                                 </a></div>
                     <div class="posted_info">
                         <h2><a href="<?php echo base_url();?>nha/<?php echo mb_strtolower(url_title(removesign($list_prj['loai_dia_oc'])))?>-c<?php echo $list_prj['id_ldo']?>/<?php echo mb_strtolower(url_title(removesign($list_prj['title'])))?>-h<?php echo $list_prj['id']?>"><?php echo $list_prj['title']?></a></h2>
-                        <span class="location"><a class="link-ext" href="/thue-van-phong-c9/tphcm-t3/quan-binh-thanh-q140">Quận Bình Thạnh</a>, 
-                                                <a class="link-ext" href="/thue-van-phong-c9/tphcm-t3">TP.HCM</a></span><br />
+                        <span class="location"><a class="link-ext"><?php echo $list_district[$list_prj['id_district']]?></a>, 
+                                                <a class="link-ext"><?php echo $list_city[$list_prj['id_city']]?></a></span><br />
                         <span class="price">
                         
                         <?php 
