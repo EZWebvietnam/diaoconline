@@ -12,13 +12,7 @@
                             
                         </ul>
                         <div id="search_result">
-                            <form action="/sieu-thi/loc" method="post" class="form_style_5">
-                            <fieldset>
-                                <input placeholder="Từ khóa / Mã số tài sản" type="text" name="txtSearch" id="txtSearch" value="">
-                                <button type="submit" name="SubmitSearch" id="SubmitSearch">
-                                    Tìm tài sản bất động sản</button>
-                            </fieldset>
-                            </form>
+                            
                         </div>
                     </div>
                     <div class="rounded_style_2 rounded_box margin_bottom"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>

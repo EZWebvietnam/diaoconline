@@ -208,7 +208,7 @@ else
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/normalize.css" rel="stylesheet" type="text/css" />
     <div class="wrap">
 
-<div id="position_43" class ='banner_960x75 margin_bottom'>
+
 <?php 
 if(empty($vi_tri_8))
 {
@@ -223,6 +223,7 @@ else
         if($i==1)
         {
     ?>
+    <div id="position_43" class ='banner_960x75 margin_bottom'>
 <div class="bannerHide">
 <a href="<?php echo $vt_8['link']?>" target="_blank">
 <img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
@@ -235,8 +236,9 @@ else
 <img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
 </a>
 </div>
-<?php } $i++;} } ?>
 </div><script type='text/javascript'>var Banner43=1;function Random_Banner43(){    var _Arr=document.getElementById("position_43").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner43 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner43 - 1]).html(); $(_Arr[Banner43 - 1]).html(''); $(_Arr[Banner43 - 1]).html(tempBanner);    window.setTimeout("Random_Banner43()" ,25000);    Banner43 = Banner43 + 1;    if(Banner43 > _Arr.length)        Banner43 = 1;}Random_Banner43();</script>
+<?php } $i++;} } ?>
+
         <div class="col_180">
         <?php 
         foreach($list_cate_left as $cate)
@@ -278,15 +280,7 @@ else
         });
     </script>
     <div class="body">
-        <form action="/Discovery/Search" id="FormSearch" method="post" class="form_style_1">
-        <fieldset>
-            <div class="business_search_type margin_bottom_form">
-                <input type="text" class="input_text" value="" id="KeySearch" name="KeySearch" placeholder="Nhập từ khóa cần tìm"/>
-                <button type="submit" name="Submit" id="Submit" class="btn_2">
-                    <span>TÌM KIẾM</span></button>
-            </div>
-        </fieldset>
-        </form>
+        
     </div>
 
             </div>

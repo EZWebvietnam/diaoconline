@@ -29,13 +29,7 @@ background: #F7FCBD !important;
                     <div class="headline_title_1 rounded_style_5 rounded_box"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                         <div class="content">
                             <div id="search_result">
-                                <form action="/sieu-thi/loc" method="post" class="form_style_5">
-                                <fieldset>
-                                    <input placeholder="Từ khóa / Mã số tài sản" type="text" name="txtSearch" id="txtSearch" value="">
-                                    <button type="submit" name="SubmitSearch" id="SubmitSearch">
-                                        Tìm tài sản bất động sản</button>
-                                </fieldset>
-                                </form>
+                                
                             </div>
                             <div class="paging_2">
                                 <ul class="pager"></ul>

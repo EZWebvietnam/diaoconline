@@ -226,6 +226,8 @@
                             <ul>
                                 <li><label><input type="radio" name="LoaiTinDangList" value="1" />Cần bán</label></li>
                                 <li><label><input type="radio" name="LoaiTinDangList" value="2" />Cho thuê</label></li>
+                                <li><label><input type="radio" name="LoaiTinDangList" value="3" />Cần mua</label></li>
+                                <li><label><input type="radio" name="LoaiTinDangList" value="4" />Cần thuê</label></li>
                             </ul>
                         </div>
                         <div>

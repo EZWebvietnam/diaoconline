@@ -209,7 +209,7 @@ else
         
     <div class="wrap">
 
-<div id="position_32" class ='banner_960x75 margin_bottom'>
+
 <?php 
 if(empty($vi_tri_8))
 {
@@ -224,6 +224,7 @@ else
         if($i==1)
         {
     ?>
+    <div id="position_32" class ='banner_960x75 margin_bottom'>
 <div class="bannerHide">
 <a href="<?php echo $vt_8['link']?>" target="_blank">
 <img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
@@ -236,10 +237,11 @@ else
 <img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px">
 </a>
 </div>
+</div><script type='text/javascript'>var Banner32=1;function Random_Banner32(){    var _Arr=document.getElementById("position_32").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner32 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner32 - 1]).html(); $(_Arr[Banner32 - 1]).html(''); $(_Arr[Banner32 - 1]).html(tempBanner);    window.setTimeout("Random_Banner32()" ,25000);    Banner32 = Banner32 + 1;    if(Banner32 > _Arr.length)        Banner32 = 1;}Random_Banner32();</script>
 <?php } $i++;} } ?>
 
 
-</div><script type='text/javascript'>var Banner32=1;function Random_Banner32(){    var _Arr=document.getElementById("position_32").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner32 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner32 - 1]).html(); $(_Arr[Banner32 - 1]).html(''); $(_Arr[Banner32 - 1]).html(tempBanner);    window.setTimeout("Random_Banner32()" ,25000);    Banner32 = Banner32 + 1;    if(Banner32 > _Arr.length)        Banner32 = 1;}Random_Banner32();</script>
+
 <form action="/Company/Search" id="formV3" method="post" pi=""><script type="text/javascript">
     $(function () {
         $("#CityList,#DistrictList,#CompanyTypeList").uniform({
