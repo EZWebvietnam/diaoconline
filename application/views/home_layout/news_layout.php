@@ -463,8 +463,8 @@ else
     
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
-        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
-        <a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15" class="grey_link">Xem thêm</a>
+        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-style-c15"><span>Café Style</span></a></h2>
+        <a href="<?php echo base_url();?>tin-tuc-c/cafe-style-c15" class="grey_link">Xem thêm</a>
     </div>
     <div class="rounded_style_2 rounded_box">
         <div class="body">

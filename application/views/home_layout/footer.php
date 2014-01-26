@@ -39,27 +39,8 @@
                     </ul>
                 </div>
                 <div id="company_menu">
-                    <h4>»DOANH NGHIỆP ĐỊA ỐC</h4>
-                    <ul>
-                            <li>
-                                <a href="/doanh-nghiep/moi-gioi-dia-oc-c1">Môi giới địa ốc</a>
-                            </li>
-                            <li>
-                                <a href="/doanh-nghiep/vlxd-thi-cong-c3">VLXD & Thi công</a>
-                            </li>
-                            <li>
-                                <a href="/doanh-nghiep/tai-chinh-phap-ly-c6">Tài chính pháp lý</a>
-                            </li>
-                            <li>
-                                <a href="/doanh-nghiep/dau-tu-du-an-c12">Đầu tư - Dự án</a>
-                            </li>
-                            <li>
-                                <a href="/doanh-nghiep/thiet-ke-trang-tri-c14">Thiết kế - Trang trí</a>
-                            </li>
-                            <li>
-                                <a href="/doanh-nghiep/truyen-thong-quang-cao-c16">Truyền thông - Quảng cáo</a>
-                            </li>
-                    </ul>
+                    <h4><a href="<?php echo base_url();?>doanh-nghiep">»DOANH NGHIỆP ĐỊA ỐC</a></h4>
+                    
                 </div>
                 <div id="discover_menu" class="last">
                     <h4>
@@ -81,22 +62,26 @@
                     <div class="like">
                     <div style="margin-bottom:5px;">
                         <b>Hỗ trợ kỹ thuật</b>
-                        <p><b>Hotline:</b> 0947098968</p>
+                        <p><b>Hotline:</b> 0985072575</p>
                         </div>
                         <br />
-                       
+                     <h4>Hỗ trợ trực tuyến: </h4>
+                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                        <h4>Hỗ trợ trực tuyến: </h4>
+                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                        <h4>Hỗ trợ trực tuyến: </h4>
+                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>  
 						
                     </div>
                     <div class="join_network">
-                        <h4>Hỗ trợ trực tuyến: </h4>
-                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-                        <!--<ul>
+                        <h4>KẾT NỐI VỚI CHÚNG TÔI TẠI: </h4>
+                        <ul>
                         <li class="facebook"><a href="http://facebook.com/diaoconlinefc" target="_blank">facebook</a></li>
                         <li class="twitter"><a href="https://twitter.com/DiaOcOnlinevn" target="_blank">twitter</a></li>
                         <li class="youtube"><a href="http://www.youtube.com/diaoconline" target="_blank">youtube</a></li>
                         <li class="google"><a href="https://plus.google.com/u/1/b/101503616522434888485/" target="_blank">google</a></li>
                         <li class="linkedin"><a href="http://www.linkedin.com/in/diaoconline" target="_blank">linkedin</a></li>
-                        </ul>-->
+                        </ul>
                     </div>
                 </div>
             </div>

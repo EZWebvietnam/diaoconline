@@ -71,11 +71,11 @@ color: #EDF5FA;
                         
                         <td class="center">
                             
-                            <a class="btn btn-info" href="<?php echo base_url();?>admin/admincateproject/edit/<?php echo $cate['id']?>">
+                            <a class="btn btn-info" href="<?php echo base_url();?>admin/admincatenew/edit/<?php echo $cate['id']?>">
                                 <i class="icon-edit icon-white"></i>  
                                Sửa                                        
                             </a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/admincateproject/delete/<?php echo $cate['id']?>">
+                            <a onclick="return confirm('Bạn có chắc muốn xóa không ?')" class="btn btn-danger" href="<?php echo base_url();?>admin/admincatenew/delete/<?php echo $cate['id']?>">
                                 <i class="icon-trash icon-white"></i> 
                                 Xóa
                             </a>

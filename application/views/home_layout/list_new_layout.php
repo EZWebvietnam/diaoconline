@@ -4,9 +4,9 @@
 <head>
     <link rel="icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="http://www.diaoconline.vn/favicon.ico" type="image/x-icon">
-    <title>Hà Nội dừng đầu tư xây dựng 14 nhà vệ sinh tiền tỷ - DCBLand.COM</title>
-    <meta name="description" content="Chiều 8/1, ông Nguyễn Thịnh Thành, Chánh Văn phòng, kiêm người phát ngôn Ủy ban Nhân dân thành phố Hà Nội cho biết thành phố vừa chỉ đạo Giám đốc Sở Xây dựng; Chủ tịch các quận Ba Đình, Hoàn Kiếm, Đống Đa và Hai Bà Trưng liên quan đến việc đầu tư xây dựng" />
-    <meta name="keywords" content="14 nhà vệ sinh công cộng, hà nội, nhà vệ sinh công cộng bằng thép, nhà vệ sinh tiền tỷ" />
+    <title>Thông tin địa ốc - DCBLand.COM</title>
+    <meta name="description" content="Thông tin địa ốc - DCBLand.COM" />
+    <meta name="keywords" content="Thông tin địa ốc - DCBLand.COM" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/general.css?1037" rel="stylesheet" type="text/css" />
@@ -359,8 +359,8 @@ if(empty($vi_tri_5))
     
 <div id="law_advisory" class="margin_bottom">
     <div class="headline_title_1 rounded_style_5 rounded_box">
-        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15"><span>TƯ VẤN CAFE LUẬT</span></a></h2>
-        <a href="<?php echo base_url();?>tin-tuc-c/cafe-luat-c15" class="grey_link">Xem thêm</a>
+        <h2 class="headline"><a href="<?php echo base_url();?>tin-tuc-c/cafe-style-c15"><span>Café Style</span></a></h2>
+        <a href="<?php echo base_url();?>tin-tuc-c/cafe-style-c15" class="grey_link">Xem thêm</a>
     </div>
     <div class="rounded_style_2 rounded_box">
         <div class="body">

@@ -208,14 +208,12 @@ else
         
     <div class="wrap">
 
-<div id="position_41" class ='banner_960x75 margin_bottom'>
+
 <?php 
 if(empty($vi_tri_8))
 {
 ?>
-<div>
-<a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/92A-thamdinh_300x250.gif" width="300px" height="250px"/></a>
-</div>
+
 <?php
 } else
 {
@@ -225,6 +223,7 @@ if(empty($vi_tri_8))
         if($i==1)
         {
 ?>
+<div id="position_41" class ='banner_960x75 margin_bottom'>
 <div>
 <a href="<?php echo $vt_8['link']?>" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px"/></a>
 </div>
@@ -233,8 +232,11 @@ if(empty($vi_tri_8))
 <div>
 <a href="<?php echo $vt_8['link']?>" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_8['file']?>" width="960px" height="90px"/></a>
 </div>
-<?php } $i++; } }?>
-</div><script type='text/javascript'>var Banner41=1;function Random_Banner41(){    var _Arr=document.getElementById("position_41").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner41 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner41 - 1]).html(); $(_Arr[Banner41 - 1]).html(''); $(_Arr[Banner41 - 1]).html(tempBanner);    window.setTimeout("Random_Banner41()" ,25000);    Banner41 = Banner41 + 1;    if(Banner41 > _Arr.length)        Banner41 = 1;}Random_Banner41();</script>
+<?php } $i++; } ?> 
+</div>
+<script type='text/javascript'>var Banner41=1;function Random_Banner41(){    var _Arr=document.getElementById("position_41").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner41 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner41 - 1]).html(); $(_Arr[Banner41 - 1]).html(''); $(_Arr[Banner41 - 1]).html(tempBanner);    window.setTimeout("Random_Banner41()" ,25000);    Banner41 = Banner41 + 1;    if(Banner41 > _Arr.length)        Banner41 = 1;}Random_Banner41();</script>
+<?php }?>
+
         <div class="wrap">
             <div class="col_180">
                 <?php 
@@ -515,7 +517,7 @@ if(empty($vi_tri_5))
     <div class="rounded_style_4 rounded_box">
         <div class="content">
             <div class="top">
-                <h2 class="headline"><a href="<?php echo base_url();?>kham-pha-c/shopping-cung-dcbland-c7"><span>Shopping Cùng DCBLand</span></a></h2>
+                <h2 class="headline"><a href="<?php echo base_url();?>kham-pha-c/shopping-cung-dcb-house-c7"><span>Shopping Cùng DCB House</span></a></h2>
                 
             </div>
             <div class="show">

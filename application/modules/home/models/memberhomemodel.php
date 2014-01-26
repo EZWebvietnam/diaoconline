@@ -30,6 +30,10 @@ class Memberhomemodel extends CI_Model
     {
         $this->db->insert('property_image',$data);
     }
+    public function delete_img($id)
+    {
+        $this->db->delete('property_image',array('id_pro'=>$id));
+    }
     
 }
 ?>

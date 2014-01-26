@@ -32,7 +32,7 @@ class Member extends MY_Controller
         $location = 'home';
         if(!$this->tank_auth->is_logged_in($active,$location))
         {
-            redirect('/');
+            redirect('/dang-nhap');
         }
     }
     function change_email()
@@ -625,6 +625,16 @@ class Member extends MY_Controller
         $this->load->model('propertyhomemodel');
         if($this->input->post())
         {
+            $path = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->input->post('code');
+            $files = array();
+            $dir = opendir($path); // open the cwd..also do an err check.
+            while(false != ($file = readdir($dir))) {
+                    if(($file != ".") and ($file != "..") and ($file != "index.php")) {
+                            $files[] = $file; // put in array.
+                    }   
+            }
+            
+            natsort($files);
             if($this->input->post('SubmitSave'))
             {
                 if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
@@ -770,6 +780,13 @@ class Member extends MY_Controller
                 $data_save['create_date']=strtotime('now');
                 
                 $this->propertyhomemodel->update($id,$data_save);
+                $this->memberhomemodel->delete_img($id);
+                $data_img = array();
+                foreach($files as $v)
+                {
+                    $data_img = array('file'=>$v,'id_pro'=>$id);
+                    $this->memberhomemodel->insert_img_proper($data_img);
+                }
                 redirect($_SERVER['HTTP_REFERER']);
             }
         }

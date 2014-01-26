@@ -21,7 +21,8 @@
                                 	<div class="option">
                                         <input type="radio" name="TinDang" id="at_1" value="1" checked="checked"><label for="at_1">Cần bán</label>
                                         <input type="radio" name="TinDang" id="at_2" value="2"><label for="at_2">Cho thuê</label>
-                                        
+                                        <input type="radio" name="TinDang" id="at_3" value="3" ><label for="at_1">Cần mua</label>
+                                        <input type="radio" name="TinDang" id="at_4" value="4"><label for="at_2">Cần thuê</label>
                                 	</div>
                                 </li>
                                 <li class="realty_type" id="dio"><label>Loại địa ốc <span class="hightlight">*</span></label>

@@ -24,10 +24,30 @@
                                     ?>
                                         <input type="radio" name="TinDang" id="at_1" value="1" checked="checked"><label for="at_1">Cần bán</label>
                                         <input type="radio" name="TinDang" id="at_2" value="2"><label for="at_2">Cho thuê</label>
-                                     <?php } else {?>
-                                        <input type="radio" name="TinDang" id="at_1" value="1" ><label for="at_1">Cần bán</label>
-                                        <input type="radio" name="TinDang" id="at_2" value="2" checked="checked"><label for="at_2">Cho thuê</label>
-                                     <?php } ?>   
+                                        <input type="radio" name="TinDang" id="at_3" value="3" ><label for="at_1">Cần mua</label>
+                                        <input type="radio" name="TinDang" id="at_4" value="4"><label for="at_2">Cần thuê</label>
+                                     <?php } if($detail[0]['loai_tin']==2) {?>
+                                        <input type="radio" name="TinDang" id="at_1" value="1"><label for="at_1">Cần bán</label>
+                                        <input type="radio" name="TinDang" id="at_2" value="2" checked=""><label for="at_2">Cho thuê</label>
+                                        <input type="radio" name="TinDang" id="at_3" value="3" ><label for="at_1">Cần mua</label>
+                                        <input type="radio" name="TinDang" id="at_4" value="4"><label for="at_2">Cần thuê</label>
+                                     <?php } 
+                                     if($detail[0]['loai_tin']==3)
+                                     {
+                                     ?>
+                                     <input type="radio" name="TinDang" id="at_1" value="1"><label for="at_1">Cần bán</label>
+                                        <input type="radio" name="TinDang" id="at_2" value="2"><label for="at_2">Cho thuê</label>
+                                        <input type="radio" name="TinDang" id="at_3" value="3" checked="" ><label for="at_1">Cần mua</label>
+                                        <input type="radio" name="TinDang" id="at_4" value="4"><label for="at_2">Cần thuê</label>
+                                     <?php }
+                                     if($detail[0]['loai_tin']==4)
+                                     {
+                                     ?>
+                                     <input type="radio" name="TinDang" id="at_1" value="1"><label for="at_1">Cần bán</label>
+                                        <input type="radio" name="TinDang" id="at_2" value="2" checked=""><label for="at_2">Cho thuê</label>
+                                        <input type="radio" name="TinDang" id="at_3" value="3" ><label for="at_1">Cần mua</label>
+                                        <input type="radio" name="TinDang" id="at_4" value="4"><label for="at_2">Cần thuê</label>
+                                     <?php }?> 
                                 	</div>
                                 </li>
                                 <li class="realty_type" id="dio"><label>Loại địa ốc <span class="hightlight">*</span></label>

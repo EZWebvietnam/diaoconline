@@ -441,7 +441,7 @@ else
     <div class="rounded_style_4 rounded_box">
         <div class="content">
             <div class="top">
-                <h2 class="headline"><a href="<?php echo base_url();?>kham-pha-c/shopping-cung-dcbland-c7"><span>Shopping Cùng DCBLand</span></a></h2>
+                <h2 class="headline"><a href="<?php echo base_url();?>kham-pha-c/shopping-cung-dcb-house-c7"><span>Shopping Cùng DCB House</span></a></h2>
                 
             </div>
             <div class="show">
