@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 23, 2014 at 09:24 PM
+-- Generation Time: Jan 26, 2014 at 09:31 AM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -25,6 +25,66 @@ USE `diaoconline`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `adv`
+--
+
+CREATE TABLE IF NOT EXISTS `adv` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `adv`
+--
+
+INSERT INTO `adv` (`id`, `name`) VALUES
+(1, 'Quảng cáo số 1'),
+(2, 'Quảng cáo số 2'),
+(3, 'Quảng cáo số 3'),
+(4, 'Quảng cáo số 4'),
+(5, 'Quảng cáo số 5'),
+(6, 'Quảng cáo số 6'),
+(7, 'Quảng cáo số 7'),
+(8, 'Vị trí số 8');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `adv_detail`
+--
+
+CREATE TABLE IF NOT EXISTS `adv_detail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `exp_date` date NOT NULL,
+  `vi_tri` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+
+--
+-- Dumping data for table `adv_detail`
+--
+
+INSERT INTO `adv_detail` (`id`, `file`, `link`, `exp_date`, `vi_tri`) VALUES
+(1, 'E1A-TTdecor_100x300.gif', '#', '2014-01-28', 1),
+(2, 'E1A-TTdecor_100x300.gif', '#', '2014-01-28', 2),
+(3, 'BAA-phulong_100x300.gif', '', '2014-01-29', 3),
+(4, 'BAA-phulong_100x300.gif', '', '2014-01-29', 4),
+(5, '01E-seareal_100x300.jpg', '', '2014-01-29', 3),
+(6, '01E-seareal_100x300.jpg', '', '2014-01-29', 4),
+(7, '01E-seareal_100x300.jpg', '', '2014-01-29', 1),
+(8, '01E-seareal_100x300.jpg', '', '2014-01-29', 2),
+(9, 'BCD-xuong_DN_170x200.gif', '', '2014-01-29', 7),
+(10, '057-nha_GoVap_170x100.gif', '', '2014-01-29', 6),
+(11, '92A-thamdinh_300x250.gif', '', '2014-01-29', 5),
+(12, '19E-duan_960x90.gif', '', '2014-01-29', 8),
+(19, 'dc2f2eee6813347d110650d39af3d17f_thumb.PNG', '#', '2014-01-29', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `business`
 --
 
@@ -40,8 +100,18 @@ CREATE TABLE IF NOT EXISTS `business` (
   `gioi_thieu` text COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
+  `noi_bat` int(11) NOT NULL,
+  `status` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `business`
+--
+
+INSERT INTO `business` (`id`, `logo`, `ten_dn`, `dia_chi_dn`, `sdt`, `fax`, `mail`, `web`, `gioi_thieu`, `create_date`, `id_user`, `noi_bat`, `status`) VALUES
+(2, '402dfbfe1a2171852b4843b5c88bd673.PNG', 'Công ty cổ phần Outsprin', '143/7B Xô Viết Nghệ Tĩnh,Phường 25,Quận Bình Thạnh', '1', '1', '1', '1', '<p>ssss</p>\r\n', 1390651684, 0, 1, 1),
+(3, '402dfbfe1a2171852b4843b5c88bd673.PNG', 'Công ty cổ phần Outsprin', '143/7B Xô Viết Nghệ Tĩnh,Phường 25,Quận Bình Thạnh', '1', '1', '1', '1', '<p>ssss</p>\r\n', 1390651684, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -67,7 +137,7 @@ INSERT INTO `cate_discovery` (`id`, `name`, `parent`) VALUES
 (4, 'Phong thủy', 1),
 (5, 'Không gian sống', 1),
 (6, 'Thương hiệu', 1),
-(7, 'Shopping cùng DOOL', 1),
+(7, 'Shopping cùng DCBLand', 1),
 (8, 'Nhà của sao', 1),
 (9, 'test ', 0),
 (10, 'ssss', 9);
@@ -215,8 +285,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('1cd0f60cab8088a0d23e456dd2152f52', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390507137, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}'),
-('a20a47959448e8d2e084611954061359', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390508117, 'a:7:{s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
+('4bb9bf0781db321db4e0d7896a804cef', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.76 Safari/537.36', 1390723754, 'a:7:{s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -1190,7 +1259,7 @@ CREATE TABLE IF NOT EXISTS `nhadep` (
   `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `nhadep`
@@ -1198,7 +1267,8 @@ CREATE TABLE IF NOT EXISTS `nhadep` (
 
 INSERT INTO `nhadep` (`id`, `title`, `id_cate`, `img`, `code`, `create_date`) VALUES
 (2, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', '', 1390505393),
-(3, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', '', 1390505417);
+(3, 'test', 1, '706f071673e812bc35f8eb416ad70c97.jpg', '', 1390505417),
+(4, 'Nhà đẹp test', 1, '59a5534507f74f86b3a4f812da91d249.PNG', 'Q2BgAT', 1390637306);
 
 -- --------------------------------------------------------
 
@@ -1211,7 +1281,7 @@ CREATE TABLE IF NOT EXISTS `nhadep_img` (
   `id_nha` int(11) NOT NULL,
   `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `nhadep_img`
@@ -1219,7 +1289,10 @@ CREATE TABLE IF NOT EXISTS `nhadep_img` (
 
 INSERT INTO `nhadep_img` (`id`, `id_nha`, `img`) VALUES
 (1, 3, '706f071673e812bc35f8eb416ad70c97.jpg'),
-(2, 3, 'd82b8b8c210a14741b9bba67ffb8bb76.png');
+(2, 3, 'd82b8b8c210a14741b9bba67ffb8bb76.png'),
+(3, 4, '59a5534507f74f86b3a4f812da91d249.PNG'),
+(4, 4, 'ae98ed0c524672c68e9b168b33896490.PNG'),
+(5, 4, 'ebb5fd1454c534201f9e9886dae97c47.PNG');
 
 -- --------------------------------------------------------
 
@@ -1340,7 +1413,7 @@ CREATE TABLE IF NOT EXISTS `property` (
   `status` int(11) NOT NULL,
   `phi_ky_gui` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
 
 --
 -- Dumping data for table `property`
@@ -1353,7 +1426,31 @@ INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_
 (20, 0, 0, 0, 'Cho thuê nguyên căn tòa nhà 521-523 Điện Biên Phủ, Q.Bình Thạnh, ngay cầu Văn Thánh', '', 'Cho thuê nguyên căn tòa nhà văn phòng tại: 521 - 523 Điện Biên Phủ, P.25, Q.Bình Thạnh. Gồm: 1 trệt, 4 lầu, tổng diện tích: 530m2 (8.2m x 15m). \r\n\r\nVị trí đắc địa, ngay Hàng Xanh, trên trục đường cửa ngõ thành phố, rất thuận tiện mở showroom, chi nhánh công ty, trường học, ngân hàng\r\n\r\nGiá cho thuê: 84 triệu/ tháng (4000 USD), chưa bao gồm VAT. Liên hệ: 090 301 4477.', 'Thương lượng', '252888', 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '001', '01', 0, 1, 0, 0, '123.jpg', 1, 0, 0, '', 1, '0'),
 (21, 1, 0, 1, '1 test', '', '', '1', '', 1, 3, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, '001', '01', 0, 1, 1, 0, '', 0, 1, 0, '', 1, ''),
 (22, 11, 0, 11, '1', '', '<p>ssss</p>\r\n', '1111', '', 11, 1, 1, 11, 0, 11, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, '001', '01', 0, 1, 1, 1390480894, 'e750b612ef7b7f41b9abf572924dd5c6.PNG', 0, 1, 1, '', 1, '12'),
-(23, 1, 0, 1, 'test', '', '<p>test h&agrave;m</p>\r\n', '1000000000', '7xmTzf', 1, 1, 1, 1, 0, 1, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '004', '01', 0, 1, 0, 1390481764, '07dad2605bcff804a0f12f2b2cfcc358.PNG', 0, 1, 1, '', 1, '0');
+(23, 1, 0, 1, 'test', '', '<p>test h&agrave;m</p>\r\n', '1000000000', '7xmTzf', 1, 1, 1, 1, 0, 1, 7, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, '004', '01', 0, 1, 0, 1390481764, '07dad2605bcff804a0f12f2b2cfcc358.PNG', 0, 1, 1, '', 1, '0'),
+(24, 1, 0, 1, 'sss te', 'sss', 'ssss', '111', '', 1, 1, 2, 1, 0, 12, 1, 1, 2, 2, 18, 1, 18, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, '001', '01', 0, 1, 1, 1390719430, '', 0, 1, 1, 'tongdientich', 0, ''),
+(25, 1, 0, 1, 'sss te', 'sss', 'ssss', '111', '', 1, 1, 2, 1, 0, 12, 1, 1, 2, 2, 18, 1, 18, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, '001', '01', 0, 1, 1, 1390719446, '', 0, 1, 1, 'tongdientich', 0, ''),
+(26, 1, 0, 1, 'sss te', 'sss', 'ssss', '111', '', 1, 1, 2, 1, 0, 12, 1, 1, 2, 2, 18, 1, 18, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, '001', '01', 0, 1, 1, 1390719461, '', 0, 1, 1, 'tongdientich', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `property_image`
+--
+
+CREATE TABLE IF NOT EXISTS `property_image` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `file` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id_pro` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+
+--
+-- Dumping data for table `property_image`
+--
+
+INSERT INTO `property_image` (`id`, `file`, `id_pro`) VALUES
+(16, '59831_P1110567_360.jpg', 1),
+(17, '59831_P1110567_360.jpg', 1);
 
 -- --------------------------------------------------------
 
@@ -1641,14 +1738,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `img` varchar(255) COLLATE utf8_bin NOT NULL,
   `role` int(11) NOT NULL DEFAULT '3',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`, `role`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-23 21:09:57', '2014-01-20 11:40:27', '2014-01-23 20:09:57', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1);
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$Bw50jRSxSYgNWDRLoQMqRc/Yf/MUL1.', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-01-26 04:56:58', '2014-01-20 11:40:27', '2014-01-26 03:56:58', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1),
+(2, 'test', '0', '01667039939', '', '$2a$08$yN/hZjdfBlKYV3JyJeQ1TuJkrpMKCO8S1C4GcY.2FkhIg6VZySLBq', 'beobeboi91@gmail.com', 0, 0, NULL, NULL, NULL, NULL, NULL, '::1', '0000-00-00 00:00:00', '2014-01-26 09:09:14', '2014-01-26 08:09:24', 0, '', '', '', '', 1);
 
 -- --------------------------------------------------------
 
@@ -1704,14 +1802,15 @@ CREATE TABLE IF NOT EXISTS `user_profiles` (
   `country` varchar(20) COLLATE utf8_bin DEFAULT NULL,
   `website` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=3 ;
 
 --
 -- Dumping data for table `user_profiles`
 --
 
 INSERT INTO `user_profiles` (`id`, `user_id`, `country`, `website`) VALUES
-(1, 1, NULL, NULL);
+(1, 1, NULL, NULL),
+(2, 2, NULL, NULL);
 
 -- --------------------------------------------------------
 
