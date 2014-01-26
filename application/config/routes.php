@@ -40,6 +40,10 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['quy-dinh-su-dung'] = "home/home/quy_dinh";
+$route['dieu-khoan-thoa-thuan'] = "home/home/dieu_khoan";
+$route['chinh-sach-bao-mat'] = "home/home/chinh_sach";
+$route['lien-he'] = "home/home/lien_he";
 $route['doanh-nghiep'] = "home/businesshome/load_dn";
 $route['doanh-nghiep/(:any)-i(:any)/gioi-thieu'] = "home/businesshome/gioi_thieu_dn/$2";
 $route['doanh-nghiep/(:any)-i(:any)/dau-tu-du-an'] = "home/businesshome/du_an/$2";

@@ -65,45 +65,41 @@
                         <p><b>Hotline:</b> 0985072575</p>
                         </div>
                         <br />
-                     <h4>Hỗ trợ trực tuyến: </h4>
-                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-                        <h4>Hỗ trợ trực tuyến: </h4>
-                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-                        <h4>Hỗ trợ trực tuyến: </h4>
-                        <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>  
-						
+                  	
                     </div>
                     <div class="join_network">
                         <h4>KẾT NỐI VỚI CHÚNG TÔI TẠI: </h4>
                         <ul>
-                        <li class="facebook"><a href="http://facebook.com/diaoconlinefc" target="_blank">facebook</a></li>
-                        <li class="twitter"><a href="https://twitter.com/DiaOcOnlinevn" target="_blank">twitter</a></li>
-                        <li class="youtube"><a href="http://www.youtube.com/diaoconline" target="_blank">youtube</a></li>
-                        <li class="google"><a href="https://plus.google.com/u/1/b/101503616522434888485/" target="_blank">google</a></li>
+                        <li class="facebook"><a href="http://facebook.com/" target="_blank">facebook</a></li>
+                        <li class="twitter"><a href="https://twitter.com/" target="_blank">twitter</a></li>
+                        <li class="youtube"><a href="http://www.youtube.com/" target="_blank">youtube</a></li>
+                        <li class="google"><a href="https://plus.google.com/u/1/b/" target="_blank">google</a></li>
                         <li class="linkedin"><a href="http://www.linkedin.com/in/diaoconline" target="_blank">linkedin</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-          <!-- <div id="dool_network" class="white_border_box rounded_box">
+           <div id="dool_network" class="white_border_box rounded_box">
                 <div class="content">
-					<h4>DCBLAND.COM NETWORK</h4>
+					<h4>TƯ VẤN TRỰC TUYẾN</h4>
+					<br/>
+					<div style="margin-left:5px;">
                    <ul>  
-                    <li class="dool"><a href="#">DCBLAND.COM</a></li>
-                    <li class="roi"><a href="#">DCBLAND.COM</a></li>
-                    <li class="tv"><a href="#">DCBLAND.COM</a></li>
-                    <li class="map"><a href="#">DCBLAND.COM</a></li>
-                    </ul>
+                   <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                   <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                   <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
+                
+                    </ul></div>
                 </div>
-            </div>-->
+            </div>
             <div id="misc" class="rounded_style_3 rounded_box">
                 <div class="content">
                    	<ul>
-                    <li class="btn_help_center first"><a href="http://adv.diaoconline.vn/AboutUs/trogiup.html" target="_blank"><span></span>TRUNG TÂM TRỢ GIÚP</a></li>
-                    <li class="btn_ad_price_list"><a href="http://adv.diaoconline.vn/AboutUs/banggia.html" target="_blank"><span></span>BẢNG GIÁ QUẢNG CÁO</a></li>
-                    <li class="btn_point_load"><a href="http://adv.diaoconline.vn/AboutUs/trogiup_tphi_napthe.html" target="_blank"><span></span>NẠP ĐIỂM DOOL</a></li>
-                    <li class="btn_our_services"><a href="http://adv.diaoconline.vn/AboutUs/dichvu.html" target="_blank"><span></span>DỊCH VỤ CỦA CHÚNG TÔI</a></li>
-                    <li class="btn_post_guide"><a href="http://adv.diaoconline.vn/AboutUs/trogiup_tdang.html" target="_blank"><span></span>HƯỚNG DẪN ĐĂNG TIN</a></li>
+                    <li class="btn_help_center first"><a href="" target="_blank"><span></span>TRUNG TÂM TRỢ GIÚP</a></li>
+                    <li class="btn_ad_price_list"><a href="" target="_blank"><span></span>BẢNG GIÁ QUẢNG CÁO</a></li>
+                    <li class="btn_point_load"><a href="" target="_blank"><span></span>NẠP ĐIỂM DOOL</a></li>
+                    <li class="btn_our_services"><a href="" target="_blank"><span></span>DỊCH VỤ CỦA CHÚNG TÔI</a></li>
+                    <li class="btn_post_guide"><a href="" target="_blank"><span></span>HƯỚNG DẪN ĐĂNG TIN</a></li>
                     </ul>
                 </div>
             </div>
@@ -113,13 +109,13 @@
         <div id="foot_content" class="wrap">
         <div id="foot_nav">
             <ul>
-            <li class="first"><a href="http://adv.diaoconline.vn/AboutUs" target="_blank">Về chúng tôi</a></li>
-            <li><a href="http://adv.diaoconline.vn/AboutUs/trogiup.html" target="_blank">Hướng dẫn sử dụng</a></li>
-            <li><a href="/quy-dinh-su-dung">Quy định sử dụng</a></li>
-            <li><a href="/dieu-khoan-thoa-thuan">Điều khoản thỏa thuận</a></li>
+            <li class="first"><a href="" target="_blank">Về chúng tôi</a></li>
+            <li><a href="<?php echo base_url(); ?>" target="_blank">Hướng dẫn sử dụng</a></li>
+            <li><a href="<?php echo base_url(); ?>quy-dinh-su-dung">Quy định sử dụng</a></li>
+            <li><a href="<?php echo base_url(); ?>dieu-khoan-thoa-thuan">Điều khoản thỏa thuận</a></li>
       
-            <li><a href="/chinh-sach-bao-mat">Chính sách bảo mật</a></li>
-            <li><a href="/lien-he">Liên hệ</a></li>
+            <li><a href="<?php echo base_url(); ?>chinh-sach-bao-mat">Chính sách bảo mật</a></li>
+            <li><a href="<?php echo base_url(); ?>lien-he">Liên hệ</a></li>
             <li><a href="/rss"><img width="36" height="14" alt="rss diaoconline" src="<?php echo base_url();?>template/home_ezwebvietnam/Content/images/icon_rss.gif"/></a></li>
             </ul>
         </div>

@@ -54,5 +54,10 @@ class Advhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    public function insert_contact(array $data)
+    {
+        $this->db->insert('contact',$data);
+        return $this->db->insert_id();
+    }
 }
 ?>

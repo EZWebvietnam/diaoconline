@@ -111,12 +111,12 @@
             </div>
             <div class="alert margin_left">
                 <ul>
-                    <li class="block new_mail"><a href="/thanh-vien/hop-thu/da-nhan" class="icon">THƯ </a> 
-                        <a href="/thanh-vien/hop-thu/da-nhan">0 THƯ TỪ HỆ THỐNG</a> </li>
+                    <li class="block new_mail"><a href="#" class="icon">THƯ </a> 
+                        <a href="#">THƯ TỪ HỆ THỐNG</a> </li>
                     <li class="block dealing"><a href="<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi" class="icon">TÀI SẢN ĐANG GIAO DỊCH</a> 
-                        <a href="<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi">0 TS ĐANG GIAO DỊCH</a></li>
+                        <a href="<?php echo base_url();?>thanh-vien/tai-san-dang-hien-thi">TS ĐANG GIAO DỊCH</a></li>
                     <li class="block point last"><a href="javascript:void(0)" class="icon"></a>
-                        <a href="javascript:void(0)"><span id="UserPoint"><?php echo number_format($so_du_nav[0]['so_du'])?></span> VNĐ</a></li>
+                        <a href="javascript:void(0)"><span id="UserPoint"><?php if(isset($so_du_nav[0]['so_du'])){ echo number_format($so_du_nav[0]['so_du']);} else { echo 0;}?></span> VNĐ</a></li>
                 </ul>
             </div>
         </div>

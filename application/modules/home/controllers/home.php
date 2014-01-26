@@ -67,5 +67,49 @@ class Home extends MY_Controller
         $this->data['main_content']='home_view/home_index';
         $this->load->view('home_layout/home_layout',$this->data);
     }
+    public function quy_dinh()
+    {
+        $this->data['main_content']='home_view/quy_dinh';
+        $this->load->view('home_layout/support_guide_contact_layout',$this->data);
+    }
+    public function dieu_khoan()
+    {
+        $this->data['main_content']='home_view/dieu_khoan';
+        $this->load->view('home_layout/support_guide_contact_layout',$this->data);
+    }
+    public function chinh_sach()
+    {
+        $this->data['main_content']='home_view/chinh_sach_bao_mat';
+        $this->load->view('home_layout/support_guide_contact_layout',$this->data);
+    }
+    public function lien_he()
+    {
+        if($this->input->post())
+        {
+            $data_save = array(
+            'fullname'=>$this->input->post('FullName'),
+            'email'=>$this->input->post('Email'),
+            'ten_cty'=>$this->input->post('CompanyName'),
+            'title'=>$this->input->post('Title'),
+            'content'=>$this->input->post('Message'),
+            'create_date'=>strtotime('now')
+            );
+            $this->load->model('advhomemodel');
+            $id = $this->advhomemodel->insert_contact($data_save);
+            if($id>0)
+            {
+                redirect('/');
+            }
+            else
+            {
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+        }
+        else
+        {
+            $this->load->view('home_layout/lien_he_layout',$this->data);
+        }
+        
+    }
 }
 ?>
