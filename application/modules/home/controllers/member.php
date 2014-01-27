@@ -443,8 +443,10 @@ class Member extends MY_Controller
                         $data_file = array('id_pro'=>$id,'file'=>$v);
                         $this->memberhomemodel->insert_img_proper($data_file);
                     }
+                    $code = $this->input->post('code');
+                    redirect('/tai-san/dang-thanh-cong-'.$code);
                 }
-                redirect('/thanh-vien/tai-san-dang-moi');
+                
             }
             else
             {
@@ -1428,6 +1430,11 @@ class Member extends MY_Controller
             $this->data['main_content']='member/nang_cap_dich_vu';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
+    }
+    public function dang_thanh_cong($code)
+    {
+        $this->data['main_content']='member_postsuccess';
+        $this->load->view('home_layout/registersuccess_layout',$this->data);
     }
     
 }

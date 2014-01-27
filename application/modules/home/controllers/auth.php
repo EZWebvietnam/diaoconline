@@ -462,7 +462,7 @@ class Auth extends MY_Controller
 	function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/');
+		redirect('/dang-ky-thanh-cong');
 	}
 
 	/**
@@ -582,6 +582,11 @@ class Auth extends MY_Controller
 		}
 		return TRUE;
 	}
+    public function dang_ky_thanh_cong()
+    {
+        $this->data['main_content']='auth/register_success';
+        $this->load->view('home_layout/registersuccess_layout',$this->data);
+    }
 
 }
 

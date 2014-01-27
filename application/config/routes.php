@@ -40,6 +40,8 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
+$route['dang-ky-thanh-cong'] = "home/auth/dang_ky_thanh_cong";
+$route['tai-san/dang-thanh-cong-(:any)'] = "home/member/dang_thanh_cong/$1";
 $route['quy-dinh-su-dung'] = "home/home/quy_dinh";
 $route['dieu-khoan-thoa-thuan'] = "home/home/dieu_khoan";
 $route['chinh-sach-bao-mat'] = "home/home/chinh_sach";
