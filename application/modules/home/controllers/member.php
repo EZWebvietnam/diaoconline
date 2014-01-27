@@ -1437,6 +1437,5 @@ class Member extends MY_Controller
         $this->data['main_content']='member/post_success';
         $this->load->view('home_layout/registersuccess_layout',$this->data);
     }
-    
 }
 ?>

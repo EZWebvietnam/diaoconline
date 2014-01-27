@@ -77,6 +77,7 @@ border: 1px solid #D6CACA;
                 </div>
                 
                 <div class="col_650">
+                <div id="position_55" class="banner_650x120 margin_bottom"><div class="bannerShow"><a href="<?php echo base_url();?>ThongBaoNghiTet" target="_blank"><img src="<?php echo base_url();?>file/uploads/thongbao.png" width="650px" height="120px"></a></div><div class="bannerHide"><a href="http://www.diaoconline.vn/quangcao/420/55" target="_blank"><img src="http://image.diaoconline.vn/banner-dool/2014/01/17/01A-thongbao_650x120.jpg" width="650px" height="120px"></a></div></div>
 					<div id="new_logos" class="rounded_style_6 rounded_box margin_bottom">
                         <div class="content">
     <script type="text/javascript">
