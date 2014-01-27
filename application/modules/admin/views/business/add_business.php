@@ -31,6 +31,34 @@
                         </div>
                     </div>
                     <div class="control-group">
+								<label class="control-label">Trạng thái</label>
+								<div class="controls">
+								  <label class="radio">
+									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="status" id="status" value="1" checked="" style="opacity: 0;"></span></div>
+									Kích hoạt
+								  </label>
+								  <div style="clear:both"></div>
+								  <label class="radio">
+									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="status" id="status" value="0" style="opacity: 0;"></span></div>
+									Đóng
+								  </label>
+								</div>
+							  </div>
+                    <div class="control-group">
+								<label class="control-label">Nổi bật</label>
+								<div class="controls">
+								  <label class="radio">
+									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="noi_bat" id="noi_bat" value="1" checked="" style="opacity: 0;"></span></div>
+									Kích hoạt
+								  </label>
+								  <div style="clear:both"></div>
+								  <label class="radio">
+									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="noi_bat" id="noi_bat" value="0" style="opacity: 0;"></span></div>
+									Đóng
+								  </label>
+								</div>
+							  </div>
+                    <div class="control-group">
                         <label class="control-label" for="disabledInput">Thành viên chủ quản</label>
                         <div class="controls">
                            <select name="id_cate">

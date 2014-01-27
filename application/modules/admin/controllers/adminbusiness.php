@@ -49,6 +49,8 @@ class Adminbusiness extends MY_Controller
                 $file='';
             }
             $data_save = array(
+            'status'=>$this->input->post('status'),
+            'noi_bat'=>$this->input->post('noi_bat'),
             'ten_dn'=>$this->input->post('title'),
             'dia_chi_dn'=>$this->input->post('address'),
             'sdt'=>$this->input->post('sdt'),
@@ -135,6 +137,8 @@ class Adminbusiness extends MY_Controller
                     }
                 }
                 $data_save = array(
+                'status'=>$this->input->post('status'),
+                'noi_bat'=>$this->input->post('noi_bat'),
                 'ten_dn'=>$this->input->post('title'),
                 'dia_chi_dn'=>$this->input->post('address'),
                 'sdt'=>$this->input->post('sdt'),
@@ -150,6 +154,8 @@ class Adminbusiness extends MY_Controller
             else
             {
                 $data_save = array(
+                'status'=>$this->input->post('status'),
+                'noi_bat'=>$this->input->post('noi_bat'),
                 'ten_dn'=>$this->input->post('title'),
                 'dia_chi_dn'=>$this->input->post('address'),
                 'sdt'=>$this->input->post('sdt'),
@@ -161,7 +167,7 @@ class Adminbusiness extends MY_Controller
                 'id_user'=>$this->input->post('id_user')
                 );
             }
-            $this->businessmodel->update($data_save);
+            $this->businessmodel->update($id,$data_save);
             $this->session->set_flashdata('type','success');
             $this->session->set_flashdata('message','Thêm thành công');
             redirect('/admin/adminbusiness');
