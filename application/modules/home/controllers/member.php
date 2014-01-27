@@ -1433,7 +1433,8 @@ class Member extends MY_Controller
     }
     public function dang_thanh_cong($code)
     {
-        $this->data['main_content']='member_postsuccess';
+        $this->data['code']=$code;
+        $this->data['main_content']='member/post_success';
         $this->load->view('home_layout/registersuccess_layout',$this->data);
     }
     
