@@ -225,7 +225,7 @@ else
     </script>
     <div class="wrap">
 
-<div id="position_1" class ='banner_960x320 margin_bottom'><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner-1.gif" width="960px" height="360px"/></a></div><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner2.gif" width="960px" height="360px"/></a></div></div><script type='text/javascript'>var Banner1=1;function Random_Banner1(){    var _Arr=document.getElementById("position_1").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner1 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner1 - 1]).html(); $(_Arr[Banner1 - 1]).html(''); $(_Arr[Banner1 - 1]).html(tempBanner);    window.setTimeout("Random_Banner1()" ,25000);    Banner1 = Banner1 + 1;    if(Banner1 > _Arr.length)        Banner1 = 1;}Random_Banner1();</script>
+<div id="position_1" class ='banner_960x320 margin_bottom'><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner-home-5.gif" width="960px" height="360px"/></a></div><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner2.gif" width="960px" height="360px"/></a></div></div><script type='text/javascript'>var Banner1=1;function Random_Banner1(){    var _Arr=document.getElementById("position_1").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner1 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner1 - 1]).html(); $(_Arr[Banner1 - 1]).html(''); $(_Arr[Banner1 - 1]).html(tempBanner);    window.setTimeout("Random_Banner1()" ,25000);    Banner1 = Banner1 + 1;    if(Banner1 > _Arr.length)        Banner1 = 1;}Random_Banner1();</script>
         <div id="status_search" class="wrap margin_bottom clearfix">
             <div id="status" class="rounded_style_1 rounded_box">
                 <div class="content">
@@ -254,7 +254,7 @@ else
                                 <li class="actived" id="tabtimkiemts"><span class="L"></span><a href="javascript:void(0)">
                                     Tìm kiếm tài sản</a> <span class="R"></span></li>
                                 <li id="tabtimnhanhts"><a href="javascript:void(0)"><span>Xem nhanh theo loại tài sản</span></a></li>
-                                
+                                <li><a href="<?php echo base_url();?>sieu-thi"><span>Xem tài sản đấu giá</span></a></li>
                                 <li><a href="<?php echo base_url();?>sieu-thi/nha-tro"><span>Nhà trọ sinh viên</span></a></li>
                             </ul>
                             
@@ -274,7 +274,8 @@ else
                                         <div class="wid">
                                             <select id="LoaiTinDang" name="LoaiTinDangList" style="width:150px"><option value="1">Cần b&#225;n</option>
 <option value="2">Cho thu&#234;</option>
-
+<option value="3">Cần mua</option>
+<option value="4">Cần thu&#234;</option>
 </select>
                                         </div>
                                     </div>

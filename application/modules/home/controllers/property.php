@@ -80,7 +80,7 @@ class Property extends MY_Controller
             exit;
         }
         $config['uri_segment'] = 5;
-        $page = $this->uri->segment(3);
+        $page = $this->uri->segment(4);
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_cate($id);
         if ($page == '') {
@@ -136,10 +136,39 @@ class Property extends MY_Controller
     }
     public function list_cc()
     {
-        $this->load->helper('url');
+    	$this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
        
+        $config['per_page'] = 12;
+        $config['total_rows'] = $this->propertyhomemodel->count_property_cate_cc();
+        if ($page == '') {
+            $page = 1;
+        }
+        $page1 = ($page - 1) * $config['per_page'];
+       
+        if (!is_numeric($page)) {
+            show_404();
+            exit;
+        }
+       
+       $num_pages = ceil($config['total_rows']/ $config['per_page']);
+       $array_sv = $this->propertyhomemodel->list_property_cc($config['per_page'], $page1);
+      
+       $this->data['total_page'] = $num_pages;
+       $this->data['offset'] = $page1;
+       $this->data['page']=$page;
+       $this->data['total']=$config['total_rows'];
+       $this->data['list']=$array_sv;
+       $this->data['main_content']='property_view/chinh_chu';
+       $this->load->view('home_layout/list_tai_san',$this->data);
+    }
+    public function list_cc_()
+    {
+    	$this->load->helper('url');
+        $config['uri_segment'] = 5;
+        $page = $this->uri->segment(4);
+       	
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_cate_cc();
         if ($page == '') {
@@ -168,7 +197,7 @@ class Property extends MY_Controller
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
-       
+       	
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_cate_nt();
         if ($page == '') {
@@ -197,7 +226,7 @@ class Property extends MY_Controller
        $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
-        
+       
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_cate_duan($id);
         if ($page == '') {
@@ -227,8 +256,8 @@ class Property extends MY_Controller
         $gianho = intval($gianho);
         $this->load->helper('url');
         $config['uri_segment'] = 5;
-        $page = $this->uri->segment(4);
-        
+        $page = $this->uri->segment(5);
+       
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_cate_gia($gianho,$gialon);
         if ($page == '') {
@@ -401,6 +430,7 @@ class Property extends MY_Controller
         {
             $page = 1;
         }
+        
         $config['per_page'] = 12;
       
         if ($page == '') {
@@ -524,8 +554,8 @@ class Property extends MY_Controller
         }
         $this->load->helper('url');
         $config['uri_segment'] = 5;
-        $page = $this->uri->segment(6);
-        
+        $page = $this->uri->segment(5);
+     
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_member($id);
         

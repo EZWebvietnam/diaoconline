@@ -88,7 +88,7 @@
                                             var myLatlng;
                                             var toggleLatlng;
 
-                                            var keyGmap = "AIzaSyAUTPN4rOuvSRFrBmo00YCd6xhe8uUUqHQ";
+                                            var keyGmap = "AIzaSyAipe4JE1yUZS8gZUiPdSpFxgSn629iDqw";
                                             function initialize() {
                                                 myLatlng = new google.maps.LatLng(10.7410135269165, 106.700729370117);
                                                 var mapOptions = {
@@ -465,8 +465,8 @@ foreach($list_pn as $pn)
                            	    <fieldset>
                                     
                                     
-                                     <input id="userfile" name="userfile" type="file" multiple="true">
-                                   
+                                     <input id="userfile" name="userfile" type="file" class="qq-upload-button qq-trigger" multiple="true">
+                                   <link href="<?php echo base_url(); ?>assets/js/jquery/uploadify_31/uploadify.css" rel="stylesheet" type="text/css" />
                                     <script src="<?php echo base_url()?>assets/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 		<?php $timestamp = time();?>
@@ -485,7 +485,7 @@ foreach($list_pn as $pn)
                                 'fileTypeDesc':'Image Files (.jpg,.bmp,.png,.tif)',
                                 'fileSizeLimit':'2MB',
                                 'fileObjName':'userfile',
-                                'buttonText':'Select Photo(s)',
+                                'buttonText':'Uploads',
                                 'multi':true,
                                 'removeCompleted':false,
                                 'onUploadError' : function(file, errorCode, errorMsg, errorString) {

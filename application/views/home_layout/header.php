@@ -84,14 +84,24 @@
                                 <div class="col_178">
                                     <div class="left_menu">
                                         <ul>
-                                                <?php 
-                                                foreach($cate_sieu_thi_list as $cate_st)
-                                                {
-                                                ?>
-                                                <li><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($cate_st['name'])))?>-c<?php echo $cate_st['id']?>"><?php echo $cate_st['name']?></a>
-                                                </li>
-                                                <?php } ?>
-                                                
+                                             <li><a href="<?php echo base_url();?>sieu-thi/nha-pho-c3">Nhà phố</a>
+                                             </li>
+                                              <li><a href="<?php echo base_url();?>sieu-thi/vila-biet-thu-c2">Vila - Biệt thự</a>
+                                             </li>  
+                                              <li><a href="<?php echo base_url();?>sieu-thi/can-ho-chung-cu-c7">Căn hộ chung cư</a>
+                                             </li>  
+                                              <li><a href="<?php echo base_url();?>sieu-thi/dat-o-dat-tho-cu-c11">Đất ở - Đất thổ cư</a>
+                                             </li>  
+                                             <li><a href="<?php echo base_url();?>sieu-thi/dat-du-an-quy-hoach-c10">Đất dự án - Quy hoạch</a>
+                                             </li>
+                                             <li><a href="<?php echo base_url();?>sieu-thi/van-phong-c6">Văn phòng</a>
+                                             </li>   
+                                             <li><a href="<?php echo base_url();?>sieu-thi/mat-bang-cua-hang-c18">Mặt bằng - Cửa hàng</a>
+                                             </li> 
+                                              <li><a href="<?php echo base_url();?>sieu-thi/nha-hang-khach-san-c17">Nhà hàng - Khách sạn</a>
+                                             </li>   
+                                             <li><a href="<?php echo base_url();?>sieu-thi/nha-kho-nha-xuong-c16">Nhà kho - Nhà xưởng</a>
+                                             </li>  
                                         </ul>
                                     </div>
                                 </div>

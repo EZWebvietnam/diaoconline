@@ -31,34 +31,6 @@
                         </div>
                     </div>
                     <div class="control-group">
-								<label class="control-label">Trạng thái</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="status" id="status" value="1" checked="" style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="status" id="status" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <div class="control-group">
-								<label class="control-label">Nổi bật</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="noi_bat" id="noi_bat" value="1" checked="" style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="noi_bat" id="noi_bat" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <div class="control-group">
                         <label class="control-label" for="disabledInput">Thành viên chủ quản</label>
                         <div class="controls">
                            <select name="id_cate">
@@ -106,7 +78,7 @@
                         <div class="controls">
                             <input class="input-xlarge disabled" id="disabledInput" type="text" name="web">
                         </div>
-                    </div>
+                    </div>					<div class="control-group">								<label class="control-label">Trạng thái</label>								<div class="controls">								  <label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="" style="opacity: 0;"></span></div></span></div>									Kích hoạt								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span><div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="optionsRadios" id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không kích hoạt								  </label>								</div>					</div>					<div class="control-group">								<label class="control-label">Nổi bật</label>								<div class="controls">								  <label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="noi_bat" id="optionsRadios1" value="1" checked="" style="opacity: 0;"></span></div></span></div>									Có								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span><div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="noi_bat" id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không								  </label>								</div>							  </div>
                     <div class="control-group">
                         <label class="control-label" >Nội dung</label>
                         <div class="controls">

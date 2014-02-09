@@ -153,7 +153,7 @@ class Auth extends MY_Controller
 						$this->form_validation->set_value('email'),
 						$this->form_validation->set_value('password'),
                         $this->form_validation->set_value('fullname'),
-                        $this->form_validation->set_value('phone'),
+                        $this->form_validation->set_value('phone'),'3',
 						$email_activation))) {									// success
 
 					$data['site_name'] = $this->config->item('website_name', 'tank_auth');
@@ -462,7 +462,7 @@ class Auth extends MY_Controller
 	function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/dang-ky-thanh-cong');
+		redirect('/');
 	}
 
 	/**
@@ -582,11 +582,6 @@ class Auth extends MY_Controller
 		}
 		return TRUE;
 	}
-    public function dang_ky_thanh_cong()
-    {
-        $this->data['main_content']='auth/register_success';
-        $this->load->view('home_layout/registersuccess_layout',$this->data);
-    }
 
 }
 

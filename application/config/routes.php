@@ -40,8 +40,6 @@
 
 $route['default_controller'] = "home/index";
 $route['dang-ky'] = "home/auth/register";
-$route['dang-ky-thanh-cong'] = "home/auth/dang_ky_thanh_cong";
-$route['tai-san/dang-thanh-cong-(:any)'] = "home/member/dang_thanh_cong/$1";
 $route['quy-dinh-su-dung'] = "home/home/quy_dinh";
 $route['dieu-khoan-thoa-thuan'] = "home/home/dieu_khoan";
 $route['chinh-sach-bao-mat'] = "home/home/chinh_sach";
@@ -49,8 +47,12 @@ $route['lien-he'] = "home/home/lien_he";
 $route['doanh-nghiep'] = "home/businesshome/load_dn";
 $route['doanh-nghiep/(:any)-i(:any)/gioi-thieu'] = "home/businesshome/gioi_thieu_dn/$2";
 $route['doanh-nghiep/(:any)-i(:any)/dau-tu-du-an'] = "home/businesshome/du_an/$2";
+$route['doanh-nghiep/(:any)-i(:any)/dau-tu-du-an/page/(:any)'] = "home/businesshome/du_an/$2";
 $route['doanh-nghiep/tim-kiem/tukhoa_(:any)'] = "home/businesshome/tim_kiem/$1";
+$route['doanh-nghiep/tim-kiem/tukhoa_(:any)/page/(:any)'] = "home/businesshome/tim_kiem/$1";
 $route['doanh-nghiep/page/(:any)'] = "home/businesshome/load_dn";
+//
+$route['thanh-vien/nap-the'] = "home/member/nap_the";
 $route['thanh-vien/nang-cap-tai-san/(:any)'] = "home/member/nang_cap/$1";
 $route['thanh-vien/log-giao-dich'] = "home/member/list_giao_dich";
 $route['thanh-vien/nap-tien'] = "home/member/nap_tien";
@@ -90,6 +92,10 @@ $route['nha-dep/page/(:any)'] = "home/nhadep/list_nhadep";
 $route['nha-dep/(:any)-c(:any)/(:any)-i(:any)'] = "home/nhadep/nhadep_detail/$4";
 $route['nha-dep-c/(:any)-c(:any)'] = "home/nhadep/list_nhadep_cate/$2";
 //
+
+//
+$route['sieu-thi/chinh-chu'] = "home/property/list_cc";
+$route['sieu-thi/chinh-chu/page/(:any)'] = "home/property/list_cc_";
 $route['xoa-proper-luu/k/(:any)'] = "home/property/delete_save/$1";
 $route['xoa-new-luu/k/(:any)'] = "home/news/delete_save/$1";
 $route['xoa-project-luu/k/(:any)'] = "home/project/delete_save/$1";
@@ -106,13 +112,18 @@ $route['logout'] = "home/auth/logout";
 $route['active-pass/(:any)/(:any)'] = "home/auth/reset_password";
 $route['nha/(:any)-c(:any)/(:any)-h(:any)'] = "home/property/detail/$4";
 $route['sieu-thi/(:any)-c(:any)'] = "home/property/list_property/$2";
+$route['sieu-thi/(:any)-c(:any)/page/(:any)'] = "home/property/list_property/$2";
 $route['q-sieu-thi/(:any)-c(:any)/quan/(:any)-q(:any)'] = "home/property/get_theo_quan/$2/$4";
 $route['tp-sieu-thi/(:any)-c(:any)/city/(:any)-ct(:any)'] = "home/property/get_theo_thanh_pho/$2/$4";
 $route['sieu-thi/gia/gianho-(:any)-gialon-(:any)'] = "home/property/gia_nho/$1/$2";
 $route['sieu-thi'] = "home/property/sieu_thi";
-$route['sieu-thi/chinh-chu'] = "home/property/list_cc";
+$route['sieu-thi/page/(:any)'] = "home/property/sieu_thi";
+
+
 $route['sieu-thi/nha-tro'] = "home/property/nha_tro";
+$route['sieu-thi/nha-tro/page/(:any)'] = "home/property/nha_tro";
 $route['sieu-thi/du-an.(:any).duan'] = "home/property/du_an/$1";
+$route['sieu-thi/du-an.(:any).duan/page/(:any)'] = "home/property/du_an/$1";
 $route['sieu-thi/tv/(:any)'] = "home/property/get_theo_mem/$1";
 $route['tim-kiem?(:any)'] = "home/property/tim_kiem";
 $route['tin-tuc'] = "home/news/index";

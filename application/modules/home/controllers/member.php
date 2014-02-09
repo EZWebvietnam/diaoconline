@@ -35,11 +35,108 @@ class Member extends MY_Controller
             redirect('/dang-nhap');
         }
     }
+	public function nap_tien()
+    {
+        $this->load->library('nl');
+        if($this->input->post())
+        {
+			$type = $this->input->post('ServiceList');
+			switch($type)
+			{
+				case 1:
+				{
+					$this->load->library('nl');
+					$url = base_url()."home/member/ket_qua";
+					$receiver ="info@dcbland.com";
+					$transaction_info='';
+					$order_code= $this->input->post('order_code');
+					$price = $this->input->post('code');
+					$this->load->model('blancehomemodel');
+					$data = array(
+					'id_user'=>$this->session->userdata('user_id'),
+					'code'=>$order_code,
+					'money'=>$price,
+					'status'=>0
+					);
+					$this->blancehomemodel->insert_order($data);
+					$url = $this->nl->buildCheckoutUrlExpand($url,$receiver,$transaction_info,$order_code,$price);
+					redirect($url);
+					break;
+				}
+				case 2:
+				{
+					$this->load->library('baokim');
+					$order_id = $this->input->post('order_code');
+					$business = 'info@dcbland.com';
+					$total_amount = $this->input->post('code');
+					$shipping_fee = 0;
+					$tax_fee = 0;
+					$order_description = 0;
+					$url_success=base_url()."home/member/ket_qua";
+					$url_cancel='http://dcbland.com/thanh-vien/nap-tien';
+					$url_detail = 'http://dcbland.com/thanh-vien/nap-tien';
+					$url = $this->baokim->createRequestUrl($order_id, $business, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail);
+					redirect($url);
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
+        }
+        else
+        {
+            $this->data['code'] = rand_string(6);
+            $this->data['main_content']='member/nap_tien';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function nap_the()
+    {
+        $this->data['so_du']=$this->blancehomemodel->so_du($this->session->userdata('user_id'));
+        if($this->input->post())
+        {
+            $this->load->library('gamebank');
+            $telco = $this->input->post('lstTelco');
+            $code = $this->input->post('txtCode');
+            $seri = $this->input->post('txtSeri');
+            $result = $this->gamebank->nap_tien($telco,$code,$seri);
+            if($result['error']==1)
+            {
+                $this->data['message']=$result['return_result'];
+                $this->data['ma_the']=$code;
+                $this->data['series']=$seri;
+                $this->data['main_content']='member/nap_the';
+                $this->load->view('home_layout/member/user_index_layout',$this->data);
+            }
+            else
+            {
+                 $data_log_gd = array(
+				    'id_user'=>$this->session->userdata('user_id'),
+					'thoi_gian'=>strtotime('now'),
+					'so_tien'=>$result['money'],
+					'loai_giao_dich'=>'Nạp tiền thẻ điện thoại',
+					'trang_thai'=>1,
+					'hinh_thuc'=>'+'
+				);
+                $data_user_blance = array('so_du'=>$tien_con);
+				$this->blancehomemodel->update_blance_user($this->session->userdata('user_id'),$data_user_blance);
+                $this->logblancehomemodel->insert($data_log_gd);
+                $this->session->set_flashdata('message',$result['return_result']);
+                redirect('/thanh-vien/nap-the');
+            }
+        }
+        else
+        {
+            $this->data['main_content']='member/nap_the';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
     function change_email()
 	{
-		if (!$this->tank_auth->is_logged_in()) {								// not logged in or not activated
+		if (!$this->tank_auth->is_logged_in()) {
 			redirect('/dang-nhap');
-
 		} else {
 		  $this->load->model('memberhomemodel');
           $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
@@ -92,7 +189,6 @@ class Member extends MY_Controller
             }
             if($this->input->post('SubmitInfo'))
             {
-                
                 $data_user = array(
                 'full_name'=>$this->input->post('FullName'),
                 'birthday'=>$this->input->post('AllDay').'/'.$this->input->post('AllMonth').'/'.$this->input->post('AllYear'),
@@ -102,7 +198,6 @@ class Member extends MY_Controller
                 'company'=>$this->input->post('CompanyName'),
                 'website'=>$this->input->post('Website')
                 );
-                
                 $this->memberhomemodel->update_userinfo($this->session->userdata('user_id'),$data_user);
             }
             if($this->input->post('SubmitLogo'))
@@ -136,27 +231,11 @@ class Member extends MY_Controller
 			$this->load->view('home_layout/member/user_index_layout', $this->data);
 		}
 	}
-    
-	/**
-	 * Show info message
-	 *
-	 * @param	string
-	 * @return	void
-	 */
 	function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
 		redirect('/');
 	}
-
-	/**
-	 * Send email message of given type (activate, forgot_password, etc.)
-	 *
-	 * @param	string
-	 * @param	string
-	 * @param	array
-	 * @return	void
-	 */
 	function _send_email($type, $email, &$data)
 	{
 	   $this->load->library('email');
@@ -173,8 +252,6 @@ class Member extends MY_Controller
 	{
 		$user_id		= $this->uri->segment(2);
 		$new_email_key	= $this->uri->segment(3);
-
-		// Reset email
 		if ($this->tank_auth->activate_new_email($user_id, $new_email_key)) {	// success
 			$this->tank_auth->logout();
 			$this->_show_message($this->lang->line('auth_message_new_email_activated').' '.anchor('/auth/login/', 'Login'));
@@ -185,11 +262,16 @@ class Member extends MY_Controller
 	}
     public function du_property_luu()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
-        
         $config['per_page'] = 12;
         $config['total_rows'] = $this->propertyhomemodel->count_property_save();
         if ($page == '') {
@@ -201,10 +283,8 @@ class Member extends MY_Controller
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_save($config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -215,26 +295,27 @@ class Member extends MY_Controller
     }
     public function tin_tuc_luu()
     {
+		
+        if(!$this->tank_auth->is_logged_in())
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('newshomemodel');
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
-       
         $config['per_page'] = 12;
         $config['total_rows'] = $this->newshomemodel->get_count_new_save();
         if ($page == '') {
             $page = 1;
         }
         $page1 = ($page - 1) * $config['per_page'];
-       
         if (!is_numeric($page)) {
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->newshomemodel->get_list_new_save($config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -245,26 +326,27 @@ class Member extends MY_Controller
     }
     public function project_save()
     {
+		
+        if(!$this->tank_auth->is_logged_in())
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('projecthomemodel');
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
-        
         $config['per_page'] = 12;
         $config['total_rows'] = $this->projecthomemodel->count_save();
         if ($page == '') {
             $page = 1;
         }
         $page1 = ($page - 1) * $config['per_page'];
-       
         if (!is_numeric($page)) {
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->projecthomemodel->get_list_project_save($config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -275,6 +357,11 @@ class Member extends MY_Controller
     }
     public function tai_san_dang_moi()
     {
+		
+        if(!$this->tank_auth->is_logged_in())
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
             $this->load->model('memberhomemodel');
         if($this->input->post())
@@ -287,9 +374,7 @@ class Member extends MY_Controller
                             $files[] = $file; // put in array.
                     }   
             }
-            
             natsort($files);
-            
             if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
             {
                 $price = "Thương lượng";
@@ -432,8 +517,10 @@ class Member extends MY_Controller
             $data_save['id_user']=$this->session->userdata('user_id');
             $data_save['status']=0;
             $data_save['create_date']=strtotime('now');
+			$data_save['code']=$this->input->post('code');
             if($this->input->post('SubmitNew'))
             {
+            	
                 $id = $this->propertyhomemodel->insert($data_save);
                 if($id>0)
                 {
@@ -443,17 +530,14 @@ class Member extends MY_Controller
                         $data_file = array('id_pro'=>$id,'file'=>$v);
                         $this->memberhomemodel->insert_img_proper($data_file);
                     }
-                    $code = $this->input->post('code');
-                    redirect('/tai-san/dang-thanh-cong-'.$code);
                 }
-                
+                redirect('/thanh-vien/tai-san-dang-moi');
             }
             else
             {
                 $this->propertyhomemodel->insert_tmp($data_save);
                 redirect('/thanh-vien/tai-san-dang-moi');
             }
-            
         }
         else
         {
@@ -494,6 +578,12 @@ class Member extends MY_Controller
     }
     public function dang_hien_thi()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
         $this->load->helper('url');
@@ -511,10 +601,8 @@ class Member extends MY_Controller
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_available($id_user,$config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -525,6 +613,12 @@ class Member extends MY_Controller
     }
     public function dang_hien_thi_search()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
         $this->load->helper('url');
@@ -534,33 +628,25 @@ class Member extends MY_Controller
         $config['per_page'] = 12;
         $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
         FROM property
-        
         LEFT JOIN loai_dia_oc
         ON property.loai_dia_oc = loai_dia_oc.id
         WHERE property.id_user = $id_user AND property.status = 1
         ";
-        
         if ($page == '') {
             $page = 1;
         }
-        
         $page1 = ($page - 1) * $config['per_page'];
-        
         if (!is_numeric($page)) {
             show_404();
             exit;
         }
-       
-       
        $sql_query = "SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
         FROM property
         LEFT JOIN loai_dia_oc
         ON property.loai_dia_oc = loai_dia_oc.id
         WHERE property.id_user = $id_user AND property.status = 1";
-        
         if($this->input->get('tp'))
         {
-            
              $sql_query .=" AND id_city=".$this->input->get('tp');
              $sql .=" AND id_city=".$this->input->get('tp');
         }
@@ -592,6 +678,12 @@ class Member extends MY_Controller
     }
     public function dang_cho_duyet()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
         $this->load->helper('url');
@@ -609,10 +701,8 @@ class Member extends MY_Controller
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_pending($id_user,$config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -623,6 +713,12 @@ class Member extends MY_Controller
     }
     public function edit_tai_san_pending($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('memberhomemodel');
         $this->load->model('propertyhomemodel');
         if($this->input->post())
@@ -635,7 +731,6 @@ class Member extends MY_Controller
                             $files[] = $file; // put in array.
                     }   
             }
-            
             natsort($files);
             if($this->input->post('SubmitSave'))
             {
@@ -780,7 +875,6 @@ class Member extends MY_Controller
                 $data_save['id_user']=$this->session->userdata('user_id');
                 $data_save['status']=0;
                 $data_save['create_date']=strtotime('now');
-                
                 $this->propertyhomemodel->update($id,$data_save);
                 $this->memberhomemodel->delete_img($id);
                 $data_img = array();
@@ -811,8 +905,15 @@ class Member extends MY_Controller
     }
     public function chua_thanh_toan()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+        $this->load->helper('url');
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
@@ -830,7 +931,6 @@ class Member extends MY_Controller
         }
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_waitpay($id_user,$config['per_page'], $page1);
-        
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -841,61 +941,68 @@ class Member extends MY_Controller
     }
     public function thanh_toan($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $id_user= $this->session->userdata('user_id');
         $this->load->model('propertyhomemodel');
         $this->load->model('blancehomemodel');
         $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
         $this->data['detail_order']=$this->blancehomemodel->detail_dv($id,$id_user);
-       
         if($this->input->post())
         {
             $tien = $this->data['so_du'][0]['so_du'];
             $tien_tra = $this->data['detail_order'][0]['tong_tien'];
-            if($tien == 0)
-            {
-                redirect($_SERVER['HTTP_REFERER']);
-            }
-            else
-            {
-                if($tien < $tien_tra)
-                {
-                    redirect($_SERVER['HTTP_REFERER']);
-                }
-                else
-                {
+            if($tien==0 || $tien<$tien_tra)
+			{
+				$trang_thai = 0;
+			}
+			else
+			{
+				$trang_thai = 1;
+			}
                     $tien_up = $tien - $tien_tra;
                     $data_update_order = array(
-                    'ngay_het_han'=>'',
-                    'tinh_trang'=>1
+                    'ngay_het_han'=>$this->data['detail_order'][0]['ngay_het_han'],
+                    'tinh_trang'=>$trang_thai
                     );
                     $data_log_gd = array(
                     'id_user'=>$id_user,
                     'thoi_gian'=>strtotime('now'),
                     'so_tien'=>$tien_tra,
                     'loai_giao_dich'=>'Thanh toán dịch vụ',
-                    'trang_thai'=>1,
+                    'trang_thai'=>$trang_thai,
                     'hinh_thuc'=>'-'
                     );
+					if($tien>0 && $tien>$tien_tra && $tien_up>0)
+					{
                     $this->load->model('logblancehomemodel');
                     $this->logblancehomemodel->insert($data_log_gd);
                     $data_user_blance = array('so_du'=>$tien_up);
                     $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+					}
                     $data_pro = array('goi_giao_dich'=>$this->data['detail_order'][0]['id_dich_vu']);
                     $this->blancehomemodel->update_blance($this->data['detail_order'][0]['id_ctdvts'],$data_update_order);
                     $this->propertyhomemodel->update($this->data['detail_order'][0]['id_tai_san'],$data_pro);
                     redirect('/thanh-vien/dich-vu-chua-thanh-toan');
-                }
-            }
         }
         else
         {
-            
             $this->data['main_content']='member/thanh_toan';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
     }
     public function list_dang_soan()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
         $this->load->helper('url');
@@ -913,10 +1020,8 @@ class Member extends MY_Controller
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->propertyhomemodel->list_property_prepare($id_user,$config['per_page'], $page1);
-      
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -927,6 +1032,12 @@ class Member extends MY_Controller
     }
     public function sua_hs_dang_soan($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
        $id_user= $this->session->userdata('user_id');
        $this->load->model('propertyhomemodel');
        $this->load->model('memberhomemodel');
@@ -954,8 +1065,10 @@ class Member extends MY_Controller
                 'so_phong_ngu'=>$this->input->post('NumberOfBedRoomList'),
                 'so_phong_tam_wc'=>$this->input->post('NumberOfWCList'),
                 'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
+                'phong_khac'=>$this->input->post('NumberOfRelaxRoomList'),
                 'content'=>$this->input->post('Detail'),
-                'title'=>$this->input->post('Title')
+                'title'=>$this->input->post('Title'),
+				'code'=>$this->input->post('code')
                 );
                 if($this->input->post('TinDang')==2)
                 {
@@ -1071,6 +1184,21 @@ class Member extends MY_Controller
                     if($id_ins>0)
                     {
                         $this->propertyhomemodel->delete_tmp($id);
+						$path = $_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/property/'.$this->input->post('code');
+						$files = array();
+						$dir = opendir($path); // open the cwd..also do an err check.
+						while(false != ($file = readdir($dir))) {
+								if(($file != ".") and ($file != "..") and ($file != "index.php")) {
+										$files[] = $file; // put in array.
+								}   
+						}
+						
+						natsort($files);
+						foreach($files as $v)
+						{
+							$data_img = array('file'=>$v,'id_pro'=>$id_ins);
+							$this->memberhomemodel->insert_img_proper($data_img);
+						}
                         redirect('/thanh-vien/tai-san-dang-soan');
                     }
                 }
@@ -1098,9 +1226,12 @@ class Member extends MY_Controller
     }
     public function list_het_han()
     {
-        /*$tomorrow  = mktime(0, 0, 0, date("m")+1  , date("d"), date("Y"));
-        echo date('d/m/Y',$tomorrow);
-        echo $tomorrow;exit;*/
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('propertyhomemodel');
         $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
         $this->load->helper('url');
@@ -1118,10 +1249,8 @@ class Member extends MY_Controller
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
-       $array_sv = $this->propertyhomemodel->list_property_exp($id_user,$config['per_page'], $page1);
-       
+       $array_sv = $this->propertyhomemodel->list_property_exp($id_user,$config['per_page'], $page1);       
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
@@ -1132,35 +1261,36 @@ class Member extends MY_Controller
     }
     public function gia_han_dich_vu($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $id_user= $this->session->userdata('user_id');
         $this->load->model('propertyhomemodel');
         $this->load->model('blancehomemodel');
         $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
         $this->data['detail_order']=$this->blancehomemodel->detail_dv_hh($id,$id_user);
-       
         if($this->input->post())
         {
             $tien = $this->data['so_du'][0]['so_du'];
             $tien_dv = $this->blancehomemodel->sv_detail($this->input->post('dich_vu'));
             $tien_tra = $tien_dv[0]['money'] * $this->input->post('time');
-            if($tien == 0)
-            {
-                redirect($_SERVER['HTTP_REFERER']);
-            }
-            else
-            {
-                if($tien < $tien_tra)
-                {
-                    redirect($_SERVER['HTTP_REFERER']);
-                }
-                else
-                {
+			if($tien==0 || $tien<$tien_tra)
+			{
+			$trang_thai = 0;
+			} 
+			else
+			{
+			$trang_thai = 1;
+			}
                     $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
                     $date_exp = date('Y-m-d h:i:s',$tomorrow);
                     $tien_up = $tien - $tien_tra;
                     $data_update_order = array(
                     'ngay_het_han'=>$date_exp,
-                    'tinh_trang'=>1,
+                    'tinh_trang'=>$trang_thai,
                     'id_dich_vu'=>$this->input->post('dich_vu'),
                     'tong_tien'=>$tien_tra,
                     'time'=>$this->input->post('time')
@@ -1170,19 +1300,20 @@ class Member extends MY_Controller
                     'thoi_gian'=>strtotime('now'),
                     'so_tien'=>$tien_up,
                     'loai_giao_dich'=>'Gia hạn dịch vụ',
-                    'trang_thai'=>1,
+                    'trang_thai'=>$trang_thai,
                     'hinh_thuc'=>'-'
                     );
-                    $this->load->model('logblancehomemodel');
-                    $this->logblancehomemodel->insert($data_log_gd);
-                    $data_user_blance = array('so_du'=>$tien_up);
-                    $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+					if($tien!=0 && $tien > $tien_tra && $tien_up >0)
+					{
+						$this->load->model('logblancehomemodel');
+						$this->logblancehomemodel->insert($data_log_gd);
+						$data_user_blance = array('so_du'=>$tien_up);
+						$this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+					}
                     $data_pro = array('goi_giao_dich'=>$this->input->post('dich_vu'));
                     $this->blancehomemodel->update_blance($this->data['detail_order'][0]['id_ctdvts'],$data_update_order);
                     $this->propertyhomemodel->update($this->data['detail_order'][0]['id_tai_san'],$data_pro);
                     redirect('/thanh-vien/tai-san-het-han');
-                }
-            }
         }
         else
         {
@@ -1193,6 +1324,12 @@ class Member extends MY_Controller
     }
     public function ajax_get_price_sv($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('blancehomemodel');
         $id = intval($id);
         $detail = $this->blancehomemodel->sv_detail($id);
@@ -1200,6 +1337,12 @@ class Member extends MY_Controller
     }
     public function get_price_sv($id)
     {
+	$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('blancehomemodel');
         $id = intval($id);
         $detail = $this->blancehomemodel->sv_detail($id);
@@ -1214,7 +1357,6 @@ class Member extends MY_Controller
     }
      public function ajax_total($month,$id)
     {
-        
         $this->load->model('blancehomemodel');
         $id = intval($id);
         $month = intval($month);
@@ -1223,37 +1365,15 @@ class Member extends MY_Controller
     }
     public function huy_dich_vu($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $id = intval($id);
         $this->load->model('propertyhomemodel');
         $this->propertyhomemodel->delete_dich_vu_($id);
-    }
-    public function nap_tien()
-    {
-        $this->load->library('nl');
-        if($this->input->post())
-        {
-            $url = base_url()."home/member/ket_qua";
-            $receiver ="nguyentruonggiang91@gmail.com";
-            $transaction_info='';
-            $order_code= $this->input->post('order_code');
-            $price = $this->input->post('code');
-            $this->load->model('blancehomemodel');
-            $data = array(
-            'id_user'=>$this->session->userdata('user_id'),
-            'code'=>$order_code,
-            'money'=>$price,
-            'status'=>0
-            );
-            $this->blancehomemodel->insert_order($data);
-            $url = $this->nl->buildCheckoutUrlExpand($url,$receiver,$transaction_info,$order_code,$price);
-            redirect($url);
-        }
-        else
-        {
-            $this->data['code'] = rand_string(6);
-            $this->data['main_content']='member/nap_tien';
-            $this->load->view('home_layout/member/user_index_layout',$this->data);
-        }
     }
     public function ket_qua()
     {
@@ -1295,133 +1415,132 @@ class Member extends MY_Controller
     }  
     public function list_giao_dich()
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
         $this->load->model('logblancehomemodel');
-        
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(4);
         $id_user = $this->session->userdata('user_id');
-        $config['per_page'] = 12;
+        $config['per_page'] = 10;
         $config['total_rows'] = $this->logblancehomemodel->count_giao_dich($id_user);
         if ($page == '') {
             $page = 1;
         }
         $page1 = ($page - 1) * $config['per_page'];
-       
         if (!is_numeric($page)) {
             show_404();
             exit;
         }
-       
        $num_pages = ceil($config['total_rows']/ $config['per_page']);
        $array_sv = $this->logblancehomemodel->list_giao_dich($id_user,$config['per_page'], $page1);
-       
        $this->data['total_page'] = $num_pages;
        $this->data['offset'] = $page1;
        $this->data['page']=$page;
        $this->data['total']=$config['total_rows'];
        $this->data['list']=$array_sv;
-       
-        $this->data['main_content']='member/list_giao_dich';
-         $this->load->view('home_layout/member/user_index_layout',$this->data);
+       $this->data['main_content']='member/list_giao_dich';
+       $this->load->view('home_layout/member/user_index_layout',$this->data);
     }
     public function nang_cap($id)
     {
+		$active = TRUE;
+        $location = 'home';
+        if(!$this->tank_auth->is_logged_in($active,$location))
+        {
+            redirect('/dang-nhap');
+        }
          $id_user= $this->session->userdata('user_id');
         $this->load->model('propertyhomemodel');
         $this->load->model('blancehomemodel');
         $this->data['so_du']=$this->blancehomemodel->so_du($id_user);
-        
-       
         if($this->input->post())
         {
             $tien = $this->data['so_du'][0]['so_du'];
             $tien_dv = $this->blancehomemodel->sv_detail($this->input->post('dich_vu'));
             $detail = $this->propertyhomemodel->search_ct_dv($id);
             $tien_tra = $tien_dv[0]['money'] * $this->input->post('time');
+			if($tien==0 || $tien<$tien_tra)
+			{
+					$trang_thai = 0;
+			}
+			else
+			{
+					$trang_thai = 1;
+			}
             $this->load->model('logblancehomemodel');
             if(!empty($detail))
             {
-                if($tien == 0)
-                {
-                    redirect($_SERVER['HTTP_REFERER']);
-                }
-                else
-                {
                     $day = intval(time_diff_string('now',$detail[0]['ngay_het_han']))*30;
-                    $money_per_day = $detail[0]['money']/($detail[0]['time']*30);
+                    $money_per_day = $detail[0]['tong_tien']/($detail[0]['time']*30);
                     $day_use = $day * $money_per_day;
-                    $tien_du = $detail[0]['money']-$day_use;
+                    $tien_du = $detail[0]['tong_tien']-$day_use;
                     $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
                     $date_exp = date('Y-m-d h:i:s',$tomorrow);
                     $tien_up = $tien_tra - $tien_du;
                     $tien_con = $tien - $tien_up;
                     $data_update_order = array(
                         'ngay_het_han'=>$date_exp,
-                        'tinh_trang'=>1,
+                        'tinh_trang'=>$trang_thai,
                         'id_dich_vu'=>$this->input->post('dich_vu'),
                         'tong_tien'=>$tien_up,
                         'time'=>$this->input->post('time')
                         );
-                        
                     $this->blancehomemodel->update_blance($detail[0]['id_ctdvts'],$data_update_order);
-                    $data_user_blance = array('so_du'=>$tien_con);
-                    $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
-                    $data_log_gd = array(
-                    'id_user'=>$id_user,
-                    'thoi_gian'=>strtotime('now'),
-                    'so_tien'=>$tien_up,
-                    'loai_giao_dich'=>'Nâng cấp dịch vụ',
-                    'trang_thai'=>1,
-                    'hinh_thuc'=>'-'
-                    );
-                    
-                    $this->logblancehomemodel->insert($data_log_gd);
+					if($tien>0 && $tien>$tien_up && $tien_con>0)
+					{
+						$data_user_blance = array('so_du'=>$tien_con);
+						$this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+						
+					}
+					$data_log_gd = array(
+						'id_user'=>$id_user,
+						'thoi_gian'=>strtotime('now'),
+						'so_tien'=>$tien_up,
+						'loai_giao_dich'=>'Nâng cấp dịch vụ',
+						'trang_thai'=>$trang_thai,
+						'hinh_thuc'=>'-'
+						);
+						
+						$this->logblancehomemodel->insert($data_log_gd);
                     redirect($_SERVER['HTTP_REFERER']);
-                }
+                
             }
             else
             {
-                if($tien == 0)
-                {
-                    redirect($_SERVER['HTTP_REFERER']);
-                }
-                else
-                {
-                    if($tien < $tien_tra)
-                    {
-                        redirect($_SERVER['HTTP_REFERER']);
-                    }
-                    else
-                    {
-                        $tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
+				$tomorrow  = mktime(0, 0, 0, date("m")+$this->input->post('time'), date("d"), date("Y"));
                         $date_exp = date('Y-m-d h:i:s',$tomorrow);
                         
                         $tien_up = $tien - $tien_tra;
                         $data_update_order = array(
                         'id_tai_san'=>$id,
                         'ngay_het_han'=>$date_exp,
-                        'tinh_trang'=>1,
+                        'tinh_trang'=>$trang_thai,
                         'id_dich_vu'=>$this->input->post('dich_vu'),
                         'tong_tien'=>$tien_tra,
                         'time'=>$this->input->post('time')
                         );
-                        $this->blancehomemodel->insert_ct($data_update_order);
-                        $data_user_blance = array('so_du'=>$tien_up);
-                        $this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
-                         $data_log_gd = array(
-                        'id_user'=>$id_user,
-                        'thoi_gian'=>strtotime('now'),
-                        'so_tien'=>$tien_up,
-                        'loai_giao_dich'=>'Nâng cấp dịch vụ',
-                        'trang_thai'=>1,
-                        'hinh_thuc'=>'-'
-                        );
-                        
-                        $this->logblancehomemodel->insert($data_log_gd);
+						$this->blancehomemodel->insert_ct($data_update_order);
+						if($tien>0 && $tien>$tien_tra && $tien_up>0)
+						{
+							
+							$data_user_blance = array('so_du'=>$tien_up);
+							$this->blancehomemodel->update_blance_user($id_user,$data_user_blance);
+						}
+							 $data_log_gd = array(
+							'id_user'=>$id_user,
+							'thoi_gian'=>strtotime('now'),
+							'so_tien'=>$tien_up,
+							'loai_giao_dich'=>'Nâng cấp dịch vụ',
+							'trang_thai'=>$trang_thai,
+							'hinh_thuc'=>'-'
+							);
+							$this->logblancehomemodel->insert($data_log_gd);
                         redirect('/thanh-vien/dich-vu-chua-thanh-toan');
-                    }
-                }
             }
         }
         else
@@ -1430,12 +1549,6 @@ class Member extends MY_Controller
             $this->data['main_content']='member/nang_cap_dich_vu';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
-    }
-    public function dang_thanh_cong($code)
-    {
-        $this->data['code']=$code;
-        $this->data['main_content']='member/post_success';
-        $this->load->view('home_layout/registersuccess_layout',$this->data);
     }
 }
 ?>

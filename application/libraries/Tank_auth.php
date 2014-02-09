@@ -661,6 +661,4 @@ class Tank_auth
 		}
 	}
 }
-
-/* End of file Tank_auth.php */
-/* Location: ./application/libraries/Tank_auth.php */
+?>

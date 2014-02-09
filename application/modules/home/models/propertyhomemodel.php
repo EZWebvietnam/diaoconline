@@ -1114,5 +1114,13 @@ class Propertyhomemodel extends CI_Model
         $query = $this->db->query($sql);
         return $query->result_array();
     }
+    //
+    public function search_tk_ctt($id)
+    {
+    	$id = intval($id);
+        $sql ="SELECT * FROM chi_tiet_dv_ts WHERE id_tai_san= $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
 }
 ?>

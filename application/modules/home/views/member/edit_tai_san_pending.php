@@ -597,7 +597,7 @@ for($b=1;$b<=20;$b++)
                         	
                            	    <fieldset>
                                     <input id="userfile" name="userfile" type="file" multiple="true">
-                                   
+                                   <link href="<?php echo base_url(); ?>assets/js/jquery/uploadify_31/uploadify.css" rel="stylesheet" type="text/css" />
                                     <script src="<?php echo base_url()?>assets/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 		<?php $timestamp = time();?>

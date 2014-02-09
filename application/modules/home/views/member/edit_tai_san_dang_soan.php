@@ -1,4 +1,3 @@
-
 <div class="col_790 margin_left">
             <div class="box">
               	<div class="headline_11"><h2>
@@ -6,6 +5,7 @@
                 </h2></div>
 
                 <form  method="post" class="form_style_3" enctype="multipart/form-data">
+                <input type="hidden" name="code" value="<?php echo $detail[0]['code'] ?>"/>
                 <div class="body">
                   <div class="mess_head margin_bottom"><strong>Điền chính xác các thông tin dưới đây giúp cho tài sản của bạn xuất hiện chính xác và đầy đủ trong các kết quả theo nhu cầu của người dùng, việc này giúp cho giao dịch của bạn sẽ nhanh hơn.</strong></div>
                   

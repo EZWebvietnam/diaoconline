@@ -30,74 +30,6 @@
                             <input class="input-xlarge disabled" id="disabledInput" type="text" name="title" value="<?php echo $detail[0]['ten_dn']?>">
                         </div>
                     </div>
-                    <?php 
-                    if($detail[0]['status']==1)
-                    {
-                    ?>
-                    <div class="control-group">
-								<label class="control-label">Trạng thái</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="status" id="status" value="1" checked="" style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="status" id="status" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <?php } else {?>
-                    <div class="control-group">
-								<label class="control-label">Trạng thái</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span><input type="radio" name="status" id="status" value="1"  style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span  class="checked"><input type="radio" name="status" checked="" id="status" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <?php } ?>
-                    <?php 
-                    if($detail[0]['noi_bat']==1)
-                    {
-                    ?>
-                    <div class="control-group">
-								<label class="control-label">Nổi bật</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="noi_bat" id="noi_bat" value="1" checked="" style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="noi_bat" id="noi_bat" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <?php } else {?>
-                    <div class="control-group">
-								<label class="control-label">Nổi bật</label>
-								<div class="controls">
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios1"><span><input type="radio" name="noi_bat" id="noi_bat" value="1"  style="opacity: 0;"></span></div>
-									Kích hoạt
-								  </label>
-								  <div style="clear:both"></div>
-								  <label class="radio">
-									<div class="radio" id="uniform-optionsRadios2"><span  class="checked"><input type="radio" name="noi_bat" checked="" id="noi_bat" value="0" style="opacity: 0;"></span></div>
-									Đóng
-								  </label>
-								</div>
-							  </div>
-                    <?php } ?>
                     <div class="control-group">
                         <label class="control-label" for="disabledInput">Thành viên chủ quản</label>
                         <div class="controls">
@@ -150,7 +82,7 @@
                         <div class="controls">
                             <input class="input-xlarge disabled" id="disabledInput" type="text" name="web" value="<?php echo $detail[0]['web']?>">
                         </div>
-                    </div>
+                    </div>					<div class="control-group">								<label class="control-label">Trạng thái</label>								<div class="controls">								<?php								if($detail[0]['status']==1)								{								?>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="optionsRadios" id="optionsRadios1" value="1" checked="" style="opacity: 0;"></span></div></span></div>									Kích hoạt								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span><div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="optionsRadios" id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không kích hoạt								  </label>								 <?php } else {?>								 <label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span ><div class="radio" id="uniform-optionsRadios1"><span><input type="radio" name="optionsRadios" id="optionsRadios1" value="1" style="opacity: 0;"></span></div></span></div>									Kích hoạt								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span class="checked"><div class="radio" id="uniform-optionsRadios2"><span  class="checked"><input type="radio" name="optionsRadios" checked=""  id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không kích hoạt								  </label>								 <?php }?>								</div>					</div>					<div class="control-group">								<label class="control-label">Nổi bật</label>								<div class="controls">								<?php								if($detail[0]['noi_bat']==1)								{								?>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span class="checked"><div class="radio" id="uniform-optionsRadios1"><span class="checked"><input type="radio" name="noi_bat" id="optionsRadios1" value="1" checked="" style="opacity: 0;"></span></div></span></div>									Có								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span><div class="radio" id="uniform-optionsRadios2"><span><input type="radio" name="noi_bat" id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không								  </label>								<?php } else {?>								<label class="radio">									<div class="radio" id="uniform-optionsRadios1"><span><div class="radio" id="uniform-optionsRadios1"><span><input type="radio" name="noi_bat" id="optionsRadios1" value="1" style="opacity: 0;"></span></div></span></div>									Có								  </label>								  <div style="clear:both"></div>								  <label class="radio">									<div class="radio" id="uniform-optionsRadios2"><span  class="checked"><div class="radio" id="uniform-optionsRadios2"><span  class="checked"><input type="radio" checked=""  name="noi_bat" id="optionsRadios2" value="2" style="opacity: 0;"></span></div></span></div>									Không								  </label>								<?php } ?>								</div>							  </div>
                     <div class="control-group">
                         <label class="control-label" >Nội dung</label>
                         <div class="controls">

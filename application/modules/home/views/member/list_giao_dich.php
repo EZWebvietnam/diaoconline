@@ -64,7 +64,7 @@
                             <ul class="pager"></ul>
 <script type="text/javascript">
     $(function () {
-        $('.pager').html(LoadPagging(<?php echo $page ?>, <?php echo $total ?>, 'thanh-vien/log-giao-dich',<?php echo $total_page?>));
+        $('.pager').html(LoadPagging(<?php echo $page ?>, <?php echo $total ?>, '<?php echo base_url();?>thanh-vien/log-giao-dich',<?php echo $total_page?>));
     });
 </script>
 

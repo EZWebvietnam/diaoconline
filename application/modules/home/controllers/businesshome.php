@@ -70,6 +70,7 @@ class Businesshome extends MY_Controller
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(5);
+        
         $config['per_page'] = 10;
         $config['total_rows'] = $this->doanhnghiephomemodel->count_doanh_nghiep_key($key);
        
@@ -123,6 +124,7 @@ class Businesshome extends MY_Controller
         $this->load->helper('url');
         $config['uri_segment'] = 5;
         $page = $this->uri->segment(5);
+       
         $config['per_page'] = 10;
         $config['total_rows'] = $this->projecthomemodel->count_list_project_dn($id);
       

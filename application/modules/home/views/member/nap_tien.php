@@ -9,45 +9,11 @@
                     <div id="card_agency" class="rounded_style_3 rounded_box margin_bottom"><div class="TL"></div><div class="TR"></div><div class="BL"></div><div class="BR"></div>
                         <div class="headline_12">
                             <h2>
-                                Hệ tại hệ thống chấp nhận nạp các loại thẻ như: <strong>DoolCard, Mobiphone, Vinaphone,
-                                    Viettel, VTC Vcoin, FPT Gate, Megacard</strong></h2>
+                                Hiện tại hệ thống chỉ chấp nhận nạp tiền qua ví điện tử Ngân Lượng</strong></h2>
                         </div>
                         <div class="body">
                             <ul>
-                                <li>
-                                    <div class="pack">
-                                        <div class="block_140x62">
-                                            <div class="logo">
-                                                <img src="Content/images/logo_diaoconline_napdd.gif" alt="">
-                                                
-                                                </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pack">
-                                        <div class="block_140x62">
-                                            <div class="logo">
-                                                <img src="Content/images/logo_mobi_napdd.gif" alt=""></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pack">
-                                        <div class="block_140x62">
-                                            <div class="logo">
-                                                <img src="Content/images/logo_vina_napdd.gif" alt=""></div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="pack">
-                                        <div class="block_140x62">
-                                            <div class="logo">
-                                                <img src="Content/images/logo_viettel_napdd.gif" alt=""></div>
-                                        </div>
-                                    </div>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>
@@ -60,7 +26,7 @@
                                     Hình thức <span class="hightlight">*</span></label>
                                 <select id="ServiceList" name="ServiceList"><option selected="selected" value="-1">--- Chọn loại giao dịch ---</option>
 <option value="1">Ngân Lượng</option>
-
+<option value="2">Bảo Kim</option>
 </select>
                             </li>
                             <li>
@@ -74,11 +40,7 @@
                                     <?php echo $code?>
                                 <input  id="order_code" name="order_code" type="hidden" value="<?php echo $code?>">
                             </li>
-                            <li>
-                                <label>
-                                    Tài khoản nhận điểm DOOL</label>
-                                <input id="reciver" name="reciver" type="text" value="GiangBeo">
-                            </li>
+                            
                             <li>
                                 <button type="submit" class="btn_2">
                                     <span>NẠP ĐIỂM</span></button>

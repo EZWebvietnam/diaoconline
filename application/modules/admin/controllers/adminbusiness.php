@@ -49,8 +49,6 @@ class Adminbusiness extends MY_Controller
                 $file='';
             }
             $data_save = array(
-            'status'=>$this->input->post('status'),
-            'noi_bat'=>$this->input->post('noi_bat'),
             'ten_dn'=>$this->input->post('title'),
             'dia_chi_dn'=>$this->input->post('address'),
             'sdt'=>$this->input->post('sdt'),
@@ -60,7 +58,7 @@ class Adminbusiness extends MY_Controller
             'gioi_thieu'=>stripslashes($this->input->post('editor1')),
             'create_date'=>strtotime('now'),
             'id_user'=>$this->input->post('id_user'),
-            'logo'=>$file
+            'logo'=>$file,			'status'=>$this->input->post('optionsRadios'),			'noi_bat'=>$this->input->post('noi_bat')
             );
             $id = $this->businessmodel->insert($data_save);
             if($id>0)
@@ -137,8 +135,6 @@ class Adminbusiness extends MY_Controller
                     }
                 }
                 $data_save = array(
-                'status'=>$this->input->post('status'),
-                'noi_bat'=>$this->input->post('noi_bat'),
                 'ten_dn'=>$this->input->post('title'),
                 'dia_chi_dn'=>$this->input->post('address'),
                 'sdt'=>$this->input->post('sdt'),
@@ -148,14 +144,12 @@ class Adminbusiness extends MY_Controller
                 'gioi_thieu'=>stripslashes($this->input->post('editor1')),
                 'create_date'=>strtotime('now'),
                 'id_user'=>$this->input->post('id_user'),
-                'logo'=>$file
+                'logo'=>$file,				'status'=>$this->input->post('optionsRadios'),				'noi_bat'=>$this->input->post('noi_bat')
                 );
             }
             else
             {
                 $data_save = array(
-                'status'=>$this->input->post('status'),
-                'noi_bat'=>$this->input->post('noi_bat'),
                 'ten_dn'=>$this->input->post('title'),
                 'dia_chi_dn'=>$this->input->post('address'),
                 'sdt'=>$this->input->post('sdt'),
@@ -164,7 +158,7 @@ class Adminbusiness extends MY_Controller
                 'web'=>$this->input->post('web'),
                 'gioi_thieu'=>stripslashes($this->input->post('editor1')),
                 'create_date'=>strtotime('now'),
-                'id_user'=>$this->input->post('id_user')
+                'id_user'=>$this->input->post('id_user'),				'status'=>$this->input->post('optionsRadios'),				'noi_bat'=>$this->input->post('noi_bat')
                 );
             }
             $this->businessmodel->update($id,$data_save);

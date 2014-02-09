@@ -1,14 +1,14 @@
 <?php 
-class NL
+class nl
 {
 	// Địa chỉ thanh toán hoá đơn của NgânLượng.vn
 	private $nganluong_url = 'https://www.nganluong.vn/checkout.php';
 	
 	// Mã website của bạn đăng ký trong chức năng tích hợp thanh toán của NgânLượng.vn.
-	private $merchant_site_code = '32491'; //100001 chỉ là ví dụ, bạn hãy thay bằng mã của bạn
+	private $merchant_site_code = '32605'; //100001 chỉ là ví dụ, bạn hãy thay bằng mã của bạn
 
 	// Mật khẩu giao tiếp giữa website của bạn và NgânLượng.vn.
-	private $secure_pass= 'giangbeo'; //d685739bf1 chỉ là ví dụ, bạn hãy thay bằng mật khẩu của bạn
+	private $secure_pass= 'giangbeo91'; //d685739bf1 chỉ là ví dụ, bạn hãy thay bằng mật khẩu của bạn
 	// Nếu bạn thay đổi mật khẩu giao tiếp trong quản trị website của chức năng tích hợp thanh toán trên NgânLượng.vn, vui lòng update lại mật khẩu này trên website của bạn
 	private $affiliate_code = ''; //Mã đối tác tham gia chương trình liên kết của NgânLượng.vn
 	/**

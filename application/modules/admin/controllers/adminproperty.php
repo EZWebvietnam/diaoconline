@@ -40,7 +40,7 @@ class Adminproperty extends MY_Controller
             exit;
         }
         $data_save = array('status'=>1);
-        $this->propertymodel->update_propery($id,$data_save);
+        $this->propertymodel->update_property($id,$data_save);
         $this->session->set_flashdata('type','success');
         $this->session->set_flashdata('message','Duyệt thành công');
         redirect('/admin/adminproperty');
