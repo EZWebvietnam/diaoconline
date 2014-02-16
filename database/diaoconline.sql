@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2014 at 07:05 PM
+-- Generation Time: Feb 16, 2014 at 08:59 PM
 -- Server version: 5.5.32
 -- PHP Version: 5.4.19
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `adv` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `adv`
@@ -46,7 +46,8 @@ INSERT INTO `adv` (`id`, `name`) VALUES
 (5, 'Quảng cáo số 5'),
 (6, 'Quảng cáo số 6'),
 (7, 'Quảng cáo số 7'),
-(8, 'Vị trí số 8');
+(8, 'Quảng cáo số 8'),
+(9, 'Vị trí đặc biệt');
 
 -- --------------------------------------------------------
 
@@ -61,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `adv_detail` (
   `exp_date` date NOT NULL,
   `vi_tri` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `adv_detail`
@@ -70,8 +71,7 @@ CREATE TABLE IF NOT EXISTS `adv_detail` (
 INSERT INTO `adv_detail` (`id`, `file`, `link`, `exp_date`, `vi_tri`) VALUES
 (21, 'a7a44d4fbbc8956950cc2046f5c2fd12_thumb.png', 'http://dcbland.com/', '2024-01-13', 1),
 (22, '4619aab7f80b158eaa405ff5df0cccb9_thumb.png', 'http://dcbland.com/', '2024-03-12', 3),
-(25, '8e79c3f7ffec54eda06b3b43333c0bea_thumb.png', 'http://dcbland.com/', '2024-01-13', 5),
-(26, 'cfbb08c70559ffe878d37eec7ea86c28_thumb.jpg', '', '0000-00-00', 8);
+(25, '_thumb', 'http://dcbland.com/', '2024-01-11', 5);
 
 -- --------------------------------------------------------
 
@@ -276,22 +276,7 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 INSERT INTO `ci_sessions` (`session_id`, `ip_address`, `user_agent`, `last_activity`, `user_data`) VALUES
-('003458dbfa32131e925c89a54133728c', '115.73.217.108', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1391964721, ''),
-('06da93f2891bceea013ae8608623e5d7', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391962672, ''),
-('07b3d89ddcb8ac35eef35f2f53be57f7', '66.249.66.73', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391960980, ''),
-('15a066380591b981289174af1e287a5a', '115.73.217.108', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1391964728, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}'),
-('1c7f3de2d84e403f03094090800e1f48', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391963799, ''),
-('3a41471c3a6243971ad18ffe89fb9249', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391964641, ''),
-('3fde770f50aa35192be957748b40a1c2', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391962837, ''),
-('52736eb109f478e59d5614735fd531a8', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391962313, ''),
-('548c0afdb21dc5c2b559dfe154f32ba8', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1391968816, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}'),
-('725443d4d5603696add5303c568b0aee', '66.249.66.73', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391961643, ''),
-('98c54f7feead489e387b29ca860ca0f6', '66.249.66.73', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391960961, ''),
-('b4fc9cbc5832bb6b208046972f5e32d5', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391965101, ''),
-('de19b80cadc2658e803a8be1b04ebe27', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391961664, ''),
-('e5d34c9ea2ca79de7e5e1428b1b17afa', '66.249.66.73', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391961755, ''),
-('f836ddd4de61efef5287b8f870beba3b', '66.249.66.73', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391961522, ''),
-('f97ae30195055a703abd5fbaf418c267', '66.249.66.182', 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)', 1391965319, '');
+('df28b68883eea566d6b6ab4e71e2f385', '::1', 'Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1700.107 Safari/537.36', 1392571405, 'a:8:{s:9:"user_data";s:0:"";s:7:"user_id";s:1:"1";s:8:"username";s:5:"admin";s:9:"full_name";s:24:"Nguyễn Trường Giang";s:7:"created";s:19:"2014-01-20 11:40:27";s:5:"email";s:20:"giangbeoit@gmail.com";s:6:"status";s:1:"1";s:4:"role";s:1:"1";}');
 
 -- --------------------------------------------------------
 
@@ -308,14 +293,7 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `content` text COLLATE utf8_unicode_ci NOT NULL,
   `create_date` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `contact`
---
-
-INSERT INTO `contact` (`id`, `fullname`, `email`, `ten_cty`, `title`, `content`, `create_date`) VALUES
-(1, 'ss', 'ss', 'ssss', 'sss', 'sss', 1390747543);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1098,6 +1076,18 @@ INSERT INTO `district` (`districtid`, `name`, `type`, `location`, `provinceid`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `email_subcrise`
+--
+
+CREATE TABLE IF NOT EXISTS `email_subcrise` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `huong`
 --
 
@@ -1173,7 +1163,7 @@ CREATE TABLE IF NOT EXISTS `login_attempts` (
   `login` varchar(50) COLLATE utf8_bin NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -1467,7 +1457,7 @@ CREATE TABLE IF NOT EXISTS `property` (
   `status` int(11) NOT NULL,
   `phi_ky_gui` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=34 ;
 
 --
 -- Dumping data for table `property`
@@ -1479,8 +1469,7 @@ INSERT INTO `property` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_
 (30, 0, 0, 0, 'Nhà phố vườn Bắc Sài Gòn, giá chỉ 867 triệu. Nhà mới xây, thiết kế kiểu Singapo', '', '<p>Tập đo&agrave;n Nam Long - tr&acirc;n trọng ch&agrave;o b&aacute;n: nh&agrave; phố vườn Ehome bắc S&agrave;i G&ograve;n, c&aacute;ch trung t&acirc;m th&agrave;nh phố 12km về hướng H&agrave;ng Xanh. Bao quanh dự &aacute;n bao gồm những tiện &iacute;ch như: chợ Vĩnh Ph&uacute;, bệnh viện Hạnh ph&uacute;c, trường quốc tế Singapore, KCN Việt - Sing, KCN Việt Hương, khu ẩm thực D&igrave;n K&yacute;,...</p>\n\n<p>Diện t&iacute;ch: 5m x 15m (1 trệt, 1 lầu, thảm cỏ s&acirc;n trước v&agrave; s&acirc;n sau, b&atilde;i đậu &ocirc; t&ocirc;). An ninh được bảo an 24/24, cộng đồng văn minh, m&ocirc;i trường xanh - sạch. Dọn v&agrave;o ở ngay.</p>\n\n<p>Gi&aacute; 867 triệu/căn/3 ph&ograve;ng ngủ.</p>\n\n<p>Xem thực tế nh&agrave; phố vườn bắc S&agrave;i G&ograve;n v&agrave; đặt mua vui l&ograve;ng li&ecirc;n hệ chuy&ecirc;n vi&ecirc;n kinh doanh Nam Long (24/7): 093.2020.695 - T&iacute;n Nghĩa<br />\nEmail: tinnghia87@gmai.com (xem 1 số h&igrave;nh ảnh thực tế)</p>\n', '867000000', 'u6mMKe', 75, 1, 3, 5, 0, 15, 1, 1, 1, 1, 2, 6, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 3, '762', '79', 0, 4, 0, 1391563562, 'bed77796612d5ffe05e7cd38e7ce3319.jpg', 0, 1, 1, '', 1, '0'),
 (31, 0, 0, 0, 'Đất nền khu nghĩ dưỡng cao cấp ven sông Q.2, ưu đãi 10 nền đẹp nhất - Giá gốc chủ đầu tư', '', '<p>1. Những ưu thế vượt trội :<br />\n- Bảo vệ 24/24<br />\n- Hồ sinh th&aacute;i rộng hơn 1 ha, kh&ocirc;ng kh&iacute; trong l&agrave;nh m&aacute;t mẻ<br />\nNgay trục đường Nguyễn Duy Trinh - V&agrave;nh Đai Đ&ocirc;ng. Về TT quận 1 chỉ mất 15 ph&uacute;t, về Ph&uacute; Mỹ Hưng 10 ph&uacute;t<br />\n- C&ocirc;ng vi&ecirc;n vui chơi giải tr&iacute; ven Hồ sinh th&aacute;i, trung t&acirc;m TDTT, Spa, ph&ograve;ng GYM, khu nghỉ dưỡng<br />\n2. Diện t&iacute;ch : 128m2<br />\n3. Vị tr&iacute; :<br />\n- 2 mặt tiền đường Li&ecirc;n Phường - Ng&atilde; tư đường V&agrave;nh Đai Trong<br />\n- Đối diện Eastean Tower (1000 căn) sắp giao nh&agrave; của H&agrave;n Quốc<br />\n- Li&ecirc;n th&ocirc;ng với 2 dự &aacute;n Goldora Villa, Villa Park<br />\n- Đi thẳng ra đường cao tốc TpHCM - Long Th&agrave;nh - Dầu Gi&acirc;y khoảng 800m<br />\n4. Ph&aacute;p l&yacute; :<br />\n- Sổ đỏ sang t&ecirc;n<br />\n- CSHT ho&agrave;n thiện 100%<br />\n- Ng&acirc;n h&agrave;ng hỗ trợ 70%<br />\n- Thanh to&aacute;n linh hoạt 9 đợt<br />\n5. Gi&aacute; b&aacute;n : 11,3 triệu/m2<br />\nNhanh tay li&ecirc;n hệ để đặt chỗ những vị tr&iacute; đẹp trước như l&ocirc; g&oacute;c, view hồ sinh th&aacute;i, view c&ocirc;ng vi&ecirc;n&hellip;với gi&aacute; tốt nhất hiện nay.</p>\n', '11000000 m2', 'jp3oYw', 144, 1, 2, 8, 0, 14, 2, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 2, '762', '79', 0, 4, 0, 1391605402, 'f97eda540671cee6ef0c74aaf9ba1219.jpg', 0, 1, 1, '', 1, '0'),
 (32, 0, 0, 0, 'Biệt thự vườn ven sông Sài Gòn - Thủ Đức Garden Homes', '', '<p>Biệt thự vườn ven s&ocirc;ng S&agrave;i G&ograve;n - Dự &aacute;n Thủ Đức Garden Homes. Chỉ c&aacute;ch trung t&acirc;m TP.HCM 15 ph&uacute;t l&aacute;i xe, c&aacute;ch nh&agrave; thờ Đức B&agrave; đ&uacute;ng 7km, ngay Quốc lộ 13, P. Hiệp B&igrave;nh Phước, Quận Thủ Đức, TPHCM. Khu Biệt thự 11ha. Diện t&iacute;ch khu&ocirc;n vi&ecirc;n: từ 244m2.</p>\n\n<p>Gồm 1 trệt, 1 lầu, 3 ph&ograve;ng ngủ, 3 ph&ograve;ng vệ sinh, 1 ph&ograve;ng kh&aacute;ch, 01 kho, s&acirc;n vườn rộng, đẹp ngay s&ocirc;ng S&agrave;i G&ograve;n. Dịch vụ: hồ bơi, s&acirc;n tennis, khu thể thao đa năng, si&ecirc;u thị, nh&agrave; trẻ... đặc biệt c&oacute; bến du thuyền. Khu biệt thự kh&eacute;p k&iacute;n, an ninh 24/24, l&agrave; nơi l&yacute; tưởng để bạn tận hưởng cuộc sống cũng như thể hiện đẳng cấp của m&igrave;nh.</p>\n\n<p>Gi&aacute; b&aacute;n: thương lượng.<br />\nLi&ecirc;n hệ: Văn ph&ograve;ng chủ đầu tư - C&ocirc;ng ty Việt Quốc<br />\nAnh Kha (ph&ograve;ng kinh doanh): 0988335177</p>\n', '', 'V8AgHj', 244, 1, 2, 0, 0, 0, 1, 1, 1, 1, 3, 6, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, '762', '79', 0, 4, 0, 1391605585, '09adf54b2fb4be7e8bf8d21996834f79.jpg', 0, 1, 1, '', 1, '0'),
-(33, 0, 0, 0, 'Bán biệt thự nghỉ dưỡng tại Bình Dương. Giá: 1,6 tỷ đồng', '', '<p>B&aacute;n 1 biệt thự trong khu BT 5 sao Western Land, Đại lộ B&igrave;nh Dương, c&aacute;ch Tp. HCM 42Km, cạnh DA XD Trường ĐH TDM v&agrave; ĐH Việt Đức. Biệt thự đơn lập kiểu Ch&acirc;u &Acirc;u. Khu vực y&ecirc;n tĩnh, cảnh quan đẹp, hiện đ&atilde; c&oacute; nhiều gia đ&igrave;nh đang sinh sống hoặc mua để đến nghỉ dưỡng, bảo vệ 24/7.</p>\n\n<p>- DTKV đất ở: 517m2 (21m x 24.6m).<br />\n- Nh&agrave; XD ngang: 12,45m, d&agrave;i: 13,30m; 1 trệt v&agrave; 1 lầu.<br />\n- Tổng DT s&agrave;n sử dụng: 282m2 (trệt 149m2, lầu 133m2);<br />\n- Gồm 4 PN; 3 WC; 1 nh&agrave; xe; 1 ph&ograve;ng SHC tr&ecirc;n lầu c&oacute; 2 cửa đi mở ra ban c&ocirc;ng. Ph&ograve;ng kh&aacute;ch/ph&ograve;ng ăn/bếp rộng 70m2.<br />\n- Nh&agrave; x&acirc;y ho&agrave;n thiện năm 2011, chưa ở (10 ảnh thực tế đ&iacute;nh k&egrave;m). Tường x&acirc;y 20cm; cửa đi v&agrave; cửa sổ Euro Windows; cửa PN gỗ căm se; nền gạch granit b&oacute;ng kiếng Đồng T&acirc;m 60mx60m; thiết bị điện EG v&agrave; thiết bị vệ sinh AS.<br />\n- Gi&aacute; b&aacute;n: 1,6 tỷ đồng (Một tỷ, s&aacute;u trăm triệu đồng). Bao sang t&ecirc;n.</p>\n\n<p>Vui l&ograve;ng L/H chủ nh&agrave;: A. Minh - 0907 128 409 hoặc email: levanminh103@gmail.com. MTG.</p>\n', '1600000000', 'qR7DfV', 282, 1, 2, 21, 0, 24, 6, 2, 2, 1, 3, 5, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 2, '721', '74', 0, 4, 0, 1391605762, 'ce5d53f80ab377cc922e0ec094af6306.jpg', 0, 1, 1, '', 1, '0'),
-(36, 1, 0, 1, '', '', '', 'Thương lượng', '', 1, 2, 2, 1, 0, 1, 1, 1, 12, 16, 17, 2, 16, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, '001', '01', 0, 1, 10, 1391772470, '', 0, 2, 0, 'tongdientich', 0, '11');
+(33, 0, 0, 0, 'Bán biệt thự nghỉ dưỡng tại Bình Dương. Giá: 1,6 tỷ đồng', '', '<p>B&aacute;n 1 biệt thự trong khu BT 5 sao Western Land, Đại lộ B&igrave;nh Dương, c&aacute;ch Tp. HCM 42Km, cạnh DA XD Trường ĐH TDM v&agrave; ĐH Việt Đức. Biệt thự đơn lập kiểu Ch&acirc;u &Acirc;u. Khu vực y&ecirc;n tĩnh, cảnh quan đẹp, hiện đ&atilde; c&oacute; nhiều gia đ&igrave;nh đang sinh sống hoặc mua để đến nghỉ dưỡng, bảo vệ 24/7.</p>\n\n<p>- DTKV đất ở: 517m2 (21m x 24.6m).<br />\n- Nh&agrave; XD ngang: 12,45m, d&agrave;i: 13,30m; 1 trệt v&agrave; 1 lầu.<br />\n- Tổng DT s&agrave;n sử dụng: 282m2 (trệt 149m2, lầu 133m2);<br />\n- Gồm 4 PN; 3 WC; 1 nh&agrave; xe; 1 ph&ograve;ng SHC tr&ecirc;n lầu c&oacute; 2 cửa đi mở ra ban c&ocirc;ng. Ph&ograve;ng kh&aacute;ch/ph&ograve;ng ăn/bếp rộng 70m2.<br />\n- Nh&agrave; x&acirc;y ho&agrave;n thiện năm 2011, chưa ở (10 ảnh thực tế đ&iacute;nh k&egrave;m). Tường x&acirc;y 20cm; cửa đi v&agrave; cửa sổ Euro Windows; cửa PN gỗ căm se; nền gạch granit b&oacute;ng kiếng Đồng T&acirc;m 60mx60m; thiết bị điện EG v&agrave; thiết bị vệ sinh AS.<br />\n- Gi&aacute; b&aacute;n: 1,6 tỷ đồng (Một tỷ, s&aacute;u trăm triệu đồng). Bao sang t&ecirc;n.</p>\n\n<p>Vui l&ograve;ng L/H chủ nh&agrave;: A. Minh - 0907 128 409 hoặc email: levanminh103@gmail.com. MTG.</p>\n', '1600000000', 'qR7DfV', 282, 1, 2, 21, 0, 24, 6, 2, 2, 1, 3, 5, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 2, '721', '74', 0, 4, 0, 1391605762, 'ce5d53f80ab377cc922e0ec094af6306.jpg', 0, 1, 1, '', 1, '0');
 
 -- --------------------------------------------------------
 
@@ -1556,7 +1545,7 @@ CREATE TABLE IF NOT EXISTS `property_tmp` (
   `status` int(11) NOT NULL,
   `phi_ky_gui` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `property_tmp`
@@ -1564,7 +1553,8 @@ CREATE TABLE IF NOT EXISTS `property_tmp` (
 
 INSERT INTO `property_tmp` (`id`, `xd_chieu_ngang_truoc`, `xd_chieu_ngang_sau`, `xd_chieu_dai`, `title`, `dia_chi`, `content`, `price`, `code`, `dien_tich`, `loai_hinh`, `loai_dia_oc`, `chieu_ngang_truoc`, `chieu_ngang_sau`, `chieu_dai`, `tinh_trang_phap_ly`, `huong`, `so_lau`, `so_phong_khach`, `so_phong_tam_wc`, `so_phong_ngu`, `phong_khac`, `day_du_tien_nghi`, `cho_de_xe_hoi`, `san_vuon`, `ho_boi`, `tien_kinh_doanh`, `tien_de_o`, `tien_lam_van_phong`, `tien_cho_san_xuat`, `cho_sinh_vien_thue`, `vi_tri_dia_oc`, `id_district`, `id_city`, `cho_dau_xe_hoi`, `id_user`, `id_duan`, `create_date`, `img`, `goi_giao_dich`, `loai_tin`, `moi_gioi`, `asset`, `status`, `phi_ky_gui`) VALUES
 (10, 1, 0, 1, 'sss', '123 test', 'ssss', 'Thương lượng', '', 1, 1, 2, 1, 0, 1, 1, 1, 1, 2, 17, 1, 16, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, '291', '30', 0, 1, 0, 1391759859, '', 0, 1, 1, 'tongdientich', 0, 0),
-(13, 0, 0, 0, '', '', '', 'Thương lượng', '0WFI6w', 0, 3, 17, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '0', '26', 0, 1, 0, 1391772727, '', 0, 2, 0, 'tongdientich', 0, 0);
+(13, 0, 0, 0, '', '', '', 'Thương lượng', '0WFI6w', 0, 3, 17, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, '0', '26', 0, 1, 0, 1391772727, '', 0, 2, 0, 'tongdientich', 0, 0),
+(14, 0, 0, 0, '', '', '', 'Thương lượng', 'Sda1Ri', 0, 2, 0, 0, 0, 0, 0, 0, -1, -1, -1, -1, -1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, '', '', 0, 1, 0, 1392569740, '', 0, 1, 0, 'tongdientich', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1790,14 +1780,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `img` varchar(255) COLLATE utf8_bin NOT NULL,
   `role` int(11) NOT NULL DEFAULT '3',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `full_name`, `phone`, `address`, `password`, `email`, `activated`, `banned`, `ban_reason`, `new_password_key`, `new_password_requested`, `new_email`, `new_email_key`, `last_ip`, `last_login`, `created`, `modified`, `sex`, `company`, `website`, `birthday`, `img`, `role`) VALUES
-(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$P$BiCqTofCqE0WgTFZEvQYp70BKnX9Rc1', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, '', '', '::1', '2014-02-09 18:45:11', '2014-01-20 11:40:27', '2014-02-09 17:45:11', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1),
+(1, 'admin', 'Nguyễn Trường Giang', '01667039939', 'HCM', '$2a$08$6yOFqjSwRiUDeH0DBFo2IeK.SgYng/aOBwDAiunZyicoGD2xBRh5O', 'giangbeoit@gmail.com', 1, 0, NULL, NULL, NULL, 'beobeboi91@gmail.com', '0d5846cb5638699fe8080eddd348565a', '::1', '2014-02-16 17:38:00', '2014-01-20 11:40:27', '2014-02-16 16:45:49', 0, 'Công ty cổ phần Vượt Tốc', 'http://outsprin.com', '9/5/1991', '2cecdbb1cf075f53b965e50c41717c51.jpg', 1),
 (3, 'hongdao123', 'Hồng Đào', '0', '', '$P$BiCqTofCqE0WgTFZEvQYp70BKnX9Rc1', 'hongdao.tnmt@yahoo.com', 1, 0, NULL, NULL, NULL, NULL, NULL, '1.53.80.176', '2014-02-09 08:35:50', '2014-02-03 19:59:05', '2014-02-09 14:35:50', 0, '', '', '', '', 1),
 (4, 'aithietke', 'Tùng Trần', '01655416056', '', '$P$BDAVpTlGSa6ZI/6Qke10gVm6VUx8F41', 'aithietke@yahoo.com', 1, 0, NULL, NULL, NULL, NULL, NULL, '27.75.92.232', '2014-02-07 19:18:01', '2014-02-04 18:30:48', '2014-02-08 01:18:01', 0, '', '', '', '', 1);
 
