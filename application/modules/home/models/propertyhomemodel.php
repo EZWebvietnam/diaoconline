@@ -769,7 +769,7 @@ class Propertyhomemodel extends CI_Model
     public function list_district_by_city($id)
     {
         $id = intval($id);
-        $sql = "SELECT * FROM district WHERE provinceid = $id ORDER BY district.name";
+        $sql = "SELECT * FROM district WHERE provinceid = $id ORDER BY district.name ASC";
         $query = $this->db->query($sql);
         return $query->result_array();
     }
