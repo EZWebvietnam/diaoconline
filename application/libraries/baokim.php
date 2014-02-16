@@ -44,12 +44,12 @@ class baokim
 		}
 		return $redirect_url.$url_params;
 	}
-	public function verifyResponseUrl($_GET = array())
+	public function verifyResponseUrl($b = array())
 	{
-		$checksum = $_GET['checksum'];
-		unset($_GET['checksum']);
-		ksort($_GET);
-		$str_combined = $this->secure_pass.implode('', $_GET);
+		$checksum = $b['checksum'];
+		unset($b['checksum']);
+		ksort($b);
+		$str_combined = $this->secure_pass.implode('', $b);
 		$verify_checksum = strtoupper(md5($str_combined));
 		if ($verify_checksum === $checksum) 
 		{

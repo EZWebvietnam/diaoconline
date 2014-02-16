@@ -140,6 +140,7 @@ class Member extends MY_Controller
 		} else {
 		  $this->load->model('memberhomemodel');
           $this->data['userdetail']=$this->memberhomemodel->user_detail($this->session->userdata('user_id'));
+          
 		  if($this->input->post('SubmitEmail'))
           {
     			$this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean');
@@ -157,10 +158,10 @@ class Member extends MY_Controller
     
     					// Send email with new email address and its activation link
     					$this->_send_email('change_email', $data['new_email'], $data);
-    
-    					$this->_show_message(sprintf($this->lang->line('auth_message_new_email_sent'), $data['new_email']));
-                      
-    
+                        $message = 'Thay đổi avatar thành công';
+    					$this->_show_message(sprintf($this->lang->line('auth_message_new_email_sent'), $data['new_email']),$message);
+                        $this->session->set_flashdata('message','Thay đổi email thành công');
+                        redirect('/thanh-vien/edit-tai-khoan');
     				} else {
     					$errors = $this->tank_auth->get_error_message();
     					foreach ($errors as $k => $v)	$this->data['errors'][$k] = $this->lang->line($v);
@@ -179,8 +180,10 @@ class Member extends MY_Controller
     				if ($this->tank_auth->change_password(
     						$this->form_validation->set_value('old_password'),
     						$this->form_validation->set_value('new_password'))) {	// success
-    					$this->_show_message($this->lang->line('auth_message_password_changed'));
-    
+                            $message = 'Thay đổi password thành công';
+    					$this->_show_message($message);
+                        $this->session->set_flashdata('message','Thay đổi password thành công');
+                        redirect('/thanh-vien/edit-tai-khoan');
     				} else {														// fail
     					$errors = $this->tank_auth->get_error_message();
     					foreach ($errors as $k => $v)	$this->data['errors'][$k] = $this->lang->line($v);
@@ -198,7 +201,11 @@ class Member extends MY_Controller
                 'company'=>$this->input->post('CompanyName'),
                 'website'=>$this->input->post('Website')
                 );
+                $message = 'Thay đổi thông tin thành công';
                 $this->memberhomemodel->update_userinfo($this->session->userdata('user_id'),$data_user);
+                $this->_show_message($message);
+                $this->session->set_flashdata('message','Thay đổi thông tin thành công');
+                redirect('/thanh-vien/edit-tai-khoan');
             }
             if($this->input->post('SubmitLogo'))
             {
@@ -226,6 +233,10 @@ class Member extends MY_Controller
                 }
                 $data_td['img'] = $file;
                 $this->memberhomemodel->update_userinfo($this->session->userdata['user_id'],$data_td);
+                $message = 'Thay đổi avatar thành công';
+                $this->_show_message($message);
+                $this->session->set_flashdata('message','Thay đổi avatar thành công');
+                redirect('/thanh-vien/edit-tai-khoan');
             }
             $this->data['main_content']='member/change_info';
 			$this->load->view('home_layout/member/user_index_layout', $this->data);
@@ -234,7 +245,7 @@ class Member extends MY_Controller
 	function _show_message($message)
 	{
 		$this->session->set_flashdata('message', $message);
-		redirect('/');
+		redirect('/thanh-vien/edit-tai-khoan');
 	}
 	function _send_email($type, $email, &$data)
 	{
@@ -530,12 +541,14 @@ class Member extends MY_Controller
                         $data_file = array('id_pro'=>$id,'file'=>$v);
                         $this->memberhomemodel->insert_img_proper($data_file);
                     }
+                    $this->session->set_flashdata('message','Đăng tài sản thành công');
                 }
                 redirect('/thanh-vien/tai-san-dang-moi');
             }
             else
             {
                 $this->propertyhomemodel->insert_tmp($data_save);
+                $this->session->set_flashdata('message','Lưu tài sản thành công');
                 redirect('/thanh-vien/tai-san-dang-moi');
             }
         }

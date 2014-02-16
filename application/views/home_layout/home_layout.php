@@ -224,8 +224,20 @@ else
         });
     </script>
     <div class="wrap">
+<?php 
+if(!empty($vi_tri_9))
+{
+?>
+<div id="position_1" class ='banner_960x320 margin_bottom'>
 
-<div id="position_1" class ='banner_960x320 margin_bottom'><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner-home-5.gif" width="960px" height="360px"/></a></div><div><a href="#" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/banner2.gif" width="960px" height="360px"/></a></div></div><script type='text/javascript'>var Banner1=1;function Random_Banner1(){    var _Arr=document.getElementById("position_1").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner1 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner1 - 1]).html(); $(_Arr[Banner1 - 1]).html(''); $(_Arr[Banner1 - 1]).html(tempBanner);    window.setTimeout("Random_Banner1()" ,25000);    Banner1 = Banner1 + 1;    if(Banner1 > _Arr.length)        Banner1 = 1;}Random_Banner1();</script>
+<?php 
+foreach($vi_tri_9 as $vt_9)
+{
+?>
+<div><a href="<?php echo $vt_9['link']?>" target="_blank"><img src="<?php echo base_url();?>file/uploads/adv/<?php echo $vt_9['file']?>" width="960px" height="360px"/></a></div>
+<?php } ?>
+<script type='text/javascript'>var Banner1=1;function Random_Banner1(){    var _Arr=document.getElementById("position_1").getElementsByTagName("div");    for (i=0; i<=_Arr.length-1; i++)    {        _Arr[i].className='bannerHide';    }    _Arr[Banner1 - 1].className='bannerShow';    var tempBanner = $(_Arr[Banner1 - 1]).html(); $(_Arr[Banner1 - 1]).html(''); $(_Arr[Banner1 - 1]).html(tempBanner);    window.setTimeout("Random_Banner1()" ,25000);    Banner1 = Banner1 + 1;    if(Banner1 > _Arr.length)        Banner1 = 1;}Random_Banner1();</script></div>
+<?php } ?>
         <div id="status_search" class="wrap margin_bottom clearfix">
             <div id="status" class="rounded_style_1 rounded_box">
                 <div class="content">
@@ -323,7 +335,14 @@ foreach($list_city as $k=>$v)
                                         {
                                     ?>
                                     <li><a href="<?php echo base_url();?>sieu-thi/<?php echo mb_strtolower(url_title(removesign($cate_l['name'])))?>-c<?php echo $cate_l['id']?>">
+                                    <?php 
+                                    if($i<=10)
+                                    {
+                                    ?>
                                         <span class="ico_30 ico_home_<?php echo $i?>_30"></span><strong><?php echo $cate_l['name']?></strong></a></li>
+                                    <?php } else {?>
+                                    <span class="ico_30 ico_home_10_30"></span><strong><?php echo $cate_l['name']?></strong></a></li>
+                                    <?php } ?>
                                     <?php $i++;} ?>
                             </ul>
                         </div>
@@ -528,22 +547,18 @@ if(empty($vi_tri_5))
                         <span id="errormsg"></span>
                         <input type="text" value="" name="email" id="email" placeholder="Nhập địa chỉ email của bạn"
                             class="input_text" />
-                        <button type="submit">
+                        <button id="register" type="button">
                             Đăng ký</button>
                         <script type="text/javascript">
                             $(function () {
                                 $('#email').val('');
                                 $('#TuKhoaTimKiem').val('');
                                 var filter = /^[a-zA-Z0-9]+[a-zA-Z0-9_.-]+[a-zA-Z0-9_-]+@[a-zA-Z0-9]+[a-zA-Z0-9.-]+[a-zA-Z0-9]+.[a-z]{2,4}$/;
-                                $('#frmNewsLetter').submit(function () {
-                                    if (!filter.test($('#email').val())) {
-                                        $('#email').focus();
-                                        return false;
-                                    } else {
+                                $('#register').click(function () {
+                                    
                                         $.ajax({
                                             type: "POST"
-                                            , url: '/Home/NewsLetter'
-                                            , cache: false
+                                            , url: '<?php echo base_url()?>home/home/news_letter'
                                             , data: { email: $('#email').val() }
                                             , dataType: "json"
                                             , success: function (data) {
@@ -551,7 +566,7 @@ if(empty($vi_tri_5))
                                                     if (data.msg == true) {
                                                         $("#bodyNewsLetter").fadeOut(800).fadeIn(800);
                                                         setTimeout(function () {
-                                                            $("#bodyNewsLetter").html('<p class="title-green"><img src="Content/Images/Complete.gif"/> Email của bạn đã đăng ký thành công.</p>')
+                                                            $("#bodyNewsLetter").html('<p class="title-green"> Email của bạn đã đăng ký thành công.</p>')
                                                         }, 500);
                                                     } else {
                                                         $("#errormsg").fadeOut(800).fadeIn(800);
@@ -563,9 +578,9 @@ if(empty($vi_tri_5))
                                             }
                                         });
 
-                                        return false;
-                                    }
-                                    return false;
+                                       
+                                    
+                                    
                                 });
                             });
                         </script>
@@ -642,9 +657,9 @@ if(empty($vi_tri_5))
                         if(file_exists($_SERVER['DOCUMENT_ROOT'].ROT_DIR.'file/uploads/nhadep/'.$nha_dep['code'].'/'.$nha_dep['img']))
                         {
                         ?>
-                          <img width="196" height="263" src="<?php echo base_url();?>file/uploads/nhadep/<?php echo $nha_dep['code']?>/<?php echo $nha_dep['img']?>" alt="0" />
+                          <img style="width: 289px; height: 400px;" src="<?php echo base_url();?>file/uploads/nhadep/<?php echo $nha_dep['code']?>/<?php echo $nha_dep['img']?>" alt="0" />
                         <?php } else { ?>
-                         <img width="196" height="263" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="0" />
+                         <img style="width: 289px; height: 400px;" src="<?php echo base_url();?>file/uploads/no_image.gif" alt="0" />
                         <?php } ?>
                           </a>
                         </div>
