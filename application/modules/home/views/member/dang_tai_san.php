@@ -7,7 +7,7 @@
 
                 <form  method="post" class="form_style_3" enctype="multipart/form-data">
                 
-                <input type="hidden" value="<?php echo $code?>" name="code"/>
+                <input type="hidden" value="<?php echo $code?>" name="code" id="code"/>
                 <div class="body">
                   <div class="mess_head margin_bottom"><strong>Điền chính xác các thông tin dưới đây giúp cho tài sản của bạn xuất hiện chính xác và đầy đủ trong các kết quả theo nhu cầu của người dùng, việc này giúp cho giao dịch của bạn sẽ nhanh hơn.</strong></div>
                   <?php 
@@ -474,6 +474,9 @@ foreach($list_pn as $pn)
                                     
                                     
                                      <input id="userfile" name="userfile" type="file" class="qq-upload-button qq-trigger" multiple="true">
+                                      <link href="<?php echo base_url(); ?>template/home_ezwebvietnam/Content/js/ajaxupload/fileuploader.css" rel="stylesheet" type="text/css" />
+                                     <ul class="qq-upload-list"></ul>
+                                     
                                    <link href="<?php echo base_url(); ?>assets/js/jquery/uploadify_31/uploadify.css" rel="stylesheet" type="text/css" />
                                     <script src="<?php echo base_url()?>assets/js/jquery/uploadify_31/jquery.uploadify-3.1.min.js" type="text/javascript"></script>
 <script type="text/javascript">
@@ -499,11 +502,51 @@ foreach($list_pn as $pn)
                                 'onUploadError' : function(file, errorCode, errorMsg, errorString) {
                                     alert('The file ' + file.name + ' could not be uploaded: ' + errorString);
                                 },
-                                 'onUploadSuccess':function(file){
-                                    
+                                 'onUploadSuccess':function(file, data, response){
+                                    if(response === true){
+                                        file_data = JSON.parse(data);
+                                        
+                                        $('.qq-upload-list').append('<li class='+file_data.file_name+'><div class="qq-progress-bar"></div><span class="qq-upload-spinner" style="display: none;"></span><span class="qq-upload-finished"></span><span class="qq-upload-file">(x)   ' + file.name + '</span><span class="qq-upload-size" style="display: none;"></span><a href="javascript:void(0)" class="qq-upload-cancel" id='+file_data.file_name+'>Xóa</a>');
+                                      
+                                    }
+                                    else
+                                    {
+                                        alert('Invalid File Type');
+                                    }
                                  }
 			});
 		});
+        function DeleteImage(id) {
+                                            if (id.length > 0) {
+                                                code = $('#code').val();
+                                                $.ajax({
+                                                    type: "POST"
+                                                    , url: '<?php echo base_url();?>upload/delete_file'
+                                                    , data: { gid: id,code:code }
+                                                    , cache: false
+                                                    , dataType: "json"
+                                                    , success: function (data) {
+                                                        if (data != null) {
+                                                            if (data.msg == true) {
+                                                                alert('Xóa file thành công')
+                                                            }
+                                                            else
+                                                            {
+                                                               alert('Xóa file thất bại')
+                                                            }
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                        }
+$(document).ready(function() {
+    $(document).on('click','.qq-upload-cancel',function(event){
+            var contentPanelId = jQuery(this).attr("id");
+            DeleteImage(contentPanelId);
+           
+    });
+    
+});
 	</script>
                               </fieldset>
                         </div>
@@ -558,3 +601,4 @@ foreach($list_pn as $pn)
 
 
         </div>
+        
