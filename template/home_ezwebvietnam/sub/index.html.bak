@@ -1,0 +1,79 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" /> <!--Thiết lập bảng mã trang web-->
+        <title>Site Title</title>
+        <meta name="description" content="Giao diện Mobile-first" />
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/><!--Bật Responsive-->
+		
+        <!---Insert CSS-->
+        <link rel="stylesheet" href="normalize.min.css" /> <!--Reset CSS-->
+        <link rel="stylesheet" href="style.css" media="screen,handheld" /><!--Default CSS-->
+        <link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (min-width: 18.750em)" />
+        <link rel="stylesheet" type="text/css" href="css/tablet.css" media="screen and (min-width: 34.375em)" />
+        <link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width: 48em)" />
+	
+		<!--IE9 không hỗ trợ query media, do vậy ta sẽ dùng respond.js để bật Responsive cho IE9-->
+        <!--[if lt IE 9]> 
+            <script src="js/vendor/html5-3.6-respond-1.1.0.min.js"></script> 
+        <![endif]-->
+		
+    </head>
+    <body>
+ <div id="wrapper">
+ <div class="featured-post">
+       <div class="box">
+                    <div class="post">
+<p style="text-align: center;"><strong>ĐO ĐẠC</strong></p>
+<a href="#"><img src="img/dodac.png" alt="Post 1"></a>
+<ul>
+	<a href="#"><li>Giới thiệu</li></a>
+	<a href="#"><li>Bảng giá</li></a>
+	<a href="#"><li>Dịch vụ</li></a>
+	<a href="#"><li>Hướng dẫn</li></a>
+</ul>
+</div>
+                </div><!--end .box-->
+
+<div class="box">
+                    <div class="post">
+<p style="text-align: center;"><strong>ĐỊA ỐC</strong></p>
+<a href="#"><img src="img/diaoc.png" alt="Post 2"></a>
+<ul>
+	<a href="#"><li>Giới thiệu</li></a>
+	<a href="#"><li>Bảng giá</li></a>
+	<a href="#"><li>Dịch vụ</li></a>
+	<a href="#"><li>Hướng dẫn</li></a>
+</ul>
+</div>
+                </div><!--end .box-->
+
+<div class="box">
+                    <div class="post">
+<p style="text-align: center;"><strong>PHÁP LÝ</strong></p>
+<a href="#"><img src="img/phaply.png" alt="Post 3"></a>
+<ul>
+	<a href="#"><li>Giới thiệu</li></a>
+	<a href="#"><li>Bảng giá</li></a>
+	<a href="#"><li>Dịch vụ</li></a>
+	<a href="#"><li>Hướng dẫn</li></a>
+</ul>
+</div>
+                </div><!--end .box-->
+
+<div class="box">
+                    <div class="post">
+<p style="text-align: center;"><strong>XÂY DỰNG</strong></p>
+<a href="#"><img src="img/AAAA.png" alt="Post 4"></a>
+<ul>
+	<a href="#"><li>Giới thiệu</li></a>
+	<a href="#"><li>Bảng giá</li></a>
+	<a href="#"><li>Dịch vụ</li></a>
+	<a href="#"><li>Hướng dẫn</li></a>
+</ul>
+</div>
+                </div><!--end .box-->
+
+</div>
+</div>
+   </body>

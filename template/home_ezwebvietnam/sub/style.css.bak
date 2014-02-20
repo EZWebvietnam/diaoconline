@@ -1,0 +1,102 @@
+body {
+  width: 100%;
+  *zoom: 1;
+}
+body:before,
+body:after {
+  content: "";
+  display: table;
+}
+body:after {
+  clear: both;
+}
+/*
+	# Thiết lập các biến cần dùng thường xuyên
+*/
+/*--COLOR--*/
+/*--MISC--*/
+/*
+	# Trong đây chỉ là CSS của những thành phần cơ bản sử dụng mọi màn hình.
+*/
+/*------------------------------------------------------------------
+*----------------Main Style----------------------------------------*/
+body {
+  font-size: 93.8%;
+  line-height: 1.5em;
+  background: #e9eaed;
+}
+a {
+  color: #1e4684;
+  text-decoration: none;
+}
+a:hover {
+  color: #e24116;
+}
+a:focus {
+  outline: none;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+/*--Header--*/
+.top-bar {
+  background: #1e4684;
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  padding: 0 15px;
+  position: fixed;
+  font-size: 0.9em;
+  z-index: 1000;
+  border-bottom: 1px solid #fff;
+}
+.top-bar a {
+  color: #dfd23c;
+  font-style: italic;
+}
+#header {
+  padding-top: 3em;
+  background: #222222;
+  color: #fff;
+}
+#header a {
+  color: #fff;
+}
+#header a:hover {
+  color: #e24116;
+}
+/*--Featured Post--*/
+.featured-post {
+  clear: both;
+  margin-bottom: 1em;
+}
+.featured-post .box {
+  padding: 0.299em;
+  background: #fff;
+  border: 1px solid #dddddd;
+}
+.featured-post .box .post {
+  position: relative;
+}
+.featured-post .box .post .post-title {
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: -5.9%;
+  width: 100%;
+  padding: 0.3em 1em 0.3em 0.5em;
+}
+.featured-post .box .post .post-title a {
+  color: #fff;
+  font-size: 0.9em;
+}
+.featured-post .box .post img {opacity:1;filter:alpha(opacity=75);}
+}
+
+.featured-post .box .post a img:hover{opacity:0.75;filter:alpha(opacity=75);}

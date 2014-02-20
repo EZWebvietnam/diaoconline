@@ -124,10 +124,10 @@
     <div class="col_160">
     <div id="panel">
     <div class="panel_block active">
-        <h2><span class="ico_16 ico_panel_0"></span><a href="/thanh-vien/trang-chu">TỔNG
+        <h2><span class="ico_16 ico_panel_0"></span><a>TỔNG
                 QUAN</a></h2>
         <ul>
-            <li><a href="/thanh-vien/loc-tai-san">Lọc tài sản mặc định</a></li>
+            <li><a href="<?php echo base_url()?>thanh-vien/loc-tai-san-mac-dinh">Lọc tài sản mặc định</a></li>
         </ul>
     </div>
     <div class="panel_block">

@@ -123,6 +123,13 @@ class Member extends MY_Controller
                 $data_user_blance = array('so_du'=>$tien_con);
 				$this->blancehomemodel->update_blance_user($this->session->userdata('user_id'),$data_user_blance);
                 $this->logblancehomemodel->insert($data_log_gd);
+                $data = array(
+					'id_user'=>$this->session->userdata('user_id'),
+					'code'=>rand_string(6),
+					'money'=>$result['money'],
+					'status'=>1
+				);
+				$this->blancehomemodel->insert_order($data);
                 $this->session->set_flashdata('message',$result['return_result']);
                 redirect('/thanh-vien/nap-the');
             }
@@ -386,6 +393,7 @@ class Member extends MY_Controller
                     }   
             }
             natsort($files);
+            
             if($this->input->post('PriceMain')==0 || $this->input->post('PriceMain')=='')
             {
                 $price = "Thương lượng";
@@ -1560,6 +1568,106 @@ class Member extends MY_Controller
         {
             $this->data['list_dv']=$this->blancehomemodel->list_dv();
             $this->data['main_content']='member/nang_cap_dich_vu';
+            $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+    }
+    public function loc_tai_san_mac_dinh()
+    {
+        parent::get_loai_dia_oc();
+        if($this->input->post())
+        {
+            $cate_property = array();
+            if($this->input->post('cate_sieu_thi'))
+            {
+                $cate_property = implode(',',$this->input->post('cate_sieu_thi'));
+            }
+            $city = array();
+            if($this->input->post('cate_sieu_thi'))
+            {
+                $city = implode(',',$this->input->post('city'));
+            }
+            $active = TRUE;
+            $location = 'home';
+            if(!$this->tank_auth->is_logged_in($active,$location))
+            {
+                redirect('/dang-nhap');
+            }
+            $id_user = $this->session->userdata('user_id');
+            $sql_count="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+                    FROM property
+                    
+                    LEFT JOIN loai_dia_oc
+                    ON property.loai_dia_oc = loai_dia_oc.id
+                    WHERE 1 = 1
+                    ";
+            if(!empty($cate_property))
+            {
+                $sql_count.=" AND loai_dia_oc IN ($cate_property)";
+            }
+            if(!empty($city))
+            {
+                $sql_count.=" AND id_city IN ($city)";
+            }
+            if($this->input->post('tindang'))
+            {
+                $tin_dang = $this->input->post('tindang');
+                $sql_count.=" AND loai_tin = $tin_dang";
+            }
+            $sql_count.=" AND property.id_user = $id_user";
+            $this->load->model('propertyhomemodel');
+            $this->data['list_tinh'] = $this->propertyhomemodel->list_tinh_member();
+            $this->load->helper('url');
+            $config['uri_segment'] = 5;
+            $page = $this->uri->segment(4);
+           
+            $config['per_page'] = 12;
+            $config['total_rows'] = $this->propertyhomemodel->count_loc_tai_san($sql_count);
+            if ($page == '') {
+                $page = 1;
+            }
+            $page1 = ($page - 1) * $config['per_page'];
+           
+            if (!is_numeric($page)) {
+                show_404();
+                exit;
+            }
+            $sql="SELECT property.*,loai_dia_oc.name as loai_dia_oc,loai_dia_oc.id as id_ldo
+            FROM property
+            
+            LEFT JOIN loai_dia_oc
+            ON property.loai_dia_oc = loai_dia_oc.id
+            WHERE 1 = 1";
+            if(!empty($cate_property))
+            {
+                $sql.=" AND loai_dia_oc IN ($cate_property)";
+            }
+            if(!empty($city))
+            {
+                $sql.=" AND id_city IN ($city)";
+            }
+            if($this->input->post('tindang'))
+            {
+                $tin_dang = $this->input->post('tindang');
+                $sql.=" AND loai_tin = $tin_dang";
+            }
+            $sql.=" AND property.id_user = $id_user
+             ORDER BY property.goi_giao_dich DESC
+             LIMIT $page1,
+            ".$config['per_page'];
+           $num_pages = ceil($config['total_rows']/ $config['per_page']);
+           $array_sv = $this->propertyhomemodel->list_loc_tai_san($sql);
+           $this->data['total_page'] = $num_pages;
+           $this->data['offset'] = $page1;
+           $this->data['page']=$page;
+           $this->data['total']=$config['total_rows'];
+           $this->data['list']=$array_sv;
+           $this->data['main_content']='member/loc_tai_san_mac_dinh_post';
+           $this->load->view('home_layout/member/user_index_layout',$this->data);
+        }
+        else
+        {
+            
+            $this->data['main_content']='member/loc_tai_san_mac_dinh_get';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
     }

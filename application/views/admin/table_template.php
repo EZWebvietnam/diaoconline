@@ -273,6 +273,8 @@
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminadv"><i class="icon-list-alt"></i><span class="hidden-tablet">Quang cao</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminemailsubcrise"><i class="icon-list-alt"></i><span class="hidden-tablet">Email nhan tin</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincontact"><i class="icon-list-alt"></i><span class="hidden-tablet">Lien he</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminthamdinh"><i class="icon-list-alt"></i><span class="hidden-tablet">Tham dinh</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminorder"><i class="icon-list-alt"></i><span class="hidden-tablet">Hoa don</span></a></li>
 
 					</ul>
 

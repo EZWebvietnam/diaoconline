@@ -1,0 +1,116 @@
+@media screen and (min-width: 48em) {
+  
+  /*--Menu--*/
+  #header {
+    width: 100%;
+    margin: 0;
+  }
+  #header .site-title {
+    margin-left: 9.374999999999998%;
+  }
+  #header .header-menu {
+    margin-left: 17.708333333333332%;
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+  }
+  #header .header-menu .show-menu {
+    display: none !important;
+  }
+  #header .header-menu > ul {
+    display: block !important;
+    position: relative;
+  }
+  #header .header-menu > ul:after {
+    content: " ";
+    clear: both;
+    display: block;
+  }
+  #header .header-menu > ul li {
+    display: inline;
+    background: transparent !important;
+  }
+  #header .header-menu > ul li a:hover {
+    font-weight: normal !important;
+  }
+  #header .header-menu > ul li ul {
+    display: none;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+  }
+  #header .header-menu > ul li ul li a {
+    font-size: 0.8em;
+  }
+  #header .header-menu > ul li:hover ul {
+    display: block;
+  }
+  /*--CONTENT--*/
+  #wrapper {
+    overflow: hidden;
+    margin-bottom: 1em !important;
+    width: 75%;
+    margin: 0 auto;
+  }
+  #wrapper .featured-post {
+    padding: 0;
+  }
+  #wrapper .content {
+    display: block;
+    width: 102.08333333333333%;
+    margin: 0 -1.0416666666666665%;
+    *zoom: 1;
+    /*--SIDEBAR--*/
+  
+  }
+  #wrapper .content:before,
+  #wrapper .content:after {
+    content: "";
+    display: table;
+  }
+  #wrapper .content:after {
+    clear: both;
+  }
+  #wrapper .content .content-main {
+    display: inline;
+    float: left;
+    width: 64.58333333333334%;
+    margin: 0 1.0416666666666665%;
+  }
+  #wrapper .content .content-main .post-below {
+    display: block;
+  }
+  #wrapper .content .sidebar {
+    display: inline;
+    float: left;
+    width: 31.25%;
+    margin: 0 1.0416666666666665%;
+    clear: none;
+    padding-top: 0;
+  }
+  #wrapper .content .sidebar .recent-post li {
+    display: inline;
+    float: left;
+    width: 97.91666666666666%;
+    margin: 0 1.0416666666666665%;
+  }
+  /*--FOOTER--*/
+  #footer {
+    overflow: hidden;
+  }
+  #footer .col-1,
+  #footer .col-2 {
+    display: inline;
+    float: left;
+    width: 22.916666666666664%;
+    margin: 0 1.0416666666666665%;
+  }
+  #footer .col-3 {
+    display: inline;
+    float: left;
+    width: 47.91666666666667%;
+    margin: 0 1.0416666666666665%;
+    clear: none;
+  }
+}

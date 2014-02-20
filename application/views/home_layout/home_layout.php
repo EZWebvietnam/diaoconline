@@ -17,6 +17,11 @@
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/uniform.default.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo base_url();?>template/home_ezwebvietnam/Content/css/doolv3.css" rel="stylesheet" type="text/css" />
     <script src="<?php echo base_url();?>template/home_ezwebvietnam/Content/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+    
+     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/><!--Bật Responsive-->
+		
+        <!---Insert CSS-->
+        
     <script type='text/javascript'>
         var _gaq = _gaq || [];
         _gaq.push(['_setAccount', 'UA-1771835-4']);
@@ -728,8 +733,11 @@ if(empty($vi_tri_5))
 
             
         </div>
+        
     </div>
+    
 <div id="shopping" class="wrap margin_bottom">
+
     <div class="rounded_style_4 rounded_box">
         <div class="content">
             <div class="top">

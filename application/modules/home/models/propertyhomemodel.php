@@ -836,7 +836,6 @@ class Propertyhomemodel extends CI_Model
         ";
         $query = $this->db->query($sql);
         return count($query->result_array());
-        
     }
     // Tai san dang hien thi search
     public function list_property_available_search($sql)
@@ -1119,6 +1118,18 @@ class Propertyhomemodel extends CI_Model
     {
     	$id = intval($id);
         $sql ="SELECT * FROM chi_tiet_dv_ts WHERE id_tai_san= $id";
+        $query = $this->db->query($sql);
+        return $query->result_array();
+    }
+    //
+    public function count_loc_tai_san($sql)
+    {
+        $query = $this->db->query($sql);
+        return count($query->result_array());
+    }
+     public function list_loc_tai_san($sql)
+    {
+        
         $query = $this->db->query($sql);
         return $query->result_array();
     }

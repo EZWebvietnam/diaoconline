@@ -277,6 +277,8 @@
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminadv"><i class="icon-list-alt"></i><span class="hidden-tablet">Quảng cáo</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminemailsubcrise"><i class="icon-list-alt"></i><span class="hidden-tablet">Email nhận tin</span></a></li>
                             <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/admincontact"><i class="icon-list-alt"></i><span class="hidden-tablet">Liên hệ</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminthamdinh"><i class="icon-list-alt"></i><span class="hidden-tablet">Thẩm định</span></a></li>
+                            <li><a class="ajax-link" href="<?php echo base_url(); ?>admin/adminorder"><i class="icon-list-alt"></i><span class="hidden-tablet">Hóa đơn</span></a></li>
 
                            
 
