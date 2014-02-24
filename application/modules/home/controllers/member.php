@@ -551,7 +551,7 @@ class Member extends MY_Controller
                     }
                     $this->session->set_flashdata('message','Đăng tài sản thành công');
                 }
-                redirect('/thanh-vien/tai-san-dang-moi');
+                redirect('/thanh-vien/dang-tai-san-thanh-cong-k-'.$this->input->post('code'));
             }
             else
             {
@@ -1220,7 +1220,7 @@ class Member extends MY_Controller
 							$data_img = array('file'=>$v,'id_pro'=>$id_ins);
 							$this->memberhomemodel->insert_img_proper($data_img);
 						}
-                        redirect('/thanh-vien/tai-san-dang-soan');
+                        redirect('/thanh-vien/dang-tai-san-thanh-cong-k-'.$this->input->post('code'));
                     }
                 }
                 if($this->input->post('SubmitSave'))
@@ -1670,6 +1670,11 @@ class Member extends MY_Controller
             $this->data['main_content']='member/loc_tai_san_mac_dinh_get';
             $this->load->view('home_layout/member/user_index_layout',$this->data);
         }
+    }
+    public function dang_tai_san_thanh_cong($code)
+    {
+        $this->data['code']=$code;
+        $this->load->view('home_layout/dang_tai_san_thanh_cong',$this->data);
     }
 }
 ?>

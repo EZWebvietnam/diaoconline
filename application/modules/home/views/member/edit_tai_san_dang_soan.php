@@ -122,72 +122,70 @@ foreach ($list_vi_tri as $l_vi_tri)
                               	</li>
                                 <li class="map">
                                     <label>Bản đồ</label>
+                                    <input type="hidden" value="" id="long" />
+                                    <input type="hidden" value="" id="lat" />
                                     <div id="IdMapReview">
-                                        <img alt="" src="<?php echo base_url();?>template/home_ezwebvietnam/images/demo/map_member.jpg">
+                                        <img alt="" src="http://www.diaoconline.vn/images/demo/map_member.jpg"/>
                                         <button class="btn_2" type="button" id="btnMapReview">
                                             <span>CẬP NHẬT VỊ TRÍ</span>
                                         </button>
+                                        
                                     </div>
                                     <div id="IdMap" style="display:none">
                                         <div id="map_canvas" style="width:390px; height:300px;margin-bottom:10px;"></div>
                                         <button class="btn_2" type="button" id="btnCancelMapReview">
                                             <span>HỦY CẬP NHẬT</span>
                                         </button>
+                                        
+                                            
+                                        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+                                            
                                         <script type="text/javascript">
-                                            var map;
-                                            var marker;
-                                            var myLatlng;
-                                            var toggleLatlng;
-
-                                            var keyGmap = "AIzaSyAUTPN4rOuvSRFrBmo00YCd6xhe8uUUqHQ";
-                                            function initialize() {
-                                                myLatlng = new google.maps.LatLng(10.7410135269165, 106.700729370117);
-                                                var mapOptions = {
-                                                    zoom: 15,
-                                                    center: myLatlng,
-                                                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            function codeAddress() {
+                                            geocoder = new google.maps.Geocoder();
+                                            var latlng = new google.maps.LatLng(42.095287, -79.3185139);
+                                            var myOptions = {
+                                              zoom: 20,
+                                              center: latlng,
+                                              mapTypeId: google.maps.MapTypeId.ROADMAP
+                                            };
+                                            map = new google.maps.Map(document.getElementById("map_canvas"),
+                                                myOptions);
+                                            var city = $( "#CityListMember option:selected" ).text();
+                                            var district = $( "#DistrictListMember option:selected" ).text();
+                                            var ward = $( "#WardListMember option:selected" ).text();
+                                            var sAddress = document.getElementById("HouseNumberStreet").value+', phường '+ward+', Quận'+district+','+city;
+                                            geocoder.geocode( { 'address': sAddress}, function(results, status) {
+                                               
+                                                if (status == google.maps.GeocoderStatus.OK) {
+                                                    
+                                                    map.setCenter(results[0].geometry.location);
+                                                    
+                                                    var marker = new google.maps.Marker({
+                                                        map: map, 
+                                                        position: results[0].geometry.location
+                                                    });
+                                                } else {
+                                                   
+                                                    alert("Geocode was not successful for the following reason: " + status);
                                                 }
-                                                map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-                                                marker = new google.maps.Marker({
-                                                    map: map,
-                                                    draggable: true,
-                                                    animation: google.maps.Animation.DROP,
-                                                    position: myLatlng,
-                                                    title:"Chọn vị trí tài sản trên bản đồ"
-                                                });
-                                                google.maps.event.addListener(marker, 'dragend', function (event) {
-                                                    setPosition(event.latLng.lat(), event.latLng.lng());
-                                                });
-
-                                            }
-                                            function setPosition(lat, lng) {
-                                                $('#MapX').val(lat);
-                                                $('#MapY').val(lng);
-                                            }
-                                            function loadScript() {
-                                                var script = document.createElement("script");
-                                                script.type = "text/javascript";
-                                                script.src = "http://maps.googleapis.com/maps/api/js?key=" + keyGmap + "&sensor=false&callback=initialize";
-                                                document.body.appendChild(script);
-                                            }
+                                              });
+                                          }
                                             $(function () {
-                                                setPosition('','');
+                                                
                                                 var clicked = $('#Clicked');
                                                 clicked.val('');
                                                 $('#IdMap').attr('style','display:none');
                                                 $('#btnMapReview').click(function () {
-                                                    if(clicked.val() == '')
-                                                    {
-                                                        clicked.val('1');
-                                                        loadScript() ;
-                                                    }
+                                                     
+                                                    codeAddress();
                                                     $('#IdMapReview').attr('style', 'display:none');
                                                     $('#IdMap').attr('style', '');
                                                 });
                                                 $('#btnCancelMapReview').click(function(){
                                                     $('#IdMapReview').attr('style', '');
                                                     $('#IdMap').attr('style', 'display:none');
-                                                    setPosition('', '');
+                                                   
                                                 });
                                             });
                                         </script>

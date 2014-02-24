@@ -52,6 +52,7 @@ $route['doanh-nghiep/tim-kiem/tukhoa_(:any)'] = "home/businesshome/tim_kiem/$1";
 $route['doanh-nghiep/tim-kiem/tukhoa_(:any)/page/(:any)'] = "home/businesshome/tim_kiem/$1";
 $route['doanh-nghiep/page/(:any)'] = "home/businesshome/load_dn";
 //
+$route['thanh-vien/dang-tai-san-thanh-cong-k-(:any)'] = "home/member/dang_tai_san_thanh_cong/$1";
 $route['thanh-vien/loc-tai-san-mac-dinh'] = "home/member/loc_tai_san_mac_dinh";
 $route['thanh-vien/loc-tai-san-mac-dinh/page/(:any)'] = "home/member/loc_tai_san_mac_dinh";
 $route['thanh-vien/nap-the'] = "home/member/nap_the";
