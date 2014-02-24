@@ -303,7 +303,7 @@ function PostComment(tid, id) {
 function GetData(folder,controller, action, id, idData) {
     $.ajax({
         type: "GET"
-        , url: "/diaoconline/"+folder +'/'+ controller + "/" + action + "/" + id
+        , url: "/"+folder +'/'+ controller + "/" + action + "/" + id
         , cache: false
         , dataType: "html"
         , success: function (data) {
@@ -316,7 +316,7 @@ function GetData(folder,controller, action, id, idData) {
 function GetData_(folder,controller, action, id,abc, idData) {
     $.ajax({
         type: "GET"
-        , url: "/diaoconline/"+folder +'/'+ controller + "/" + action + "/" + id+'/'+abc
+        , url: "/"+folder +'/'+ controller + "/" + action + "/" + id+'/'+abc
         , cache: false
         , dataType: "html"
         , success: function (data) {

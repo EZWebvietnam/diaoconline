@@ -23,7 +23,6 @@ class Member extends MY_Controller
         parent::project_noi_bat_lm1();
         parent::get_list_cafe_law();
         parent::project_noi_menu($this->data['noi_bat_menu_1'][0]['id_pro']);
-        
         // Tai san
         parent::get_tai_san_lm3();
         parent::get_ts_menu();
@@ -582,6 +581,7 @@ class Member extends MY_Controller
     public function ajax_get_district($id)
     {
         $this->load->model('propertyhomemodel');
+        $this->data['id_city']=$id;
         $this->data['list_district']=$this->propertyhomemodel->list_district_by_city($id);
         $this->load->view('member/ajax_list_district',$this->data);
     }

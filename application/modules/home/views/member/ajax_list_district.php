@@ -5,13 +5,13 @@
 <?php 
 
 foreach($list_district as $district)
-
 {
-
+    if($id_city == 79)
+    {
 ?>
-
-<option value="<?php echo $district['districtid']?>"><?php if(is_numeric($district['name'])) { echo 'Quận '.$district['name'];} else { echo 'Huyện '.$district['name'];}?></option>
-
-<?php } ?>
+<option value="<?php echo $district['districtid']?>"><?php  echo $district['name'];?></option>
+<?php } else { ?> 
+<option value="<?php echo $district['districtid']?>"><?php  echo $district['name'];?></option>
+<?php } } ?>
 
 </select>
