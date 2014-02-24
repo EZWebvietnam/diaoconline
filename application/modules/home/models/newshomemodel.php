@@ -227,15 +227,9 @@ class Newshomemodel extends CI_Model
     public function get_list_new_save()
 
     {
-
-       
-
         $sql = "SELECT save_tin.id as id_save,save_tin.create_date as ngay_luu,news.id as id_new,news.view,news.create_date,news.content,news.title,news.img,cate_new.id as id_cate,cate_new.name FROM news INNER JOIN cate_new ON cate_new.id = news.id_cate INNER JOIN save_tin ON save_tin.id_new = news.id  ORDER BY news.id DESC LIMIT 5";
-
         $query = $this->db->query($sql);
-
         return $query->result_array();
-
     }
 
     public function get_count_new_save()

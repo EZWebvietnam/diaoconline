@@ -39,7 +39,7 @@
                                  <?php 
                                  if(isset($so_du[0]['so_du']))
                                  {
-                                 echo $so_du[0]['so_du']                                    
+                                 echo $so_du[0]['so_du'];                                 
                                  }
                                  else
                                  {
