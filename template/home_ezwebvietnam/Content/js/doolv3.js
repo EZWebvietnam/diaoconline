@@ -409,7 +409,7 @@ function GetDataSaved(urlData, urlReturn, idData,type) {
     {
     $.ajax({
         type: "POST"
-        , url: "/diaoconline/luu-tin/k/" + urlData
+        , url: "/luu-tin/k/" + urlData
         , cache: false
         , dataType: "json"
         , success: function (data) {
@@ -432,7 +432,7 @@ function GetDataSaved(urlData, urlReturn, idData,type) {
         
         $.ajax({
         type: "POST"
-        , url: "/diaoconline/luu-dis/k/" + urlData
+        , url: "/luu-dis/k/" + urlData
         , cache: false
         , dataType: "json"
         , success: function (data) {
@@ -455,7 +455,7 @@ function GetDataSavedProject(urlData, urlReturn, idData) {
     
     $.ajax({
         type: "POST"
-        , url: "/diaoconline/luu-prj/k/" + urlData
+        , url: "/luu-prj/k/" + urlData
         , cache: false
         , dataType: "json"
         , success: function (data) {
@@ -477,7 +477,7 @@ function GetDataSavedProperty(urlData, urlReturn, idData) {
     
     $.ajax({
         type: "POST"
-        , url: "/diaoconline/luu-proper/k/" + urlData
+        , url: "/luu-proper/k/" + urlData
         , cache: false
         , dataType: "json"
         , success: function (data) {
@@ -517,7 +517,7 @@ function DeleteDataSaved(urlData, urlReturn, idData) {
 }
 
 function BuildUrl() {
-    var act = '/diaoconline/thanh-vien/tai-san-dang-hien-thi-search';
+    var act = '/thanh-vien/tai-san-dang-hien-thi-search';
    
     var url = '';
     $('[param]').each(function () {

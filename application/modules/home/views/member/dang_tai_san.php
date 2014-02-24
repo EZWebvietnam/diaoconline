@@ -579,7 +579,7 @@ $(document).ready(function() {
                         	<div class="content">   	
                             	<h5>Lưu ý:</h5>
                             	<p>Những mục có dấu * là thông tin phải điền đầy đủ. Chỉ khi bạn hoàn tất những thông tin được yêu cầu điền đầy đủ thì các chức năng <strong>Đăng tài sản</strong> mới được kích hoạt</p>
-                                <p>DiaOcOnline không chịu trách nhiệm về những nội dung (chữ/ hình ảnh/ Video) do bạn đăng tải</p>
+                                <p>DCBLAND không chịu trách nhiệm về những nội dung (chữ/ hình ảnh/ Video) do bạn đăng tải</p>
                            	  <fieldset>
                            	    <ul>
                                 	<li class="agree"><div class="info">
