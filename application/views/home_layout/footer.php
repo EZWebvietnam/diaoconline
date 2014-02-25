@@ -142,7 +142,7 @@
 
                         <ul>
 
-                        <li class="facebook"><a href="http://facebook.com/" target="_blank">facebook</a></li>
+                        <li class="facebook"><a target="__blank" href="https://www.facebook.com/DCBHouse" target="_blank">facebook</a></li>
 
                         <li class="twitter"><a href="https://twitter.com/" target="_blank">twitter</a></li>
 
@@ -169,17 +169,20 @@
 					<br/>
 
 					<div style="margin-left:5px;">
-
                    <ul>  
-
-                   <a href="ymsgr:sendim?dcbhouse"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-
-                   <a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-
-                   <a href="ymsgr:sendim?dcbland"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a>
-
-                
-
+                    <table>
+                    <tr>
+                    	<td style="margin-left: 5px;"><a href="ymsgr:sendim?dcbhouse"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a></td>
+                    	<td style="margin-left: 5px;"><a href="ymsgr:sendim?hongdao.tnmt"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a></td>
+                    	<td style="margin-left: 5px;"><a href="ymsgr:sendim?dcbland"><img class="aligncenter  wp-image-6317" title="yahoo" src="http://www.aithietke.com/wp-content/uploads/2013/10/yahoo.png" alt="" width="112" height="30"></a></td>
+                    </tr>
+                    <tr>
+                    	<td style="margin-left: 5px;">Tư vấn DCBHouse</td>
+                    	<td style="margin-left: 5px;">Tra cứu Hồ sơ</td>
+                    	<td style="margin-left: 5px;">Tư vấn DCBLand</td>
+                    </tr>
+                    </table>
+                   
                     </ul></div>
 
                 </div>
