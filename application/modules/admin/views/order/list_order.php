@@ -114,7 +114,8 @@ color: #EDF5FA;
                         <th>Thành viên</th>
 
                         <th>Số tiền</th>
-                         <th>Trạng thái</th>
+                        <th>Thanh toán qua</th>
+                        <th>Trạng thái</th>
                        
 
                     </tr>
@@ -135,6 +136,10 @@ color: #EDF5FA;
                         <td class="center"><?php echo $prj['code']?></td>
                         <td class="center"><?php echo $prj['username']?></td>
                         <td class="center"><?php echo $prj['money']?></td>
+                        <?php 
+                        $array = array('0'=>'Ngân Lượng','1'=>'Bảo Kim','2'=>'Thẻ Cào')
+                        ?>
+                        <td class="center"><?php echo $array[$prj['type']]?></td>
                         <td class="center"><?php if($prj['status']==0)
                         {
                         ?>

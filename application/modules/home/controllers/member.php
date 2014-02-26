@@ -55,7 +55,8 @@ class Member extends MY_Controller
 					'id_user'=>$this->session->userdata('user_id'),
 					'code'=>$order_code,
 					'money'=>$price,
-					'status'=>0
+					'status'=>0,
+                    'type'=>0
 					);
 					$this->blancehomemodel->insert_order($data);
 					$url = $this->nl->buildCheckoutUrlExpand($url,$receiver,$transaction_info,$order_code,$price);
@@ -64,6 +65,7 @@ class Member extends MY_Controller
 				}
 				case 2:
 				{
+				    $this->load->model('blancehomemodel');
 					$this->load->library('baokim');
 					$order_id = $this->input->post('order_code');
 					$business = 'info@dcbland.com';
@@ -74,6 +76,14 @@ class Member extends MY_Controller
 					$url_success=base_url()."home/member/ket_qua";
 					$url_cancel='http://dcbland.com/thanh-vien/nap-tien';
 					$url_detail = 'http://dcbland.com/thanh-vien/nap-tien';
+                    $data = array(
+					'id_user'=>$this->session->userdata('user_id'),
+					'code'=>$order_code,
+					'money'=>$price,
+					'status'=>0,
+                    'type'=>1
+					);
+                    $this->blancehomemodel->insert_order($data);
 					$url = $this->baokim->createRequestUrl($order_id, $business, $total_amount, $shipping_fee, $tax_fee, $order_description, $url_success, $url_cancel, $url_detail);
 					redirect($url);
 					break;
@@ -126,7 +136,8 @@ class Member extends MY_Controller
 					'id_user'=>$this->session->userdata('user_id'),
 					'code'=>rand_string(6),
 					'money'=>$result['money'],
-					'status'=>1
+					'status'=>1,
+                    'type'=>2
 				);
 				$this->blancehomemodel->insert_order($data);
                 $this->session->set_flashdata('message',$result['return_result']);
