@@ -235,9 +235,7 @@ class Auth extends MY_Controller
 	function activate()
 	{
 		$user_id		= $this->uri->segment(2);
-        
 		$new_email_key	= $this->uri->segment(3);
-        
 		// Activate user
 		if ($this->tank_auth->activate_user($user_id, $new_email_key)) {
 		      // success
@@ -246,7 +244,6 @@ class Auth extends MY_Controller
 			     $this->tank_auth->logout();
             }
 			$this->_show_message($this->lang->line('auth_message_activation_completed').' '.anchor('/home/auth/login/', 'Login'));
-
 		} else {																// fail
 			$this->_show_message($this->lang->line('auth_message_activation_failed'));
 		}
